@@ -2,8 +2,8 @@
   "id": "DL-TECH2-DIAGNOSTIC-WORKUP-001",
   "title": "Technician II Diagnostic Workup Record",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "worksheet",
   "format": "csv",
   "description": "A structured evidence record for separating observations from hypotheses, ranking differentials, selecting discriminating checks, and documenting bounded conclusions.",
@@ -22,5 +22,6 @@
   "limitations": [
     "This worksheet supports diagnostic reasoning but does not confirm a pathogen, nutrient disorder, genetic cause, or equipment failure by itself.",
     "Use approved site procedures and qualified laboratory or supervisory support when confirmation or restricted actions are required."
-  ]
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a regulated record, facility SOP, assessor score sheet, or professional credential issuance instrument."
 }

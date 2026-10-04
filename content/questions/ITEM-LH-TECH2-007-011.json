@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A peer asks Technician II to approve a controlled-record edit. What is the correct response if that authority is not assigned?",
   "choices": [
-    "Approve it because Technician II is senior.",
-    "Edit the record for the peer.",
-    "Explain the controlled correction process and route approval to the authorized role.",
-    "Create a replacement record with no link to the original."
+    "Approve the edit if the correction is obvious and the technician can verify the source evidence.",
+    "Make the edit on the peer's behalf while leaving the peer as the original record owner.",
+    "Explain the controlled correction process, help assemble the evidence if appropriate, and route approval to the role authorized to approve the change.",
+    "Create a replacement record with the corrected value and archive the original so approval is unnecessary."
   ],
   "correct": 2,
-  "rationale": "Explain the controlled correction process and route approval to the authorized role.",
+  "rationale": "Technician II can support the correction process and verify evidence, but approval authority remains role-specific. The proper response is to guide the peer through the controlled correction workflow and route authorization to the assigned role. Editing on someone's behalf or creating a replacement record can bypass attribution and audit-trail requirements.",
   "references": [
     "REF-ASTM-E2659-001",
     "REF-MHRA-GXP-DATA-INTEGRITY"

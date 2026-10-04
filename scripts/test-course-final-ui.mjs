@@ -19,17 +19,25 @@ for (const marker of [
 ]) assert.ok(html.includes(marker), `index must expose final-assessment asset/boundary contract: ${marker}`);
 
 for (const marker of [
-  '/api/v1/me/courses/${COURSE_ID}/assessment-attempts',
+  '/api/v1/me/courses/${encodeURIComponent(courseId)}/assessment-attempts',
   '/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/responses',
   '/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit',
   'Responses save to your learner record as you answer.',
+  'course-assessment-timer',
+  'Time expired — submitting',
+  'submitAssessment(panel, { force: true, timedOut: true })',
   'Post-attempt feedback is domain-level; answer keys are not displayed.',
-  'This is the public Course 1 final, separate from the Technician I credential examination.',
-  'Current academic development threshold:',
-  'provisional pending pilot evidence and documented standard setting',
-  'This is Course 1 academic knowledge evidence under a provisional development threshold',
-  'this is not a Technician I credential decision',
-  'Open Field References'
+  'Authenticated summative assessment',
+  'It is recorded to your learner account and remains separate from professional credential issuance.',
+  'Current academic passing target:',
+  'Practical/performance evidence and professional credential issuance remain separate decisions.',
+  'Professional certification uses a separate validation, standard-setting, and release process.',
+  'Open Field References',
+  'View course record',
+  "document.querySelector('#tab-course-record')?.click()",
+  'course-assessment-navigator',
+  'Assessment question navigator',
+  'updateQuestionNavigator(panel)'
 ]) assert.ok(js.includes(marker), `assessment UI missing contract: ${marker}`);
 
 assert.ok(js.includes("credentials: 'same-origin'"), 'assessment requests must use same-origin authentication');
@@ -37,6 +45,10 @@ assert.ok(js.includes("input.type = 'radio'"), 'single-choice assessment items n
 assert.ok(js.includes("input.type = 'checkbox'"), 'multiple-response assessment items need checkbox controls');
 assert.ok(js.includes("input.type = 'number'"), 'numeric assessment items need numeric controls');
 assert.ok(js.includes('renderRichBlocks(fieldset, item.stimulus)'), 'assessment evidence stimuli must use the accessible rich renderer');
+for (const identityMarker of ['Learner: ', 'Application: ', 'Certificate name: ', 'Attempt: ']) {
+  assert.ok(js.includes(identityMarker), `assessment UI must retain learner/exam identity marker: ${identityMarker}`);
+}
+assert.ok(js.includes('result.learner?.certificateName'), 'scored assessment result must retain the certificate name linked to the attempt');
 assert.ok(js.includes('pendingSaves'), 'submission must account for in-flight autosaves');
 assert.ok(js.includes('saveChains'), 'rapid updates for one item must be serialized');
 assert.ok(js.includes("fieldset.dataset.saved = 'false'"), 'changed responses must become unsaved until persistence succeeds');
@@ -48,13 +60,32 @@ assert.equal(/\brationale\b/.test(js), false, 'learner assessment UI must not de
 
 for (const marker of [
   '.course-assessment-toolbar',
+  '.course-assessment-timer',
   '.course-assessment-choice',
   'min-height: 44px',
   '@media (max-width: 620px)',
-  '.course-assessment-domain-grid'
+  '.course-assessment-domain-grid',
+  '.course-assessment-navigator',
+  '.course-assessment-nav-button',
+  'scroll-margin-top: 10rem',
+  'min-height: 52px',
+  '.course-assessment-nav-button { min-width: 44px; min-height: 44px',
+  '@media (max-height: 620px)',
+  'padding-bottom: max(1.25rem, env(safe-area-inset-bottom))'
 ]) assert.ok(css.includes(marker), `assessment CSS missing ${marker}`);
+
+assert.equal(/course-assessment-nav-button[^}]*min-(?:width|height):\s*(?:4[0-3]|3\d)px/.test(css), false, 'assessment question navigator must keep at least 44px touch targets');
+assert.ok(/@media \(max-height: 620px\)[\s\S]*\.course-assessment-toolbar,[\s\S]*\.course-assessment-navigator,[\s\S]*\.course-assessment-submit-area[\s\S]*position: static/.test(css), 'short-height assessment mode must release stacked sticky regions');
 
 assert.ok(server.includes("['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']]"), 'web server must serve assessment JS');
 assert.ok(server.includes("['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']]"), 'web server must serve assessment CSS');
 
-console.log('Course 1 final learner UI autosave, accessibility, non-disclosure, provisional-threshold, credential-boundary, responsive, and static-serving contracts passed.');
+const app = fs.readFileSync('apps/web/public/app.js', 'utf8');
+assert.ok(app.includes("import { launchCourseAssessment } from './course-assessment.js'"), 'catalog must import the shared final launcher');
+assert.ok(app.includes('Take graded course final'), 'catalog must expose a graded final launch action for published summative finals');
+assert.ok(app.includes('launchCourseAssessment(course.id, launch)'), 'catalog final action must launch the selected course, not a hard-coded Course 1 assessment');
+assert.ok(app.includes("academyParams.get('course')"), 'Academy must accept a course deep link from the public course site');
+assert.ok(app.includes("academyParams.get('view')"), 'Academy must accept a final-view deep link');
+assert.ok(app.includes('data-course-final-for') || app.includes('dataset.courseFinalFor'), 'Academy must mark course-specific final controls for deep linking');
+
+console.log('Academy final learner UI autosave, accessibility, non-disclosure, identity linkage, generic course launching, responsive, and static-serving contracts passed.');

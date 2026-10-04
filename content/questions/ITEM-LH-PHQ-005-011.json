@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-005-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-005-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why can a precise laboratory result still be weak lot evidence?",
+  "choices": [
+    "Precision always proves representativeness.",
+    "Only accreditation matters.",
+    "Analytical precision does not correct a nonrepresentative or identity-compromised sample.",
+    "Lot history never matters."
+  ],
+  "correct": 2,
+  "rationale": "Sampling and identity are separate contributors to inference quality.",
+  "references": [
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

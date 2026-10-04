@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Why is a representative delivery check required after routine system execution?",
   "choices": [
-    "It is only for estimating yield",
-    "A controller or pump status does not prove solution actually reached every required crop location",
-    "It replaces the work order",
-    "It identifies exact nutrient composition"
+    "It mainly helps estimate eventual crop yield after irrigation.",
+    "Controller or pump status confirms that the system was commanded to run, but representative checks are needed to verify that solution actually reached required crop locations.",
+    "It replaces the work order because field delivery is more important than planned instructions.",
+    "It reveals the exact nutrient composition delivered at every emitter."
   ],
   "correct": 1,
-  "rationale": "A controller or pump status does not prove solution actually reached every required crop location. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A controller can show that a command was issued and equipment may show that it operated, but neither proves that every required location received solution. Clogged emitters, pressure loss, closed valves, leaks, or line problems can create delivery failures. Representative checks verify actual outcome rather than assuming command equals delivery.",
   "references": [
     "REF-IRRIGATION-001"
   ],

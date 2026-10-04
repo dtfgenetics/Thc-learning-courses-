@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-003-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-003-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A high-barrier film has inconsistent seals. What is the strongest evaluation?",
+  "choices": [
+    "Approve it based on film data alone.",
+    "Ignore seal records if packages look closed.",
+    "Assess the complete container-closure system because material properties cannot compensate for uncontrolled closure performance.",
+    "Increase headspace without review."
+  ],
+  "correct": 2,
+  "rationale": "Package protection depends on material, closure and actual use.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

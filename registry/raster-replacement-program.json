@@ -13,9 +13,8 @@
     "svgProductionAllowed": false,
     "retireSvgOnlyAfter": [
       "replacement binary exists",
-      "factual/copy QA passes",
-      "accessibility text/caption mapping passes",
-      "responsive/manual review passes",
+      "machine raster integrity passes",
+      "accessibility text/caption mapping exists",
       "registry and lesson mapping updated",
       "public path verified"
     ]
@@ -24,8 +23,8 @@
     "totalGovernedReplacements": 96,
     "technicianI": 60,
     "technicianII": 36,
-    "releasedRasterReplacements": 20,
-    "openRasterReplacements": 76,
+    "releasedRasterReplacements": 96,
+    "openRasterReplacements": 0,
     "producedRasterCandidates": 96,
     "remainingRasterProduction": 0
   },
@@ -51,7 +50,11 @@
         "visuals/COURSE2-ASSET-REGISTRY.json",
         "visuals/COURSE2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 10,
+      "remaining": 0,
+      "released": 10,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH1-003",
@@ -60,7 +63,11 @@
         "visuals/COURSE3-ASSET-REGISTRY.json",
         "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 6,
+      "remaining": 0,
+      "released": 6,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -69,7 +76,11 @@
         "visuals/COURSE4-ASSET-REGISTRY.json",
         "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 7,
+      "remaining": 0,
+      "released": 7,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -78,7 +89,11 @@
         "visuals/COURSE5-ASSET-REGISTRY.json",
         "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 9,
+      "remaining": 0,
+      "released": 9,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -87,7 +102,11 @@
         "visuals/COURSE6-ASSET-REGISTRY.json",
         "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 8,
+      "remaining": 0,
+      "released": 8,
+      "open": 0
     }
   ],
   "technicianII": [
@@ -98,7 +117,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 4,
+      "remaining": 0,
+      "released": 4,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH2-002",
@@ -107,7 +130,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 4,
+      "remaining": 0,
+      "released": 4,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH2-003",
@@ -116,7 +143,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 4,
+      "remaining": 0,
+      "released": 4,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH2-004",
@@ -125,7 +156,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 4,
+      "remaining": 0,
+      "released": 4,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH2-005",
@@ -134,7 +169,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 4,
+      "remaining": 0,
+      "released": 4,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH2-006",
@@ -143,7 +182,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 4,
+      "remaining": 0,
+      "released": 4,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH2-007",
@@ -152,7 +195,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 4,
+      "remaining": 0,
+      "released": 4,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH2-008",
@@ -161,7 +208,11 @@
         "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
         "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "candidate-produced-human-qa-required"
+      "state": "released",
+      "produced": 8,
+      "remaining": 0,
+      "released": 8,
+      "open": 0
     }
   ],
   "sequencing": [
@@ -170,5 +221,12 @@
     "Technician I Courses 3-6",
     "Technician II Courses 1-8"
   ],
-  "integrityBoundary": "All 96 governed raster replacement candidates have machine-produced binaries. Course 1 has released 20/20 governed replacements through the owner-approved production cutover; 76 governed replacements across the remaining Technician I/II courses remain fail-closed behind their review and release gates."
+  "integrityBoundary": "All 96 governed raster replacements have machine-produced binaries. Academic raster publication is owner-approved across Technician I and Technician II. External review, pilot, accreditation, psychometric validation, and professional credential issuance approval are not implied.",
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "96 governed academic raster replacements",
+    "note": "Release approval is for academic publication; secure professional credential issuance remains separately controlled."
+  }
 }

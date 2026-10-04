@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "White material is observed on leaves, but no diagnostic structures have been confirmed. What is the best next step before a disease-specific response?",
   "choices": [
-    "Assume powdery mildew from color alone.",
-    "Apply any available fungicide.",
-    "Examine representative material and obtain confirmation appropriate to the risk while keeping non-disease look-alikes plausible.",
-    "Delete environmental data because disease is suspected."
+    "Classify the material as powdery mildew because white foliar growth is sufficiently characteristic to justify a disease-specific response.",
+    "Begin a broad fungicide response while collecting confirmation, because delaying treatment creates more risk than treating a possible false positive.",
+    "Examine representative material, compare look-alikes, and obtain confirmation appropriate to the consequence before making a disease-specific decision.",
+    "Prioritize environmental correction first because white foliar material is more likely to be residue or stress when no diagnostic structures are visible."
   ],
   "correct": 2,
-  "rationale": "Visual similarity alone can be misleading; confirmation and alternative causes remain important.",
+  "rationale": "White foliar material can be consistent with powdery mildew, but color and gross appearance alone are not enough to establish a specific disease. Residues, mineral deposits, spray artifacts, trichomes, debris, and other non-disease conditions can create look-alikes. The strongest next step is to examine representative material and use confirmation proportional to the consequence of the decision while maintaining appropriate containment/escalation. Treating first or dismissing disease first both collapse the differential before the evidence supports that choice.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

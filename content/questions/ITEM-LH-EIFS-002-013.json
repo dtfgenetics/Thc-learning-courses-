@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-002-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which lighting verification record is strongest?",
+  "choices": [
+    "Meter ID, grid, crop plane, fixture state, canopy condition, readings, interpretation and limitations.",
+    "Only the final average.",
+    "Only fixture brand.",
+    "A verbal note that lighting looked good."
+  ],
+  "correct": 0,
+  "rationale": "A reconstructable record preserves the basis for comparison and interpretation.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-EIFS-007-02",
+  "title": "Dryback Curves, Rate, Timing & Context",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-007-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001",
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Dryback describes the reduction in root-zone water content between defined measurement points. Its magnitude and rate should be interpreted with media, crop stage, environment, irrigation history and sensor method rather than as a universal percentage or elapsed-time rule.",
+    "vocabulary": [
+      {
+        "term": "Dryback",
+        "definition": "Reduction in measured root-zone water content between defined times or events."
+      },
+      {
+        "term": "Dryback rate",
+        "definition": "Change in measured water content per unit time over a defined interval."
+      },
+      {
+        "term": "Trajectory",
+        "definition": "The sequence and shape of root-zone measurements over time rather than one isolated value."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Calculate from comparable measurements",
+        "body": "Use consistent sensor placement, units and timing. A change from 70% to 46% water content is a 24-percentage-point dryback, but that number has meaning only in the stated system and interval.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Rate can matter as much as magnitude",
+        "body": "The same total dryback reached rapidly or slowly can reflect different crop demand, environmental load or irrigation timing.",
+        "references": [
+          "REF-VPD-002",
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Do not universalize a steering number",
+        "body": "Media properties, container size, cultivar, stage, root mass and environment alter the relationship between dryback and plant response. Use facility-validated ranges and measured response rather than copied percentages.",
+        "references": [
+          "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A 20-point dryback over four hours under intense light is not equivalent evidence to the same change over fourteen hours in a different media and environment."
+    ],
+    "commonMistakes": [
+      "Using clock time alone as dryback.",
+      "Copying one dryback percentage across all media.",
+      "Ignoring irrigation event size and sensor location."
+    ],
+    "practicalApplication": "Graph a mock dryback curve and identify irrigation events, fastest depletion intervals and evidence needed before changing a steering target.",
+    "summary": "Dryback is a context-dependent trajectory that should be measured, trended and interpreted—not memorized as a universal percentage."
+  }
+}

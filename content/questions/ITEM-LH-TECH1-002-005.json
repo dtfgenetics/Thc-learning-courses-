@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A room schedule says flower week two, but several plants show less reproductive development than the rest. What is the best record?",
   "choices": [
-    "Record the visible developmental distribution and keep the schedule as separate context",
-    "All plants are flower week two because the schedule controls biology",
-    "Change the cultivar name for the lagging plants",
-    "Ignore the lagging plants because they are a minority"
+    "Record the visible developmental distribution and keep the scheduled week as separate context rather than forcing every plant into one biological stage.",
+    "Record every plant as flower week two because the schedule defines the room's official stage.",
+    "Change the cultivar identity of the lagging plants if their morphology does not match the majority.",
+    "Exclude the lagging minority from the stage record because room-level reporting should reflect the dominant group."
   ],
   "correct": 0,
-  "rationale": "Developmental stage should be supported by observable morphology; schedule timing is useful context but not proof that every plant is biologically identical.",
+  "rationale": "The production schedule is useful context, but visible morphology is the evidence for how individual plants are actually developing. If several plants visibly lag, that distribution should be documented rather than overwritten by the calendar. Changing identity or excluding the subgroup would erase evidence that may matter to later observation or troubleshooting.",
   "references": [
     "REF-FLOWER-MORPH-2023-001"
   ],

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "An operator procedure permits one reset, but the fault returns immediately. What should happen next?",
   "choices": [
-    "Stop repeated resets, document the recurring condition and escalate under the servicing/maintenance pathway.",
-    "Repeat the reset until the equipment stays on.",
-    "Bypass the fault input.",
-    "Lower the setpoint so the fault does not trigger."
+    "Stop repeated resets, preserve the recurrence evidence, and escalate the condition through the servicing or maintenance pathway because the authorized operator reset did not restore stable operation.",
+    "Repeat the reset several times because the procedure allows a reset and some faults require multiple restart attempts before stabilizing.",
+    "Bypass or acknowledge the fault input long enough to confirm whether the equipment can operate normally without the alarm state.",
+    "Lower the operating setpoint so the equipment remains outside the condition that triggers the fault while maintenance is scheduled."
   ],
   "correct": 0,
-  "rationale": "Stop repeated resets, document the recurring condition and escalate under the servicing/maintenance pathway. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "The procedure authorizes one reset, not unlimited attempts to force the equipment back into operation. An immediate recurrence shows that the underlying fault remains present and should be documented and escalated rather than normalized. Repeated resets, bypassing the fault, or changing the operating target can hide the condition and may move the technician beyond the approved operator-care boundary. The key is to preserve the evidence and transition the issue to the controlled servicing process.",
   "references": [
     "REF-NIOSH-CANNABIS-HAZARDS-2024",
     "REF-MHRA-GXP-DATA-INTEGRITY"

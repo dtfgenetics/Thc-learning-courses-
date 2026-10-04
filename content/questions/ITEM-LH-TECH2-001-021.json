@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Affected plants are all from one propagation batch while adjacent older plants under the same room conditions are normal. How should this pattern influence the differential?",
   "choices": [
-    "Increase attention to batch-specific history, roots, propagation stress or source health while retaining shared-environment alternatives until tested.",
-    "Prove the room environment is irrelevant.",
-    "Prove a pathogen is present.",
-    "Justify changing every room setpoint."
+    "Increase attention to batch-specific propagation history, root condition, source health, and handling while still testing shared room factors against matched unaffected plants.",
+    "Treat the normal older plants as evidence that the room environment can be excluded from the differential for the affected batch.",
+    "Treat the batch pattern as presumptive evidence of a transmissible propagation problem and begin containment while other causes are investigated.",
+    "Adjust the room environment toward the needs of the affected batch because the normal older plants are already acclimated and may not reveal the same stress."
   ],
   "correct": 0,
-  "rationale": "Cohort patterns can prioritize batch-specific hypotheses but do not prove a cause or exclude shared factors.",
+  "rationale": "A batch-limited pattern is valuable because it raises the probability of cohort-specific explanations such as propagation stress, root quality, source-plant health, handling, or batch-specific exposure. It does not eliminate the environment, since younger or recently propagated plants may respond differently to the same room conditions. It also does not prove a pathogen. The strongest workup therefore uses the batch pattern to reprioritize hypotheses while comparing matched unaffected plants and shared environmental evidence.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001",
     "REF-NUTRIENT-DEFICIENCY-001"

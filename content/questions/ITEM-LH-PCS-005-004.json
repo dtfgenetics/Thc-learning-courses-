@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-LH-PCS-005-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "An operator reaches outside the controlled work zone during an open-vessel step. What should happen next?",
+  "choices": [
+    "Ignore it if no debris is visible",
+    "Finish every vessel before reporting it",
+    "Discard all facility material",
+    "Apply the defined stop/reset procedure and identify affected vessels"
+  ],
+  "correct": 3,
+  "rationale": "The controlled response preserves affected-vessel identity and follows the defined reset rather than guessing impact.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

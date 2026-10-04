@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A record says a donor is 'clean' but gives no target, method, sample ID or date. What is the problem?",
+  "choices": [
+    "The statement is too specific.",
+    "The testing status is undefined and cannot support a durable clean-stock claim.",
+    "The donor must be infected.",
+    "Testing never matters."
+  ],
+  "correct": 1,
+  "rationale": "Testing status needs target, method, sample identity and date.",
+  "references": [
+    "REF-HLVD-TRANSMISSION-2025"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}

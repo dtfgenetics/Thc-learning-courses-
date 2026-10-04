@@ -1,0 +1,110 @@
+{
+  "id": "GROW-160",
+  "title": "Forms, logs, checklists, and training records — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define the minimum controlled-record architecture needed to make cultivation work reconstructable without creating redundant or meaningless paperwork.",
+  "sourceIds": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001",
+    "REF-EPA-SOP-QAG6"
+  ],
+  "scope": {
+    "included": [
+      "master forms index",
+      "record purpose",
+      "required fields",
+      "identity/time/context",
+      "corrections",
+      "training records",
+      "authorization status",
+      "retention/versioning",
+      "electronic/paper equivalence principles",
+      "handoff records"
+    ],
+    "excludedUntilValidated": [
+      "silent overwriting of original data",
+      "blanket requirement to record data with no defined purpose",
+      "private uncontrolled shadow logs replacing official records",
+      "training completion without competency/authorization context where required",
+      "one retention period applied universally regardless of law or record type"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-160-C01",
+      "statement": "A useful controlled record identifies what occurred, who or what system recorded it, when and where it occurred, the affected material or process, measured versus target information, actions taken and unresolved conditions when relevant.",
+      "sources": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-ASTM-D8403-001"
+      ],
+      "boundary": "Not every form needs every possible field; fields should be selected from the decision, traceability and evidence needs of the specific process."
+    },
+    {
+      "id": "GROW-160-C02",
+      "statement": "Corrections should preserve the original entry or audit history so later reviewers can reconstruct the change rather than seeing a silently rewritten record.",
+      "sources": [
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "boundary": "Exact correction mechanics depend on the approved paper or electronic record system."
+    },
+    {
+      "id": "GROW-160-C03",
+      "statement": "Forms should be linked to the procedure that requires them and should contain fields for the critical observations, verifications, decisions and approvals that the procedure expects users to perform.",
+      "sources": [
+        "REF-EPA-SOP-QAG6",
+        "REF-ASTM-D8403-001"
+      ],
+      "boundary": "A form cannot repair an ambiguous procedure; missing decision rules or authorization boundaries require SOP correction."
+    },
+    {
+      "id": "GROW-160-C04",
+      "statement": "Training records should identify the controlled instruction or competency trained, version where relevant, learner, date, trainer/evaluator or controlled system and any required authorization or reassessment state.",
+      "sources": [
+        "REF-ASTM-E2659-001",
+        "REF-ASTM-D8403-001"
+      ],
+      "boundary": "Attendance alone does not prove job competence where supervised performance or authorization is required."
+    },
+    {
+      "id": "GROW-160-C05",
+      "statement": "Shift handoff records should preserve completed work, current state, deviations, containment, open risk, required next check and ownership so the receiving person can continue without relying on memory.",
+      "sources": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-ASTM-D8403-001"
+      ],
+      "boundary": "A handoff is not a substitute for emergency notification or formal deviation escalation when those controls apply."
+    },
+    {
+      "id": "GROW-160-C06",
+      "statement": "A master records index should identify the current template/version, owner, linked process, storage location, status and applicable retention/disposition rule.",
+      "sources": [
+        "REF-ASTM-E2659-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "boundary": "Retention periods and privacy requirements must be set from applicable law, contract and facility policy rather than a generic course value."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "master forms/register index",
+    "daily cultivation log minimum fields",
+    "environment and irrigation record minimum fields",
+    "IPM/plant-health observation log",
+    "cleaning/biosecurity record",
+    "harvest/postharvest lot record",
+    "deviation/CAPA record links",
+    "training/authorization matrix",
+    "correction/audit-trail rules",
+    "retention/archive/disposition matrix"
+  ],
+  "releaseGates": [
+    "records/data-integrity review",
+    "training-governance review",
+    "privacy/retention applicability review",
+    "electronic-record implementation review where used",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

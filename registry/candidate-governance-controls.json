@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "id": "CANDIDATE-GOVERNANCE-CONTROLS-001",
-  "version": "0.1.0",
-  "updated": "2026-09-21",
+  "version": "0.2.0",
+  "updated": "2026-09-24",
   "status": "approval-pending",
   "appliesTo": [
     "CREDPROG-CULT-TECH-I-001",
@@ -14,17 +14,18 @@
   ],
   "controls": {
     "retest": {
-      "state": "defined-approval-pending",
+      "state": "issuer-policy-defined-privacy-legal-review-pending",
       "remediationRequiredBeforeRetest": true,
       "equivalentSecureFormOrVariantRequired": true,
       "criticalFailureNonCompensatory": true,
-      "finalAttemptLimit": null,
-      "waitingPeriodHours": null,
-      "feePolicy": null,
-      "privatePriorFormExposureRecordRequired": true
+      "finalAttemptLimit": 3,
+      "waitingPeriodHours": 168,
+      "feePolicy": "No automatic retest fee at initial program launch. Any future fee must be published before the attempt, applied consistently, and must not penalize an approved accommodation.",
+      "privatePriorFormExposureRecordRequired": true,
+      "policyRationale": "Issuer policy: three total credential attempts with remediation before retest and a minimum seven-day interval balances remediation time, form-security exposure, fairness and administrative simplicity. These numbers are issuer choices, not values prescribed by ISO/IEC 17024, ADA or FTC guidance."
     },
     "accommodation": {
-      "state": "defined-approval-pending",
+      "state": "issuer-policy-defined-privacy-legal-review-pending",
       "constructPreservationRequired": true,
       "separateFromScoringDecision": true,
       "minimumNecessaryAssessorDisclosure": true,
@@ -39,7 +40,7 @@
       "medicalDocumentationPubliclyExposed": false
     },
     "appeal": {
-      "state": "defined-approval-pending",
+      "state": "issuer-policy-defined-privacy-legal-review-pending",
       "preserveOriginalRecord": true,
       "authorizedDecisionMakerRequired": true,
       "decisionRecordRequired": true,
@@ -54,7 +55,7 @@
       ]
     },
     "securityIncident": {
-      "state": "defined-approval-pending",
+      "state": "issuer-policy-defined-privacy-legal-review-pending",
       "silentEvidenceMutationAllowed": false,
       "supportedActions": [
         "hold",
@@ -67,25 +68,26 @@
       ]
     },
     "privacyRetention": {
-      "state": "defined-approval-pending",
+      "state": "issuer-policy-defined-privacy-legal-review-pending",
       "dataMinimizationRequired": true,
       "roleBasedAccessRequired": true,
       "overwriteOriginalScoredEvidenceAllowed": false,
       "auditTrailRequired": true,
       "retentionScheduleApproved": false,
       "retentionPeriods": {
-        "failedPracticeAttempts": null,
-        "readinessAttempts": null,
-        "credentialAttempts": null,
-        "evaluatorCalibrationEvidence": null,
-        "appealAdjudicationRecords": null,
-        "issuedCredentialVerificationRecords": null,
-        "revokedExpiredCredentials": null,
-        "securityLogs": null
-      }
+        "failedPracticeAttempts": "90 days after last practice activity, unless linked to an active appeal, security investigation or required audit record",
+        "readinessAttempts": "12 months after last readiness activity, unless superseded by a credential attempt or active review",
+        "credentialAttempts": "7 years after final attempt disposition, or longer when required by applicable law, contract, accreditation or an unresolved appeal/security matter",
+        "evaluatorCalibrationEvidence": "5 years after the calibration evidence is superseded or evaluator authorization ends, whichever is later",
+        "appealAdjudicationRecords": "7 years after final appeal disposition, or longer while a related legal/security matter remains open",
+        "issuedCredentialVerificationRecords": "for the active credential lifetime plus 7 years after expiration, revocation or retirement of the credential record",
+        "revokedExpiredCredentials": "7 years after revocation or expiration, with the minimum public verification projection retained only as necessary to verify historical status",
+        "securityLogs": "24 months by default; incident-linked logs retained with the incident record until its longer retention requirement expires"
+      },
+      "retentionPolicyRationale": "Issuer baseline chosen to minimize unnecessary data while preserving audit, appeal, credential-verification and security evidence. These durations are not represented as legal requirements and remain subordinate to applicable law, contracts, accreditation requirements and approved privacy/legal review."
     },
     "publicVerification": {
-      "state": "defined-approval-pending",
+      "state": "issuer-policy-defined-privacy-legal-review-pending",
       "minimumNecessaryProjectionRequired": true,
       "rawScoresPublicByDefault": false,
       "secureItemsPublic": false,
@@ -102,5 +104,10 @@
     "organizational"
   ],
   "operationalUseAuthorized": false,
-  "boundary": "Machine-complete governance structure only. No legal/privacy approval, final retention schedule, final retest limit/waiting period/fee rule, or operational credential authorization is claimed."
+  "boundary": "Issuer policy values are defined for retest, fees, accommodations, appeals, security, public verification and a proposed retention schedule. Program, assessment, accessibility, security and organizational policy approval are recorded separately; privacy/legal approval and operational-use authorization remain open.",
+  "governanceSourceIds": [
+    "REF-ISO-17024-2026-001",
+    "REF-ADA-TESTING-ACCOMMODATIONS-001",
+    "REF-FTC-DATA-MINIMIZATION-001"
+  ]
 }

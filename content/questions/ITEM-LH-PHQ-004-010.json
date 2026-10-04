@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-004-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A failed fan is found after a defect event. Is that automatically the root cause?",
+  "choices": [
+    "Yes, equipment failure always explains all defects.",
+    "No; it is evidence that must be tested against timeline, exposure, product pattern and system controls.",
+    "No equipment evidence may be used.",
+    "Root cause is always operator error."
+  ],
+  "correct": 1,
+  "rationale": "Immediate findings should not be promoted beyond supported causal evidence.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

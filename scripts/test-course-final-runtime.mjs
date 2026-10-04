@@ -63,4 +63,9 @@ assert.ok(scored.competencyResults.every((row) => row.scorePercent === 100));
 const incomplete = createCourseAssessmentAttempt({ learnerId: 'incomplete', assessment, itemBank, seed: 'incomplete' });
 assert.throws(() => scorePersistedCourseAssessment({ assessment, attempt: incomplete, itemBank }), /unanswered item/);
 
-console.log('Course 1 final assessment runtime security, shuffle, non-disclosure, and scoring tests passed.');
+const timedOut = createCourseAssessmentAttempt({ learnerId: 'timed-out', assessment, itemBank, seed: 'timed-out' });
+const timedOutScored = scorePersistedCourseAssessment({ assessment, attempt: timedOut, itemBank, allowIncomplete: true });
+assert.equal(timedOutScored.attempt.scorePercent, 0, 'unanswered timed-out items must always score zero');
+assert.equal(timedOutScored.attempt.passed, false);
+
+console.log('Course 1 final assessment runtime security, shuffle, timeout, non-disclosure, and scoring tests passed.');

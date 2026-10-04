@@ -2,15 +2,27 @@
   "id": "DL-TECH1-HARVEST-HANDOFF-001",
   "title": "Technician I Harvest-to-Dry-Room Handoff",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "record-template",
   "format": "csv",
   "description": "A harvest and receiving record that preserves authorization, safety, lot genealogy, quantity reconciliation, holds, dry-room observations, and handoff.",
   "path": "/downloads/tech1-harvest-dry-room-handoff.csv",
   "accessibilityStatus": "partial",
-  "courseMappings": ["COURSE-LH-TECH1-006", "COURSE-LH-TECH1-007"],
+  "courseMappings": [
+    "COURSE-LH-TECH1-006",
+    "COURSE-LH-TECH1-007"
+  ],
   "resourceMappings": [],
-  "instructions": ["Verify harvest authorization, source identity, destination, pathway, PPE, and sanitation before movement.", "Link source, harvest or container, and receiving identifiers so genealogy remains reconstructable.", "Record outgoing and received quantities independently and investigate rather than forcing a match.", "Keep suspect material on the supplied hold path and escalate unresolved identity or destination conflicts."],
-  "limitations": ["This template does not authorize disposition or product-release decisions.", "Jurisdictional traceability systems and approved facility records remain controlling where required."]
+  "instructions": [
+    "Verify harvest authorization, source identity, destination, pathway, PPE, and sanitation before movement.",
+    "Link source, harvest or container, and receiving identifiers so genealogy remains reconstructable.",
+    "Record outgoing and received quantities independently and investigate rather than forcing a match.",
+    "Keep suspect material on the supplied hold path and escalate unresolved identity or destination conflicts."
+  ],
+  "limitations": [
+    "This template does not authorize disposition or product-release decisions.",
+    "Jurisdictional traceability systems and approved facility records remain controlling where required."
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument."
 }

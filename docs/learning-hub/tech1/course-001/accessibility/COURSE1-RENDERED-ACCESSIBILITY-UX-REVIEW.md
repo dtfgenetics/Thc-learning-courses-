@@ -22,7 +22,7 @@ At minimum, review the deployed Course 1 experience covering:
 - Course 1 orientation/course-map page;
 - six module pages;
 - all 18 lesson pages;
-- all 19 canonical lesson-level visual placements / 14 unique public SVG assets;
+- the current governed Course 1 raster instructional layer, including 23 reviewed PNG learner assets and all lesson placements that use them;
 - workbook and workbook-template surfaces;
 - integrated practical learner surface;
 - six module-test surfaces;
@@ -183,7 +183,7 @@ The rendered accessibility/manual UX gate may be closed only when:
 
 1. the full required surface has been reviewed using the recorded environment matrix;
 2. every applicable Level A/AA failure has either been corrected and retested or formally resolved under a documented standards interpretation;
-3. all 18 lessons and all canonical teaching visuals have been represented in the evidence;
+3. all 18 lessons and all canonical raster teaching visuals have been represented in the evidence;
 4. assessment interactions have been manually verified with keyboard and assistive technology;
 5. responsive mobile/tablet/desktop layouts have been manually reviewed;
 6. the reviewer signs a versioned review record tied to the exact Course 1 and deployed build being approved.

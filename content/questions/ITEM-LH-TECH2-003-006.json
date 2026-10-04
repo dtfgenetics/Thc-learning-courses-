@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRIENT-DIAG-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Root-zone EC rises while input EC remains stable. Which interpretation is most defensible?",
   "choices": [
-    "The input recipe is automatically too strong.",
-    "Investigate water balance, accumulation, selective uptake and delivery before changing nutrient concentration.",
-    "The EC meter is automatically defective.",
-    "The crop is proven deficient in one specific element."
+    "Reduce input EC because a rising root-zone EC shows the recipe is accumulating faster than the crop can use it.",
+    "Investigate water balance, accumulation, selective uptake, drainage, and delivery before changing nutrient concentration.",
+    "Repeat the root-zone EC measurement and replace the meter if the value remains above input EC.",
+    "Treat the rising EC as evidence of deficiency because reduced uptake can concentrate unused salts around the roots."
   ],
   "correct": 1,
-  "rationale": "Investigate water balance, accumulation, selective uptake and delivery before changing nutrient concentration.",
+  "rationale": "Root-zone EC can rise even when input EC is stable because water is removed faster than salts, drainage is insufficient, delivery is uneven, or nutrient ions accumulate differently as plants selectively absorb water and nutrients. That pattern does not by itself prove that input concentration is too high or that a particular deficiency exists. The strongest response is to examine water balance and delivery context before changing the recipe.",
   "references": [
     "REF-ROOTZONE-NUTRIENT-002",
     "REF-NUTRITION-001"

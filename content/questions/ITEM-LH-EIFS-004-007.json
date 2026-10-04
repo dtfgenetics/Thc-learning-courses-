@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-004-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A controller calls for dehumidification for 45 minutes, but equipment status shows no response and RH remains high. What should be concluded?",
+  "choices": [
+    "The command proves the unit worked.",
+    "Equipment response should be verified and the fault escalated.",
+    "The plants should be irrigated more.",
+    "The alarm should be disabled."
+  ],
+  "correct": 1,
+  "rationale": "A command is not proof of physical response.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

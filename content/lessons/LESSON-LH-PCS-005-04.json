@@ -1,0 +1,66 @@
+{
+  "id": "LESSON-LH-PCS-005-04",
+  "title": "Multiplication, Regeneration & Genotype Response",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-TC-REGEN-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-005-04"
+  ],
+  "estimatedMinutes": 75,
+  "references": [
+    "REF-PROP-TC-2025-001",
+    "REF-PROP-REGEN-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Multiplication is a multi-trait decision. More shoots can accompany callus, weak morphology or poor downstream rooting, and different genotypes may rank treatments differently.",
+    "vocabulary": [
+      {
+        "term": "Axillary multiplication",
+        "definition": "Propagation using existing buds or meristems."
+      },
+      {
+        "term": "Organogenesis",
+        "definition": "Formation of new organs from cultured tissue, sometimes through callus-associated pathways."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Route affects purpose and risk",
+        "body": "Axillary multiplication, direct regeneration and callus-associated routes support different production or research goals and create different fidelity questions.",
+        "references": [
+          "REF-PROP-REGEN-2025-001"
+        ]
+      },
+      {
+        "title": "Quality is more than count",
+        "body": "Useful comparisons include usable shoots, morphology, callus, multiplication rate, rooting response and losses. A high count with poor downstream performance may be operationally inferior.",
+        "references": [
+          "REF-PROP-TC-2025-001"
+        ]
+      },
+      {
+        "title": "Genotype interactions require replication",
+        "body": "Cannabis studies show genotype-by-treatment effects. Compare identified genotypes with replication and avoid declaring one recipe universally optimal.",
+        "references": [
+          "REF-PROP-TC-2025-001",
+          "REF-PROP-REGEN-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Treatment A yields more shoots but twice the abnormal morphology; the choice depends on usable output and later performance.",
+      "Cultivar X favors one medium while cultivar Y favors another, so pooled averages can conceal the operational choice."
+    ],
+    "commonMistakes": [
+      "Selecting a treatment from shoot count alone.",
+      "Generalizing from one genotype.",
+      "Ignoring passage or regeneration route in comparisons."
+    ],
+    "practicalApplication": "Score two simulated treatments by usable shoots, morphology, callus, rooting, loss and labor, then recommend a controlled next trial for each genotype.",
+    "summary": "Specialist multiplication decisions balance output, quality, route, genotype and downstream performance with replicated evidence."
+  }
+}

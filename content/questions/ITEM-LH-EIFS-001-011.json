@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A humidity sensor sits directly in dehumidifier discharge and reads much drier than canopy sensors. What should be considered first?",
+  "choices": [
+    "The canopy sensors should be discarded.",
+    "The room should be humidified immediately.",
+    "The discharge reading may represent a local microclimate rather than the crop average.",
+    "Sensor location never matters."
+  ],
+  "correct": 2,
+  "rationale": "Equipment discharge locations can be unrepresentative of canopy conditions.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

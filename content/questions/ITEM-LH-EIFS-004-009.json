@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-004-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-03",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A coworker proposes bypassing an interlock to see whether equipment will run. What is the correct response?",
+  "choices": [
+    "Bypass it briefly.",
+    "Disable all alarms first.",
+    "Increase setpoints until the interlock clears.",
+    "Do not bypass safeguards; stay within authorized checks and escalate to qualified service."
+  ],
+  "correct": 3,
+  "rationale": "Safety interlocks and authorization boundaries must not be bypassed for troubleshooting.",
+  "references": [
+    "REF-SAFETY-OSHA-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

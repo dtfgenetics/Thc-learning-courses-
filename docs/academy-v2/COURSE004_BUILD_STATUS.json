@@ -1,9 +1,16 @@
 {
   "courseId": "COURSE-LH-TECH1-004",
-  "courseVersion": "0.4.0",
+  "courseVersion": "0.5.0",
   "status": "development-readiness",
   "module": "MOD-LH-TECH1-004-IRRIGATION",
-  "objectives": ["LO-LH-TECH1-004-01", "LO-LH-TECH1-004-02", "LO-LH-TECH1-004-03", "LO-LH-TECH1-004-04", "LO-LH-TECH1-004-05", "LO-LH-TECH1-004-06"],
+  "objectives": [
+    "LO-LH-TECH1-004-01",
+    "LO-LH-TECH1-004-02",
+    "LO-LH-TECH1-004-03",
+    "LO-LH-TECH1-004-04",
+    "LO-LH-TECH1-004-05",
+    "LO-LH-TECH1-004-06"
+  ],
   "formativeAssessment": "ASSESS-LH-TECH1-004-M01",
   "summativeAssessment": "ASSESS-LH-TECH1-004-FINAL",
   "formativeItems": 12,
@@ -15,9 +22,9 @@
   "objectiveCoverageMappedToPractical": true,
   "visualRegistry": "visuals/COURSE4-ASSET-REGISTRY.json",
   "visualDriveFolderId": "13su1HkrSjWqhMtssQos3cju9BkgeqGBv",
-  "producedVisualCount": 5,
+  "producedVisualCount": 6,
   "downloadablePracticeAssetCount": 2,
-  "totalLearnerAssetCount": 7,
+  "totalLearnerAssetCount": 8,
   "learnerAssetLayerBuilt": true,
   "releaseStatus": "draft",
   "completedDevelopmentWork": [
@@ -27,9 +34,9 @@
     "24 distinct summative-development items",
     "all six objectives crosswalked to canonical Practical B tasks, evidence, scoring categories and deliverables",
     "bounded nutrition-context performance evidence added to Practical B",
-    "five public accessible embedded teaching visuals",
+    "six public accessible embedded teaching visuals, including pH/root-zone nutrient-availability context",
     "two public downloadable practice worksheets",
-    "all seven learner assets mirrored to the Course 4 Drive folder",
+    "all eight learner assets registered with legacy or native-raster Drive provenance",
     "deterministic Course 4 learner-asset registry and reachability contract"
   ],
   "remainingDevelopmentPriorities": [

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician suspects disease spread but the task does not authorize diagnosis or treatment selection. What is the best response?",
   "choices": [
-    "Choose a pesticide based on the symptom",
-    "Move affected plants through clean areas for closer viewing",
-    "Record a confirmed disease name so the next shift acts faster",
-    "Document location and evidence, preserve supplied quarantine boundaries and escalate according to procedure"
+    "Select a treatment that matches the visible symptom so the suspected spread is addressed quickly.",
+    "Move several affected plants through a clean area for closer inspection and comparison.",
+    "Record the most likely disease name as the working diagnosis so the receiving shift knows what to look for.",
+    "Document the location, distribution, and evidence; preserve the supplied quarantine or movement boundaries; and escalate diagnosis/treatment decisions according to procedure."
   ],
   "correct": 3,
-  "rationale": "The technician preserves evidence and containment boundaries while escalating work outside their diagnostic or treatment authority.",
+  "rationale": "Technician I can recognize an abnormal pattern and preserve evidence without exceeding diagnostic or treatment authority. When spread is suspected, containment and traceability become especially important. Moving plants through clean areas, naming an unconfirmed disease, or selecting treatment can create new risk or overstate the evidence. The correct action is to document, preserve the boundary, and escalate.",
   "references": [
     "REF-PLANT-BIO-001"
   ],

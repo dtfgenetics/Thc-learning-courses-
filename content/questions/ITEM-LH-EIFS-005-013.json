@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-005-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-005-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "After meter verification and recipe reconciliation, a batch remains outside approved EC acceptance. What should happen?",
+  "choices": [
+    "Make undocumented adjustments until it passes.",
+    "Hold and follow the authorized correction/disposition process.",
+    "Average with yesterday's batch.",
+    "Change the acceptance criteria."
+  ],
+  "correct": 1,
+  "rationale": "A verified out-of-acceptance result requires controlled disposition.",
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}

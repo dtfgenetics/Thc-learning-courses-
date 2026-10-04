@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A meter remains unstable after the permitted cleaning and verification steps. What is the strongest response?",
   "choices": [
-    "Keep measuring until a preferred number appears",
-    "Copy the target value",
-    "Document the suspect instrument status and escalate rather than using an unreliable value as verified data",
-    "Adjust the crop based on the unstable reading"
+    "Keep measuring until the meter produces a stable value close to the expected target.",
+    "Use the target value temporarily and replace it later when the instrument is repaired.",
+    "Document the instrument as suspect, preserve the unstable readings as appropriate, and escalate rather than presenting them as verified data.",
+    "Adjust the crop solution based on the midpoint of the unstable readings."
   ],
   "correct": 2,
-  "rationale": "Document the suspect instrument status and escalate rather than using an unreliable value as verified data. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "If the instrument remains unstable after the permitted cleaning and verification steps, confidence in the measurement is reduced. Technician I should not shop for a preferred number or substitute the target. The correct response is to document the instrument condition and escalate so later decisions are not based on unreliable data.",
   "references": [
     "REF-IRRIGATION-001"
   ],

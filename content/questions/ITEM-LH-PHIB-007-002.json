@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-007-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-007-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which item is an assumption rather than a direct observation?",
+  "choices": [
+    "Roots are brown in the photographed plant.",
+    "The room temperature logger recorded 29 C.",
+    "The browning was caused by Pythium before confirmatory evidence is available.",
+    "The affected plant ID is P-17."
+  ],
+  "correct": 2,
+  "rationale": "A causal claim without confirming evidence is an interpretation/assumption, not a direct observation.",
+  "references": [
+    "REF-CANNABIS-DIAGNOSTICS-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

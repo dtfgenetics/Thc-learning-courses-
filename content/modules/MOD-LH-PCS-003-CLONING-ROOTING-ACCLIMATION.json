@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PCS-003-CLONING-ROOTING-ACCLIMATION",
+  "title": "Cloning, Rooting Environment & Acclimation",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PCS-003-01",
+    "LESSON-LH-PCS-003-02",
+    "LESSON-LH-PCS-003-03",
+    "LESSON-LH-PCS-003-04",
+    "LESSON-LH-PCS-003-05"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-ENV-VPD-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering clonal batch setup, adventitious-root development, rooting-environment reasoning, failure localization, acclimation and genotype-aware batch performance analysis.",
+  "estimatedMinutes": 320,
+  "learningOutcomes": [
+    "Build a reconstructable clonal-propagation batch workflow that preserves donor identity, cutting condition, process steps and downstream handoff.",
+    "Interpret rooting-environment evidence in terms of cutting water balance and developmental state without treating one humidity, temperature or light value as universally correct.",
+    "Distinguish failures occurring during cutting survival, root initiation, root development and post-root acclimation and select the next useful observation or measurement.",
+    "Design a staged acclimation plan that increases normal production demand only as rooted cuttings demonstrate adequate response.",
+    "Analyze genotype- and batch-linked propagation performance, separate correlation from cause and propose a controlled next test with traceable records."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why should negative findings be recorded?",
   "choices": [
-    "They help define sampled unaffected scope when the route and denominator are known.",
-    "They prove the entire facility is pest-free.",
-    "They can replace sample-count records.",
-    "They are useful only after treatment."
+    "Negative findings help define the sampled unaffected scope when the route, denominator, and inspection method are known.",
+    "Negative findings establish that the unsampled parts of the facility are likely pest-free if the scouting route was representative.",
+    "Negative findings can substitute for denominator data because absence is easier to interpret than positive counts.",
+    "Negative findings are most useful only after treatment because pretreatment absence does not affect trend interpretation."
   ],
   "correct": 0,
-  "rationale": "They help define sampled unaffected scope when the route and denominator are known.",
+  "rationale": "A negative finding is meaningful only in relation to what was actually sampled. When the route, denominator, and method are known, it helps define where the issue was not detected and can support spatial or trend interpretation. It does not prove unsampled areas are free of the pest, and it cannot replace the sampling denominator. Preserving both positives and negatives creates a more complete picture of affected and unaffected scope.",
   "references": [
     "REF-IPM-001"
   ]

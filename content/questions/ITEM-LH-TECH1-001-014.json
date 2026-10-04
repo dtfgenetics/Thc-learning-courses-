@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-014","version":1,"status":"draft","purpose":"summative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-04","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"A tray from a quarantine area is found in general production. What should the technician do first?","choices":["Return it quietly and say nothing","Stop further movement, preserve its identity, and report the breach under procedure","Dispose of it immediately without a record","Relabel it as general production"],"correct":1,"rationale":"A biosecurity breach should be contained and documented before more movement obscures the exposure history.","references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES","REF-UMASS-GREENHOUSE-SANITATION"]}
+{
+  "id": "ITEM-LH-TECH1-001-014",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A tray from a quarantine area is found in general production. What should the technician do first?",
+  "choices": [
+    "Return the tray to quarantine immediately and correct the location later so general-production work is not interrupted.",
+    "Stop further movement, preserve the tray's identity and current location, and report the breach under the controlled biosecurity procedure.",
+    "Dispose of the tray immediately to eliminate any possible contamination risk before other plants are exposed.",
+    "Relabel the tray as general production if it appears healthy and no pest or disease has been confirmed."
+  ],
+  "correct": 1,
+  "rationale": "A quarantine tray found in general production creates both a biosecurity and traceability problem. The first step is to stop additional movement, preserve identity and location evidence, and report the breach so affected scope can be evaluated. Quietly moving, destroying, or relabeling the tray can erase the exposure history needed to decide what else may require containment.",
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ]
+}

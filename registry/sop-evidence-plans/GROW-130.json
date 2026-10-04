@@ -1,0 +1,122 @@
+{
+  "id": "GROW-130",
+  "title": "Harvest readiness and harvest workflow — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define an evidence-led cannabis harvest workflow that separates maturity assessment from sanitation, lot identity, authorization, segregation and transfer into postharvest control.",
+  "sourceIds": [
+    "REF-POSTHARVEST-001",
+    "REF-CANNABIS-HARVEST-STIGMA-2025-001",
+    "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+  ],
+  "scope": {
+    "included": [
+      "maturity assessment",
+      "genotype/crop-stage context",
+      "stigma and trichome observations",
+      "sampling and confirmation",
+      "harvest authorization",
+      "sanitary cut/handling workflow",
+      "lot/batch segregation",
+      "tool/equipment status",
+      "chain of custody",
+      "handoff to drying/postharvest"
+    ],
+    "excludedUntilValidated": [
+      "one universal number of flowering weeks",
+      "one universal stigma-color percentage",
+      "one universal trichome-color ratio",
+      "harvest decision from one convenience flower",
+      "mixing lots with uncertain identity",
+      "release of suspect or contaminated material because maturity appears acceptable"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-130-C01",
+      "statement": "Cannabinoid concentration and other inflorescence characteristics change during flowering and harvest timing can materially affect the chemical profile and yield objective.",
+      "sources": [
+        "REF-CANNABIS-HARVEST-STIGMA-2025-001"
+      ],
+      "boundary": "The timing of peak concentration varies by genotype and production context, so one calendar week cannot be used as a universal harvest rule."
+    },
+    {
+      "id": "GROW-130-C02",
+      "statement": "Stigma color transition can provide a useful maturity approximation for many cannabis genotypes, but some genotypes reach cannabinoid peaks at earlier color stages.",
+      "sources": [
+        "REF-CANNABIS-HARVEST-STIGMA-2025-001"
+      ],
+      "boundary": "A mostly-amber rule of thumb is not a substitute for genotype-specific validation or the defined product objective."
+    },
+    {
+      "id": "GROW-130-C03",
+      "statement": "Glandular trichome development and senescence are influenced by plant age and genotype, and different trichomes on the same inflorescence can be at different developmental stages.",
+      "sources": [
+        "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+      ],
+      "boundary": "A single trichome image or color count cannot prove whole-lot maturity or exact cannabinoid concentration."
+    },
+    {
+      "id": "GROW-130-C04",
+      "statement": "Trichome browning and structural senescence can accompany maturation, while stress and postharvest handling can also affect trichome appearance, so visual observations require crop and handling context.",
+      "sources": [
+        "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+      ],
+      "boundary": "Visual color alone should not be treated as a direct laboratory measurement of cannabinoid content."
+    },
+    {
+      "id": "GROW-130-C05",
+      "statement": "Representative maturity sampling should preserve plant/zone position, date, genotype, crop stage, sampled tissue and observation method so repeated checks and harvest decisions remain comparable.",
+      "sources": [
+        "REF-CANNABIS-HARVEST-STIGMA-2025-001",
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "Convenience sampling from the most visually mature top flower can overstate lot readiness."
+    },
+    {
+      "id": "GROW-130-C06",
+      "statement": "Harvest execution should preserve lot identity, tool/equipment sanitation status, affected crop scope, cut/trim location and transfer history so later drying, testing and deviations can be traced back to the source material.",
+      "sources": [
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "A mature crop is not automatically releasable if identity, sanitation, contamination or quality status is unresolved."
+    },
+    {
+      "id": "GROW-130-C07",
+      "statement": "Material from different rooms, zones, genotypes or materially different process histories should not be combined in a way that destroys the ability to reconstruct their source and exposure history.",
+      "sources": [
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "Facility lot-definition rules can differ, but traceability should remain sufficient for investigation and disposition."
+    },
+    {
+      "id": "GROW-130-C08",
+      "statement": "The harvest-to-drying handoff should communicate exact lot identity, harvest timing, observed maturity evidence, deviations/holds, sanitary status and required next processing step.",
+      "sources": [
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "Handoff documentation does not clear an existing contamination, testing or quality hold."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "harvest-readiness sampling plan",
+    "genotype/crop-stage maturity record",
+    "stigma/trichome observation method",
+    "harvest authorization checklist",
+    "tool/equipment sanitation release",
+    "cut/trim and handling sequence",
+    "lot/batch identity and segregation rules",
+    "suspect/hold material workflow",
+    "harvest-to-drying chain-of-custody record",
+    "harvest deviation and post-run review"
+  ],
+  "releaseGates": [
+    "claim-level flowering/maturity review",
+    "facility-specific maturity validation",
+    "sanitation/food-product handling review as applicable",
+    "lot/traceability review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

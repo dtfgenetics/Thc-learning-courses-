@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A canopy practice worked well in one cultivar last cycle. What should govern use on a different cultivar and stage?",
   "choices": [
-    "The previous cultivar result is universal.",
-    "Social-media technique names override the work order.",
-    "Flowering stage is irrelevant to canopy response.",
-    "The current authorized work plan plus cultivar/stage-specific response evidence, not automatic copying of the prior result."
+    "Apply the same practice because the prior cultivar responded well and successful techniques should transfer unless problems appear.",
+    "Use the named technique as written in external guidance if it is commonly used for the new cultivar type.",
+    "Treat flowering stage as secondary if canopy density is similar to the previous cycle.",
+    "Follow the current authorized work plan and use cultivar- and stage-specific response evidence rather than automatically copying a prior-cycle result."
   ],
   "correct": 3,
-  "rationale": "The current authorized work plan plus cultivar/stage-specific response evidence, not automatic copying of the prior result.",
+  "rationale": "A canopy practice that worked in one cultivar and stage is evidence, not a universal instruction. Cultivar architecture, developmental stage, plant vigor, environment, and current production goals can change both benefit and recovery risk. The governing decision should therefore come from the current authorized plan and relevant response evidence, not automatic transfer of a previous success.",
   "references": [
     "REF-CANOPY-DEFOL-2025-001",
     "REF-FLOWER-001"

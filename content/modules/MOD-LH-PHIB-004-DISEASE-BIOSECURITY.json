@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PHIB-004-DISEASE-BIOSECURITY",
+  "title": "Plant Disease, HLVd & Biosecurity",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHIB-004-01",
+    "LESSON-LH-PHIB-004-02",
+    "LESSON-LH-PHIB-004-03",
+    "LESSON-LH-PHIB-004-04",
+    "LESSON-LH-PHIB-004-05"
+  ],
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering disease evidence, cannabis root/foliar/flower disease differentials, HLVd biology/testing, clean-stock biosecurity, containment and controlled records.",
+  "estimatedMinutes": 300,
+  "learningOutcomes": [
+    "Differentiate disease signs, symptoms and abiotic look-alikes using distribution, plant part, environmental/root-zone context and confirmatory evidence before assigning cause.",
+    "Analyze major cannabis root/crown, foliar and flower disease risks using pathogen, host, environment and process evidence while preserving diagnostic uncertainty.",
+    "Explain HLVd biology, asymptomatic infection, transmission pathways, testing limits and clean-stock implications without treating visual inspection as a reliable exclusion test.",
+    "Design a layered biosecurity response for suspect plant material using movement control, separation, sanitation, sampling/testing escalation, traceability and controlled release authority.",
+    "Produce a reconstructable disease/biosecurity investigation record that distinguishes observation, hypothesis, test result, containment action, disposition authority and unresolved follow-up."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

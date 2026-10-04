@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-005-01",
+  "title": "Threshold Logic: Monitoring, Crop Impact & Decision Rules",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-005-01"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-HEMP-IPM-VT-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Threshold-based IPM depends on reliable monitoring and a defined decision rule. A detection threshold, trend trigger, crop-damage concern and legal treatment authority are different concepts; cannabis-specific universal pest-count thresholds are not assumed where evidence is lacking.",
+    "vocabulary": [
+      {
+        "term": "Monitoring threshold",
+        "definition": "A predefined finding that triggers increased observation, confirmation or escalation rather than automatically authorizing treatment."
+      },
+      {
+        "term": "Action threshold",
+        "definition": "A decision point at which an authorized intervention is justified under the crop, pest, facility and legal context."
+      },
+      {
+        "term": "Sampling denominator",
+        "definition": "The number of plants, traps, leaves, zones or other units examined, needed to interpret counts and compare monitoring rounds."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Counts need sampling context",
+        "body": "Ten pests from ten plants and ten pests from one thousand plants do not describe the same incidence. Record route, sampled units, crop stage, affected location and method so trend comparisons are interpretable.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001",
+          "REF-HEMP-IPM-VT-001"
+        ]
+      },
+      {
+        "title": "Thresholds are decision tools, not universal constants",
+        "body": "Greenhouse IPM uses monitoring and threshold concepts to avoid routine unnecessary intervention, but thresholds depend on crop value, pest biology, crop stage, damage tolerance, facility experience and available controls. A threshold from another crop or facility should not be transplanted into cannabis without validation.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Detection can trigger escalation before treatment",
+        "body": "A low-level finding may justify rescouting, identification confirmation, containment or beneficial-organism deployment before any pesticide decision. Separate the monitoring trigger from treatment authority.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A single hotspot of mites in propagation may trigger immediate containment and intensified scouting even when no universal numeric cannabis threshold exists."
+    ],
+    "commonMistakes": [
+      "Reporting counts without denominators.",
+      "Treating any detection as automatic pesticide authorization.",
+      "Importing thresholds from another crop without validation."
+    ],
+    "practicalApplication": "Create a threshold ladder with four states: routine monitoring, intensified monitoring, authorized nonchemical intervention, and treatment/escalation review. Define the evidence needed to move between states.",
+    "summary": "Threshold logic converts representative monitoring into proportional decisions while keeping local crop context and authority explicit."
+  }
+}

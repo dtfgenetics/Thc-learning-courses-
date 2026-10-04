@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-007-05",
+  "title": "Root-Zone Steering Reports, Acceptance & Escalation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-007-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001",
+    "REF-ROOTZONE-NUTRIENT-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A root-zone steering report should show the baseline, intervention, measured response, uncertainty, acceptance criteria and next authorized action so another qualified person can reconstruct what changed and whether it worked.",
+    "vocabulary": [
+      {
+        "term": "Baseline",
+        "definition": "The measured pre-change state used for comparison."
+      },
+      {
+        "term": "Acceptance criterion",
+        "definition": "Predefined evidence required to consider a steering intervention acceptable for its intended purpose."
+      },
+      {
+        "term": "Reversal criterion",
+        "definition": "A predefined condition requiring the intervention to be stopped, reversed or escalated."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Document the intervention precisely",
+        "body": "Record zone, crop stage, media, event volume/frequency, input chemistry, environmental context and timestamps so the change is reproducible.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Compare like with like",
+        "body": "Use the same measurement method and representative positions before and after the intervention. Changing sensor placement or sampling method can invalidate the comparison.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Escalate when response conflicts with the model",
+        "body": "Unexpected water-content, EC or crop-response trends should reopen the hypothesis rather than be forced into the intended steering narrative.",
+        "references": [
+          "REF-ROOTZONE-NUTRIENT-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A steering trial intended to reduce overnight saturation instead produces rising root-zone EC and uneven dryback; the report should flag the adverse response and trigger review rather than call the schedule successful."
+    ],
+    "commonMistakes": [
+      "Documenting only the schedule and not the response.",
+      "Changing measurement method mid-trial.",
+      "Ignoring adverse evidence because the intervention was planned."
+    ],
+    "practicalApplication": "Write a steering verification report from a supplied baseline/intervention dataset with acceptance and reversal criteria.",
+    "summary": "Advanced steering is defensible only when the intervention and measured response are both reconstructable."
+  }
+}

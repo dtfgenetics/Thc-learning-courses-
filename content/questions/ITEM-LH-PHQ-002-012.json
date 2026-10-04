@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-002-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-002-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Who should change an approved drying endpoint after an unexpected result?",
+  "choices": [
+    "Any operator who dislikes the result.",
+    "The instrument vendor automatically.",
+    "No documentation is needed for a stricter endpoint.",
+    "Only the authorized controlled process, with rationale and change records; collection staff should not improvise it."
+  ],
+  "correct": 3,
+  "rationale": "Evidence collection and specification authority are separate responsibilities.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

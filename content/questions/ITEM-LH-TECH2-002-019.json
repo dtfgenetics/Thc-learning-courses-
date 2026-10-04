@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "An alarm disappeared after a reset, but the underlying trend still shows abnormal cycling. What is the best disposition?",
   "choices": [
-    "Close it because the alarm cleared.",
-    "Delete the cycling data.",
-    "Keep the condition open and document the continuing abnormal response for further verification/escalation.",
-    "Raise the alarm threshold."
+    "Close the event because the alarm itself cleared and use the trend only if the same alarm returns.",
+    "Exclude the abnormal cycling data from the performance record because the alarm reset indicates the condition was transient.",
+    "Keep the condition open, preserve the abnormal trend evidence, and continue verification or escalation until the underlying cycling behavior is dispositioned.",
+    "Raise the alarm threshold temporarily so the system can continue operating without repeated nuisance alarms during the investigation."
   ],
   "correct": 2,
-  "rationale": "Keep the condition open and document the continuing abnormal response for further verification/escalation. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "Clearing an alarm does not prove that the underlying equipment or control behavior has returned to normal. If the trend continues to show abnormal cycling, the condition remains unresolved and should stay open until the cause is verified and appropriately dispositioned. Deleting the data or widening the alarm limit hides useful evidence, while closure based only on the alarm state confuses notification status with system performance.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

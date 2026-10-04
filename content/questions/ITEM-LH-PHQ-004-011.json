@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-004-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What distinguishes CAPA completion from CAPA effectiveness?",
+  "choices": [
+    "They are identical.",
+    "Effectiveness is assumed after retraining.",
+    "Completion shows the action occurred; effectiveness requires follow-up evidence that control improved and recurrence risk fell.",
+    "Completion requires no owner."
+  ],
+  "correct": 2,
+  "rationale": "Quality improvement requires verification, not task closure alone.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

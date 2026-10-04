@@ -1,0 +1,66 @@
+{
+  "id": "LESSON-LH-PCS-006-05",
+  "title": "Release, Handoff & Continuous Improvement",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-CULT-TRACEABILITY-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-006-05"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-PROP-001",
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-EPA-SOP-QAG6"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Propagation output becomes usable only when the receiving team can verify what arrived, what was excluded, what remains uncertain and who owns follow-up. Improvement depends on closing that loop.",
+    "vocabulary": [
+      {
+        "term": "Handoff",
+        "definition": "Transfer of identified material, records, status and responsibility between controlled process stages or teams."
+      },
+      {
+        "term": "Corrective action",
+        "definition": "An authorized action addressing a demonstrated cause or control failure, with follow-up verification."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Reconcile physical and recorded quantity",
+        "body": "The handoff should match counts, cultivar or accession, batch, stage, status and destination. Discrepancies are resolved or explicitly transferred as exceptions.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Communicate exceptions without hiding uncertainty",
+        "body": "Slow lines, partial releases, holds, damage and unusual treatment history should travel with the material. The receiver should not need to infer risk from plant appearance.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Improvement closes with verification",
+        "body": "A corrective action is incomplete until its implementation and effect are checked. Trend review should distinguish one-time recovery from sustained process change.",
+        "references": [
+          "REF-EPA-SOP-QAG6"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A partial release lists the original cohort, released units, held units, reasons and next review owner.",
+      "A revised sanitation step is verified across subsequent batches before the deviation is considered closed."
+    ],
+    "commonMistakes": [
+      "Handing off plants without exception history.",
+      "Reconciling only the released quantity.",
+      "Closing an action when it is assigned rather than verified."
+    ],
+    "practicalApplication": "Prepare a complete handoff for a mixed-status propagation cohort and a 30-day follow-up plan that verifies whether the selected corrective action changed the intended metric.",
+    "summary": "A strong handoff reconciles identity, quantity, status and exceptions, then connects corrective action to follow-up evidence."
+  }
+}

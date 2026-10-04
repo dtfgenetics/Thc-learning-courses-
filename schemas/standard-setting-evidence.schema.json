@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/standard-setting-evidence.schema.json",
+  "title": "THC Academy Standard Setting Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "courseId",
+    "courseVersion",
+    "assessmentId",
+    "assessmentVersion",
+    "status",
+    "method",
+    "panelistCount",
+    "stableItemCount",
+    "recommendedCutScore",
+    "governanceDecision",
+    "authorityId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^STDSET-[A-Z0-9-]+$"
+    },
+    "courseId": {
+      "type": "string",
+      "pattern": "^COURSE-LH-TECH[12]-[0-9]{3}$"
+    },
+    "courseVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assessmentId": {
+      "type": "string",
+      "pattern": "^ASSESS-LH-TECH[12]-[0-9]{3}-FINAL$"
+    },
+    "assessmentVersion": {
+      "type": [
+        "string",
+        "integer"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "panel-complete",
+        "approved",
+        "revision-required",
+        "invalidated"
+      ]
+    },
+    "method": {
+      "enum": [
+        "modified-angoff",
+        "angoff",
+        "bookmark",
+        "borderline-group",
+        "contrasting-groups",
+        "other"
+      ]
+    },
+    "panelistCount": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "stableItemCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "performanceLevelDescriptionApproved": {
+      "type": "boolean"
+    },
+    "recommendedCutScore": {
+      "type": "object",
+      "required": [
+        "rawScore",
+        "percent"
+      ],
+      "properties": {
+        "rawScore": {
+          "type": "number",
+          "minimum": 0
+        },
+        "percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "roundingRule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "impactReview": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "pilotSampleSize": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "estimatedPassRateAtRecommendedCut": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sensitivityReviewed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "sensitivityReviewed"
+      ],
+      "additionalProperties": false
+    },
+    "governanceDecision": {
+      "type": "object",
+      "required": [
+        "decision",
+        "productionCutScorePercent"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "pending",
+            "adopt",
+            "return-for-analysis",
+            "reject"
+          ]
+        },
+        "productionCutScorePercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "decisionAuthority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decisionDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorityId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

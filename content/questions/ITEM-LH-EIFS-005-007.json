@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-03",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A pH meter reads consistently but fails verification against a fresh appropriate standard. What is the strongest action?",
+  "choices": [
+    "Trust consistency.",
+    "Resolve calibration/service and treat recent questionable measurements as uncertain before process correction.",
+    "Average pH with EC.",
+    "Change the recipe first."
+  ],
+  "correct": 1,
+  "rationale": "Repeatability does not prove accuracy; failed verification must be resolved.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}

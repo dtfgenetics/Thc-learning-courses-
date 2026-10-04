@@ -22,7 +22,7 @@ Course 005 now has a complete automated instruction, assessment, development-pra
 - canonical learner assets: `apps/web/public/assets/course5/`;
 - Drive production/reference mirror folder: `1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo`;
 - deterministic crosswalk and learner-asset validation run through the normal Course 005 regression;
-- Course 005 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
+- Course 005 is published for owner-approved academic use; human review, pilot, calibration, practical validation and professional credential release approval remain separate and are not implied.
 
 ## Learner asset layer
 

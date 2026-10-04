@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A peer says an older SOP version instructs a different sequence. What should Technician II verify first?",
   "choices": [
-    "Which controlled version is currently effective for the task.",
-    "Which version the peer prefers.",
-    "Which sequence is fastest.",
-    "Which version has fewer steps."
+    "Verify which controlled SOP version is currently effective for the task, then coach or escalate from that authoritative instruction.",
+    "Use the older version if the peer has more experience with it and the outcome is equivalent.",
+    "Choose the faster sequence when both versions appear technically reasonable.",
+    "Use the version with fewer steps unless a supervisor specifically directs otherwise."
   ],
   "correct": 0,
-  "rationale": "Which controlled version is currently effective for the task.",
+  "rationale": "Peer preference or familiarity does not determine the governing instruction. Technician II should verify the currently effective controlled version before coaching or escalating. If the older sequence reflects a legitimate issue with the current SOP, that concern can be routed through change control, but the technician should not select between controlled versions based on convenience.",
   "references": [
     "REF-ASTM-E2659-001"
   ]

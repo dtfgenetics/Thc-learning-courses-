@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should defect distribution be mapped?",
+  "choices": [
+    "Mapping identifies species automatically.",
+    "Spatial and lot patterns can guide scope and competing cause hypotheses without proving them.",
+    "It eliminates laboratory confirmation.",
+    "It authorizes release of unmarked units."
+  ],
+  "correct": 1,
+  "rationale": "Patterns inform investigation but do not independently establish cause.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

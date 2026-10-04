@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A held propagation tray is mistakenly moved toward a clean area. What should Technician I do?",
   "choices": [
-    "Continue because the tray is already moving",
-    "Remove the hold label",
-    "Mix the tray with clean stock",
-    "Stop the movement, restore the controlled boundary as procedure requires and report the deviation"
+    "Continue the movement because returning the tray could create more handling risk.",
+    "Remove the hold label if the tray appears healthy on visual inspection.",
+    "Mix the tray into clean stock and preserve the original tray ID in the record.",
+    "Stop the movement, restore the controlled hold/quarantine boundary as required, and report the deviation so any exposure can be assessed."
   ],
   "correct": 3,
-  "rationale": "Stop the movement, restore the controlled boundary as procedure requires and report the deviation. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A held tray should not move into a clean area until the hold is formally resolved. Once an unauthorized movement starts, the correct response is to stop it, preserve identity and status, restore containment, and report the deviation. Appearance alone does not authorize release.",
   "references": [
     "REF-IPM-001"
   ],

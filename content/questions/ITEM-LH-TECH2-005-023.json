@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A propagation problem may involve plant-health risk, but no confirmation exists. What wording is defensible?",
   "choices": [
-    "State contamination is confirmed.",
-    "Release material because uncertainty means no risk.",
-    "Describe the observed pattern and plant-health hypothesis, preserve containment, and identify the confirmation needed.",
-    "Erase symptom observations until a diagnosis exists."
+    "State that contamination is the most likely diagnosis and treat the batch as confirmed positive until evidence disproves it.",
+    "Release the batch if no confirmed pathogen or pest is present, because containment should be evidence-based.",
+    "Describe the observed pattern and plant-health hypothesis, preserve containment, and state what confirmation is still required before changing status.",
+    "Remove symptom details from the formal record until a confirmed diagnosis is available to avoid creating an unsupported contamination record."
   ],
   "correct": 2,
-  "rationale": "Describe the observed pattern and plant-health hypothesis, preserve containment, and identify the confirmation needed.",
+  "rationale": "Uncertainty should be explicit rather than converted into either confirmed contamination or no risk. The defensible record describes what was observed, identifies the plant-health hypothesis as provisional, preserves containment proportional to the risk, and specifies what evidence is needed to confirm or refute the concern. That keeps both the evidence and the biosecurity boundary intact.",
   "references": [
     "REF-IPM-001"
   ]

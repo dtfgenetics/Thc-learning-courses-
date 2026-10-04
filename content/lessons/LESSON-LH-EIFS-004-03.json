@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-004-03",
+  "title": "Controllers, Alarms, Interlocks & Command-vs-Response",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-004-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A controller command or displayed status is not proof that equipment physically responded or the crop zone reached the intended condition. Specialists trace command, equipment state and measured response separately.",
+    "vocabulary": [
+      {
+        "term": "Command-response chain",
+        "definition": "Sequence from control request through equipment action to measured process response."
+      },
+      {
+        "term": "Interlock",
+        "definition": "A condition that prevents or modifies operation until another required state is satisfied."
+      },
+      {
+        "term": "Alarm",
+        "definition": "A signal that a monitored condition or system state meets defined criteria for attention or response."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Command is not delivery",
+        "body": "A logged call for dehumidification does not prove the unit ran or moisture was removed. Verify equipment status and representative environmental response.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Alarms need context",
+        "body": "Review alarm time, duration, device identity, process state and corroborating measurements. Repeated alarms can indicate capacity, sequencing, sensor or equipment-response problems.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Never bypass safety to make controls look normal",
+        "body": "Do not defeat alarms, interlocks or safeguards to continue production or troubleshoot beyond authorization.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A dehumidifier command is active for 45 minutes, status never changes and RH remains high; the evidence supports equipment-response verification and escalation rather than assuming the command succeeded."
+    ],
+    "commonMistakes": [
+      "Treating dashboard status as physical proof.",
+      "Resetting alarms repeatedly without preserving the event.",
+      "Bypassing an interlock to test equipment."
+    ],
+    "practicalApplication": "Build a command-to-response timeline from a supplied controller/alarm trend and mark where evidence is missing.",
+    "summary": "Control logic should be verified against physical response and crop-zone outcome."
+  }
+}

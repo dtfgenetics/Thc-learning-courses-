@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician thinks the crop would benefit from a different irrigation interval, but the current work order does not authorize a schedule change. What is the correct response?",
   "choices": [
-    "Change the controller now",
-    "Ignore the observation permanently",
-    "Increase nutrient concentration instead",
-    "Document the evidence and route it for authorized review rather than independently changing the strategy"
+    "Change the interval now because direct crop observation is more important than the existing work order.",
+    "Ignore the observation because Technician I cannot alter the schedule independently.",
+    "Increase nutrient concentration to compensate for the suspected irrigation timing issue without changing the schedule.",
+    "Document the observed pattern and supporting evidence, then route the proposed schedule concern for authorized review rather than changing the strategy independently."
   ],
   "correct": 3,
-  "rationale": "Document the evidence and route it for authorized review rather than independently changing the strategy. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Technician I should not independently redesign irrigation strategy when the work order does not authorize it. The observation still matters and should not be ignored. The correct response is to document the evidence clearly and escalate it to the role that can review and approve a schedule change.",
   "references": [
     "REF-IRRIGATION-001"
   ],

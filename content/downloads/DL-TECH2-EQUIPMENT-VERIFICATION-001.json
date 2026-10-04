@@ -2,8 +2,8 @@
   "id": "DL-TECH2-EQUIPMENT-VERIFICATION-001",
   "title": "Technician II Sensor and Equipment Verification Log",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "measurement-log",
   "format": "csv",
   "description": "A verification log for sensor identity, representative placement, command-versus-response checks, independent measurements, safe operator boundaries, and maintenance handoff.",
@@ -22,5 +22,6 @@
   "limitations": [
     "A controller command or alarm reset is not proof that physical performance is restored.",
     "This log does not grant calibration, electrical, refrigeration, pressure-system, or hazardous-energy service authority."
-  ]
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a regulated record, facility SOP, assessor score sheet, or professional credential issuance instrument."
 }

@@ -1,0 +1,63 @@
+{
+  "id": "COURSE-LH-PCS-002",
+  "title": "Mother/Donor Plant Management & Plant Identity",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Propagation & Clean Stock Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Propagation & Clean Stock Specialist pathway",
+    "Cultivation personnel responsible for mother/donor stock identity, health status, propagation sourcing and stock-area biosecurity"
+  ],
+  "prerequisites": [
+    "COURSE-LH-PCS-001 or approved equivalent seed/propagation foundation",
+    "Cultivation Technician II propagation troubleshooting competency or approved equivalent"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Cannabis-specific propagation and plant-health literature supports donor identity, clonal propagation and stock-plant disease-risk concepts. A visually healthy stock plant is not assumed pathogen-free. Testing, release and sanitation procedures remain controlled by validated facility methods and applicable law.",
+  "assessmentPolicy": "The dedicated specialist assessment is development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize diagnosis, pesticide decisions, destruction/disposition or release of held stock outside assigned authority.",
+  "description": "Develops specialist management of mother/donor plants through accession identity, genealogy, suitability criteria, stock-area biosecurity, donor-linked performance analysis, testing status, longitudinal records and documented replacement decisions.",
+  "modules": [
+    "MOD-LH-PCS-002-DONOR-IDENTITY"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PCS-002-FINAL",
+  "learningOutcomes": [
+    "Establish and maintain reconstructable donor identity and genealogy from accession through cutting collection and downstream batch assignment.",
+    "Evaluate donor suitability using source identity, developmental condition, plant-health evidence, propagation performance history and defined acceptance criteria.",
+    "Apply stock-area biosecurity boundaries that separate clean, incoming, suspect and held donor material while preserving tool, personnel and movement controls.",
+    "Analyze donor-linked propagation performance without confusing correlation, genotype effects, plant condition and shared process/environment effects.",
+    "Design a donor lifecycle and replacement record that preserves provenance, testing status, performance trend, exceptions and disposition decisions without unsupported clean-stock claims."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PROP-CLEAN-STOCK-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PCS-001",
+      "COURSE-LH-TECH1-005",
+      "COURSE-LH-TECH2-005",
+      "COURSE-PROP-ADVANCED-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PCS-002-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

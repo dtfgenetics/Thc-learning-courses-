@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Why is RH alone incomplete when interpreting atmospheric drying demand?",
   "choices": [
-    "RH directly equals transpiration rate",
-    "Temperature does not affect saturation vapor pressure",
-    "VPD is calculated from light intensity only",
-    "Relative humidity depends on temperature, so temperature and RH must be interpreted together"
+    "RH alone directly describes plant transpiration rate, so temperature only matters for comfort.",
+    "Temperature does not affect saturation vapor pressure enough to change interpretation at normal grow-room conditions.",
+    "VPD is determined mainly from light intensity, so RH needs to be combined with PPFD instead of temperature.",
+    "Relative humidity is temperature-dependent, so temperature and RH must be interpreted together when estimating atmospheric vapor-pressure demand."
   ],
   "correct": 3,
-  "rationale": "Relative humidity depends on temperature, so temperature and RH must be interpreted together. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "Relative humidity expresses how much moisture the air contains relative to the maximum it could hold at that temperature. Because saturation vapor pressure changes with temperature, the same RH percentage can represent different vapor-pressure conditions at different temperatures. That is why temperature and RH belong together in VPD interpretation.",
   "references": [
     "REF-VPD-002"
   ],

@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-001-03",
+  "title": "Germination Environment, Temperature & Protocol Boundaries",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-001-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-HEMP-GERMINATION-TEMP-2022",
+    "REF-PROP-GERMINATION-H2O2-2021"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Cannabis/hemp germination responds to temperature, water availability, oxygen, seed condition and protocol design. Research values are evidence, not automatic facility recipes.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Temperature changes both rate and success",
+        "body": "Controlled hemp studies show a broad favorable range rather than one universal optimum, and responses differed across reports and cultivars. High-temperature exposure can move from inhibition to loss of viability with duration.",
+        "references": [
+          "REF-HEMP-GERMINATION-TEMP-2022"
+        ]
+      },
+      {
+        "title": "Treatment effects need context",
+        "body": "A cannabis protocol reported rapid germination using hydrogen peroxide under controlled conditions, including old seed. That demonstrates a tested method, not a requirement for all lots or facilities.",
+        "references": [
+          "REF-PROP-GERMINATION-H2O2-2021"
+        ]
+      },
+      {
+        "title": "Change one interpretable factor at a time",
+        "body": "When troubleshooting, preserve treatment identity, timing and control/comparison conditions so a later outcome can be tied to evidence rather than memory or multiple simultaneous changes.",
+        "references": [
+          "REF-HEMP-GERMINATION-TEMP-2022"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating a research protocol value as a universal production target.",
+      "Reporting successful seedlings without preserving the original denominator.",
+      "Changing multiple variables at once and then claiming one caused the result."
+    ],
+    "practicalApplication": "Given three germination protocols from different studies, identify which parameters can be treated as evidence, which remain cultivar/facility-specific, and what a controlled comparison would need.",
+    "summary": "Use source-controlled evidence, preserve identity and denominators, and keep observations separate from explanations."
+  }
+}

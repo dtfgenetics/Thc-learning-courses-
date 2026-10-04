@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A suspected contagious disease would trigger containment and major crop decisions if confirmed. What follows from the high consequence of being wrong?",
   "choices": [
-    "Use less evidence because action is urgent.",
-    "Treat every similar symptom as the same disease.",
-    "Wait for widespread damage before documenting the concern.",
-    "Use stronger confirmation and appropriate containment/escalation rather than relying on visual similarity alone."
+    "Begin the likely containment action immediately and document the diagnosis as provisional while confirmation is pursued in parallel.",
+    "Use symptom similarity plus recent crop history as sufficient confirmation if delaying action could increase spread.",
+    "Delay containment until laboratory or other confirmatory evidence is complete so the response does not unnecessarily disrupt production.",
+    "Use consequence-proportional confirmation together with timely containment/escalation, rather than treating visual similarity alone as proof of a contagious disease."
   ],
   "correct": 3,
-  "rationale": "Higher-consequence diagnoses warrant stronger confirmation and timely escalation/containment.",
+  "rationale": "When an incorrect diagnosis could trigger major containment, destruction, or other high-consequence decisions, the evidence standard should become stronger—not weaker. At the same time, waiting for perfect certainty can allow a real contagious problem to spread. The defensible response is therefore consequence-proportional: use immediate risk-reduction or containment steps that fit the authority level, escalate appropriately, and pursue stronger confirmation before making irreversible conclusions or decisions. Visual similarity alone is not enough to establish a specific contagious cause.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

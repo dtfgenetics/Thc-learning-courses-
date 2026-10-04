@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A temperature sensor flatlines exactly after maintenance while nearby verified sensors continue changing. What is the best fault classification?",
   "choices": [
-    "Confirmed perfect temperature control.",
-    "Suspected sensor/data-quality fault pending verification, not a confirmed room-temperature condition.",
-    "Confirmed HVAC failure.",
-    "Confirmed crop-transpiration failure."
+    "Interpret the flat line as evidence of unusually stable room control because nearby sensors can legitimately respond to local variation.",
+    "Classify the result as a suspected sensor or data-quality fault pending verification, rather than as a confirmed room-temperature condition.",
+    "Classify the event as a likely HVAC control fault because a true stable temperature would require the nearby verified sensors to flatten as well.",
+    "Classify the event as a crop-transpiration change because the flat line began after maintenance rather than during normal operation."
   ],
   "correct": 1,
-  "rationale": "Suspected sensor/data-quality fault pending verification, not a confirmed room-temperature condition. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A sudden flat line that begins exactly after maintenance while nearby verified sensors continue changing is a strong data-quality warning. The evidence supports suspicion of the sensor, configuration, placement, or data path, but not a confirmed root cause. Calling it stable control would confuse an instrument pattern with the room condition, while naming HVAC or crop physiology skips the verification needed to determine whether the measurement itself is trustworthy.",
   "references": [
     "REF-ENV-TEMP-2025-001",
     "REF-MHRA-GXP-DATA-INTEGRITY"

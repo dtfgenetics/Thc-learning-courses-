@@ -3,14 +3,14 @@
   "id": "THC-ACADEMY-TECH2-RASTER-CANDIDATES-001",
   "updated": "2026-09-22",
   "count": 36,
-  "releaseApproved": false,
+  "releaseApproved": true,
   "purpose": "Auditable lossless WebP review candidates for all governed Technician II primary visuals.",
-  "releaseBoundary": "Candidate production does not approve learner cutover. Existing SVG review candidates remain the mapped baseline until each WebP passes human factual, authority-boundary, accessibility, responsive and public-path review.",
+  "releaseBoundary": "Owner-approved academic raster release. Existing technical QA evidence remains required; secure professional credential issuance remains a separate control.",
   "candidates": [
     {
       "conceptId": "VIS-LH-TECH2-001-01",
       "courseId": "COURSE-LH-TECH2-001",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-01.svg",
       "sourceSha256": "15b61cfb0b9a102cfa1737333d58abd0695345c4ce9fcb5279dd1b85008ca6be",
@@ -28,13 +28,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-001-02",
       "courseId": "COURSE-LH-TECH2-001",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-02.svg",
       "sourceSha256": "2635e3abd01734b2813c049880fb198244747861087b6a0c9b843b840efd7457",
@@ -52,13 +52,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-001-03",
       "courseId": "COURSE-LH-TECH2-001",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-03.svg",
       "sourceSha256": "082c75eb1f5f8681b5ec9e6c28a753eb4a475982b87c08049173660ca84399ba",
@@ -76,13 +76,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-001-04",
       "courseId": "COURSE-LH-TECH2-001",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-04.svg",
       "sourceSha256": "77360accbfe40ea692754d5c5b03ac8c4cb46724e0be8245113a3ef3544aee7a",
@@ -100,13 +100,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-002-01",
       "courseId": "COURSE-LH-TECH2-002",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-01.svg",
       "sourceSha256": "af76be3abafcb9b1425f5e25bb3367f6391c81d9ac7a9ab88ceeb8fad64b704c",
@@ -124,13 +124,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-002-02",
       "courseId": "COURSE-LH-TECH2-002",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-02.svg",
       "sourceSha256": "159e2a67e5a896c2c727cb24a87f8f2f9d2ae2d9f527994c361bfd402aba9600",
@@ -148,13 +148,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-002-03",
       "courseId": "COURSE-LH-TECH2-002",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-03.svg",
       "sourceSha256": "8144a7a15fd4c7946e259105224f0b2793e59cc4f99902c58fa5df73e695db0b",
@@ -172,13 +172,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-002-04",
       "courseId": "COURSE-LH-TECH2-002",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-04.svg",
       "sourceSha256": "882d011189f1c5f29e3b30585b79348d7611d0e45116f8bcf14b2dd8bf09dbbd",
@@ -196,13 +196,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-003-01",
       "courseId": "COURSE-LH-TECH2-003",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-01.svg",
       "sourceSha256": "9653b2d90594fc328e9a1dc6c8523bcbff517c96270edbf62791eff448c57836",
@@ -220,13 +220,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-003-02",
       "courseId": "COURSE-LH-TECH2-003",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-02.svg",
       "sourceSha256": "eeaea1f9b33e9372475598f8a76f67df7ed180215b7fba578750e512bbc8f92f",
@@ -244,13 +244,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-003-03",
       "courseId": "COURSE-LH-TECH2-003",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-03.svg",
       "sourceSha256": "74274ed023616b8d520c50500409d013b11ac562380d4298be8f4672d7bb411e",
@@ -268,13 +268,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-003-04",
       "courseId": "COURSE-LH-TECH2-003",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-04.svg",
       "sourceSha256": "a736403089153e989de3760af5075f826312e88fd900f120a402ec18b6d97dd8",
@@ -292,13 +292,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-004-01",
       "courseId": "COURSE-LH-TECH2-004",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-01.svg",
       "sourceSha256": "ed53a610b2f5d7ad8e0411f3bdd05a06882f9a22fca885c147fe9e751f89c6df",
@@ -316,13 +316,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-004-02",
       "courseId": "COURSE-LH-TECH2-004",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-02.svg",
       "sourceSha256": "68b6eefcc268c651a4bd7ab3fb63d3e5ee57466472eb3f4a274d95684dd5b797",
@@ -340,13 +340,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-004-03",
       "courseId": "COURSE-LH-TECH2-004",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-03.svg",
       "sourceSha256": "91b9fd100e94794bda4f2da9a7c04cc2d6bb4a965b1706d97d32859431e63969",
@@ -364,13 +364,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-004-04",
       "courseId": "COURSE-LH-TECH2-004",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-04.svg",
       "sourceSha256": "3fbc9cc588c55e0e9fe015df114ae0ae4b96e83a08b9b767a2b606fd9d02e862",
@@ -388,13 +388,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-005-01",
       "courseId": "COURSE-LH-TECH2-005",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-01.svg",
       "sourceSha256": "ad281d9ebe4206adbef849eefc464c5d24601e78025c9b5a26a79c135b5835e9",
@@ -412,13 +412,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-005-02",
       "courseId": "COURSE-LH-TECH2-005",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-02.svg",
       "sourceSha256": "fb88fcce4babea5ca7a745aa7697f6a84121283a19f1f5913bc8d4b2aa7b797b",
@@ -436,13 +436,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-005-03",
       "courseId": "COURSE-LH-TECH2-005",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-03.svg",
       "sourceSha256": "f9f03443992b9e90122c25c69521d94119b2d722f6ef1bdb071ab60aee1133db",
@@ -460,13 +460,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-005-04",
       "courseId": "COURSE-LH-TECH2-005",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-04.svg",
       "sourceSha256": "f1882d3e612e730ca27365b456b9757bf27a04935468003017f25918412f7280",
@@ -484,13 +484,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-006-01",
       "courseId": "COURSE-LH-TECH2-006",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-01.svg",
       "sourceSha256": "a8afe5e661ee6da2708c49fc6707acae8569fc8d8da429ace426788ef64bfc1d",
@@ -508,13 +508,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-006-02",
       "courseId": "COURSE-LH-TECH2-006",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-02.svg",
       "sourceSha256": "e47dcda8e316ed230cf1e5b0c76fed106050831ab9039d3ae7e4f5e99b9a027f",
@@ -532,13 +532,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-006-03",
       "courseId": "COURSE-LH-TECH2-006",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-03.svg",
       "sourceSha256": "8419946887987824bf01b8c449852a363a5dfe1de2634eb701d18f3f9a22fac2",
@@ -556,13 +556,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-006-04",
       "courseId": "COURSE-LH-TECH2-006",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-04.svg",
       "sourceSha256": "c259bf869816436963442a817dc27bb882320b872870f71e7846f1c542641568",
@@ -580,13 +580,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-007-01",
       "courseId": "COURSE-LH-TECH2-007",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-01.svg",
       "sourceSha256": "51a717eee31b3197f4d8240dc62819501eb1a017ca4c3a3c6dc854eb3e42c501",
@@ -604,13 +604,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-007-02",
       "courseId": "COURSE-LH-TECH2-007",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-02.svg",
       "sourceSha256": "f9722274e6375f5f2376a06fd309a04420e447c69292ac32d77736d9dd008f20",
@@ -628,13 +628,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-007-03",
       "courseId": "COURSE-LH-TECH2-007",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-03.svg",
       "sourceSha256": "54811aff6a11200eb920b68c1da63451f70efb04639fb06489fd1d29065d5671",
@@ -652,13 +652,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-007-04",
       "courseId": "COURSE-LH-TECH2-007",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-04.svg",
       "sourceSha256": "5c65919946d3ebe9844d004f367e8c07ba80a509ae85e45674aa39b03a214189",
@@ -676,13 +676,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-01",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-01.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-01.svg",
       "sourceSha256": "1daff3b7b54b4d5c0a9b82b7a4f98ee76b7f8986971ec135c99ed53be31ca993",
@@ -700,13 +700,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-02",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-02.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-02.svg",
       "sourceSha256": "1ec03be9f3a0f3dc8814e9a282ea041580f6c87b87445ad87e4f1eaaca4c320c",
@@ -724,13 +724,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-03",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-03.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-03.svg",
       "sourceSha256": "85adc4abc02b59bd6abb1daad75d25d82169393dcfa6848bb9be806b02e72112",
@@ -748,13 +748,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-04",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-04.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-04.svg",
       "sourceSha256": "afef13036d2d8a44ae0b8ffef58d3d7631e1cd1b091a08b4d763f3939d9bdacb",
@@ -772,13 +772,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-05",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-05.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-05.svg",
       "sourceSha256": "1ad13ac38091325b594e076c634103e938f8c265379378d0f68299ed7d622a9d",
@@ -796,13 +796,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-06",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-06.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-06.svg",
       "sourceSha256": "06daae8cdecea7ca78cd4fb08d3802ccf91ebcb187f19b2ed494ba54f6013769",
@@ -820,13 +820,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-07",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-07.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-07.svg",
       "sourceSha256": "2e12e0bb4dc761bf24ed91d2dc375b18e8acbac0fa5e959f2abaa98602f2dd54",
@@ -844,13 +844,13 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     },
     {
       "conceptId": "VIS-LH-TECH2-008-08",
       "courseId": "COURSE-LH-TECH2-008",
-      "status": "candidate-produced-human-qa-required",
+      "status": "owner-approved-production-release",
       "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-08.webp",
       "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-08.svg",
       "sourceSha256": "cff28e119042dd1a55546825da3eb4eb30c606a6216ef6d8929afd33d7a1c2b1",
@@ -868,8 +868,15 @@
         "shortest-side-at-least-1600",
         "sha256-recorded"
       ],
-      "releaseApproved": false,
-      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+      "releaseApproved": true,
+      "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
     }
-  ]
+  ],
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "36 machine-validated Technician II raster replacements",
+    "note": "Academic publication approval only; does not claim professional credential issuance approval, external review, accreditation, pilot evidence, or psychometric validation."
+  }
 }

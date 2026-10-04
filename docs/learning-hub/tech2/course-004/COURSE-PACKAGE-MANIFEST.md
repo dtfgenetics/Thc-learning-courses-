@@ -2,9 +2,9 @@
 
 **Course:** Plant Health, IPM & Biosecurity Troubleshooting  
 **Canonical version:** 0.2.0  
-**Canonical course state:** draft  
+**Canonical course state:** published  
 **Public academic package:** published  
-**Updated:** 2026-09-18
+**Updated:** 2026-09-22
 
 ## Purpose
 This package controls the learner-support, remediation, visual, accessibility, evidence and review layer around the canonical Technician II course. The course remains fully editable and expandable; current counts are descriptive, not ceilings.

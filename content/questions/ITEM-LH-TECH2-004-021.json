@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "What makes a post-intervention measure useful?",
   "choices": [
-    "It is defined in advance or clearly, collected comparably, and connected to the intended outcome and decision.",
-    "It is the easiest number to collect.",
-    "It always decreases after a successful treatment.",
-    "It requires no baseline."
+    "A useful post-intervention measure is clearly defined, collected comparably to baseline, tied to the intended outcome, and linked to a decision or follow-up rule.",
+    "A useful measure is the easiest variable to collect consistently after treatment because frequent data are more valuable than a complex baseline.",
+    "A useful measure should be expected to decrease after a successful intervention so the direction of success is unambiguous.",
+    "A useful measure can be interpreted without a baseline if the post-treatment value falls within a facility target range."
   ],
   "correct": 0,
-  "rationale": "It is defined in advance or clearly, collected comparably, and connected to the intended outcome and decision.",
+  "rationale": "An outcome measure is most useful when its definition and collection method are clear, it can be compared with baseline or prior rounds, and its result changes what happens next. Easy collection or a convenient direction of change does not make a metric valid. Without comparable context and a decision rule, a number can be precise but still fail to show whether the intervention achieved its intended effect.",
   "references": [
     "REF-IPM-001"
   ]

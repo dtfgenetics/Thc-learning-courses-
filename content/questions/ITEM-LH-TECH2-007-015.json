@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A yield-per-area KPI is supplied with a denominator of 20 square meters and output of 10 kilograms. What is the result?",
   "choices": [
-    "2 kg per square meter.",
-    "10 kg per square meter.",
-    "0.5 kg per square meter.",
-    "200 kg per square meter."
+    "2 kg/m², because the 20 m² denominator should be divided by the 10 kg output.",
+    "10 kg/m², because yield is normally reported using total kilograms as the primary value.",
+    "0.5 kg/m², because 10 kilograms divided by 20 square meters equals one-half kilogram per square meter.",
+    "200 kg/m², because output and area should be multiplied when both are production quantities."
   ],
   "correct": 2,
-  "rationale": "0.5 kg per square meter. The result follows the stated KPI definition by using the supplied numerator, denominator, eligible population, units, and time window without changing the denominator after seeing the result.",
+  "rationale": "Yield per area is output divided by area. Ten kilograms divided by 20 square meters equals 0.5 kilograms per square meter. Keeping the unit attached to the calculation is important because it prevents reversing or multiplying the numerator and denominator incorrectly.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "OCCUPATIONAL-VALIDATION-INSTRUMENTS-001",
+  "updated": "2026-09-24",
+  "state": "instruments-ready-panel-execution-pending",
+  "methodologySources": [
+    "REF-OPM-JOB-ANALYSIS-2026-001",
+    "REF-ONET-TASK-ANALYSIS-001"
+  ],
+  "decisionBoundary": "No automatic numeric cutoff approves a task. Ratings are evidence for documented panel reconciliation.",
+  "programs": [
+    {
+      "programId": "CREDPROG-CULT-TECH-I-001",
+      "programVersion": "0.1.0",
+      "taskCount": 13,
+      "jta": "docs/academy-v2/job-task-analyses/CULTIVATION_TECHNICIAN_I_JTA.md",
+      "panelCsv": "docs/academy-v2/occupational-validation/CREDPROG-CULT-TECH-I-001-SME-TASK-RATINGS.csv",
+      "emergingTaskCsv": "docs/academy-v2/occupational-validation/CREDPROG-CULT-TECH-I-001-EMERGING-TASKS.csv",
+      "instructions": "docs/academy-v2/occupational-validation/CREDPROG-CULT-TECH-I-001-PANEL-INSTRUCTIONS.md"
+    },
+    {
+      "programId": "CREDPROG-CULT-TECH-II-001",
+      "programVersion": "0.1.0",
+      "taskCount": 12,
+      "jta": "docs/academy-v2/job-task-analyses/CULTIVATION_TECHNICIAN_II_JTA.md",
+      "panelCsv": "docs/academy-v2/occupational-validation/CREDPROG-CULT-TECH-II-001-SME-TASK-RATINGS.csv",
+      "emergingTaskCsv": "docs/academy-v2/occupational-validation/CREDPROG-CULT-TECH-II-001-EMERGING-TASKS.csv",
+      "instructions": "docs/academy-v2/occupational-validation/CREDPROG-CULT-TECH-II-001-PANEL-INSTRUCTIONS.md"
+    }
+  ]
+}

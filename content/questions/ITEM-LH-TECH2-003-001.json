@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-QUALITY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A final-batch EC is unexpectedly high. What is the strongest first response?",
   "choices": [
-    "Verify sample identity and meter performance with the controlled reference/check before changing the batch.",
-    "Dilute immediately until the display matches target.",
-    "Delete the first reading and retest until a normal value appears.",
-    "Increase nutrient concentration because high EC indicates deficiency."
+    "Verify sample identity and current meter performance with the controlled check/reference before changing the batch.",
+    "Dilute the batch incrementally until the EC reaches target, then document the original high reading as an outlier.",
+    "Retest from a second sample and accept the lower value if it falls within the expected range.",
+    "Adjust the nutrient recipe downward because an unexpectedly high final EC is most likely a formulation error."
   ],
   "correct": 0,
-  "rationale": "Verify sample identity and meter performance with the controlled reference/check before changing the batch.",
+  "rationale": "An unexpected final-batch EC can reflect a real formulation problem, a sample mix-up, contamination, temperature/measurement effects, or meter error. Before changing the batch, the technician should verify that the sample is the intended batch and that the meter is fit for use with the controlled reference/check. Diluting or reformulating first destroys the opportunity to determine whether the original value represented the batch or the measurement system.",
   "references": [
     "REF-WATER-ALKALINITY-EXT-001"
   ]

@@ -3,9 +3,9 @@
   "id": "COURSE2-RASTER-CANDIDATE-MANIFEST-001",
   "updated": "2026-09-22",
   "courseId": "COURSE-LH-TECH1-002",
-  "purpose": "Integrity and automated-QA record for the ten Course 2 high-resolution lossless WebP candidates rendered from the canonical learner-facing SVG compatibility baselines.",
+  "purpose": "Integrity, provenance and automated-QA record for the ten released Course 2 high-resolution lossless WebP production assets rendered from retired SVG provenance sources.",
   "productionMethod": {
-    "source": "canonical SVG compatibility baseline",
+    "source": "retired SVG provenance source",
     "format": "lossless WebP",
     "minimumShortSidePx": 1600,
     "contentTransformation": "none; deterministic raster rendering only"
@@ -14,8 +14,10 @@
     "expectedCandidates": 10,
     "producedCandidates": 10,
     "automatedQaPassed": 10,
-    "releasedReplacements": 0,
-    "humanQaPending": 10
+    "releasedReplacements": 10,
+    "humanQaPending": 0,
+    "activeProductionRasters": 10,
+    "legacySvgLearnerTargets": 0
   },
   "candidates": [
     {
@@ -31,7 +33,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-002",
@@ -46,7 +49,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-003",
@@ -61,7 +65,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-004",
@@ -76,7 +81,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-005",
@@ -91,7 +97,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-006",
@@ -106,7 +113,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-007",
@@ -121,7 +129,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-008",
@@ -136,7 +145,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-009",
@@ -151,7 +161,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-010",
@@ -166,8 +177,16 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     }
   ],
-  "releaseBoundary": "Candidate production and automated integrity/resolution QA do not establish factual, accessibility, responsive/manual or public-path approval. SVG baselines remain live until those reviews are recorded and lesson/registry cutover is verified."
+  "releaseBoundary": "Owner-approved academic raster release is active in canonical lesson/resource paths. Binary existence, automated raster QA, canonical mapping and accessibility text remain required; manual responsive/accessibility review and external validation are not implied.",
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "10 machine-validated Course 2 raster replacements",
+    "note": "Academic publication approval; does not claim external review, accreditation, pilot evidence, or third-party validation."
+  }
 }

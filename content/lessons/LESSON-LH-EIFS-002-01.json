@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-002-01",
+  "title": "PPFD Mapping, Grid Design & Measurement Geometry",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-002-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026",
+    "REF-LIGHT-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Canopy-light verification begins with repeatable measurement geometry. A specialist defines the crop plane, sensor orientation, grid spacing, operating state and meter identity before interpreting intensity or uniformity.",
+    "vocabulary": [
+      {
+        "term": "PPFD",
+        "definition": "Photosynthetic photon flux density reaching a surface, commonly expressed in micromoles per square meter per second."
+      },
+      {
+        "term": "Measurement grid",
+        "definition": "A repeatable set of spatial positions used to characterize light distribution across a defined canopy area."
+      },
+      {
+        "term": "Crop plane",
+        "definition": "The defined height and orientation at which measurements are intended to represent the canopy receiving light."
+      }
+    ],
+    "sections": [
+      {
+        "title": "One reading is not a map",
+        "body": "Fixture spacing, height, reflectance, canopy shape and obstructions create gradients. Use multiple repeatable points rather than relying on the brightest center location.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Control geometry between maps",
+        "body": "Changing sensor height, tilt or grid positions can make before/after comparisons misleading. Record the plane, orientation and fixture operating state.",
+        "references": [
+          "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+        ]
+      },
+      {
+        "title": "Verify the meter before redesigning the room",
+        "body": "Instrument type, calibration/verification status and cosine response matter. A suspect meter should not drive major fixture or setpoint changes until checked.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A nine-point grid with one very bright center and dim edges can have an acceptable-looking average while still showing poor distribution."
+    ],
+    "commonMistakes": [
+      "Measuring only the center point.",
+      "Changing measurement height between maps.",
+      "Comparing readings from different instruments without verifying method or calibration."
+    ],
+    "practicalApplication": "Create a repeatable canopy grid and record PPFD, sensor position, orientation, fixture state and meter identity for each point.",
+    "summary": "Lighting decisions begin with repeatable spatial measurement, not fixture labels or a single peak number."
+  }
+}

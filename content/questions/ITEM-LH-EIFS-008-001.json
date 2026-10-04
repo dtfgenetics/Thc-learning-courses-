@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-008-01",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "During commissioning, a controller output labeled for Zone 4 activates a different valve. What is the correct disposition?",
+  "choices": [
+    "Document the mismatch, correct it through the authorized process, and repeat the failed commissioning test before acceptance.",
+    "Accept it because a valve opened.",
+    "Relabel the dashboard without testing.",
+    "Ignore it until crop symptoms appear."
+  ],
+  "correct": 0,
+  "rationale": "Commissioning requires function identity and response to match the intended design before acceptance.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}

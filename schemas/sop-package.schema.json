@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/sop-package.schema.json",
+  "title": "THC Controlled SOP Draft Package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "version",
+    "status",
+    "releaseState",
+    "evidencePlan",
+    "scientificSop",
+    "learnerGuide",
+    "implementationHandoff",
+    "recordsTemplate",
+    "qaReviewState",
+    "releaseGates"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^GROW-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 4
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft-controlled-package",
+        "reviewed-controlled-package"
+      ]
+    },
+    "releaseState": {
+      "enum": [
+        "blocked",
+        "approved"
+      ]
+    },
+    "evidencePlan": {
+      "type": "string"
+    },
+    "scientificSop": {
+      "type": "string"
+    },
+    "learnerGuide": {
+      "type": "string"
+    },
+    "implementationHandoff": {
+      "type": "string"
+    },
+    "recordsTemplate": {
+      "type": "string"
+    },
+    "qaReviewState": {
+      "enum": [
+        "not-started",
+        "in-review",
+        "complete"
+      ]
+    },
+    "reusedModules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reusedLessons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "controlledReferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "releaseGates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

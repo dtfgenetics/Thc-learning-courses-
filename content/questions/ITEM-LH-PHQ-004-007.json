@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-004-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-004-03",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What inspection route best reduces cross-transfer?",
+  "choices": [
+    "Start at the most suspect material and continue unchanged.",
+    "Mix tools to compare lots.",
+    "Move from controlled unaffected areas toward suspect material with defined tools, PPE and sanitation.",
+    "Move all units before mapping."
+  ],
+  "correct": 2,
+  "rationale": "Clean-to-suspect sequencing and controlled tools reduce transfer risk.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

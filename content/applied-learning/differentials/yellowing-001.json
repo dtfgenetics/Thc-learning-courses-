@@ -1,0 +1,79 @@
+{
+  "id": "ALDIFF-YELLOWING-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "title": "Same Symptom, Different Cause: Yellowing Leaves",
+  "summary": "Practice separating a visible yellowing pattern from competing nutritional, root-zone and environmental explanations before choosing the next evidence to collect.",
+  "observedPattern": "Older lower leaves are yellowing while newer growth remains comparatively greener.",
+  "competencyIds": [
+    "COMP-NUTRITION-001",
+    "COMP-PLANT-BIO-001"
+  ],
+  "referenceIds": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-NUTRITION-001",
+    "REF-PLANT-BIO-001"
+  ],
+  "canonicalSources": [
+    "LESSON-NUTRITION-001",
+    "LESSON-PLANT-BIO-001"
+  ],
+  "hypotheses": [
+    {
+      "id": "low-or-limited-nutrient-availability",
+      "label": "Low supply or limited nutrient availability",
+      "whyPlausible": "A tissue-age pattern can be consistent with a mobile-nutrient limitation, but the visual pattern alone is not proof.",
+      "evidenceThatRaisesConfidence": [
+        "feed/source analysis shows insufficient supply",
+        "root-zone pH trend supports reduced availability",
+        "pattern progresses consistently across matched plants"
+      ],
+      "evidenceThatLowersConfidence": [
+        "root-zone EC is already excessive",
+        "roots show clear oxygen/water stress",
+        "pattern is localized to a heat or airflow anomaly"
+      ]
+    },
+    {
+      "id": "root-zone-stress",
+      "label": "Root-zone water, aeration or salinity stress",
+      "whyPlausible": "Root dysfunction can limit uptake even when nutrients are present in the feed.",
+      "evidenceThatRaisesConfidence": [
+        "abnormal root-zone moisture or aeration history",
+        "elevated root-zone EC",
+        "root discoloration or reduced root vigor where visible"
+      ],
+      "evidenceThatLowersConfidence": [
+        "root-zone measurements are stable and matched controls share the same conditions",
+        "independent tissue/feed evidence supports a specific supply deficiency"
+      ]
+    },
+    {
+      "id": "environmental-or-localized-stress",
+      "label": "Environmental or localized canopy stress",
+      "whyPlausible": "Temperature, airflow, light distribution and other localized conditions can produce stress patterns that overlap with nutrient symptoms.",
+      "evidenceThatRaisesConfidence": [
+        "symptoms map to one zone",
+        "recent setpoint/equipment change precedes the pattern",
+        "matched root-zone chemistry differs little between affected and unaffected plants"
+      ],
+      "evidenceThatLowersConfidence": [
+        "pattern follows tissue age across the entire crop",
+        "environmental measurements are spatially uniform while nutrition/root-zone evidence diverges"
+      ]
+    }
+  ],
+  "discriminatingEvidence": [
+    "Record tissue age, organ position, distribution and progression before naming a cause.",
+    "Compare feed and root-zone pH/EC using consistent methods.",
+    "Review irrigation/moisture history and root condition.",
+    "Compare affected and unaffected zones for temperature, humidity, airflow and light context.",
+    "Use laboratory/tissue analysis where appropriate and authorized when the decision requires stronger evidence."
+  ],
+  "boundary": "This activity teaches differential reasoning. It does not diagnose a crop, prescribe a nutrient correction, or authorize pesticide, HVAC, electrical, irrigation-system or other controlled operational changes.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

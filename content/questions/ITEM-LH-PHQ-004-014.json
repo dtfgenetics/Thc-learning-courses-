@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-004-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why must physical and electronic hold status agree?",
+  "choices": [
+    "Electronic status is always optional.",
+    "A mismatch can allow material to move or be used outside its authorized state.",
+    "Physical labels replace records.",
+    "Agreement proves the lot is rejected."
+  ],
+  "correct": 1,
+  "rationale": "Aligned status controls prevent unintended processing and preserve traceability.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-006-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-006-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What makes an emitter catch test comparable across dates?",
+  "choices": [
+    "Consistent collection time, test method, operating state and sampled locations.",
+    "Using different containers each time.",
+    "Testing only the best emitter.",
+    "Changing zone pressure during the test."
+  ],
+  "correct": 0,
+  "rationale": "Repeatable conditions are required for meaningful comparison.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}

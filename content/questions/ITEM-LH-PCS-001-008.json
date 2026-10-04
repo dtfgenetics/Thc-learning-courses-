@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-001-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A cannabis germination paper reports success with hydrogen peroxide. What does the paper establish?",
+  "choices": [
+    "Every seed lot requires that treatment.",
+    "That the tested protocol worked under its reported conditions; local use still requires controlled, documented validation.",
+    "Hydrogen peroxide proves seed vigor.",
+    "No untreated comparison is ever needed."
+  ],
+  "correct": 1,
+  "rationale": "That the tested protocol worked under its reported conditions; local use still requires controlled, documented validation.",
+  "references": [
+    "REF-PROP-GERMINATION-H2O2-2021"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-TRACEABILITY-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What must a new harvest-container identifier preserve?",
   "choices": [
-    "Its controlled relationship to the source plant/batch and harvest event",
-    "Only the cultivar nickname",
-    "Only the new container number",
-    "Only the dry-room name"
+    "Its controlled relationship to the source plant or batch and the harvest event that created the container.",
+    "Only the cultivar nickname because the source can be inferred from genetics.",
+    "Only the new container number because downstream identity replaces source identity.",
+    "Only the dry-room location because location is enough to reconstruct the movement."
   ],
   "correct": 0,
-  "rationale": "Its controlled relationship to the source plant/batch and harvest event. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A new harvest-container ID should extend genealogy, not replace the source relationship. The record must preserve where the material came from and which harvest event produced the container so later movement, disposition, or investigation can trace backward and forward. A nickname, container number, or room alone cannot reconstruct origin.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY",
     "REF-MHRA-GXP-DATA-INTEGRITY"

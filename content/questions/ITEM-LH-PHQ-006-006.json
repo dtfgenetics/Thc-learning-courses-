@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-006-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-006-02",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "How should a merge event be recorded?",
+  "choices": [
+    "Replace parent records with the child.",
+    "Authorized parent lots, quantities, time, reason, resulting child ID and applicable status/process context.",
+    "Record only the final weight.",
+    "Use a verbal note."
+  ],
+  "correct": 1,
+  "rationale": "Merge genealogy must preserve source relationships and event context.",
+  "references": [
+    "REF-CODEX-TRACEABILITY-CXG-60-2006",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

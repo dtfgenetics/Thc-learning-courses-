@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "What makes a troubleshooting handoff reconstructable?",
   "choices": [
-    "It states only the technician’s preferred diagnosis.",
-    "It replaces conflicting measurements with an average.",
-    "It preserves observations, measurements, verification steps, decisions, actions, responses and unresolved conditions with identities/timestamps.",
-    "It records only the final correction."
+    "A handoff is reconstructable when it identifies the technician's leading diagnosis and the final correction selected for the next shift.",
+    "A handoff is reconstructable when conflicting measurements are reconciled into one summary value before transfer.",
+    "A handoff is reconstructable when it preserves observations, measurements, verification steps, decisions, actions, responses, unresolved conditions, identities, and timestamps in sequence.",
+    "A handoff is reconstructable when it records the final disposition and omits intermediate checks that did not change the outcome."
   ],
   "correct": 2,
-  "rationale": "It preserves observations, measurements, verification steps, decisions, actions, responses and unresolved conditions with identities/timestamps.",
+  "rationale": "Reconstructability means another qualified person can understand what happened, what evidence existed at each point, what was done, and what remains unresolved without relying on memory. That requires the sequence of observations, measurements, verification steps, decisions, actions, responses, identities, and timestamps. Reducing the record to a final diagnosis or correction hides the decision path and can erase important conflicting evidence.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A recipe version was recently revised. Which version governs today’s batch?",
   "choices": [
-    "Whichever version the technician remembers best.",
-    "The oldest version because it has more history.",
-    "Any version that produces the target EC.",
-    "The currently effective approved version under the facility’s controlled-document process."
+    "Use the version the technician knows best if its ingredient list still matches the current batch target.",
+    "Use the older version until the revised procedure has accumulated enough production history to demonstrate that it is stable.",
+    "Use any version that reaches the specified final EC and pH because the process outcome matters more than the document version.",
+    "Use the currently effective approved version identified by the facility's controlled-document system."
   ],
   "correct": 3,
-  "rationale": "The currently effective approved version under the facility’s controlled-document process.",
+  "rationale": "A controlled-document process exists so workers can identify which instruction is currently authorized. A familiar, historically successful, or technically equivalent older version may still contain superseded quantities, materials, steps, or safety controls. The batch should follow the currently effective approved version, with any discrepancy or concern routed through change control rather than resolved informally.",
   "references": [
     "REF-ASTM-E2659-001"
   ]

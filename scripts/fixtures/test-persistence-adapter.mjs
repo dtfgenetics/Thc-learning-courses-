@@ -5,6 +5,8 @@ export async function createPersistenceAdapters() {
   const practicalResults = new Map();
   const assignments = new Map();
   const practicalSubmissions = new Map();
+  const profiles = new Map();
+  const applications = new Map();
 
   function assignmentKey(subject, courseId, assessmentId, assessmentVersion) {
     return `${subject}:${courseId}:${assessmentId}:${assessmentVersion}`;
@@ -39,11 +41,16 @@ export async function createPersistenceAdapters() {
     credentialStore: {
       kind: 'test-persistent',
       async ping() { return true; },
-      async schemaVersion() { return '4'; },
+      async schemaVersion() { return '7'; },
       async getByVerificationId() { return null; },
+      async listBySubjectHash() { return []; },
       async count() { return 0; }
     },
-    credentialWriter: { kind: 'test-writer' },
+    credentialWriter: {
+      kind: 'test-writer',
+      async issueCredential(record) { return { credential: structuredClone(record), created: true, idempotent: false }; },
+      async transitionById() { return null; }
+    },
     practicalEvaluatorStore: {
       kind: 'test-practical-evaluator',
       async listCourseLearners({ courseId, assessmentId, assessmentVersion, search = '', practicalStatus = '', assignmentFilter = '', evaluatorId = '', page = 1, pageSize = 25 } = {}) {
@@ -102,6 +109,30 @@ export async function createPersistenceAdapters() {
     },
     learnerStore: {
       kind: 'test-learner-runtime',
+      async getLearnerProfile(subject) {
+        return profiles.get(subject) ?? { learnerReference: `THC-LRN-${subject}`, displayName: 'Test Learner', certificateName: 'Test Learner' };
+      },
+      async saveLearnerProfile(subject, profile) {
+        const saved = { learnerReference: profiles.get(subject)?.learnerReference ?? `THC-LRN-${subject}`, displayName: profile.displayName ?? null, certificateName: profile.certificateName ?? null };
+        profiles.set(subject, saved);
+        return structuredClone(saved);
+      },
+      async listApplications(subject) {
+        const rows = applications.get(subject);
+        if (rows) return structuredClone(rows);
+        const defaults = [{ applicationReference: 'THC-APP-TEST-001', programId: 'CREDPROG-CULT-TECH-I-001', status: 'active' }];
+        applications.set(subject, defaults);
+        return structuredClone(defaults);
+      },
+      async createApplication(subject, { programId } = {}) {
+        const rows = applications.get(subject) ?? [];
+        const existing = rows.find((row) => row.programId === programId);
+        if (existing) return structuredClone(existing);
+        const saved = { applicationReference: `THC-APP-TEST-${String(rows.length + 1).padStart(3, '0')}`, programId, status: 'active' };
+        rows.push(saved);
+        applications.set(subject, rows);
+        return structuredClone(saved);
+      },
       async listEnrollments(subject) { return [...(enrollments.get(subject) ?? [])]; },
       async enroll(subject, record) {
         const rows = enrollments.get(subject) ?? [];

@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHIB-007-01",
+  "title": "Case Intake & Evidence Quality",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-007-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A complex case should begin as an evidence inventory, not a diagnosis. Direct observations, measurements, records, test results, images, environmental context and missing information must be separated so weak evidence does not acquire false authority through repetition.",
+    "vocabulary": [
+      {
+        "term": "Direct observation",
+        "definition": "A finding actually seen or measured, recorded without assigning a causal interpretation."
+      },
+      {
+        "term": "Contextual fact",
+        "definition": "A verified condition such as crop stage, irrigation history, movement record or environmental measurement relevant to interpretation."
+      },
+      {
+        "term": "Assumption",
+        "definition": "An unverified proposition used provisionally and clearly labeled as such."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Normalize the case file",
+        "body": "Reconcile plant/lot IDs, timestamps, room/location, crop stage, sample IDs, units and source of each observation before reasoning from the evidence.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Grade evidence by what it can support",
+        "body": "A photo can support a visible morphology claim; a calibrated measurement can support a value; a laboratory result can support only the identified sample and method. Do not let one evidence type answer questions it was not designed to answer.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Record missing and conflicting information",
+        "body": "Missing denominators, uncertain sample identity, changed monitoring methods and contradictory records should be explicit because they change the confidence of later conclusions.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "An image showing leaf chlorosis, an EC measurement from a different irrigation zone and a verbal claim of 'root rot' belong in three different evidence categories and should not be merged into one confirmed diagnosis."
+    ],
+    "commonMistakes": [
+      "Starting with the suspected diagnosis and sorting evidence to fit it.",
+      "Treating copied notes as independent evidence.",
+      "Discarding conflicting observations."
+    ],
+    "practicalApplication": "Convert a mixed case packet into a table with evidence ID, source, time, identity, observation, reliability limits, interpretation and missing follow-up.",
+    "summary": "Case quality depends on evidence discipline before diagnosis begins."
+  }
+}

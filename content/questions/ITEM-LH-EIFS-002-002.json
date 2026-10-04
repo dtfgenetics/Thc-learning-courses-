@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-EIFS-002-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two canopy maps are taken before and after a fixture-height change. Which condition is most important for valid comparison?",
+  "choices": [
+    "Use a different meter each time.",
+    "Measure only the brightest point after the change.",
+    "Use the same grid, crop plane, sensor orientation and comparable operating state.",
+    "Change the photoperiod between maps."
+  ],
+  "correct": 2,
+  "rationale": "Repeatable geometry and operating state are necessary for defensible before/after comparison.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}

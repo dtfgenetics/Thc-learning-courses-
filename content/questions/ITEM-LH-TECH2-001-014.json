@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which proposed next test is most valuable in a ranked differential?",
   "choices": [
-    "The fastest measurement even if every hypothesis predicts the same result.",
-    "A test whose possible outcomes would materially change the ranking of the leading hypotheses.",
-    "A repeat of the same weak observation with no decision rule.",
-    "A test chosen only because the equipment is nearby."
+    "Choose the fastest available measurement so the workup progresses quickly, then interpret it alongside the existing evidence.",
+    "Choose a test whose possible outcomes would materially increase or decrease the likelihood of the leading hypotheses.",
+    "Repeat the observation that originally triggered the workup to determine whether the symptom is still present before selecting another test.",
+    "Choose the most precise available instrument even when all leading hypotheses predict approximately the same result."
   ],
   "correct": 1,
-  "rationale": "Discriminating tests reduce uncertainty by producing outcomes that separate plausible explanations.",
+  "rationale": "A valuable next test is discriminating: different plausible hypotheses predict meaningfully different outcomes, so the result can change their ranking. Speed and precision matter only if the measurement can reduce uncertainty. Repeating the original observation may confirm persistence but may not separate competing causes. A highly precise result is also low-value when every leading hypothesis predicts the same outcome. Diagnostic efficiency comes from selecting evidence that changes decisions, not merely accumulating more measurements.",
   "references": [
     "REF-NUTRIENT-DEFICIENCY-001",
     "REF-IPM-GREENHOUSE-2024-001"

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-004-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-004-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A two-hour data gap overlaps a suspected environmental excursion. How should the gap be handled?",
+  "choices": [
+    "Assume conditions were normal.",
+    "Document the gap as uncertainty and use independent evidence without inventing values.",
+    "Fill the gap with the nearest reading.",
+    "Delete the whole trend."
+  ],
+  "correct": 1,
+  "rationale": "Missing data should remain visible rather than silently imputed as fact.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-005","version":1,"status":"draft","purpose":"summative","competency":"COMP-SAFETY-WORK-001","objective":"LO-LH-TECH1-001-02","bloomLevel":"apply","difficulty":"easy","type":"multiple-choice","stem":"Which statement best describes PPE selection for Technician I work?","choices":["Use the PPE required by the supplied hazard assessment, label, and procedure","Choose whichever gloves are most comfortable","Use maximum PPE for every task regardless of hazard","Skip PPE when the task is short"],"correct":0,"rationale":"PPE should match the identified hazard and controlled requirements rather than preference or duration.","references":["REF-OSHA-1910-132-PPE"]}
+{
+  "id": "ITEM-LH-TECH1-001-005",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-001-02",
+  "bloomLevel": "apply",
+  "difficulty": "easy",
+  "type": "multiple-choice",
+  "stem": "Which statement best describes PPE selection for Technician I work?",
+  "choices": [
+    "Use the PPE required by the hazard assessment, product label, and applicable procedure for the specific task.",
+    "Choose the most comfortable gloves and eye protection if they allow the task to be completed safely.",
+    "Use the highest level of PPE available for every chemical task so no hazard-specific decision is needed.",
+    "Reduce PPE for short-duration tasks because exposure time is limited."
+  ],
+  "correct": 0,
+  "rationale": "PPE should match the identified hazards and the controlled requirements for the task. More PPE is not automatically better if it creates other hazards or is incompatible with the work, while comfort or short duration does not override hazard controls. The technician should follow the specified PPE selection rather than improvising.",
+  "references": [
+    "REF-OSHA-1910-132-PPE"
+  ]
+}

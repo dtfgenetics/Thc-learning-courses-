@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A container has one moisture reading immediately before irrigation. What can the technician conclude about dryback rate?",
   "choices": [
-    "A single point is insufficient; repeated comparable observations are needed to describe the trajectory",
-    "The exact dryback rate is known",
-    "The media is too dry by definition",
-    "The irrigation interval is automatically correct"
+    "One moisture value cannot establish a dryback rate; repeated comparable observations are needed to describe change over time.",
+    "The dryback rate is known because the reading was taken immediately before irrigation.",
+    "The media is too dry because any pre-irrigation reading represents the lowest moisture point.",
+    "The irrigation interval is confirmed as correct because the technician captured a pre-event value."
   ],
   "correct": 0,
-  "rationale": "A single point is insufficient; repeated comparable observations are needed to describe the trajectory. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Dryback describes change over time, so a single reading shows only one point in that trajectory. To estimate or compare dryback, the technician needs repeated measurements collected under comparable conditions. One pre-irrigation value cannot by itself show how quickly the root zone lost water or whether the interval was appropriate.",
   "references": [
     "REF-IRRIGATION-001"
   ],

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What best describes dryback?",
   "choices": [
-    "Hours since lights-on",
-    "Reduction in root-zone water content between irrigation events",
-    "The amount of fertilizer added",
-    "Any runoff event"
+    "The number of hours since lights-on before the next irrigation event.",
+    "The reduction in root-zone water content between irrigation events or defined comparison points.",
+    "The amount of nutrient concentrate added during fertigation.",
+    "Any event in which runoff is observed from the container."
   ],
   "correct": 1,
-  "rationale": "Reduction in root-zone water content between irrigation events. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Dryback refers to the decrease in root-zone water content over time, typically between irrigation events or other defined points. It is not simply elapsed time, nutrient amount, or runoff occurrence. Keeping that definition clear prevents the technician from confusing a moisture trend with an irrigation event or recipe variable.",
   "references": [
     "REF-IRRIGATION-001"
   ],

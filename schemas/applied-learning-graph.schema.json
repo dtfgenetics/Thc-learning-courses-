@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dtfseeds.com/schemas/applied-learning-graph.schema.json",
+  "title": "THC Applied Learning Knowledge Graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "status",
+    "title",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ALGRAPH-[A-Z0-9-]+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "published",
+        "retired"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "canonicalType",
+          "canonicalId"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ALNODE-[A-Z0-9-]+$"
+          },
+          "canonicalType": {
+            "enum": [
+              "competency",
+              "objective",
+              "lesson",
+              "claim",
+              "reference"
+            ]
+          },
+          "canonicalId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source",
+          "target",
+          "relationship"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ALEDGE-[A-Z0-9-]+$"
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^ALNODE-[A-Z0-9-]+$"
+          },
+          "target": {
+            "type": "string",
+            "pattern": "^ALNODE-[A-Z0-9-]+$"
+          },
+          "relationship": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

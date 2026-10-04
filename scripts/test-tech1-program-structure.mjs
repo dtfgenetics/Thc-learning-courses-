@@ -18,7 +18,8 @@ for (const courseId of program.requiredCourses) {
   assert.equal(c.extensions?.credentialPath, program.id);
   assert.ok(Array.isArray(c.modules) && c.modules.length > 0);
   for (const moduleId of c.modules) assert.ok(exists(`content/modules/${moduleId}.json`), `${courseId} references missing module ${moduleId}`);
-  if (courseId !== 'COURSE-LH-TECH1-001') assert.equal(c.status, 'draft', `${courseId} must remain draft until its release gates complete`);
+  assert.equal(c.status, 'published', `${courseId} must be published for owner-approved academic study`);
+  if (courseId !== 'COURSE-LH-TECH1-001') { assert.equal(c.extensions?.academicPublicationStatus, 'owner-approved-public-academic-release'); assert.equal(c.extensions?.professionalCredentialUseAuthorized, false); }
   if (c.finalAssessment) {
     assert.ok(exists(`content/assessments/${c.finalAssessment}.json`), `${courseId} final assessment must resolve`);
     const a = read(`content/assessments/${c.finalAssessment}.json`);
@@ -57,4 +58,4 @@ assert.equal(integrated.extensions?.liveCredentialFormApproved, false);
 assert.equal(integrated.extensions?.credentialPracticalSetRequired.length, 6);
 assert.equal(new Set(integrated.extensions.credentialPracticalSetRequired).size, 6);
 assert.equal(integrated.extensions?.capstoneRequired, 'CAPSTONE-TECH1-SHIFT-001');
-console.log('Technician I program structure passed: all seven courses resolve; Courses 002-006 contain draft instruction/assessment and Course 007 now contains the dedicated integrated lab while practical/capstone validation and release gates remain explicit.');
+console.log('Technician I program structure passed: all seven academic courses are published; Course 007 retains integrated-lab design while professional practical/capstone validation and release gates remain explicit.');

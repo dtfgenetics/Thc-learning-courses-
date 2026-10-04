@@ -1,8 +1,8 @@
 # Learner Materials — COURSE-LH-TECH1-002
 
 **Course:** Plant Observation, Growth Stages & Crop Records  
-**Status:** development learner package  
-**Date:** 2026-09-15
+**Status:** published owner-approved academic learner package  
+**Updated:** 2026-09-22
 
 ## Learner purpose
 
@@ -35,7 +35,7 @@ Using the supplied crop-room practice sheet:
 - classify the visible spatial pattern as isolated, edge-associated, zonal/clustered, widespread, or another documented pattern;
 - write one room-level statement that does not overgeneralize from a single plant.
 
-**Download:** `/assets/course2/crop-walk-room-map-practice.svg`
+**Download:** `/assets/course2/crop-walk-room-map-practice.webp`
 
 ### Evidence check
 
@@ -105,7 +105,7 @@ Audit each synthetic image set for:
 - edits/filters that could materially alter appearance;
 - missing evidence that limits interpretation.
 
-**Download:** `/assets/course2/photo-evidence-audit-practice.svg`
+**Download:** `/assets/course2/photo-evidence-audit-practice.webp`
 
 ### Learner activity B: reconstructable record and handoff
 
@@ -125,7 +125,7 @@ Complete the observation/handoff worksheet with:
 - receiving-person cross-check;
 - correction history where an entry changes.
 
-**Download:** `/assets/course2/observation-handoff-practice.svg`
+**Download:** `/assets/course2/observation-handoff-practice.webp`
 
 ## Integrated application scenario
 
@@ -153,12 +153,20 @@ Course 2 currently contains:
 - current development threshold: 80% for each assessment definition;
 - mapped professional performance evidence: `PRACTICAL-TECH1-A`.
 
-These are development/public-academic course materials. They are not the secure Technician I credential examination and do not independently authorize professional credential issuance.
+These are development/public-academic course materials. Every final-test objective is mapped back to dedicated Course 2 lessons in `TEST-TO-TEACHING-MAP.md`; the test may not assess encyclopedia-only or unrelated-course material. These assessments are not the secure Technician I credential examination and do not independently authorize professional credential issuance.
 
-## Remediation expectations
+## Remediation and reassessment
 
-Until the objective-linked remediation package is completed, instructors/learners should not treat repeated test attempts as equivalent evidence automatically. Remediation must target the missed objective and require fresh/equivalent practice before reassessment. Exact controlled remediation/reassessment rules remain a Course 2 package deliverable.
+Objective-linked remediation is controlled in `instructor/OBJECTIVE-REMEDIATION-MATRIX.md`. A missed objective is not remediated by simply replaying the same answer key.
+
+The learner must receive:
+
+1. corrective coaching for the missed objective;
+2. fresh/equivalent return-to-practice work;
+3. reassessment at the same intended cognitive demand using a different but equivalent prompt/scenario.
+
+The matrix covers all five controlled Course 2 objectives. Human reviewers still need to confirm equivalence, fairness, accessibility and instructional sufficiency before final course approval.
 
 ## Completion boundary
 
-This learner package can support course development and review. Course 2 remains `draft` until the required technical, instructional, assessment, accessibility, practical, pilot and release gates are satisfied.
+This learner package is published for owner-approved academic use. Technical, instructional, assessment, accessibility, practical, pilot and professional-credential release gates remain separate and must still be satisfied before professional credential issuance.

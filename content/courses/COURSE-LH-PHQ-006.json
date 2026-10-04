@@ -1,0 +1,64 @@
+{
+  "id": "COURSE-LH-PHQ-006",
+  "title": "Postharvest QA, Traceability & Recall/Disposition Concepts",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Postharvest Quality Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Postharvest Quality Specialist pathway",
+    "Postharvest and quality personnel responsible for controlled product evidence, traceability and escalation"
+  ],
+  "prerequisites": [
+    "Cultivation Technician II harvest/postharvest foundation or equivalent",
+    "COURSE-LH-PHQ-001 or equivalent controlled harvest/lot-integrity foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses cannabis-specific peer-reviewed postharvest evidence plus authoritative quality, measurement and traceability sources. Research treatments, standards and transferable quality models remain within source scope and do not become universal facility setpoints or jurisdiction-specific legal requirements.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize product release, rejection, destruction, laboratory disposition, recall execution or jurisdiction-specific compliance decisions outside assigned authority.",
+  "description": "Integrates postharvest quality-system controls, lot genealogy, trace-back and trace-forward exercises, status and disposition boundaries, CAPA, change control and audit-ready handoff.",
+  "modules": [
+    "MOD-LH-PHQ-006-QA-TRACEABILITY-RECALL-DISPOSITION"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PHQ-006-FINAL",
+  "learningOutcomes": [
+    "Analyze how specifications, procedures, records, training, equipment and lot-status controls work together in a postharvest quality system.",
+    "Construct a complete lot genealogy through harvest, splits, merges, samples, packaging and status changes with durable data-integrity controls.",
+    "Evaluate a mock recall by tracing affected material backward and forward, reconciling quantities, contacts, timing and unresolved gaps.",
+    "Evaluate disposition recommendations, CAPA and controlled process changes while preserving evidence, authority and effectiveness verification.",
+    "Create an audit-ready postharvest QA handoff and metric set that preserves definitions, denominators, open risks and accountable follow-up."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-POSTHARVEST-QA-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PHQ-001",
+      "COURSE-LH-PHQ-003",
+      "COURSE-LH-PHQ-004",
+      "COURSE-LH-PHQ-005",
+      "COURSE-PRO-SOP-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PHQ-006-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

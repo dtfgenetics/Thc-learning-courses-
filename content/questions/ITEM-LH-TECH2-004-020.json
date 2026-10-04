@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A room total declines while one previously clean zone develops repeated positives. What should follow-up prioritize?",
   "choices": [
-    "Declare full control because the room total declined.",
-    "Remove the new-zone data as inconsistent.",
-    "Stop scouting until the next scheduled month.",
-    "Report overall decline and the new spatial expansion, with targeted follow-up of the newly affected zone."
+    "Declare overall control because the room total declined, and inspect the new zone only if the total rises again.",
+    "Treat the new zone as a probable outlier because room-level pressure is still lower than before.",
+    "Return to routine scouting because the room-level decline suggests the intervention is working despite localized positives.",
+    "Report both the overall decline and the new spatial expansion, and prioritize targeted follow-up in the newly affected zone."
   ],
   "correct": 3,
-  "rationale": "Report overall decline and the new spatial expansion, with targeted follow-up of the newly affected zone.",
+  "rationale": "A lower room total and a newly positive zone can both be true. The decline suggests one aspect of pressure improved, while the new spatial expansion indicates a different risk that could matter for containment or spread. The follow-up should preserve both signals and investigate the newly affected area rather than collapsing the outcome into a single room-level number.",
   "references": [
     "REF-IPM-001"
   ]

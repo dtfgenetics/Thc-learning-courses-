@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/practical-calibration-evidence.schema.json",
+  "title": "THC Academy Practical Assessor Calibration Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "assessmentId",
+    "assessmentVersion",
+    "status",
+    "sampleCount",
+    "assessorCount",
+    "pairCount",
+    "exactTotalScoreAgreement",
+    "meanAbsoluteTotalScoreDifference",
+    "criticalErrorAgreement",
+    "unresolvedCriticalErrorDisagreements",
+    "domains",
+    "analystId"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CAL-[A-Z0-9-]+$"
+    },
+    "assessmentId": {
+      "type": "string",
+      "pattern": "^(PRACTICAL|CAPSTONE)-[A-Z0-9-]+$"
+    },
+    "assessmentVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "complete",
+        "invalidated"
+      ]
+    },
+    "sampleCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "assessorCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pairCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "exactTotalScoreAgreement": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "meanAbsoluteTotalScoreDifference": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "criticalErrorAgreement": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "unresolvedCriticalErrorDisagreements": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "domainName",
+          "pairCount",
+          "exactAgreement",
+          "meanAbsoluteDifference"
+        ],
+        "properties": {
+          "domainName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pairCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "exactAgreement": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "meanAbsoluteDifference": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assessorIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "sampleIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "analystId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "completedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

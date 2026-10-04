@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-005-03",
+  "title": "Cultural, Mechanical & Environmental Controls",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-005-03"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "IPM begins with conditions that reduce pest/pathogen establishment and spread. Sanitation, exclusion, clean stock, crop spacing, environmental management, removal of infested material and movement control can reduce pressure before chemical intervention is considered.",
+    "vocabulary": [
+      {
+        "term": "Cultural control",
+        "definition": "A production practice that makes the crop system less favorable to pest or pathogen establishment, reproduction or spread."
+      },
+      {
+        "term": "Mechanical control",
+        "definition": "Physical removal, exclusion, trapping or barriers used to reduce pest/pathogen pressure."
+      },
+      {
+        "term": "Source reduction",
+        "definition": "Removal or control of infested/infected material, debris, weeds, standing water or other reservoirs that sustain a problem."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Prevention has compounding value",
+        "body": "Incoming-material inspection, sanitation, clean propagation material, weed/debris control and appropriate environmental management reduce the number of opportunities for pests and pathogens to establish.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Control the pathway that explains the pattern",
+        "body": "An edge-associated flying pest, a media-associated fungus gnat problem and a humidity-driven disease pattern call for different cultural or mechanical responses. Match the tactic to the biology and distribution.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Cleaning and disinfection are separate operations",
+        "body": "Physical removal of organic matter improves the effectiveness of later disinfection. Sanitizer choice and use remain label- and facility-controlled.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Repeated fungus-gnat pressure linked to chronically wet media requires correction of the moisture/source condition in addition to any direct pest intervention."
+    ],
+    "commonMistakes": [
+      "Using sanitation as a vague catch-all without identifying the pathway.",
+      "Applying environmental changes that create new crop stress.",
+      "Assuming surface disinfection works through heavy organic debris."
+    ],
+    "practicalApplication": "Take one pest or disease scenario and identify one exclusion, one sanitation/source-reduction, one environmental/cultural and one mechanical tactic. State what evidence would verify each tactic is working.",
+    "summary": "Cultural and mechanical controls work best when they target the actual biological pathway and are verified with the same disciplined monitoring used for diagnosis."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A single corner of one tray roots poorly while the rest of the batch performs normally. Which next check is strongest?",
+  "choices": [
+    "Declare the genotype defective",
+    "Check localized moisture, placement, airflow/light exposure and handling evidence before making a system-wide change",
+    "Rewrite the whole propagation SOP",
+    "Average the corner into the batch and ignore location"
+  ],
+  "correct": 1,
+  "rationale": "A spatially localized pattern should trigger localized evidence checks before broad causal claims.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

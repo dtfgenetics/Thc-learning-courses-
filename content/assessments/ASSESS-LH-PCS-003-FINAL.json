@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-PCS-003-FINAL",
+  "title": "Cloning, Rooting Environment & Acclimation — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-ENV-VPD-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-PCS-003-01",
+    "LO-LH-PCS-003-02",
+    "LO-LH-PCS-003-03",
+    "LO-LH-PCS-003-04",
+    "LO-LH-PCS-003-05"
+  ],
+  "items": [
+    "ITEM-LH-PCS-003-001",
+    "ITEM-LH-PCS-003-002",
+    "ITEM-LH-PCS-003-003",
+    "ITEM-LH-PCS-003-004",
+    "ITEM-LH-PCS-003-005",
+    "ITEM-LH-PCS-003-006",
+    "ITEM-LH-PCS-003-007",
+    "ITEM-LH-PCS-003-008",
+    "ITEM-LH-PCS-003-009",
+    "ITEM-LH-PCS-003-010",
+    "ITEM-LH-PCS-003-011",
+    "ITEM-LH-PCS-003-012",
+    "ITEM-LH-PCS-003-013",
+    "ITEM-LH-PCS-003-014",
+    "ITEM-LH-PCS-003-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-PROP-001",
+      "items": 9,
+      "cognitiveTarget": "Clonal batch control, rooting-stage reasoning and acclimation"
+    },
+    {
+      "competency": "COMP-ENV-VPD-001",
+      "items": 3,
+      "cognitiveTarget": "Rooting-environment and cutting water-balance interpretation"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Batch analysis, controlled change and traceable handoff"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 5,
+    "targetBankItemsPerCompetency": 25,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PCS-003",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

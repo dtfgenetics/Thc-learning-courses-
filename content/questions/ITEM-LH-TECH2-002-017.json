@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A verified reference shows the room sensor is offset only during lights-on periods. What should the technician investigate before assuming permanent calibration drift?",
   "choices": [
-    "Radiant exposure, shielding, placement and other condition-dependent measurement effects.",
-    "Replace all room sensors immediately.",
-    "Ignore the lights-off data.",
-    "Change the HVAC target to match the offset."
+    "Investigate radiant exposure, shielding, placement, airflow, and other condition-dependent measurement effects before treating the pattern as permanent calibration drift.",
+    "Replace the sensor because an offset that appears only during lights-on still demonstrates unstable calibration.",
+    "Use the lights-off readings as the trusted baseline and correct the lights-on data mathematically until the next calibration service.",
+    "Shift the HVAC target during lights-on so the suspect sensor aligns with the verified reference under operating conditions."
   ],
   "correct": 0,
-  "rationale": "Radiant exposure, shielding, placement and other condition-dependent measurement effects. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "An offset that appears only during lights-on suggests the measurement error may depend on operating conditions rather than a constant calibration bias. Radiant heating, shielding, sensor placement, airflow, and exposure to nearby surfaces can change the sensor response when lights are on. A permanent calibration correction would normally be expected across conditions. The next step is therefore to test the environmental and installation factors that change with the lighting state before replacing the sensor or altering control targets.",
   "references": [
     "REF-ENV-TEMP-2025-001",
     "REF-VPD-002"

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-006-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-006-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A zone average is acceptable, but several far-end emitters are at half the output of near-source emitters. What is the strongest conclusion?",
+  "choices": [
+    "The zone is fully uniform.",
+    "Only the average should be reported.",
+    "The spatial distribution problem matters despite the acceptable average.",
+    "The low emitters can be ignored."
+  ],
+  "correct": 2,
+  "rationale": "Averages can hide severe localized under-delivery.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}

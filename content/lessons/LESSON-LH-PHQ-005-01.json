@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-005-01",
+  "title": "Lot Definition & Representative Sampling",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-005-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A laboratory result describes the submitted sample. Lot-level interpretation begins with a defensible lot definition and a sampling design that addresses meaningful heterogeneity.",
+    "vocabulary": [
+      {
+        "term": "Target population",
+        "definition": "Material about which the sampling decision seeks to draw a conclusion."
+      },
+      {
+        "term": "Increment",
+        "definition": "Individual portion collected from a defined location or unit."
+      },
+      {
+        "term": "Composite sample",
+        "definition": "Combined increments prepared under a stated sampling design."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Define the lot before collection",
+        "body": "Harvest identity, processing history, location, status and boundaries should be known before a sample is treated as representative.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Address expected heterogeneity",
+        "body": "Container, rack, flower size, process zone and other meaningful sources of variation should inform selection rather than convenience.",
+        "references": [
+          "REF-NIST-CANNAQAP-2024-001"
+        ]
+      },
+      {
+        "title": "Preserve the sampling procedure",
+        "body": "Who collected, where, when, how much, with what tools and under which plan are part of the result context.",
+        "references": [
+          "REF-ISO-17025-2017-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A top-of-bin grab sample is precise for that material but may not represent denser or differently exposed material elsewhere in the lot."
+    ],
+    "commonMistakes": [
+      "Letting easy access define the sample.",
+      "Sampling before lot boundaries are resolved.",
+      "Calling a composite representative without documenting increments."
+    ],
+    "practicalApplication": "Write a sampling map with lot definition, increments, locations, tools, sample amount, collector and rationale.",
+    "summary": "Representative interpretation begins with a defined lot and a documented plan for its meaningful variation."
+  }
+}

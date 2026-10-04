@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "What measurement choice best addresses uncertainty about product water availability for microbial/chemical stability?",
   "choices": [
-    "Room relative humidity alone.",
-    "A calendar day count.",
-    "Representative product water-activity measurements using the controlled method.",
-    "One photograph of the room controller."
+    "Use room relative humidity because it provides continuous evidence of the environment surrounding the product.",
+    "Use drying-day count because stability risk decreases predictably with time under controlled room conditions.",
+    "Use representative product water-activity measurements collected with the controlled method because the question concerns water availability within the product.",
+    "Use one room-controller photograph to document the environmental state at the time of the decision."
   ],
   "correct": 2,
-  "rationale": "Representative product water-activity measurements using the controlled method.",
+  "rationale": "If the uncertainty concerns water availability relevant to microbial or chemical stability, the strongest evidence is a controlled measurement of water activity on representative product samples. Room RH and elapsed time can support the process history, but they do not directly measure the product property being evaluated. Representative sampling also helps detect spatial variability that one convenient sample could miss.",
   "references": [
     "REF-POSTHARVEST-STABILITY-2026-001"
   ]

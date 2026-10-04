@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Root-zone EC is high in only the driest containers. Which conclusion is strongest?",
   "choices": [
-    "The nutrient recipe is proven excessive for every plant.",
-    "High EC identifies the accumulated ion.",
-    "The pattern supports investigating water volume/dryback and accumulation before making a room-wide nutrient change.",
-    "The dry containers prove a pathogen is present."
+    "Reduce the room-wide nutrient recipe because high EC in the driest containers shows the crop is receiving more salts than it can use.",
+    "Use the high EC values to identify which nutrient ion is accumulating and adjust that element first.",
+    "Investigate water volume, dryback, drainage, and localized accumulation in the driest containers before making a room-wide nutrient change.",
+    "Treat the pattern as evidence of root disease because healthy roots should prevent EC from rising as containers dry."
   ],
   "correct": 2,
-  "rationale": "The pattern supports investigating water volume/dryback and accumulation before making a room-wide nutrient change.",
+  "rationale": "When the highest EC occurs specifically in the driest containers, the spatial pattern points toward concentration effects associated with water loss, delivery, drainage, or localized accumulation. That does not prove that the room-wide nutrient recipe is excessive or identify a specific ion. The strongest response is to investigate why those containers are drier and how water balance is affecting concentration before changing the entire recipe.",
   "references": [
     "REF-ROOTZONE-NUTRIENT-002",
     "REF-IRRIGATION-001"

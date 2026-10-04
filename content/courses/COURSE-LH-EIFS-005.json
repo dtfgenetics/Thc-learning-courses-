@@ -1,0 +1,59 @@
+{
+  "id": "COURSE-LH-EIFS-005",
+  "title": "Water Quality, Alkalinity, pH, EC & Solution Preparation",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Environmental, Irrigation & Fertigation Systems Specialist / advanced specialization development",
+  "intendedAudience": [
+    "EIFS specialist learners",
+    "Cultivation personnel responsible for source-water characterization, solution preparation, meter verification and controlled batch acceptance"
+  ],
+  "prerequisites": [
+    "Sensors, Controllers, Alarms, Calibration & Data Quality or equivalent measurement foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses controlled university-extension water chemistry, peer-reviewed cannabis source-water evidence, data-integrity and safety references. pH, alkalinity and EC are taught as distinct measurements; source-specific chemistry and research examples are not universal cannabis specifications.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize acid/base handling outside procedure, unapproved formulation changes, chemical mixing beyond assigned work, or batch release outside controlled acceptance/disposition authority.",
+  "description": "Develops specialist source-water characterization and solution-preparation reasoning across pH, alkalinity, EC, major-ion context, meter quality, recipe execution, batch verification and evidence-based hold/escalation.",
+  "modules": [
+    "MOD-LH-EIFS-005-WATER-QUALITY"
+  ],
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-EIFS-005-FINAL",
+  "learningOutcomes": [
+    "Differentiate irrigation-water pH, alkalinity, EC and ion composition and explain why no single measurement fully characterizes source-water behavior.",
+    "Evaluate source-water variability and risk using sampling history, treatment/source changes, major-ion or contaminant context and appropriate retesting triggers.",
+    "Verify pH/EC measurement systems using controlled standards, probe condition, temperature/sample handling and traceable calibration/verification records.",
+    "Execute and verify an approved solution-preparation workflow using material identity, recipe version, final volume, ordered additions, mixing and measured acceptance criteria without independently redesigning the formula.",
+    "Produce a reconstructable batch/source-water record and apply controlled hold, correction, escalation or disposition logic when verified results fall outside acceptance."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-EIFS-004",
+      "COURSE-LH-TECH2-003"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-EIFS-005-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

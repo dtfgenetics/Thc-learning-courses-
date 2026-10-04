@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A planned drying value differs from the actual recorded value. How should the record be handled?",
   "choices": [
-    "Replace the planned value with the actual value.",
-    "Delete the actual value if it is inconvenient.",
-    "Preserve both planned and actual values and document the deviation rather than overwriting history.",
-    "Average the two and keep only the average."
+    "Replace the planned value with the actual recorded value so the process record reflects what ultimately occurred.",
+    "Retain only the planned value and document the difference in a separate deviation note to keep the batch record clean.",
+    "Preserve both the planned and actual values and document the deviation, timing, and disposition rather than overwriting either history.",
+    "Average the planned and actual values if the difference is small enough to remain within process tolerance."
   ],
   "correct": 2,
-  "rationale": "Preserve both planned and actual values and document the deviation rather than overwriting history.",
+  "rationale": "Planned and actual values answer different questions: what should have happened and what did happen. Both are necessary to reconstruct the deviation and evaluate its significance. Overwriting, averaging, or separating the actual value from the primary record can obscure execution history. The controlled record should preserve both values and document how the difference was addressed.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

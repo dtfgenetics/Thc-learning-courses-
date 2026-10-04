@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician recognizes a likely pest, but the work order does not authorize treatment selection or pesticide application. What is the correct boundary?",
   "choices": [
-    "Document and escalate the evidence and follow containment procedure; do not independently select or apply treatment",
-    "Choose a pesticide from memory",
-    "Mix a reduced rate as a test",
-    "Apply only to one plant without a record"
+    "Document the pest evidence, preserve required containment, and escalate diagnosis/treatment decisions rather than independently selecting or applying a pesticide.",
+    "Choose a familiar pesticide from memory if the symptom pattern is strong enough.",
+    "Mix a reduced test rate on one plant so the response can help confirm the diagnosis.",
+    "Apply only to the affected plant without creating a treatment record because the exposure is limited."
   ],
   "correct": 0,
-  "rationale": "Document and escalate the evidence and follow containment procedure; do not independently select or apply treatment. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "Recognizing a likely pest does not create pesticide-selection or application authority. Technician I should preserve the observed evidence, follow containment and scouting procedures, and escalate the treatment decision to the authorized role. Test applications or memory-based product choice can violate label, licensing, facility, and role boundaries.",
   "references": [
     "REF-IPM-001"
   ],

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-LH-PCS-005-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two genotypes rank media treatments differently. What does that support?",
+  "choices": [
+    "One universal medium",
+    "Eliminating replication",
+    "A genotype-by-treatment interaction that requires genotype-aware decisions",
+    "Combining all records under one line"
+  ],
+  "correct": 2,
+  "rationale": "Different relative responses support genotype-aware interpretation.",
+  "references": [
+    "REF-PROP-TC-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

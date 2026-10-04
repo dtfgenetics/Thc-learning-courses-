@@ -1,0 +1,37 @@
+{
+  "id": "GROW-160",
+  "title": "Forms, logs, checklists, and training records",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-160.json",
+  "scientificSop": "docs/sop-packages/GROW-160/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-160/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-160/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-160-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-PRO-SOP-001",
+    "MOD-PRO-QA-001"
+  ],
+  "reusedLessons": [
+    "LESSON-PRO-SOP-DESIGN-001",
+    "LESSON-PRO-TRAIN-002",
+    "LESSON-PRO-CHANGE-003",
+    "LESSON-RESPONSIBLE-RECORDS-003"
+  ],
+  "controlledReferences": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001",
+    "REF-EPA-SOP-QAG6"
+  ],
+  "releaseGates": [
+    "records/data-integrity review",
+    "training-governance review",
+    "privacy/retention applicability review",
+    "electronic-record implementation review where used",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

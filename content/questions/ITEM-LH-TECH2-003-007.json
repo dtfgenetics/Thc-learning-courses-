@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A suspect meter reading is later shown to be biased. What should happen to the original record?",
   "choices": [
-    "Replace it with the corrected value only.",
-    "Delete the entire batch record.",
-    "Preserve it with the verification evidence and documented disposition rather than erasing history.",
-    "Backdate a new value to the original timestamp."
+    "Replace the original value with the corrected value so downstream records contain only the measurement now believed to be accurate.",
+    "Invalidate the whole batch record because a biased meter means every associated observation is unreliable.",
+    "Preserve the original reading, link the verification evidence and documented disposition, and retain the corrected interpretation without erasing history.",
+    "Enter the corrected value with the original timestamp so reports remain internally consistent and trend analysis is easier."
   ],
   "correct": 2,
-  "rationale": "Preserve it with the verification evidence and documented disposition rather than erasing history.",
+  "rationale": "Data integrity requires preserving what was originally observed while documenting why that value is later considered unreliable and what evidence supports the correction or disposition. Replacing, deleting, or backdating hides the sequence of events and makes reconstruction impossible. The record should show the original evidence, the verification process, and the resulting interpretation.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

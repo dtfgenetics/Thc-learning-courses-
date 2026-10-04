@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A tool was used in a suspect zone and is needed in a clean zone. What governs the next action?",
   "choices": [
-    "Visual cleanliness alone.",
-    "Whether the tool is expensive.",
-    "The technician’s confidence that the problem is abiotic.",
-    "The facility sanitation/biosecurity procedure for cleaning, disinfection, segregation or replacement before clean-zone use."
+    "Use the tool in the clean zone if it appears visually clean and no residue or insects are visible.",
+    "Use a different tool only if the suspect-zone tool is expensive or difficult to disinfect.",
+    "Use the tool if the technician believes the problem is abiotic, because biological transfer risk would then be low.",
+    "Follow the facility sanitation/biosecurity procedure for cleaning, disinfection, segregation, or replacement before any clean-zone use."
   ],
   "correct": 3,
-  "rationale": "The facility sanitation/biosecurity procedure for cleaning, disinfection, segregation or replacement before clean-zone use.",
+  "rationale": "A tool used in a suspect zone can carry contaminants that are not visible and the diagnosis may still be uncertain. The next action should therefore be governed by the facility's sanitation and biosecurity procedure, which defines how tools are cleaned, disinfected, segregated, or replaced before entering a clean zone. Visual inspection or personal confidence in an abiotic diagnosis cannot substitute for the controlled contamination-prevention process.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-003-03",
+  "title": "Airflow Distribution, Mixing & Crop-Zone Microclimates",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-003-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001",
+    "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Airflow quality is a distribution problem, not a fan-speed number. Strong local jets can coexist with stagnant interior canopy zones, so airflow should be interpreted through crop-zone measurements and spatial patterns.",
+    "vocabulary": [
+      {
+        "term": "Air mixing",
+        "definition": "Movement that reduces unwanted spatial gradients in temperature, humidity and gas concentration."
+      },
+      {
+        "term": "Local jet",
+        "definition": "A focused high-velocity air path that can over-dry nearby tissue without improving whole-canopy mixing."
+      },
+      {
+        "term": "Stagnant zone",
+        "definition": "A crop area with weak air exchange relative to surrounding positions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "High velocity is not the same as good distribution",
+        "body": "Leaves nearest a fan can experience strong drying while dense interior canopy remains humid. Evaluate multiple positions rather than treating fan speed as the control variable.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Map gradients against crop response",
+        "body": "Compare temperature/RH and crop findings across supply paths, returns, walls, aisles and canopy interiors. Spatial agreement can reveal whether airflow distribution is contributing to the problem.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Do not redesign from one snapshot",
+        "body": "Repeat measurements across operating transitions and crop states. Persistent patterns are more informative than one short reading.",
+        "references": [
+          "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Fast drying next to a circulation fan plus high humidity inside the canopy suggests an uneven distribution problem rather than insufficient fan speed everywhere."
+    ],
+    "commonMistakes": [
+      "Adding fan speed to already stressed leaves.",
+      "Using one wall sensor as proof of canopy mixing.",
+      "Ignoring crop architecture changes."
+    ],
+    "practicalApplication": "Create an airflow/microclimate map using crop-zone temperature/RH points, visible plant response and fan/supply/return locations.",
+    "summary": "Airflow should be judged by how evenly the crop environment responds, not by equipment speed alone."
+  }
+}

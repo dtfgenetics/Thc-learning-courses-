@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-003-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should curing intake include drying history?",
+  "choices": [
+    "Drying history is irrelevant after sealing.",
+    "Starting condition and prior exposure are necessary to interpret later moisture and quality changes.",
+    "Only package color matters.",
+    "History is needed only for rejected lots."
+  ],
+  "correct": 1,
+  "rationale": "Curing outcomes depend on the incoming product and process history.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

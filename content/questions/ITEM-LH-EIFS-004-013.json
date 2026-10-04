@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-004-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-004-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which maintenance escalation is most useful?",
+  "choices": [
+    "HVAC seems weird.",
+    "Unit DH-2 received three commands from 22:10–23:30, showed no expected status response, Room 4 RH reached 71%, and sensor agreement was verified.",
+    "Fix the dehu.",
+    "Plants are unhappy."
+  ],
+  "correct": 1,
+  "rationale": "A strong handoff includes system ID, timing, command/response evidence, affected area and checks already completed.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

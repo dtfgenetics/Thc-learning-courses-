@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/secure-form-equivalence-evidence.schema.json",
+  "title": "THC Academy Secure Operational Form Equivalence Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "courseId",
+    "courseVersion",
+    "assessmentId",
+    "assessmentVersion",
+    "status",
+    "credentialProgramId",
+    "blueprintVersion",
+    "formCount",
+    "forms",
+    "equivalenceReview",
+    "securityReview",
+    "authorityId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^FORMEQ-[A-Z0-9-]+$"
+    },
+    "courseId": {
+      "type": "string",
+      "pattern": "^COURSE-LH-TECH[12]-[0-9]{3}$"
+    },
+    "courseVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assessmentId": {
+      "type": "string",
+      "pattern": "^ASSESS-LH-TECH[12]-[0-9]{3}-FINAL$"
+    },
+    "assessmentVersion": {
+      "type": [
+        "string",
+        "integer"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "evidence-complete",
+        "approved",
+        "revision-required",
+        "invalidated"
+      ]
+    },
+    "credentialProgramId": {
+      "type": "string",
+      "pattern": "^CREDPROG-[A-Z0-9-]+$"
+    },
+    "blueprintVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "formCount": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "forms": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "formId",
+          "formRevision",
+          "itemCount",
+          "manifestFingerprint",
+          "approvedOperationalItemsOnly",
+          "publicItemsExcluded"
+        ],
+        "properties": {
+          "formId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "formRevision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "itemCount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "manifestFingerprint": {
+            "type": "string",
+            "minLength": 8
+          },
+          "approvedOperationalItemsOnly": {
+            "type": "boolean"
+          },
+          "publicItemsExcluded": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "equivalenceReview": {
+      "type": "object",
+      "required": [
+        "blueprintCoverageEquivalent",
+        "cognitiveDemandEquivalent",
+        "criticalContentRepresentationEquivalent",
+        "scoredOpportunityEquivalent",
+        "retestDuplicationReviewed",
+        "quantitativeEvidenceStatus"
+      ],
+      "properties": {
+        "blueprintCoverageEquivalent": {
+          "type": "boolean"
+        },
+        "cognitiveDemandEquivalent": {
+          "type": "boolean"
+        },
+        "criticalContentRepresentationEquivalent": {
+          "type": "boolean"
+        },
+        "scoredOpportunityEquivalent": {
+          "type": "boolean"
+        },
+        "retestDuplicationReviewed": {
+          "type": "boolean"
+        },
+        "maximumObservedItemOverlapProportion": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "quantitativeEvidenceStatus": {
+          "enum": [
+            "not-yet-available",
+            "preliminary",
+            "complete"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "securityReview": {
+      "type": "object",
+      "required": [
+        "privateStoreVerified",
+        "answerMaterialExcludedFromDelivery",
+        "exposureTrackingEnabled",
+        "quarantineWorkflowEnabled"
+      ],
+      "properties": {
+        "privateStoreVerified": {
+          "type": "boolean"
+        },
+        "answerMaterialExcludedFromDelivery": {
+          "type": "boolean"
+        },
+        "exposureTrackingEnabled": {
+          "type": "boolean"
+        },
+        "quarantineWorkflowEnabled": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorityId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

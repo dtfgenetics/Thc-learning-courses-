@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why is scoping the entire facility a critical error when genealogy supports only a narrow affected set?",
   "choices": [
-    "Broader scope is always scientifically superior.",
-    "Genealogy is irrelevant after harvest.",
-    "Facility-wide scope eliminates the need for records.",
-    "It ignores traceability evidence and misrepresents the actual evidence-supported affected scope."
+    "A facility-wide scope is safer because broad inclusion prevents any potentially exposed lot from being missed.",
+    "Genealogy becomes less useful after harvest because environmental excursions can affect product outside documented movement pathways.",
+    "A broad scope simplifies the investigation by eliminating the need to evaluate individual movement histories.",
+    "A facility-wide scope misrepresents the evidence when traceability supports a narrower affected set and can obscure the actual exposure pathway."
   ],
   "correct": 3,
-  "rationale": "It ignores traceability evidence and misrepresents the actual evidence-supported affected scope.",
+  "rationale": "Scope should follow evidence. When genealogy and timing identify a limited set of exposed lots, expanding automatically to the entire facility can create unnecessary holds, consume review resources, and hide the actual exposure pattern. Scope should expand only when additional contact, movement, shared equipment, or process evidence supports doing so.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]

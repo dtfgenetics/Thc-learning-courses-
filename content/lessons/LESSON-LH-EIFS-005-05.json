@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-005-05",
+  "title": "Out-of-Acceptance Results, Holds & Batch/Water Records",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-005-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-WATER-ALKALINITY-EXT-001",
+    "REF-ASTM-D8403-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "When verified water or batch measurements fall outside controlled acceptance, the strongest response is a traceable hold, authorized correction or escalation—not undocumented adjustment or changing the criteria.",
+    "vocabulary": [
+      {
+        "term": "Hold",
+        "definition": "Controlled status preventing use or release while identity, measurement or disposition remains unresolved."
+      },
+      {
+        "term": "Disposition",
+        "definition": "Authorized decision about use, correction, rework, rejection or other controlled outcome."
+      },
+      {
+        "term": "Out-of-acceptance",
+        "definition": "A verified condition outside the defined acceptance criterion for the intended process or batch."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Verify before disposition",
+        "body": "Confirm sample identity and meter fitness so an apparent failure is not caused by the measurement system.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "Once verified, treat the result as real",
+        "body": "Do not repeat tests until one happens to pass or alter the acceptance limit for convenience. Follow the controlled hold/correction/disposition process.",
+        "references": [
+          "REF-ASTM-D8403-001"
+        ]
+      },
+      {
+        "title": "Preserve the batch history",
+        "body": "Record source water, recipe version, material lots, additions, final volume, measurements, corrections, hold status, authorization and final disposition.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A verified batch remains outside approved EC acceptance after recipe reconciliation; the batch is held and escalated rather than adjusted repeatedly without traceability."
+    ],
+    "commonMistakes": [
+      "Shopping for an in-range retest.",
+      "Changing criteria after seeing the result.",
+      "Releasing a batch because the recipe was followed even though verified acceptance failed."
+    ],
+    "practicalApplication": "Complete a mock out-of-acceptance investigation and disposition record.",
+    "summary": "Verified failures require controlled disposition and a reconstructable evidence trail."
+  }
+}

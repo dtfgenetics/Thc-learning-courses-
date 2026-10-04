@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-004-02",
+  "title": "Verification, Calibration, Drift & Reference Quality",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-004-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-ENV-TEMP-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Verification asks whether an instrument is fit for a defined decision; calibration establishes measurement relationship to a suitable reference under an authorized method. The reference itself must be suitable and verified.",
+    "vocabulary": [
+      {
+        "term": "Verification",
+        "definition": "A documented check that a device or measurement meets defined requirements for its intended use."
+      },
+      {
+        "term": "Calibration",
+        "definition": "A controlled comparison to a suitable reference used to establish measurement relationship and, where authorized, adjustment."
+      },
+      {
+        "term": "Drift",
+        "definition": "Change in instrument response over time that can bias measurements."
+      }
+    ],
+    "sections": [
+      {
+        "title": "A second device is not automatically a reference",
+        "body": "Comparison instruments need their own suitability and verification status. An unverified handheld device cannot justify recalibration of a critical sensor.",
+        "references": [
+          "REF-ASTM-D8403-001"
+        ]
+      },
+      {
+        "title": "Stable offset and intermittent faults are different",
+        "body": "A consistent bias across checks suggests a different problem than step changes or state-dependent errors. Time-series behavior should guide the next verification.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Preserve the original data",
+        "body": "Suspect measurements should be flagged and investigated, not silently rewritten to match an expected value.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A sensor passes one spot check but later shows impossible step changes; the spot check does not erase the intermittent data-quality concern."
+    ],
+    "commonMistakes": [
+      "Using any convenient meter as a reference.",
+      "Treating verification and protected calibration as the same authority.",
+      "Deleting bad-looking historical values."
+    ],
+    "practicalApplication": "Review a mock calibration history and classify each instrument as fit, limited, overdue or requiring qualified service.",
+    "summary": "Calibration quality depends on reference quality, method control and traceable handling of drift and suspect data."
+  }
+}

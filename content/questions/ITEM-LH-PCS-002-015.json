@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A donor is retired after repeated health concerns and declining propagation performance. What should the record preserve?",
+  "choices": [
+    "Only that the donor was removed.",
+    "The evidence, rationale, decision authority, date, disposition and downstream batches potentially affected.",
+    "Only the cultivar name.",
+    "Nothing once the donor leaves the room."
+  ],
+  "correct": 1,
+  "rationale": "Disposition decisions need reconstructable evidence and downstream traceability.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}

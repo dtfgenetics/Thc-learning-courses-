@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Repeated alarms clear only after repeated manual resets. What is the strongest response?",
   "choices": [
-    "Keep resetting indefinitely if production resumes.",
-    "Change alarm limits so the alerts stop.",
-    "Delete prior alarms once the equipment restarts.",
-    "Document the recurring fault and escalate under the equipment procedure rather than using resets to mask the condition."
+    "Continue using manual resets as a temporary operating method while production conditions remain within acceptable limits.",
+    "Raise or widen the alarm threshold so repeated nuisance alarms do not interrupt operations while the underlying issue is investigated.",
+    "Clear prior alarm history after each successful reset so only unresolved equipment events remain visible to the next shift.",
+    "Document the recurring fault pattern and escalate it through the controlled equipment/deviation process rather than using repeated resets to conceal or normalize the condition."
   ],
   "correct": 3,
-  "rationale": "Document the recurring fault and escalate under the equipment procedure rather than using resets to mask the condition. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "Repeated resets that temporarily restore operation can mask a persistent fault without resolving it. The recurring pattern should be preserved, documented, and escalated so maintenance or authorized technical personnel can determine why the alarm keeps returning. Changing alarm limits, deleting history, or normalizing resets reduces diagnostic visibility and weakens the record of equipment performance. Temporary continued operation may sometimes be authorized, but that decision requires controlled evaluation rather than informal repetition.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-NIOSH-CANNABIS-HAZARDS-2024"

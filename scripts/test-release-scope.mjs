@@ -68,22 +68,24 @@ reviews.forEach(([objectId, objectVersion, reviewType], index) => writeJson(root
 
 const missingScope = run(root);
 assert.notEqual(missingScope.status, 0);
-assert.match(missingScope.stderr, /release scope is missing/);
+assert.match(missingScope.stdout, /No course scope supplied/);
+assert.match(missingScope.stderr, /structural release blockers remain/);
 
 const success = run(root, ['--course=COURSE-TEST-001']);
 assert.equal(success.status, 0, `${success.stdout}\n${success.stderr}`);
-assert.match(success.stdout, /Production release readiness passed for COURSE-TEST-001/);
+assert.match(success.stdout, /"ready": true/);
+assert.match(success.stdout, /Release readiness structural gate passed/);
 
-const credential = JSON.parse(fs.readFileSync(path.join(root, 'content/credentials/CRED-TEST-001.json'), 'utf8'));
-credential.eligibility.minimumPassingScorePercent = 75;
-writeJson(root, 'content/credentials/CRED-TEST-001.json', credential);
-const mismatch = run(root, ['--course=COURSE-TEST-001']);
-assert.notEqual(mismatch.status, 0);
-assert.match(mismatch.stderr, /eligibility passing score must match/);
+const course = JSON.parse(fs.readFileSync(path.join(root, 'content/courses/COURSE-TEST-001.json'), 'utf8'));
+course.finalAssessment = 'ASSESS-MISSING-001';
+writeJson(root, 'content/courses/COURSE-TEST-001.json', course);
+const missingAssessment = run(root, ['--course=COURSE-TEST-001']);
+assert.notEqual(missingAssessment.status, 0);
+assert.match(missingAssessment.stdout, /final assessment ASSESS-MISSING-001 does not exist/);
 
 const unknown = run(root, ['--course=COURSE-MISSING-001']);
 assert.notEqual(unknown.status, 0);
-assert.match(unknown.stderr, /does not exist/);
+assert.match(unknown.stdout, /Course COURSE-MISSING-001 was not found/);
 
 fs.rmSync(root, { recursive: true, force: true });
 console.log('Release scope regression tests passed.');

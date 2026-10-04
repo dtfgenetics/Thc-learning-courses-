@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-006-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-006-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What makes a record correction data-integrity compliant?",
+  "choices": [
+    "Overwrite the original silently.",
+    "Use correction fluid on every record.",
+    "The original remains visible with attributable date, reason and authorized correction.",
+    "Change the date to match memory."
+  ],
+  "correct": 2,
+  "rationale": "Controlled corrections preserve history and accountability.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

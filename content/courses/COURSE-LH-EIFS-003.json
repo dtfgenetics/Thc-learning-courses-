@@ -1,0 +1,61 @@
+{
+  "id": "COURSE-LH-EIFS-003",
+  "title": "HVAC, Dehumidification, Airflow, CO2 & Dew-Point Concepts",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Environmental, Irrigation & Fertigation Systems Specialist / advanced specialization development",
+  "intendedAudience": [
+    "EIFS specialist learners",
+    "Cultivation personnel responsible for environmental trend review, airflow verification, moisture-load interpretation and qualified-equipment handoff"
+  ],
+  "prerequisites": [
+    "Plant-Environment Measurement & Crop Response and Lighting, PPFD, DLI, Photoperiod & Canopy Uniformity or equivalent foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course claims use controlled cannabis temperature/humidity evidence, environmental-load curriculum and worker-safety sources. Research treatments are not universal room targets; HVAC sizing, refrigeration work, gas-system work and electrical service remain qualified-person functions.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize HVAC/refrigeration/electrical repair, compressed-gas service or unsafe entry into suspected CO2 accumulation.",
+  "description": "Develops specialist interpretation of sensible/latent loads, dehumidification, airflow distribution, dew point, CO2 safety boundaries, system sequencing and trend-based environmental fault reasoning.",
+  "modules": [
+    "MOD-LH-EIFS-003-HVAC-AIRFLOW"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-ENV-VPD-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-EIFS-003-FINAL",
+  "learningOutcomes": [
+    "Differentiate sensible heat load from latent moisture load and use trend data to identify when temperature control and moisture removal are behaving differently.",
+    "Interpret dew point, cooling, dehumidification and lights-off transitions to identify condensation and high-humidity risk without reducing the problem to RH alone.",
+    "Evaluate airflow distribution using spatial crop-zone evidence rather than fan speed or room averages alone.",
+    "Explain CO2 monitoring and compressed-gas safety boundaries, including oxygen-displacement/asphyxiation risk and emergency escalation, without treating worker exposure limits as enrichment targets.",
+    "Produce a reconstructable environmental-system handoff that links symptoms, sensor trends, equipment state, likely failure class, evidence limits and qualified escalation."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-EIFS-001",
+      "COURSE-LH-EIFS-002",
+      "COURSE-LH-TECH2-002"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-EIFS-003-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

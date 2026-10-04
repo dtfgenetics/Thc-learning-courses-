@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-PCS-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One genotype roots consistently later than another under the same recorded process. What should a specialist do first?",
+  "choices": [
+    "Assume the environment is wrong for both",
+    "Preserve genotype-stratified timing and evaluate whether the difference is repeatable before changing the whole protocol",
+    "Force both lots onto one calendar",
+    "Ignore genotype identity"
+  ],
+  "correct": 1,
+  "rationale": "Cannabis clonal-rooting response can vary by genotype, so the pattern should be preserved and tested.",
+  "references": [
+    "REF-CANNABIS-CLONAL-ROOTING-2019"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

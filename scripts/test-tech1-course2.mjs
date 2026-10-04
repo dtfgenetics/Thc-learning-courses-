@@ -9,7 +9,9 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const readText = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 const exists = (p) => fs.existsSync(path.join(root, p));
 const course = read('content/courses/COURSE-LH-TECH1-002.json');
-assert.equal(course.status, 'draft');
+assert.equal(course.status,'published');
+assert.equal(course.extensions?.academicPublicationStatus,'owner-approved-public-academic-release');
+assert.equal(course.extensions?.professionalCredentialUseAuthorized,false);
 assert.equal(course.finalAssessment, 'ASSESS-LH-TECH1-002-FINAL');
 assert.ok(course.modules.includes('MOD-LH-TECH1-002-OBSERVATION'));
 assert.equal(course.extensions?.dedicatedCourseAssessmentRequired, false);
@@ -67,13 +69,28 @@ const formative = read('content/assessments/ASSESS-LH-TECH1-002-M01.json');
 const final = read('content/assessments/ASSESS-LH-TECH1-002-FINAL.json');
 assert.equal(formative.purpose, 'formative');
 assert.equal(formative.items.length, 12);
-assert.equal(final.status, 'draft');
+assert.equal(final.status,'published');
 assert.equal(final.purpose, 'summative');
 assert.equal(final.items.length, 20);
 assert.equal(new Set(final.items).size, 20);
 assert.equal(new Set([...formative.items, ...final.items]).size, 32, 'formative and summative Course 002 items must be distinct');
 assert.deepEqual(new Set(final.objectives), new Set(controlledObjectives));
 assert.deepEqual(new Set(formative.objectives), new Set(controlledObjectives));
+assert.equal(final.extensions?.courseDerivedAssessment, true, 'Course 2 final must remain explicitly course-derived');
+assert.equal(final.extensions?.encyclopediaSubstitutionAllowed, false, 'Encyclopedia material cannot substitute for Course 2 instruction');
+assert.equal(final.extensions?.untaughtMaterialAllowed, false, 'Course 2 final cannot assess untaught material');
+const taughtMaterialMap = final.extensions?.taughtMaterialMap ?? {};
+for (const objectiveId of controlledObjectives) {
+  assert.ok(Array.isArray(taughtMaterialMap[objectiveId]) && taughtMaterialMap[objectiveId].length > 0, `${objectiveId}: final must map to dedicated taught material`);
+  for (const lessonId of taughtMaterialMap[objectiveId]) {
+    assert.match(lessonId, /^LESSON-LH-TECH1-002-/, `${objectiveId}: test-to-teaching map must stay inside Course 2`);
+    assert.ok(module.lessons.includes(lessonId), `${objectiveId}: mapped teaching lesson must be in the dedicated Course 2 module`);
+    const lesson = read(`content/lessons/${lessonId}.json`);
+    assert.ok((lesson.learningObjectives ?? []).includes(objectiveId), `${objectiveId}: mapped lesson ${lessonId} must actually teach the objective`);
+  }
+}
+assert.ok(exists('docs/learning-hub/tech1/course-002/TEST-TO-TEACHING-MAP.md'), 'Course 2 must retain a human-readable test-to-teaching audit');
+
 
 const summativeObjectiveCounts = new Map(controlledObjectives.map((id) => [id, 0]));
 const formativeObjectiveCounts = new Map(controlledObjectives.map((id) => [id, 0]));
@@ -117,16 +134,19 @@ await import('./test-course2-practical-crosswalk.mjs');
 
 const completionStatus = read('registry/course2-completion-status.json');
 assert.equal(completionStatus.courseId, course.id);
-assert.equal(completionStatus.academicPublication, 'draft');
-assert.equal(completionStatus.machineResolvableWorkComplete, false);
+assert.equal(completionStatus.academicPublication, 'published');
+assert.equal(completionStatus.machineResolvableWorkComplete, true, 'Course 2 machine-resolvable work must be complete after owner-approved raster cutover and verified deployed surface QA');
+assert.equal(completionStatus.certificationEvidenceValidated, false, 'Course 2 academic machine completion must not imply validated professional credential evidence');
+assert.equal(completionStatus.nextMachineActions.length, 0, 'Course 2 cannot retain machine actions after verified raster cutover');
 assert.equal(completionStatus.goldStandardPackageComplete, false);
 assert.equal(completionStatus.certificationEvidenceValidated, false);
-assert.ok((completionStatus.nextMachineActions ?? []).length > 0, 'Course 2 must remain fail-closed while machine work remains');
+assert.equal(completionStatus.deployedMachineSurfaceQa?.state, 'verified', 'Course 2 machine completion requires verified deployed learner-surface QA');
+assert.equal(completionStatus.ownerReleaseApproval?.state, 'approved', 'Course 2 owner-approved academic raster release must be recorded');
 assert.ok((completionStatus.nextHumanActions ?? []).length > 0, 'Course 2 must retain real human validation gates');
 
 const visualRegistry = read('visuals/COURSE2-ASSET-REGISTRY.json');
 const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.equal(producedAssets.length, 10, 'Course 2 should expose the current 10 governed learner assets');
+assert.ok(producedAssets.length >= 10, 'Course 2 should expose at least the ten governed Course-owned learner assets and may include governed shared foundation visuals');
 
 const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
 server.listen(0, '127.0.0.1');
@@ -155,7 +175,7 @@ try {
     assert.ok(Array.isArray(lesson.content?.blocks) && lesson.content.blocks.length > 0, `${lessonId} must expose ordered rich content blocks`);
     for (const block of lesson.content.blocks) {
       if (block.type === 'image') {
-        assert.match(block.src ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${lessonId} image blocks must use governed Course 2 asset paths`);
+        assert.match(block.src ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/, `${lessonId} image blocks must use governed Course 2 WebP asset paths`);
         assert.ok(typeof block.alt === 'string' && block.alt.trim().length > 0, `${lessonId} image blocks must retain learner-facing alt text`);
       }
     }
@@ -218,22 +238,20 @@ try {
   assert.equal(invalidGrade.status, 400, 'invalid presentation seeds must fail closed rather than grading against a new random form');
 
   for (const asset of producedAssets) {
-    assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 2 learner path`);
+    assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/, `${asset.id} should use a controlled Course 2 WebP learner path`);
     const response = await fetch(`${base}${asset.learnerPath}`);
     assert.equal(response.status, 200, `${asset.learnerPath} should be delivered by the Academy runtime`);
-    assert.match(response.headers.get('content-type') ?? '', /^image\/svg\+xml/, `${asset.learnerPath} should use the SVG content type`);
-    const svg = await response.text();
-    assert.match(svg, /<svg[\s>]/, `${asset.learnerPath} should contain SVG markup`);
-    assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
-    assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
+    assert.match(response.headers.get('content-type') ?? '', /^image\/webp/, `${asset.learnerPath} should use the WebP content type`);
+    const body = Buffer.from(await response.arrayBuffer());
+    assert.ok(body.length > 0, `${asset.learnerPath} should return raster bytes`);
   }
-  const invalidCourseDirectory = await fetch(`${base}/assets/course2x/representative-crop-walk-route.svg`);
+  const invalidCourseDirectory = await fetch(`${base}/assets/course2x/representative-crop-walk-route.webp`);
   assert.equal(invalidCourseDirectory.status, 404, 'course asset routing must only accept course<number> directories');
-  const missingAsset = await fetch(`${base}/assets/course2/not-a-real-asset.svg`);
+  const missingAsset = await fetch(`${base}/assets/course2/not-a-real-asset.webp`);
   assert.equal(missingAsset.status, 404, 'course asset routing must return 404 for missing controlled assets');
 } finally {
   server.close();
   await once(server, 'close');
 }
 
-console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, secure learner catalog/lesson/practice/module-checkpoint routes with server-side grading, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.`);
+console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, secure learner catalog/lesson/practice/module-checkpoint routes with server-side grading, visual registry, and all governed Course 2 WebP learner assets are wired through the Academy runtime while professional credential validation remains separately gated.`);

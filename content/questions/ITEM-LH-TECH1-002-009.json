@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Six of twenty sampled plants in Zone B show interveinal yellowing on older lower leaves. Which note best preserves the evidence boundary?",
   "choices": [
-    "Six of twenty sampled Zone B plants show interveinal yellowing on older lower leaves; photos and available root-zone measurements attached",
-    "Zone B definitely has magnesium deficiency",
-    "The cultivar is weak",
-    "The room looks hungry"
+    "“Six of 20 sampled Zone B plants show interveinal yellowing on older lower leaves; photos and available root-zone measurements attached.”",
+    "“Zone B likely has magnesium deficiency because the symptom pattern matches a common nutrient issue.”",
+    "“The cultivar appears weak in Zone B because several lower leaves are yellowing.”",
+    "“Zone B plants look hungry and should be watched for additional nutrient symptoms.”"
   ],
   "correct": 0,
-  "rationale": "The stronger note records visible evidence, distribution and context without asserting a cause that has not been established.",
+  "rationale": "The strongest note preserves the visible symptom, its location, the number affected, the denominator inspected, and available supporting evidence without converting the observation into a diagnosis. A nutrient hypothesis may be reasonable later, but the record should keep observed facts distinct from causal interpretation until additional evidence supports that conclusion.",
   "references": [
     "REF-PLANT-BIO-001"
   ],

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-006-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why perform quantity reconciliation during a mock recall?",
+  "choices": [
+    "To change product specifications.",
+    "To avoid contacting owners.",
+    "To prove legal compliance automatically.",
+    "To identify unexplained material, losses or record gaps across transformations and destinations."
+  ],
+  "correct": 3,
+  "rationale": "Mass balance tests whether genealogy and inventory records are complete.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

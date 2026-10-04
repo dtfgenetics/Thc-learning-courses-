@@ -225,6 +225,34 @@ for (const { file, data } of collections.questions) {
   if (data.type === 'multiple-response' && !Array.isArray(data.correct)) {
     addError('state-conflict', `${file}: multiple-response correct answer must be an array of choice indexes`);
   }
+  if (data.type === 'ordering') {
+    if (!Array.isArray(data.choices) || data.choices.length < 2) {
+      addError('state-conflict', `${file}: ordering item must define at least two choices`);
+    }
+    if (!Array.isArray(data.correct) || data.correct.length !== (data.choices?.length ?? 0)) {
+      addError('state-conflict', `${file}: ordering correct answer must rank every choice exactly once`);
+    } else {
+      const indexes = data.correct.map(Number);
+      if (indexes.some((value) => !Number.isInteger(value) || value < 0 || value >= data.choices.length) || new Set(indexes).size !== data.choices.length) {
+        addError('state-conflict', `${file}: ordering correct answer must be a permutation of all choice indexes`);
+      }
+    }
+  }
+  if (data.type === 'matching') {
+    const prompts = Array.isArray(data.matchPrompts) ? data.matchPrompts : [];
+    const options = Array.isArray(data.matchOptions) ? data.matchOptions : [];
+    const promptIds = prompts.map((entry) => String(entry?.id ?? ''));
+    const optionIds = options.map((entry) => String(entry?.id ?? ''));
+    if (prompts.length < 2) addError('state-conflict', `${file}: matching item must define at least two prompts`);
+    if (options.length < 2) addError('state-conflict', `${file}: matching item must define at least two options`);
+    if (promptIds.some((id) => !id) || new Set(promptIds).size !== promptIds.length) addError('state-conflict', `${file}: matching prompt IDs must be non-empty and unique`);
+    if (optionIds.some((id) => !id) || new Set(optionIds).size !== optionIds.length) addError('state-conflict', `${file}: matching option IDs must be non-empty and unique`);
+    if (!Array.isArray(data.correct) || data.correct.length !== promptIds.length) {
+      addError('state-conflict', `${file}: matching correct answer must contain one option ID per prompt`);
+    } else if (data.correct.some((id) => !optionIds.includes(String(id)))) {
+      addError('state-conflict', `${file}: matching correct answer references an unknown option ID`);
+    }
+  }
   
   // CRITICAL: Active and published items MUST have approval review records
   if (data.status === 'active' || data.status === 'published') {

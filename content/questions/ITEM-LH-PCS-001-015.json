@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-001-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A propagation batch performs far below its historical range after an undocumented protocol change. What should the specialist do?",
+  "choices": [
+    "Edit the historical records to match.",
+    "Discard the poor result from the dataset.",
+    "Document the deviation, preserve the batch evidence, compare against the prior method and escalate rather than silently changing the record.",
+    "Assume the seed lot alone caused the problem."
+  ],
+  "correct": 2,
+  "rationale": "Document the deviation, preserve the batch evidence, compare against the prior method and escalate rather than silently changing the record.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}

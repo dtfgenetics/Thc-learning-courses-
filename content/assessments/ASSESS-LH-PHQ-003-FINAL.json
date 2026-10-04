@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-PHQ-003-FINAL",
+  "title": "Curing, Storage, Packaging & Quality Preservation — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-PHQ-003-01",
+    "LO-LH-PHQ-003-02",
+    "LO-LH-PHQ-003-03",
+    "LO-LH-PHQ-003-04",
+    "LO-LH-PHQ-003-05"
+  ],
+  "items": [
+    "ITEM-LH-PHQ-003-001",
+    "ITEM-LH-PHQ-003-002",
+    "ITEM-LH-PHQ-003-003",
+    "ITEM-LH-PHQ-003-004",
+    "ITEM-LH-PHQ-003-005",
+    "ITEM-LH-PHQ-003-006",
+    "ITEM-LH-PHQ-003-007",
+    "ITEM-LH-PHQ-003-008",
+    "ITEM-LH-PHQ-003-009",
+    "ITEM-LH-PHQ-003-010",
+    "ITEM-LH-PHQ-003-011",
+    "ITEM-LH-PHQ-003-012",
+    "ITEM-LH-PHQ-003-013",
+    "ITEM-LH-PHQ-003-014",
+    "ITEM-LH-PHQ-003-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-POSTHARVEST-PROCESS-001",
+      "items": 6,
+      "cognitiveTarget": "Curing as Controlled Conditioning; Storage Stability: Time, Temperature, Light & Oxygen"
+    },
+    {
+      "competency": "COMP-POSTHARVEST-QA-001",
+      "items": 6,
+      "cognitiveTarget": "Packaging Barrier, Headspace & Closure Evidence; Stability Monitoring & Shelf-Life Evidence"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Storage Deviations, Inventory Status & Handoff"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 3,
+    "targetBankItemsPerCompetency": 25,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PHQ-003",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

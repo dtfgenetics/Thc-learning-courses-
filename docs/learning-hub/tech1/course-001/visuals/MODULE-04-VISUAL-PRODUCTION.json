@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "finalFormats": [
+    "png",
+    "webp",
+    "jpeg"
+  ],
+  "svgAllowed": false,
+  "minLongEdgePx": 2200,
+  "styleRule": "Use photorealistic cultivation scenes for recognition tasks and branded scientific diagrams/process visuals for mechanisms. No generic decorative cannabis imagery.",
+  "textRule": "Keep critical labels concise in-image; put detailed explanation in HTML caption/body copy.",
+  "accessibilityRule": "Every asset requires alt text and a nearby instructional caption.",
+  "moduleId": "MOD-LH-TECH1-001-TRACE",
+  "moduleTitle": "Traceability, Material Movement, Inventory & Waste",
+  "visuals": [
+    {
+      "id": "VIS-LH-T1-C1-M4-001",
+      "lesson": "4.1",
+      "title": "Traceability as object-event graph",
+      "type": "scientific-systems-diagram",
+      "placement": "After traceability-graph foundation",
+      "teachingPurpose": "Traceability as object-event graph",
+      "requiredContent": [
+        "plants/lots/containers/samples",
+        "events",
+        "locations",
+        "time",
+        "relationships"
+      ],
+      "filename": "vis-lh-t1-c1-m4-001-traceability-as-object-event-graph.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-002",
+      "lesson": "4.1",
+      "title": "Cultivation genealogy from donor to sample",
+      "type": "genealogy-diagram",
+      "placement": "After genealogy section",
+      "teachingPurpose": "Cultivation genealogy from donor to sample",
+      "requiredContent": [
+        "donor plant",
+        "clone tray",
+        "transplant batch",
+        "flower room",
+        "harvest container",
+        "sample"
+      ],
+      "filename": "vis-lh-t1-c1-m4-002-cultivation-genealogy-from-donor-to-sample.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-003",
+      "lesson": "4.1",
+      "title": "Identity-risk transition points",
+      "type": "process-timeline",
+      "placement": "After transitions section",
+      "teachingPurpose": "Identity-risk transition points",
+      "requiredContent": [
+        "propagation",
+        "transplant",
+        "room move",
+        "split/combine",
+        "sample",
+        "harvest",
+        "waste",
+        "paper-digital transfer"
+      ],
+      "filename": "vis-lh-t1-c1-m4-003-identity-risk-transition-points.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-004",
+      "lesson": "4.2",
+      "title": "Movement event anatomy",
+      "type": "annotated-record-example",
+      "placement": "After movement-entry explanation",
+      "teachingPurpose": "Movement event anatomy",
+      "requiredContent": [
+        "what",
+        "from",
+        "to",
+        "when",
+        "quantity",
+        "responsible person/system"
+      ],
+      "filename": "vis-lh-t1-c1-m4-004-movement-event-anatomy.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-005",
+      "lesson": "4.2",
+      "title": "Physical state versus recorded state",
+      "type": "comparison-diagram",
+      "placement": "After reconciliation section",
+      "teachingPurpose": "Physical state versus recorded state",
+      "requiredContent": [
+        "physical count",
+        "record count",
+        "agreement",
+        "mismatch",
+        "do not force agreement"
+      ],
+      "filename": "vis-lh-t1-c1-m4-005-physical-state-versus-recorded-state.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-006",
+      "lesson": "4.2",
+      "title": "Reconciliation investigation flow",
+      "type": "decision-flow",
+      "placement": "After error-detection foundation",
+      "teachingPurpose": "Reconciliation investigation flow",
+      "requiredContent": [
+        "recount/verify",
+        "check IDs",
+        "review recent events",
+        "preserve discrepancy",
+        "escalate",
+        "authorized correction"
+      ],
+      "filename": "vis-lh-t1-c1-m4-006-reconciliation-investigation-flow.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-007",
+      "lesson": "4.2",
+      "title": "Controlled downtime traceability",
+      "type": "process-diagram",
+      "placement": "After downtime worked case",
+      "teachingPurpose": "Controlled downtime traceability",
+      "requiredContent": [
+        "system unavailable",
+        "contingency record",
+        "true event time",
+        "later system entry",
+        "reconciliation"
+      ],
+      "filename": "vis-lh-t1-c1-m4-007-controlled-downtime-traceability.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-008",
+      "lesson": "4.3",
+      "title": "Waste identity and disposition chain",
+      "type": "process-diagram",
+      "placement": "After waste identity section",
+      "teachingPurpose": "Waste identity and disposition chain",
+      "requiredContent": [
+        "source identity",
+        "waste status",
+        "quantity",
+        "container",
+        "disposition decision",
+        "record"
+      ],
+      "filename": "vis-lh-t1-c1-m4-008-waste-identity-and-disposition-chain.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-009",
+      "lesson": "4.3",
+      "title": "Silent correction versus preserved audit trail",
+      "type": "comparison-plate",
+      "placement": "After discrepancy preservation",
+      "teachingPurpose": "Silent correction versus preserved audit trail",
+      "requiredContent": [
+        "bad overwrite",
+        "preserved original",
+        "reason/attribution",
+        "resolution"
+      ],
+      "filename": "vis-lh-t1-c1-m4-009-silent-correction-versus-preserved-audit-trail.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M4-010",
+      "lesson": "4.3",
+      "title": "Trace-back and trace-forward exercise map",
+      "type": "interactive-reference-diagram",
+      "placement": "Beside module application",
+      "teachingPurpose": "Trace-back and trace-forward exercise map",
+      "requiredContent": [
+        "upstream source",
+        "event chain",
+        "downstream outputs",
+        "missing-link marker"
+      ],
+      "filename": "vis-lh-t1-c1-m4-010-trace-back-and-trace-forward-exercise-map.png"
+    }
+  ]
+}

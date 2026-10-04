@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Why does clean-to-dirty movement matter during crop work?",
   "choices": [
-    "It changes plant genetics",
-    "It reduces avoidable transfer of contamination from suspect or higher-risk areas into cleaner areas",
-    "It guarantees zero pests",
-    "It replaces tool sanitation"
+    "It changes plant genetics by reducing exposure to contaminated areas.",
+    "It reduces avoidable movement of pests, pathogens, debris, or other contamination from higher-risk areas into cleaner areas.",
+    "It guarantees that no pest or pathogen can enter a clean area.",
+    "It replaces tool sanitation because workflow direction is the primary control."
   ],
   "correct": 1,
-  "rationale": "It reduces avoidable transfer of contamination from suspect or higher-risk areas into cleaner areas. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "Clean-to-dirty movement is one layer of biosecurity. It reduces the chance that workers, tools, carts, or debris carry contamination from suspect areas into cleaner ones, but it does not guarantee zero risk and does not replace sanitation, quarantine, or other controls.",
   "references": [
     "REF-IPM-001"
   ],

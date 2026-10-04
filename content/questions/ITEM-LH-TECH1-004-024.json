@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A runoff EC result is entered without identifying that the sample was runoff. What is the main data-quality problem?",
   "choices": [
-    "Runoff never needs an EC value",
-    "EC units are unnecessary",
-    "Only the cultivar name matters",
-    "The measurement method/sample type is missing, so the value can be misinterpreted or compared incorrectly"
+    "Runoff EC does not require a sample-type label because EC is interpreted the same way for all water sources.",
+    "The main problem is missing cultivar identity rather than sample identity.",
+    "The value is still fully interpretable as long as the EC unit is present.",
+    "The sample type is missing, so the value can be mistaken for source water, prepared feed, or another measurement context and compared incorrectly."
   ],
   "correct": 3,
-  "rationale": "The measurement method/sample type is missing, so the value can be misinterpreted or compared incorrectly. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "EC meaning depends on what was measured. A runoff sample, source water, feed solution, or root-zone extract can have very different interpretation even if the numeric EC is identical. Sample identity therefore belongs in the record so later reviewers do not compare unlike measurements.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IRRIGATION-001"

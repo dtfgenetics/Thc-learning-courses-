@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A tool looks clean after use on held material. What does appearance establish?",
+  "choices": [
+    "That the validated sanitation procedure is complete",
+    "Only visible condition; the applicable sanitation/release procedure still controls reuse",
+    "That the tool is pathogen free",
+    "That no record is needed"
+  ],
+  "correct": 1,
+  "rationale": "Visible cleanliness is not equivalent to documented completion of a validated sanitation process.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

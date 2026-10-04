@@ -1,6 +1,6 @@
 import { buildAcademicCourseRecord } from './progress.js';
 
-const COURSE_ID = 'COURSE-LH-TECH1-001';
+const DEFAULT_COURSE_ID = 'COURSE-LH-TECH1-001';
 
 function iso(value) {
   if (!value) return null;
@@ -42,7 +42,8 @@ export function buildAcademicTranscriptText(record, { generatedAt = new Date().t
     `Instruction: ${Number(record.instruction?.completedLessons ?? 0)}/${Number(record.instruction?.totalLessons ?? 0)} canonical lessons completed`,
     `Course final: ${statusLabel(record.writtenAssessment?.outcome)}`,
     `Course practical: ${statusLabel(record.performanceAssessment?.status)}`,
-    `Practical critical errors: ${Number(record.performanceAssessment?.criticalErrorCount ?? 0)}`
+    `Practical requirement: ${record.performanceAssessment?.required === false ? 'Not required for academic course completion' : 'Required'}`,
+    `Practical critical errors: ${record.performanceAssessment?.required === false ? '—' : Number(record.performanceAssessment?.criticalErrorCount ?? 0)}`
   ];
 
   if ((record.academicCompletion?.missingRequirements ?? []).length) {
@@ -68,9 +69,13 @@ export function buildAcademicTranscriptText(record, { generatedAt = new Date().t
   lines.push(`Course final passing standard: ${record.writtenAssessment?.passingScorePercent == null ? '—' : `${Number(record.writtenAssessment.passingScorePercent).toFixed(1)}%`}`);
   lines.push(`Latest course-final score date: ${printable(record.writtenAssessment?.latestScoredAt)}`);
   lines.push(`Practical status: ${statusLabel(record.performanceAssessment?.status)}`);
-  lines.push(`Practical score: ${record.performanceAssessment?.scorePercent == null ? '—' : `${Number(record.performanceAssessment.scorePercent).toFixed(1)}%`}`);
-  lines.push(`Practical evaluated: ${printable(record.performanceAssessment?.evaluatedAt)}`);
-  lines.push(`Practical follow-up: ${statusLabel(record.performanceAssessment?.followUpStatus ?? 'none')}`);
+  if (record.performanceAssessment?.required === false) {
+    lines.push('Practical requirement: Not required for academic course completion');
+  } else {
+    lines.push(`Practical score: ${record.performanceAssessment?.scorePercent == null ? '—' : `${Number(record.performanceAssessment.scorePercent).toFixed(1)}%`}`);
+    lines.push(`Practical evaluated: ${printable(record.performanceAssessment?.evaluatedAt)}`);
+    lines.push(`Practical follow-up: ${statusLabel(record.performanceAssessment?.followUpStatus ?? 'none')}`);
+  }
   if (record.performanceAssessment?.reassessmentTargetDate) lines.push(`Reassessment target: ${record.performanceAssessment.reassessmentTargetDate}`);
   if (record.performanceAssessment?.learnerFeedback) lines.push(`Learner-facing assessor feedback: ${record.performanceAssessment.learnerFeedback}`);
 
@@ -108,7 +113,7 @@ export function buildAcademicRecordJson(record, { generatedAt = new Date().toISO
 }
 
 export function academicRecordDownloadFiles(record, options = {}) {
-  const suffix = String(record?.course?.id ?? COURSE_ID).toLowerCase();
+  const suffix = String(record?.course?.id ?? DEFAULT_COURSE_ID).toLowerCase();
   return {
     transcript: {
       filename: `${suffix}-academic-transcript.txt`,
@@ -123,17 +128,18 @@ export function academicRecordDownloadFiles(record, options = {}) {
   };
 }
 
-async function loadAcademicRecord() {
+async function loadAcademicRecord(courseId) {
+  const selectedId = courseId || DEFAULT_COURSE_ID;
   const [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse] = await Promise.all([
     fetch('/api/catalog', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
     fetch('/api/v1/me/progress', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
     fetch('/api/v1/me/enrollments', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
-    fetch(`/api/v1/me/courses/${COURSE_ID}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' })
+    fetch(`/api/v1/me/courses/${encodeURIComponent(selectedId)}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' })
   ]);
   if ([progressResponse, enrollmentResponse, evidenceResponse].some((response) => response.status === 401 || response.status === 403)) throw new Error('authentication-required');
   for (const response of [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse]) if (!response.ok) throw new Error(`academic-record-unavailable:${response.status}`);
   const [catalog, progress, enrollments, evidence] = await Promise.all([catalogResponse.json(), progressResponse.json(), enrollmentResponse.json(), evidenceResponse.json()]);
-  const course = (catalog.courses ?? []).find((row) => row.id === COURSE_ID);
+  const course = (catalog.courses ?? []).find((row) => row.id === selectedId);
   if (!course) throw new Error('course-not-found');
   return buildAcademicCourseRecord({ course, progressRows: progress.progress ?? [], enrollments: enrollments.enrollments ?? [], evidence });
 }
@@ -151,12 +157,12 @@ function downloadFile(file) {
 }
 
 function waitForRecordActions(timeoutMs = 5000) {
-  const current = document.querySelector('.academic-record .record-actions');
+  const current = document.querySelector('.academic-record [data-course-id] .record-actions');
   if (current) return Promise.resolve(current);
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => { observer.disconnect(); reject(new Error('record-actions-unavailable')); }, timeoutMs);
     const observer = new MutationObserver(() => {
-      const node = document.querySelector('.academic-record .record-actions');
+      const node = document.querySelector('.academic-record [data-course-id] .record-actions');
       if (!node) return;
       clearTimeout(timeout);
       observer.disconnect();
@@ -167,13 +173,15 @@ function waitForRecordActions(timeoutMs = 5000) {
 }
 
 async function attachAcademicRecordDownloads() {
-  let record;
-  try { record = await loadAcademicRecord(); }
-  catch { return false; }
   let actions;
   try { actions = await waitForRecordActions(); }
   catch { return false; }
-  if (actions.querySelector('[data-academic-download="transcript"]')) return true;
+  const courseId = actions.closest('[data-course-id]')?.dataset.courseId;
+  if (!courseId) return false;
+  let record;
+  try { record = await loadAcademicRecord(courseId); }
+  catch { return false; }
+  for (const old of actions.querySelectorAll('[data-academic-download]')) old.remove();
   const files = academicRecordDownloadFiles(record);
   const transcript = document.createElement('button');
   transcript.type = 'button';
@@ -193,8 +201,20 @@ async function attachAcademicRecordDownloads() {
 
 export function initializeAcademicRecordDownloads() {
   const tab = document.querySelector('#tab-course-record');
-  if (!tab) return false;
-  tab.addEventListener('click', () => { void attachAcademicRecordDownloads(); });
+  const lessonView = document.querySelector('#lesson-view');
+  if (!tab || !lessonView) return false;
+  let refreshQueued = false;
+  const queueRefresh = () => {
+    if (refreshQueued) return;
+    refreshQueued = true;
+    queueMicrotask(() => {
+      refreshQueued = false;
+      if (document.querySelector('.academic-record [data-course-id] .record-actions')) void attachAcademicRecordDownloads();
+    });
+  };
+  const observer = new MutationObserver(queueRefresh);
+  observer.observe(lessonView, { childList: true, subtree: true, attributes: true, attributeFilter: ['data-course-id'] });
+  tab.addEventListener('click', queueRefresh);
   return true;
 }
 

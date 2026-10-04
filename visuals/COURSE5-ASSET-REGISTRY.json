@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 5,
   "courseId": "COURSE-LH-TECH1-005",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 5 SVG files remain the verified learner-facing compatibility baseline. 9 high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
+    "publicDelivery": "Owner-approved lossless WebP assets are the production learner-facing delivery format for Course 5. Legacy SVG files remain provenance/reference sources only and are not production instructional assets.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -23,8 +23,8 @@
       "jpg"
     ],
     "svgProductionTarget": false,
-    "legacySvgCompatibilityAllowed": true,
-    "rasterReplacementRequired": true
+    "legacySvgCompatibilityAllowed": false,
+    "rasterReplacementRequired": false
   },
   "driveStorage": {
     "folderId": "1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo",
@@ -37,12 +37,9 @@
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Propagation identity and traceability workflow",
-      "learnerPath": "/assets/course5/propagation-identity-traceability.svg",
-      "sourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-identity-traceability.svg",
-      "driveFileId": "1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099",
-      "driveFileUrl": "https://drive.google.com/file/d/1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/propagation-identity-traceability.webp",
+      "sourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-identity-traceability.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-01",
         "LESSON-LH-TECH1-005-04"
@@ -57,9 +54,9 @@
       ],
       "purpose": "Teach donor/lot/tray identity control, labels-before-movement, count reconciliation, exception handling and the rule that uncertain identity stops movement rather than being guessed.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -82,21 +79,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-identity-traceability.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099",
+        "driveFileUrl": "https://drive.google.com/file/d/1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-002",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Canopy work-order scope and stop boundary",
-      "learnerPath": "/assets/course5/canopy-work-order-stop-boundary.svg",
-      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
-      "driveFileId": "1xwcER7w319W-1gCdkaoEI6txhMj_8pHi",
-      "driveFileUrl": "https://drive.google.com/file/d/1xwcER7w319W-1gCdkaoEI6txhMj_8pHi/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/canopy-work-order-stop-boundary.webp",
+      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-stop-boundary.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-02",
         "LESSON-LH-TECH1-005-04"
@@ -111,9 +113,9 @@
       ],
       "purpose": "Teach pre-task condition checks, supplied canopy scope, tissue-protection limits, stop conditions, sanitation and truthful exception recording.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -136,21 +138,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1xwcER7w319W-1gCdkaoEI6txhMj_8pHi",
+        "driveFileUrl": "https://drive.google.com/file/d/1xwcER7w319W-1gCdkaoEI6txhMj_8pHi/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-003",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "IPM scouting route and spatial-pattern evidence",
-      "learnerPath": "/assets/course5/ipm-scouting-route-patterns.svg",
-      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
-      "driveFileId": "1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv",
-      "driveFileUrl": "https://drive.google.com/file/d/1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/ipm-scouting-route-patterns.webp",
+      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-route-patterns.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-03",
         "LESSON-LH-TECH1-005-04"
@@ -164,9 +171,9 @@
       ],
       "purpose": "Teach repeatable representative scouting, mapped locations, incidence, severity, spatial pattern, trend and quarantine/escalation status instead of scouting only obvious damage.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -189,21 +196,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv",
+        "driveFileUrl": "https://drive.google.com/file/d/1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-004",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Sign versus symptom evidence layers",
-      "learnerPath": "/assets/course5/sign-vs-symptom-evidence.svg",
-      "sourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
-      "driveFileId": "1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH",
-      "driveFileUrl": "https://drive.google.com/file/d/1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/sign-vs-symptom-evidence.webp",
+      "sourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/sign-vs-symptom-evidence.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-03"
       ],
@@ -216,9 +228,9 @@
       ],
       "purpose": "Separate symptoms from direct signs and show how location, incidence, severity, pattern and trend build evidence without automatically proving diagnosis or treatment authority.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -241,21 +253,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH",
+        "driveFileUrl": "https://drive.google.com/file/d/1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-005",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Biosecurity, clean-to-dirty and quarantine workflow",
-      "learnerPath": "/assets/course5/biosecurity-quarantine-flow.svg",
-      "sourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
-      "driveFileId": "1DqVj3ac_XBH89rJqllr3rC81nRH6szW7",
-      "driveFileUrl": "https://drive.google.com/file/d/1DqVj3ac_XBH89rJqllr3rC81nRH6szW7/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/biosecurity-quarantine-flow.webp",
+      "sourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/biosecurity-quarantine-flow.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-01",
         "LESSON-LH-TECH1-005-02",
@@ -273,9 +290,9 @@
       ],
       "purpose": "Teach clean-to-dirty movement, tool-control checkpoints, suspect-material isolation/quarantine, breach documentation and escalation across propagation, canopy work and scouting.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -298,21 +315,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1DqVj3ac_XBH89rJqllr3rC81nRH6szW7",
+        "driveFileUrl": "https://drive.google.com/file/d/1DqVj3ac_XBH89rJqllr3rC81nRH6szW7/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-006",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Integrated crop-care handoff workflow",
-      "learnerPath": "/assets/course5/integrated-crop-care-handoff.svg",
-      "sourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
-      "driveFileId": "1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC",
-      "driveFileUrl": "https://drive.google.com/file/d/1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/integrated-crop-care-handoff.webp",
+      "sourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/integrated-crop-care-handoff.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-04"
       ],
@@ -332,9 +354,9 @@
       ],
       "purpose": "Integrate identity, task status, evidence, biosecurity actions, authorized actions, unresolved conditions, escalation and next-step handoff across all three Course 5 workstreams.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -357,21 +379,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC",
+        "driveFileUrl": "https://drive.google.com/file/d/1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-007",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Propagation workstation practice worksheet",
-      "learnerPath": "/assets/course5/propagation-workstation-practice.svg",
-      "sourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-workstation-practice.svg",
-      "driveFileId": "1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd",
-      "driveFileUrl": "https://drive.google.com/file/d/1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/propagation-workstation-practice.webp",
+      "sourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-workstation-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-01",
         "LESSON-LH-TECH1-005-04"
@@ -388,9 +415,9 @@
       ],
       "purpose": "Provide printable practice for donor/work-order identity, sanitation, tray mapping, count reconciliation, propagation condition, quarantine/isolation and handoff.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -413,21 +440,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-workstation-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd",
+        "driveFileUrl": "https://drive.google.com/file/d/1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-008",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "IPM scouting route practice worksheet",
-      "learnerPath": "/assets/course5/ipm-scouting-practice.svg",
-      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-practice.svg",
-      "driveFileId": "1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ",
-      "driveFileUrl": "https://drive.google.com/file/d/1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/ipm-scouting-practice.webp",
+      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-03",
         "LESSON-LH-TECH1-005-04"
@@ -444,9 +476,9 @@
       ],
       "purpose": "Provide printable scouting practice for route, map, sign/symptom classification, incidence, severity, spatial pattern, trend, quarantine and escalation without treatment selection.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -469,21 +501,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ",
+        "driveFileUrl": "https://drive.google.com/file/d/1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-009",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Canopy maintenance work-order practice worksheet",
-      "learnerPath": "/assets/course5/canopy-work-order-practice.svg",
-      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-practice.svg",
-      "driveFileId": "1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9",
-      "driveFileUrl": "https://drive.google.com/file/d/1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course5/canopy-work-order-practice.webp",
+      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-02",
         "LESSON-LH-TECH1-005-04"
@@ -501,9 +538,9 @@
       ],
       "purpose": "Provide printable practice for canopy work-order identity, pre-task plant condition, authorized action, stop conditions, sanitation/quarantine, before/after verification, exceptions and handoff.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -526,9 +563,489 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9",
+        "driveFileUrl": "https://drive.google.com/file/d/1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-LH-TECH1-005-010",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Seed anatomy and germination physiology",
+      "learnerPath": "/assets/course5/seed-anatomy-germination.webp",
+      "sourcePath": "apps/web/public/assets/course5/seed-anatomy-germination.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/seed-anatomy-germination.webp",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-01",
+        "LO-LH-TECH1-005-04"
+      ],
+      "references": [
+        "REF-PROP-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Show the seed coat, embryo, cotyledons and radicle together with the transition from imbibition and metabolic reactivation through radicle emergence and seedling establishment.",
+      "version": "1.0.0",
+      "assetLifecycle": "production-raster-active",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "png",
+        "bytes": 459936,
+        "pixelWidth": 1600,
+        "driveFileId": "1SgS9-ERhdBYZzG2l8-M8N3gEvxGWW_lG",
+        "driveMasterFileId": "1c_Ur84lvjzxRYk9gdfIYEj2MjRs_Rack",
+        "automatedQa": [
+          "RIFF/WEBP asset created from approved PNG master",
+          "web delivery width limited to 1600 px",
+          "lesson copy explains germination physiology beyond poster labels"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "mirrored"
+    },
+    {
+      "id": "VIS-LH-TECH1-005-011",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis plant anatomy and developmental growth stages",
+      "learnerPath": "/assets/course5/plant-anatomy-growth-stages.webp",
+      "sourcePath": "apps/web/public/assets/course5/plant-anatomy-growth-stages.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/plant-anatomy-growth-stages.webp",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-02"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-02",
+        "LO-LH-TECH1-005-04"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Connect roots, stems, nodes, internodes, leaves, meristems and reproductive structures to seedling, vegetative, transition and flowering stages so canopy work is interpreted in developmental context.",
+      "version": "1.0.0",
+      "assetLifecycle": "production-raster-active",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "png",
+        "bytes": 556096,
+        "pixelWidth": 1600,
+        "driveFileId": "1AHZ9YNWjcxl6UKoELkpUVdZwsu0-gfj5",
+        "driveMasterFileId": "1wn-T2wPyWbeWzzO-rQkFtx_WAB6hBugt",
+        "automatedQa": [
+          "RIFF/WEBP asset created from approved PNG master",
+          "web delivery width limited to 1600 px",
+          "lesson copy distinguishes anatomy from developmental stage"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "mirrored"
+    },
+    {
+      "id": "VIS-FOUNDATION-PROP-PROCESS-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Seed and cutting propagation pathways compared",
+      "primaryLessons": [
+        "LESSON-PROP-001"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-CANNABIS-SEED-GERMINATION-2021",
+        "REF-CANNABIS-CLONAL-ROOTING-2019"
+      ],
+      "purpose": "Compare the biological pathway from seed imbibition and embryo emergence with cutting survival, wound response, adventitious rooting and acclimatization.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "process-comparison",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course5/foundation-propagation-pathways.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-propagation-pathways.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-propagation-pathways.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Side-by-side process diagram comparing seed imbibition, embryo activation and radicle emergence with cutting survival, wound response, adventitious rooting and acclimatization.",
+      "caption": "Seed and cutting propagation share the goal of establishment but use different biological pathways. Track identity, sanitation and stage-specific evidence for each.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 27290,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "281e7ba3f75b62dd1c8e3f7561e30e01eca25bc8ea4c37ef3998956137d13d92",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-SEED-GERMINATION-001",
+      "status": "retired",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis seed anatomy and germination sequence",
+      "primaryLessons": [
+        "LESSON-PROP-SEED-002"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-CANNABIS-SEED-GERMINATION-2021"
+      ],
+      "purpose": "Show intact seed anatomy, imbibition, radicle emergence, cotyledon expansion and early seedling establishment with accurate labels and stage order.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "photorealistic-educational-sequence",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "retiredReason": "Superseded by existing owner-approved production raster VIS-LH-TECH1-005-010, which already provides the required cannabis seed anatomy and germination sequence.",
+      "supersededBy": "VIS-LH-TECH1-005-010"
+    },
+    {
+      "id": "VIS-FOUNDATION-CLONE-ROOTING-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis cutting to adventitious-root formation and acclimatization",
+      "primaryLessons": [
+        "LESSON-PROP-CLONE-003"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-CANNABIS-CLONAL-ROOTING-2019"
+      ],
+      "purpose": "Show donor cutting, fresh wound, high-support unrooted stage, adventitious root emergence, rooted cutting and staged acclimatization.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "photorealistic-educational-sequence",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course5/foundation-clone-rooting.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-clone-rooting.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-clone-rooting.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Five-stage propagation sequence showing a fresh donor cutting, unrooted support, root initiation, a rooted cutting and gradual acclimatization.",
+      "caption": "A cutting must survive the unrooted phase, form adventitious roots, establish root function and then acclimate gradually as normal transpiration resumes.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 18152,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "734f1daeda04d61c331430abe041a5b45091ea8420fa83a2634ef2000eb786c7",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-CANOPY-ARCH-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Apical dominance and canopy architecture response",
+      "primaryLessons": [
+        "LESSON-CANOPY-001"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-LIGHT-001"
+      ],
+      "purpose": "Show how dominant shoot position, lateral branches, leaf distribution and canopy geometry affect spatial light interception.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "scientific-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course5/foundation-canopy-architecture.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-canopy-architecture.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-canopy-architecture.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Scientific plant architecture diagram comparing a dominant central leader with a redistributed canopy, showing lateral branching and differences in light interception across the crop surface.",
+      "caption": "Canopy architecture changes where leaves intercept light and how workers access the crop. Training decisions must consider plant vigor, sanitation, airflow and recovery.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 24146,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "71e087de7095c98c80f7309eb23ac061f61aeab9cafc307e6c6cc400ef4fc34d",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-LST-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Low-stress training and trellis spacing before-and-after",
+      "primaryLessons": [
+        "LESSON-CANOPY-LST-002"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-LIGHT-001"
+      ],
+      "purpose": "Compare an uneven dominant canopy with a gradually repositioned trellised canopy while preserving realistic branch spacing and scouting access.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "photorealistic-comparison",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course5/foundation-lst-before-after.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-lst-before-after.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-lst-before-after.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Before-and-after canopy diagram comparing a dominant upright plant with gradually repositioned branches distributed across a trellis for more even spacing and scouting access.",
+      "caption": "Low-stress training redistributes branches gradually. Protect plant vigor, sanitation, airflow and access, then verify the canopy response.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 22086,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "98f7d06b27e31389e9d2d81d9741d2f3c99c474fa4d3f05806a71b7572852ca7",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-HST-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Topping, lateral response and recovery timeline",
+      "primaryLessons": [
+        "LESSON-CANOPY-HST-003"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-LIGHT-001"
+      ],
+      "purpose": "Show apical removal, wound site, lateral shoot response and recovery over time while emphasizing plant vigor and recovery cost.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "scientific-sequence",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course5/foundation-hst-recovery.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-hst-recovery.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-hst-recovery.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Four-stage diagram showing an intact plant apex, a topping cut, lateral growth response and recovery into two leaders.",
+      "caption": "Topping intentionally removes tissue and changes apical dominance. Confirm vigor, sanitation and recovery before stacking additional high-stress work.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 23036,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "5f65e2be766c9cf1bab9a23e9c0c42f1f68259df8873902882613678c9f56ad0",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-IPM-CYCLE-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Integrated pest management decision cycle",
+      "primaryLessons": [
+        "LESSON-IPM-001"
+      ],
+      "references": [
+        "REF-IPM-001",
+        "REF-PSU-GREENHOUSE-IPM-2026"
+      ],
+      "purpose": "Teach prevent, scout, identify/diagnose, decide, control and verify as a continuous evidence loop rather than a pesticide-first workflow.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "decision-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course5/foundation-ipm-cycle.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-ipm-cycle.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-ipm-cycle.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Circular integrated pest management loop moving through prevention, scouting, identification, decision, authorized control and verification with evidence and recordkeeping feeding the next cycle.",
+      "caption": "IPM is an evidence loop, not a pesticide-first workflow. Scouting and diagnosis do not by themselves confer pesticide authority.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 23012,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "a3129ce8960ba40825d2781ebf7efbebc1ad55eb0d48f049ae15b1a2f46a13d1",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
-  ]
+  ],
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "Course 5 governed raster replacements",
+    "note": "Academic publication approval; external validation and professional credential issuance are not implied."
+  }
 }

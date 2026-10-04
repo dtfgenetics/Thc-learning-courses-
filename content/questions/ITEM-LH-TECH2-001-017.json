@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why can two root zones with the same measured EC still differ biologically?",
   "choices": [
-    "EC does not identify ion composition, moisture distribution, oxygenation, roots or uptake history.",
-    "EC is unrelated to dissolved ions.",
-    "Root conditions never influence nutrient uptake.",
-    "Equal EC guarantees equal nutrient composition and root function."
+    "The same EC can represent different ion mixtures, moisture distributions, oxygen conditions, root health, and uptake histories in two root zones.",
+    "The same EC can differ biologically mainly because EC meters respond differently to each nutrient ion and therefore produce cultivar-specific readings.",
+    "The same EC usually means the dissolved nutrient concentration is equivalent, so biological differences should be attributed primarily to the shoot environment.",
+    "The same EC establishes equivalent root-zone chemistry, but differences in plant growth can still arise from cultivar genetics."
   ],
   "correct": 0,
-  "rationale": "EC is only one chemical concentration signal and must be interpreted with physical and biological root-zone context.",
+  "rationale": "EC measures bulk electrical conductivity, not the identity or proportion of individual ions and not the physical or biological state of the root zone. Two zones can therefore show the same EC while differing in moisture distribution, oxygenation, salt composition, root injury, microbial conditions, and recent plant uptake. Those differences can change nutrient availability and root function even when the conductivity number matches. EC is useful evidence, but it must be interpreted with complementary physical and biological observations.",
   "references": [
     "REF-ROOTZONE-NUTRIENT-002"
   ]

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-001-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-001-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Crop symptoms and a verified handheld meter disagree with an unverified controller sensor. What is the strongest next step?",
+  "choices": [
+    "Change targets until the controller looks correct.",
+    "Ignore the handheld meter.",
+    "Diagnose disease from the crop symptoms alone.",
+    "Verify the installed sensor's placement/calibration before changing environmental targets."
+  ],
+  "correct": 3,
+  "rationale": "Measurement quality should be resolved before setpoint changes or causal conclusions.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

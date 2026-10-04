@@ -1,0 +1,34 @@
+{
+  "id": "MOD-LH-PCS-006-PRODUCTION-PLANNING-TROUBLESHOOTING",
+  "title": "Propagation Production Planning & Troubleshooting",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PCS-006-01",
+    "LESSON-LH-PCS-006-02",
+    "LESSON-LH-PCS-006-03",
+    "LESSON-LH-PCS-006-04",
+    "LESSON-LH-PCS-006-05"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-CROP-PLAN-001",
+    "COMP-PRO-QA-001",
+    "COMP-CULT-TRACEABILITY-001"
+  ],
+  "assessment": null,
+  "description": "Integrates demand, capacity, batch scheduling, propagation KPIs, loss-stage analysis, controlled troubleshooting and accountable handoff into a specialist production-planning workflow.",
+  "estimatedMinutes": 350,
+  "learningOutcomes": [
+    "Build a propagation plan that connects demand date, stage capacity, expected losses, genotype timing, space and release criteria without treating the forecast as a guarantee.",
+    "Calculate and interpret propagation stage metrics with consistent denominators, observation windows and batch definitions.",
+    "Localize propagation losses and delays by stage, batch and shared factors before selecting a corrective action.",
+    "Design a bounded propagation troubleshooting test with baseline, comparison, acceptance criteria, records and change-control boundaries.",
+    "Create an accountable propagation release and handoff that preserves quantity, identity, exceptions, status, evidence and follow-up actions."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

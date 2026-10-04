@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A scout later realizes one trap ID was entered incorrectly. What should happen?",
   "choices": [
-    "Correct it through the controlled record process while preserving the original entry and reason for correction.",
-    "Delete the original observation.",
-    "Change all prior maps so they match the corrected story.",
-    "Leave the error because records may never be corrected."
+    "Correct the trap ID through the controlled record process so the original entry, correction, reason, and timing remain reconstructable.",
+    "Delete the original trap record and re-enter the corrected ID so downstream maps contain only the accurate value.",
+    "Update prior maps and summaries to the corrected location without retaining the original mapping error, since the error is now understood.",
+    "Leave the entry unchanged because altering a completed scouting record creates more integrity risk than keeping a known error."
   ],
   "correct": 0,
-  "rationale": "Correct it through the controlled record process while preserving the original entry and reason for correction.",
+  "rationale": "A discovered record error should be corrected transparently, not silently erased or left in place. The controlled correction should preserve what was originally entered, show the corrected value, and document why and when the change was made. That approach protects both accuracy and reconstructability. Deleting history or leaving a known error both weaken the integrity of later trend analysis.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

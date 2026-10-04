@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-001-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which batch closeout is most reconstructable?",
+  "choices": [
+    "It reports only the number of healthy seedlings.",
+    "It reconciles seeds started, germinated, normal seedlings, losses/removals, treatments, timing and exceptions.",
+    "It replaces abnormal observations with a final diagnosis.",
+    "It omits unsuccessful cells."
+  ],
+  "correct": 1,
+  "rationale": "It reconciles seeds started, germinated, normal seedlings, losses/removals, treatments, timing and exceptions.",
+  "references": [
+    "REF-HEMP-GERMINATION-TEMP-2022"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}

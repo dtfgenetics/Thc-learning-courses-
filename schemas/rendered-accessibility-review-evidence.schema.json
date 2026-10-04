@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/rendered-accessibility-review-evidence.schema.json",
+  "title": "THC Academy Rendered Accessibility and Learner UX Review Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "courseId",
+    "courseVersion",
+    "deployedBuildId",
+    "status",
+    "reviewerId",
+    "reviewedAt",
+    "environments",
+    "coverage",
+    "wcagTarget",
+    "unresolvedFailures",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^A11YREV-[A-Z0-9-]+$"
+    },
+    "courseId": {
+      "type": "string",
+      "pattern": "^COURSE-LH-TECH[12]-[0-9]{3}$"
+    },
+    "courseVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deployedBuildId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "in-progress",
+        "evidence-complete",
+        "approved",
+        "revision-required",
+        "invalidated"
+      ]
+    },
+    "reviewerId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "wcagTarget": {
+      "const": "2.2-AA"
+    },
+    "environments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "platform",
+          "browser",
+          "inputMode",
+          "viewportOrZoom"
+        ],
+        "properties": {
+          "platform": {
+            "type": "string",
+            "minLength": 2
+          },
+          "browser": {
+            "type": "string",
+            "minLength": 2
+          },
+          "assistiveTechnology": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "inputMode": {
+            "type": "string",
+            "minLength": 2
+          },
+          "viewportOrZoom": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "courseOverview",
+        "lessons",
+        "instructionalVisuals",
+        "assessments",
+        "downloads",
+        "progressCompletionStates",
+        "mobileResponsive",
+        "keyboard",
+        "assistiveTechnology",
+        "zoomReflow"
+      ],
+      "properties": {
+        "courseOverview": {
+          "type": "boolean"
+        },
+        "lessons": {
+          "type": "boolean"
+        },
+        "instructionalVisuals": {
+          "type": "boolean"
+        },
+        "assessments": {
+          "type": "boolean"
+        },
+        "downloads": {
+          "type": "boolean"
+        },
+        "progressCompletionStates": {
+          "type": "boolean"
+        },
+        "mobileResponsive": {
+          "type": "boolean"
+        },
+        "keyboard": {
+          "type": "boolean"
+        },
+        "assistiveTechnology": {
+          "type": "boolean"
+        },
+        "zoomReflow": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "unresolvedFailures": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "levelAAFailuresResolvedOrDispositioned": {
+      "type": "boolean"
+    },
+    "issueRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

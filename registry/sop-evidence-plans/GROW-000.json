@@ -1,0 +1,109 @@
+{
+  "id": "GROW-000",
+  "title": "Manual overview, purpose, scope, and document control — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define the controlled manual architecture, document hierarchy, versioning, applicability, authority and release-state rules for the cultivation SOP system.",
+  "sourceIds": [
+    "REF-EPA-SOP-QAG6",
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "scope": {
+    "included": [
+      "manual purpose/scope",
+      "document hierarchy",
+      "roles and authorization",
+      "effective versions",
+      "change control",
+      "superseded-document handling",
+      "linked forms/records",
+      "review/release state",
+      "jurisdiction/facility authority boundaries"
+    ],
+    "excludedUntilApproved": [
+      "claim that a generic quality framework is cannabis law",
+      "silent retroactive revision of historical requirements",
+      "use of draft/internal-preview material as an effective operational SOP",
+      "uncontrolled local copies treated as authoritative",
+      "release without versioned approval evidence"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-000-C01",
+      "statement": "A controlled SOP system should make purpose, scope, responsibilities, prerequisites, required steps, records and exception/escalation paths clear enough that authorized users can execute and audit the process consistently.",
+      "sources": [
+        "REF-EPA-SOP-QAG6",
+        "REF-ASTM-E2659-001"
+      ],
+      "boundary": "The exact required structure may differ by organization or jurisdiction; the SOP architecture must remain subordinate to applicable law, contracts and facility governance."
+    },
+    {
+      "id": "GROW-000-C02",
+      "statement": "Only the effective controlled version should govern current work, while historical versions must remain traceable so past events can be reconstructed against the instruction that was actually in force.",
+      "sources": [
+        "REF-ASTM-E2659-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "boundary": "A later revision can guide corrective action but must not be rewritten into the past as if it governed earlier work."
+    },
+    {
+      "id": "GROW-000-C03",
+      "statement": "Document changes should preserve who changed what, when, why, review/approval status and effective date so process evolution remains reconstructable.",
+      "sources": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-ASTM-E2659-001"
+      ],
+      "boundary": "The educational framework does not prescribe one software platform or electronic-signature implementation."
+    },
+    {
+      "id": "GROW-000-C04",
+      "statement": "Background science, training explanation and operational execution instructions should be linked but distinguishable so required steps are not buried in educational narrative.",
+      "sources": [
+        "REF-EPA-SOP-QAG6",
+        "REF-ASTM-D8403-001"
+      ],
+      "boundary": "Separating execution from background does not mean workers should be trained without understanding the scientific basis."
+    },
+    {
+      "id": "GROW-000-C05",
+      "statement": "Controlled procedures should identify the forms, logs, checklists or electronic records needed to capture critical observations, decisions, deviations and approvals.",
+      "sources": [
+        "REF-ASTM-D8403-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "boundary": "A field should not be added merely to create paperwork; records should support a defined operational, quality, safety or traceability purpose."
+    },
+    {
+      "id": "GROW-000-C06",
+      "statement": "Jurisdiction-specific rules, product labels, equipment manuals and approved facility procedures override generic educational examples when they impose more specific requirements.",
+      "sources": [
+        "REF-ASTM-E2659-001",
+        "REF-EPA-SOP-QAG6"
+      ],
+      "boundary": "Transferable quality standards must not be presented as jurisdiction-specific cannabis regulation."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "manual purpose/scope",
+    "controlled document hierarchy",
+    "role/authority matrix",
+    "version/effective-date rules",
+    "change-control workflow",
+    "superseded-document/archive rules",
+    "linked forms/templates index",
+    "review/approval/release-state matrix",
+    "jurisdiction/facility precedence statement",
+    "periodic review and retirement workflow"
+  ],
+  "releaseGates": [
+    "document-control review",
+    "legal/compliance applicability review",
+    "role/authority review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

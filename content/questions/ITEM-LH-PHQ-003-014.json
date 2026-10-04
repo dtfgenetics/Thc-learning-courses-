@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-003-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-003-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What best scopes a storage excursion?",
+  "choices": [
+    "The room name alone.",
+    "Timeline, mapped inventory, package condition and relevant product or environmental evidence.",
+    "Only units with visible defects.",
+    "All facility inventory by default."
+  ],
+  "correct": 1,
+  "rationale": "Scope should follow actual exposure and genealogy evidence.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

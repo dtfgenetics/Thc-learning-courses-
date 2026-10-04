@@ -1,0 +1,66 @@
+{
+  "id": "COURSE-LH-PCS-006",
+  "title": "Propagation Production Planning & Troubleshooting",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Propagation & Clean Stock Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Propagation & Clean Stock Specialist pathway",
+    "Propagation personnel responsible for clean-stock, tissue-culture, production-planning or propagation-quality workflows"
+  ],
+  "prerequisites": [
+    "COURSE-LH-PCS-001 through COURSE-LH-PCS-005 or approved equivalents",
+    "Cultivation Technician II propagation-performance and traceability competency or approved equivalent"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Propagation planning uses traceable internal counts, stage-transition evidence, genotype-aware performance and controlled process records. Cannabis propagation literature supports context- and genotype-dependent response. Forecasts are decision models rather than guarantees, and exact targets, staffing, capacity, release criteria and corrective actions remain controlled by the facility.",
+  "assessmentPolicy": "The specialist assessment remains development-only until technical, assessment and accessibility review plus pilot evidence are complete. Learners may analyze capacity, loss and workflow evidence but course completion does not authorize production schedule changes, release of held material, labor decisions or unapproved process changes.",
+  "description": "Integrates demand, capacity, batch scheduling, propagation KPIs, loss-stage analysis, controlled troubleshooting and accountable handoff into a specialist production-planning workflow.",
+  "modules": [
+    "MOD-LH-PCS-006-PRODUCTION-PLANNING-TROUBLESHOOTING"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-CROP-PLAN-001",
+    "COMP-PRO-QA-001",
+    "COMP-CULT-TRACEABILITY-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PCS-006-FINAL",
+  "learningOutcomes": [
+    "Build a propagation plan that connects demand date, stage capacity, expected losses, genotype timing, space and release criteria without treating the forecast as a guarantee.",
+    "Calculate and interpret propagation stage metrics with consistent denominators, observation windows and batch definitions.",
+    "Localize propagation losses and delays by stage, batch and shared factors before selecting a corrective action.",
+    "Design a bounded propagation troubleshooting test with baseline, comparison, acceptance criteria, records and change-control boundaries.",
+    "Create an accountable propagation release and handoff that preserves quantity, identity, exceptions, status, evidence and follow-up actions."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PROP-CLEAN-STOCK-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PCS-001",
+      "COURSE-LH-PCS-002",
+      "COURSE-LH-PCS-003",
+      "COURSE-LH-PCS-004",
+      "COURSE-LH-TECH2-005",
+      "COURSE-PROP-ADVANCED-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PCS-006-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

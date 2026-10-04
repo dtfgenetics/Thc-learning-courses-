@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-006-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-006-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What is required before CAPA closure?",
+  "choices": [
+    "Only proof that an action was assigned.",
+    "A manager's verbal assurance.",
+    "Implementation evidence plus an effectiveness check appropriate to the failure mode.",
+    "One unrelated normal measurement."
+  ],
+  "correct": 2,
+  "rationale": "Implementation is not the same as demonstrated effectiveness.",
+  "references": [
+    "REF-ASTM-D8403-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}

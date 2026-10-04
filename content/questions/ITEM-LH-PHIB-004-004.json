@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-004-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A flowering plant has localized gray sporulating tissue after prolonged high humidity. Which response best fits integrated disease reasoning?",
+  "choices": [
+    "Record the sign and environment, contain/handle the affected material under procedure, and confirm/disposition according to the facility disease workflow.",
+    "Assume every nearby flower is infected without scouting.",
+    "Ignore humidity because only the pathogen matters.",
+    "Spray any available fungicide immediately."
+  ],
+  "correct": 0,
+  "rationale": "Visible gray mold-like growth plus favorable environment can strongly support a Botrytis workup, but scope, handling and treatment/disposition remain controlled.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-CANNABIS-PATHOGENS-2019-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}

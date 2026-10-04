@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-003-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-003-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "An atypical stability result appears. What is the strongest record action?",
+  "choices": [
+    "Remove it from the graph.",
+    "Replace it with the average.",
+    "Release the lot before review.",
+    "Preserve the original result and initiate controlled review of sample, method, storage and trend evidence."
+  ],
+  "correct": 3,
+  "rationale": "Unexpected evidence should be investigated without rewriting history.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

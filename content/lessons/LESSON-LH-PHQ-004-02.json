@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHQ-004-02",
+  "title": "Mold Biology, Risk Conditions & Diagnostic Limits",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-004-02"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Cannabis can be affected by diverse fungi and other microbes before and after harvest. Moisture, damaged tissue, sanitation and environmental history influence risk, but no single clue establishes identity or product safety.",
+    "vocabulary": [
+      {
+        "term": "Inoculum",
+        "definition": "Microbial material capable of initiating growth or infection."
+      },
+      {
+        "term": "Colonization",
+        "definition": "Growth or establishment of an organism in or on material."
+      },
+      {
+        "term": "Diagnostic confirmation",
+        "definition": "Qualified evidence sufficient to support an organism or condition identification."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Risk has preharvest and postharvest history",
+        "body": "Disease pressure, tissue damage, handling, drying and storage can all contribute to observed problems.",
+        "references": [
+          "REF-CANNABIS-PATHOGENS-2019-001",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Environment influences growth opportunity",
+        "body": "Available moisture, temperature, airflow and time can change microbial risk, but environmental data do not identify the organism or establish lot disposition.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Diagnostic methods have scope and limitations",
+        "body": "Visual inspection supports detection and sampling; qualified laboratory or expert methods may be needed for identification and consequence assessment.",
+        "references": [
+          "REF-CANNABIS-PATHOGENS-2019-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A high-moisture zone increases concern and sampling priority but does not by itself prove every unit is contaminated."
+    ],
+    "commonMistakes": [
+      "Using odor as species identification.",
+      "Assuming no visible growth means no risk.",
+      "Treating an environmental excursion as automatic diagnostic confirmation."
+    ],
+    "practicalApplication": "Build a risk-and-evidence map connecting crop history, postharvest conditions, observations, samples and unresolved questions.",
+    "summary": "Mold-risk interpretation combines process history and qualified evidence while preserving diagnostic uncertainty."
+  }
+}

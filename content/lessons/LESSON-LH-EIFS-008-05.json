@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-008-05",
+  "title": "Commissioning and Failure-Response Packets & Qualified Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-008-05"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The final specialist product is a packet that another qualified responder can reconstruct. It should preserve system identity, baseline, tests, failures, temporary controls, recovery evidence, residual risk and the exact point where authority transfers to maintenance, controls, electrical or management roles.",
+    "vocabulary": [
+      {
+        "term": "Commissioning packet",
+        "definition": "Controlled record of planned tests, observed results, deviations, corrections and acceptance decisions for a system."
+      },
+      {
+        "term": "Failure-response packet",
+        "definition": "Evidence package describing the fault, impact, safe-state actions, troubleshooting performed and unresolved work."
+      },
+      {
+        "term": "Residual risk",
+        "definition": "Risk remaining after current controls or recovery actions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Keep the evidence sequence intact",
+        "body": "Preserve timestamps, alarm history, commands, physical response, measurements, corrective actions and recovery checks in chronological order.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoff unresolved work explicitly",
+        "body": "Written plus verbal transfer should include current safe state, temporary controls, pending tests, deadlines and next responsible role.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "title": "Respect protected-service boundaries",
+        "body": "The packet can identify evidence consistent with an electrical, controls or pressure-system fault without directing an unqualified repair.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A failure packet documents repeated zone-command mismatches, safe manual fallback, verified crop delivery during fallback, pending controller-service ticket and the criteria required before automation is restored."
+    ],
+    "commonMistakes": [
+      "Keeping only the final repair note.",
+      "Omitting temporary workaround details.",
+      "Giving unauthorized repair instructions."
+    ],
+    "practicalApplication": "Build a commissioning/failure packet from a simulated multi-system event and prepare a two-minute qualified handoff.",
+    "summary": "Automation reliability becomes auditable when commissioning, failure response and recovery are documented as one continuous evidence chain."
+  }
+}

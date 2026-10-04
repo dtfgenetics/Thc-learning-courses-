@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PHIB-005-CONTROLS-RESISTANCE",
+  "title": "Biological/Cultural Controls, Thresholds & Resistance Management",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHIB-005-01",
+    "LESSON-LH-PHIB-005-02",
+    "LESSON-LH-PHIB-005-03",
+    "LESSON-LH-PHIB-005-04",
+    "LESSON-LH-PHIB-005-05"
+  ],
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering threshold logic, biological control, cultural/mechanical prevention, intervention compatibility, resistance management and post-intervention verification.",
+  "estimatedMinutes": 295,
+  "learningOutcomes": [
+    "Use representative monitoring, crop impact and facility decision rules to distinguish observation thresholds, action thresholds and treatment authority without inventing universal cannabis pest-count triggers.",
+    "Compare biological, cultural, mechanical and environmental control tactics by target pest/pathogen, life stage, timing, compatibility, expected response and verification needs.",
+    "Evaluate beneficial-organism compatibility with sanitation, environmental conditions and other interventions while recognizing that no single control tactic is universally effective.",
+    "Apply resistance-management principles by distinguishing mode of action from brand identity, avoiding repeated selection pressure and preserving label/local-authority boundaries.",
+    "Build an IPM decision and follow-up record that links evidence, chosen tactic, authorization, compatibility checks, monitoring method, response criteria and escalation/closure decisions."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two scouting rounds report 2 detections each, but round 1 sampled 20 plants and round 2 sampled 100. What must be addressed before calling the pressure unchanged?",
   "choices": [
-    "The different sampling effort/denominator must be accounted for before comparing incidence.",
-    "The two raw counts prove the trend is flat.",
-    "Severity can be ignored because counts match.",
-    "Only the most recent round should be retained."
+    "Account for the different numbers of plants sampled before comparing incidence or concluding that pressure was unchanged.",
+    "Treat the raw detection count as directly comparable because both rounds found the same number of positives.",
+    "Compare severity only, because equal positive counts make incidence differences less informative.",
+    "Use the larger scouting round as the more accurate estimate and disregard the smaller round in the trend."
   ],
   "correct": 0,
-  "rationale": "The different sampling effort/denominator must be accounted for before comparing incidence.",
+  "rationale": "Equal raw counts do not represent equal incidence when the denominators differ. Two positives in 20 plants and two positives in 100 plants describe very different proportions and can imply different pressure. The sampling effort and method must therefore be incorporated before interpreting the trend. Severity is a separate dimension, and simply discarding one round wastes information rather than correcting the comparability problem.",
   "references": [
     "REF-IPM-001"
   ]

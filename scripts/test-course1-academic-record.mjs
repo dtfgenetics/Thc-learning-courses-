@@ -81,20 +81,31 @@ const incomplete = buildAcademicCourseRecord({
 assert.equal(incomplete.academicCompletion.complete, false);
 assert.deepEqual(incomplete.academicCompletion.missingRequirements.sort(), ['course-final', 'course-practical', 'instruction']);
 
+const noAcademicPractical = buildAcademicCourseRecord({
+  course: { ...course, id: 'COURSE-LH-TECH1-002', title: 'Plant Observation, Growth Stages & Crop Records' },
+  progressRows,
+  enrollments: [{ courseId: 'COURSE-LH-TECH1-002', courseVersion: '1.0.0', status: 'completed', enrolledAt: '2026-09-01T10:00:00Z', completedAt: '2026-09-04T10:00:00Z', academicStatusHistory: [] }],
+  evidence: { course: { id: 'COURSE-LH-TECH1-002', version: '1.0.0' }, writtenAssessment: evidence.writtenAssessment, performanceAssessment: null }
+});
+assert.equal(noAcademicPractical.academicCompletion.complete, true, 'a course without an academic practical must complete from instruction plus a passed final');
+assert.equal(noAcademicPractical.performanceAssessment.required, false);
+assert.equal(noAcademicPractical.performanceAssessment.status, 'not-required');
+assert.deepEqual(noAcademicPractical.academicCompletion.missingRequirements, []);
+
 for (const marker of [
   '/api/v1/me/progress',
   '/api/v1/me/enrollments',
-  '/api/v1/me/courses/${ACADEMIC_RECORD_COURSE_ID}/evidence',
+  '/api/v1/me/courses/${encodeURIComponent(selectedId)}/evidence',
   "credentials: 'same-origin'",
   'Academic course status',
   'Instruction record',
   'Course assessment evidence',
   'Academic completion transition history',
-  'This timeline records automatic Course 1 enrollment completion and reopening decisions.',
+  'This timeline records automatic enrollment completion and reopening decisions for this course.',
   'Requirement snapshot',
   'Course-version history',
   'Print academic record',
-  'This is an academic Course 1 completion record. It is not a professional credential, license, or certification.',
+  'This is an academic course completion record. It is not a professional credential, license, certification, or credential-eligibility decision.',
   'Completion is preserved by canonical lesson ID.'
 ]) assert.ok(source.includes(marker), `academic record runtime missing contract: ${marker}`);
 
@@ -109,4 +120,8 @@ assert.ok(source.includes('@media(max-width:620px)'), 'academic record must pres
 assert.ok(source.includes('@media print'), 'academic record must provide a print view');
 assert.ok(source.includes('min-height:44px'), 'academic record controls must preserve touch target sizing');
 
-console.log('Course 1 academic completion record, transition timeline, lesson-version preservation, credential separation, privacy, responsive and print contracts passed.');
+assert.ok(source.includes('Academic Course Records'), 'record UI must support more than Course 1');
+assert.ok(source.includes('record-course-select'), 'record UI must expose an enrolled-course selector');
+assert.ok(source.includes('No academic practical is required for completion of this course.'), 'record UI must explain optional academic practicals');
+
+console.log('Multi-course academic completion records, transition history, optional-practical semantics, credential separation, privacy, responsive and print contracts passed.');

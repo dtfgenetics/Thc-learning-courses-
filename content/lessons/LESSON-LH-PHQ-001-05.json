@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-001-05",
+  "title": "Harvest-to-Dry Intake & Reconstructable Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-001-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The handoff into drying should make material identity, condition and process status reconstructable. The receiving role needs to know what arrived, when, from where, under which lot ID, with what deviations or holds, and what remains unresolved.",
+    "vocabulary": [
+      {
+        "term": "Intake record",
+        "definition": "Record establishing identity, quantity/condition, source, time and receiving status at a process transition."
+      },
+      {
+        "term": "Chain of custody",
+        "definition": "Documented control of material or sample identity during transfers."
+      },
+      {
+        "term": "Handoff",
+        "definition": "Structured transfer of current status, evidence, open controls and next responsibilities."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Transfer identity with the material",
+        "body": "Lot ID, source crop/harvest, split/room destination and transfer time should accompany the physical material so the next process begins with correct genealogy.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Include condition and exceptions",
+        "body": "Record unusual damage, visible contamination concern, delayed transfer, temperature/moisture concern or existing hold so the drying process does not erase the upstream context.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoff unresolved work explicitly",
+        "body": "Written plus verbal handoff should preserve pending decisions, controls and next responsible role where the risk is material.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A lot arrives at drying after an unexpected staging delay; the intake preserves the delay window and lot identity so later product-condition evidence can be interpreted correctly."
+    ],
+    "commonMistakes": [
+      "Transferring material before labels/records are reconciled.",
+      "Recording only total weight.",
+      "Omitting active holds or deviations from the receiving handoff."
+    ],
+    "practicalApplication": "Write a harvest-to-dry intake record and handoff for a split lot with one open deviation.",
+    "summary": "A strong postharvest process starts with an identity- and condition-preserving handoff."
+  }
+}

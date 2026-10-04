@@ -1,6 +1,8 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { addAutomaticEnrollmentCompletion } from './enrollment-completion-adapter.mjs';
+import { loadProductionCredentialSigner } from './credential-signing-adapter.mjs';
+import { loadSecureAssessmentStore } from './secure-assessment-store-adapter.mjs';
 
 function required(env, name) {
   const value = String(env[name] ?? '').trim();
@@ -19,10 +21,23 @@ export function validateProductionEnvironment(env = process.env) {
   const authAdapterModule = required(env, 'THC_AUTH_ADAPTER_MODULE');
   const publicBaseUrl = required(env, 'THC_PUBLIC_BASE_URL');
   const requiredSchemaVersion = required(env, 'THC_REQUIRED_SCHEMA_VERSION');
+  const secureAssessmentStoreModule = required(env, 'THC_SECURE_ASSESSMENT_STORE_MODULE');
   let parsed;
   try { parsed = new URL(publicBaseUrl); } catch { throw new Error('THC_PUBLIC_BASE_URL must be a valid URL'); }
   if (parsed.protocol !== 'https:') throw new Error('Production THC_PUBLIC_BASE_URL must use https');
-  return { mode: 'production', persistenceAdapterModule, authAdapterModule, publicBaseUrl: parsed.toString(), requiredSchemaVersion };
+  return { mode: 'production', persistenceAdapterModule, authAdapterModule, publicBaseUrl: parsed.toString(), requiredSchemaVersion, secureAssessmentStoreModule };
+}
+
+export function enforceProductionAuthAssurance(authorize) {
+  if (typeof authorize !== 'function') throw new Error('Production authorizer must be a function');
+  return function authorizeWithAssurance(req, requiredScope) {
+    const result = authorize(req, requiredScope);
+    if (!result?.ok) return result;
+    if (String(requiredScope ?? '').startsWith('admin:') && result.mfaVerified !== true) {
+      return { ok: false, status: 403, error: 'admin-mfa-required' };
+    }
+    return result;
+  };
 }
 
 export async function loadProductionApiOptions(env = process.env) {
@@ -33,8 +48,8 @@ export async function loadProductionApiOptions(env = process.env) {
   if (typeof persistenceModule.createPersistenceAdapters !== 'function') throw new Error('Persistence adapter module must export createPersistenceAdapters({ env })');
   const adapters = await persistenceModule.createPersistenceAdapters({ env });
   const credentialStore = adapters?.credentialStore;
-  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function') {
-    throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), and getByVerificationId()');
+  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function' || typeof credentialStore.listBySubjectHash !== 'function') {
+    throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), getByVerificationId(), and listBySubjectHash()');
   }
   const rawLearnerStore = adapters?.learnerStore;
   const requiredLearnerMethods = [
@@ -65,18 +80,31 @@ export async function loadProductionApiOptions(env = process.env) {
     completionStore
   });
 
+  const secureAssessmentStore = await loadSecureAssessmentStore(env);
+
+  const credentialWriter = adapters.credentialWriter ?? null;
+  if (credentialWriter && (typeof credentialWriter.issueCredential !== 'function' || typeof credentialWriter.transitionById !== 'function')) {
+    throw new Error('Production credentialWriter must provide issueCredential() and transitionById()');
+  }
+  const credentialSigner = env.THC_CREDENTIAL_SIGNER_MODULE
+    ? await loadProductionCredentialSigner(env)
+    : null;
+
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));
   if (typeof authModule.createRequestAuthorizer !== 'function') throw new Error('Authentication adapter module must export createRequestAuthorizer({ env })');
-  const authorize = await authModule.createRequestAuthorizer({ env });
-  if (typeof authorize !== 'function') throw new Error('Authentication adapter must return an authorize(req, requiredScope) function');
+  const rawAuthorize = await authModule.createRequestAuthorizer({ env });
+  if (typeof rawAuthorize !== 'function') throw new Error('Authentication adapter must return an authorize(req, requiredScope) function');
+  const authorize = enforceProductionAuthAssurance(rawAuthorize);
 
   return {
     env,
     credentialStore,
-    credentialWriter: adapters.credentialWriter ?? null,
+    credentialWriter,
+    credentialSigner,
     learnerStore: wrapped.learnerStore,
     practicalEvaluatorStore: wrapped.practicalEvaluatorStore,
     enrollmentCompletionStore: completionStore,
+    secureAssessmentStore,
     requiredSchemaVersion: config.requiredSchemaVersion,
     authorize
   };

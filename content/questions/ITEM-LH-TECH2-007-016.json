@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why is one unusually high production cycle insufficient to prove a sustained improvement?",
   "choices": [
-    "One high value always proves improvement.",
-    "Context makes metrics less accurate.",
-    "Only the latest cycle should be retained.",
-    "Trend interpretation requires repeated comparable observations and context for changes in population, process or denominator."
+    "One unusually high cycle proves improvement if it exceeds the historical average by enough to be operationally meaningful.",
+    "Context should be excluded from KPI interpretation because it makes the metric less objective.",
+    "The newest cycle should receive the greatest weight because it reflects current production capability.",
+    "Sustained improvement requires repeated comparable observations and context for changes in population, process, timing, or denominator that could explain the one-cycle spike."
   ],
   "correct": 3,
-  "rationale": "Trend interpretation requires repeated comparable observations and context for changes in population, process or denominator.",
+  "rationale": "A single high result may reflect real improvement, random variation, a changed population, a denominator shift, unusual conditions, or another one-time factor. A sustained trend requires multiple comparable observations and enough context to know the metric still means the same thing over time. Recency alone cannot establish durability.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One sensor changes sharply exactly when irrigation begins, while nearby sensors do not. What should be recorded first?",
   "choices": [
-    "Irrigation as the confirmed root cause",
-    "The nearby sensors as wrong",
-    "A new room set point",
-    "The timing, sensor location and comparison pattern as context before assigning a cause"
+    "Record irrigation as the confirmed cause because the sensor changed at exactly the same time.",
+    "Treat the nearby sensors as unreliable because they did not show the same response.",
+    "Change the room target to prevent the same sensor response at the next irrigation event.",
+    "Record the timing, sensor location, and comparison with nearby sensors as context before assigning a cause."
   ],
   "correct": 3,
-  "rationale": "The timing, sensor location and comparison pattern as context before assigning a cause. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "The timing creates a useful association, but one sensor changing during irrigation does not prove irrigation caused the environmental shift. The difference may reflect local splash, placement, airflow, sensor behavior, or a real microclimate response. Preserving the timing and spatial comparison gives later reviewers the evidence needed to test those alternatives.",
   "references": [
     "REF-VPD-002"
   ],

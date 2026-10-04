@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-LIGHT-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician compares PPFD this week with last week but changes sensor height and orientation. What is the main problem?",
   "choices": [
-    "PPFD never requires consistent geometry.",
-    "Only lamp wattage matters.",
-    "The newer reading automatically replaces the older one.",
-    "The measurement geometry changed, so the values are not a clean repeatable comparison."
+    "Keep the new measurement because the same sensor was used, even though its height and orientation changed.",
+    "Normalize the values by lamp wattage so the two weeks can still be compared despite different measurement geometry.",
+    "Use only the newer measurement because current crop-plane conditions matter more than preserving the earlier geometry.",
+    "Treat the comparison as confounded because changing sensor height and orientation changes the measurement geometry and therefore the meaning of the result."
   ],
   "correct": 3,
-  "rationale": "The measurement geometry changed, so the values are not a clean repeatable comparison. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "PPFD is highly dependent on where and how the sensor is positioned relative to the light field and crop plane. If height or orientation changes, the two readings no longer represent the same measurement condition, so an apparent week-to-week change may be caused partly or entirely by geometry. The defensible approach is to repeat measurements using a controlled, documented position and orientation. Lamp wattage or recency cannot correct for a changed measurement setup after the fact.",
   "references": [
     "REF-LIGHT-001"
   ]

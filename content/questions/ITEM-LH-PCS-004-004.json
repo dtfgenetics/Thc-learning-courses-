@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A cart leaves a suspect-stock area and is urgently needed in a cleaner propagation zone. What is the strongest response?",
+  "choices": [
+    "Move it immediately because production is urgent",
+    "Follow the approved cleaning/disinfection and release workflow before moving it into the cleaner zone",
+    "Wipe one visible spot",
+    "Rename the cart"
+  ],
+  "correct": 1,
+  "rationale": "Urgency does not remove the contamination pathway or sanitation requirement.",
+  "references": [
+    "REF-PSU-HIGH-TUNNEL-SANITATION-2025"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

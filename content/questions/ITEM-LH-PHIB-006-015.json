@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-006-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-006-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which handoff best supports safe continuation of an outbreak response?",
+  "choices": [
+    "Only the final diagnosis.",
+    "Current status, evidence, holds/controls, pending tests, unresolved risks, deadlines and next responsible role.",
+    "A note saying 'watch plants.'",
+    "A verbal summary with no record."
+  ],
+  "correct": 1,
+  "rationale": "A structured handoff preserves unresolved risk and next actions across shifts and roles.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}

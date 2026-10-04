@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-002-04",
+  "title": "Representative Endpoint Sampling & Trend Review",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-002-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A drying endpoint should be supported by representative product evidence, not by elapsed time or one convenient reading. The plan must define what is sampled, how results are compared and who may release the next step.",
+    "vocabulary": [
+      {
+        "term": "Endpoint",
+        "definition": "Defined evidence state supporting transition from one controlled process stage to another."
+      },
+      {
+        "term": "Trend",
+        "definition": "Sequence of comparable observations used to evaluate direction and rate of change."
+      },
+      {
+        "term": "Decision rule",
+        "definition": "Predefined way evidence is evaluated by an authorized role."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Sample the defined lot and its variation",
+        "body": "The plan should account for rack, position, flower size or other known sources of heterogeneity and preserve each sample location.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Use trends with comparable methods",
+        "body": "Repeated results are informative only when method, sample handling and measurement basis are comparable. A sudden change can be process evidence or a measurement problem.",
+        "references": [
+          "REF-NIST-CANNAQAP-2024-001",
+          "REF-ISO-17025-2017-001"
+        ]
+      },
+      {
+        "title": "Separate evidence collection from authority",
+        "body": "A technician can collect and verify evidence without independently changing endpoint specifications or releasing product beyond assigned authority.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Most samples appear stable while one repeatable zone remains different; the outlying zone should be investigated and scoped, not deleted from the average."
+    ],
+    "commonMistakes": [
+      "Declaring completion by calendar alone.",
+      "Averaging away a known wet zone.",
+      "Changing the endpoint after seeing an inconvenient result."
+    ],
+    "practicalApplication": "Draft an endpoint plan listing lot boundaries, locations, method, frequency, trend review, exception handling and authorized decision role.",
+    "summary": "Endpoint decisions require representative, comparable product evidence and a predefined authority boundary."
+  }
+}

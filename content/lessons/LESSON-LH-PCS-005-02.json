@@ -1,0 +1,65 @@
+{
+  "id": "LESSON-LH-PCS-005-02",
+  "title": "Aseptic Workflow, Zones & Process Discipline",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-TC-ASEPTIC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-005-02"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-PROP-001",
+    "REF-PROP-TC-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Aseptic work depends on controlled sequence, prepared materials, operator discipline and traceable exceptions. A clean-looking bench is not evidence that the process remained aseptic.",
+    "vocabulary": [
+      {
+        "term": "Aseptic technique",
+        "definition": "Practices intended to prevent unwanted microbial introduction during controlled handling."
+      },
+      {
+        "term": "Process breach",
+        "definition": "A departure from the defined aseptic sequence or zone boundary that can change contamination risk."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Sequence reduces avoidable exposure",
+        "body": "Materials, labels and disposal paths should be prepared before vessels are opened so exposed work is brief, deliberate and separated from uncontrolled movement.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Zones are behavioral controls",
+        "body": "A clean zone works only when hands, tools, containers and waste follow defined movement rules. Crossing a boundary without the required reset creates a recordable breach.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Records make the process investigable",
+        "body": "Batch, operator, source, vessel, timing and breach records allow later contamination patterns to be localized without blaming an operator from one observation.",
+        "references": [
+          "REF-PROP-TC-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "An operator reaches outside the controlled field and returns without the required reset; the affected vessels are marked for hold and the event is recorded.",
+      "Two batches share a preparation lot but only one shares an operator period, preserving both factors supports later investigation."
+    ],
+    "commonMistakes": [
+      "Equating surface appearance with aseptic control.",
+      "Continuing after a boundary breach without documenting affected material.",
+      "Preparing labels after vessels have been opened."
+    ],
+    "practicalApplication": "Map an aseptic transfer from preparation through waste removal, identify clean-to-exposed transitions, and write stop, reset and hold actions for three simulated breaches.",
+    "summary": "Aseptic control is a reproducible workflow with visible boundaries, prepared sequence and honest breach records."
+  }
+}

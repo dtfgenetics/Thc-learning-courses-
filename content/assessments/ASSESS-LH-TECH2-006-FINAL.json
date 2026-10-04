@@ -1,8 +1,8 @@
 {
   "id": "ASSESS-LH-TECH2-006-FINAL",
   "title": "Harvest/Postharvest Deviations & Quality Response — Course Assessment",
-  "version": "1.0.0",
-  "status": "draft",
+  "version": "1.2.0",
+  "status": "published",
   "purpose": "summative",
   "competencies": [
     "COMP-POSTHARVEST-PROCESS-001",
@@ -47,6 +47,7 @@
   "passingScorePercent": 80,
   "maxAttempts": null,
   "cooldownHours": 0,
+  "timeLimitMinutes": 50,
   "feedbackMode": "post-attempt-domain-level",
   "totalItems": 24,
   "randomizeItems": true,
@@ -86,10 +87,49 @@
   "extensions": {
     "courseId": "COURSE-LH-TECH2-006",
     "linkedCredentialPractical": "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-006-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "independentProductReleaseOrDispositionAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-006-01": [
+        "LESSON-LH-TECH2-006-01",
+        "LESSON-LH-TECH2-006-03"
+      ],
+      "LO-LH-TECH2-006-02": [
+        "LESSON-LH-TECH2-006-02"
+      ],
+      "LO-LH-TECH2-006-03": [
+        "LESSON-LH-TECH2-006-02"
+      ],
+      "LO-LH-TECH2-006-04": [
+        "LESSON-LH-TECH2-006-03",
+        "LESSON-LH-TECH2-006-04"
+      ],
+      "LO-LH-TECH2-006-05": [
+        "LESSON-LH-TECH2-006-04"
+      ],
+      "LO-LH-TECH2-006-06": [
+        "LESSON-LH-TECH2-006-01",
+        "LESSON-LH-TECH2-006-03",
+        "LESSON-LH-TECH2-006-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-006/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false,
+    "itemQualityRevision": {
+      "date": "2026-09-23",
+      "scope": "All 24 summative items revised for stronger distractor plausibility and explanatory rationales while preserving keys, objectives, competencies, references, Bloom levels, difficulty, blueprint, item membership, and test-to-teaching mappings.",
+      "reviewRequired": true,
+      "professionalValidationConferred": false
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One zone missed irrigation before shift end because a fault remained unresolved. What should the handoff say?",
   "choices": [
-    "Irrigation complete",
-    "Identify the missed zone, actual delivery status, checks performed, unresolved fault, escalation and next action",
-    "No note until the fault is diagnosed",
-    "Copy the planned completion status"
+    "Mark irrigation complete because the shift ended and the remaining fault has already been escalated.",
+    "Identify the missed zone, actual delivery status, checks completed, unresolved fault, escalation status, and next required action.",
+    "Leave the issue out of handoff until maintenance confirms the root cause.",
+    "Copy the planned completion status so the schedule remains consistent."
   ],
   "correct": 1,
-  "rationale": "Identify the missed zone, actual delivery status, checks performed, unresolved fault, escalation and next action. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "The next shift needs the actual operational state, not the planned one. A strong handoff identifies which zone missed irrigation, what checks were completed, what fault remains unresolved, who has been notified, and what must happen next. Waiting for a final diagnosis can create a continuity gap.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IRRIGATION-001"

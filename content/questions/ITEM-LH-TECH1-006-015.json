@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Held material is accidentally staged beside normal receiving containers. What should Technician I do?",
   "choices": [
-    "Remove the hold label",
-    "Mix the containers so records match the staging",
-    "Restore the supplied segregation/hold control, document the deviation and escalate as required",
-    "Ignore it if contact was brief"
+    "Remove the hold label so the staging area matches the surrounding containers.",
+    "Mix the held container with normal receiving material so the physical arrangement matches the record.",
+    "Restore the required segregation/hold control, document the staging deviation, and escalate any possible exposure or scope question.",
+    "Ignore the event if the held and normal containers were adjacent only briefly."
   ],
   "correct": 2,
-  "rationale": "Restore the supplied segregation/hold control, document the deviation and escalate as required. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Accidental staging beside normal material is a hold/segregation deviation even if contact was brief. The technician should restore the controlled boundary, preserve both identities, and document the event so any exposure pathway can be assessed. Removing labels or mixing material compounds the traceability problem.",
   "references": [
     "REF-IPM-001",
     "REF-POSTHARVEST-001"

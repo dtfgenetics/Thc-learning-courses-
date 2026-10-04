@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-PCS-006-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "The physical count and record differ at handoff. What is the correct response?",
+  "choices": [
+    "Adjust the record silently",
+    "Hold or document the exception and reconcile under the controlled process",
+    "Transfer the discrepancy as if it were resolved",
+    "Discard the batch label"
+  ],
+  "correct": 1,
+  "rationale": "A discrepancy must be reconciled or explicitly controlled, not hidden.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

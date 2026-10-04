@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IRRIGATION-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "After an authorized irrigation repair, what best supports closure?",
   "choices": [
-    "Assume closure because the repair ticket is complete.",
-    "Close the issue when the pump turns on.",
-    "Repeat the relevant representative delivery/performance measurement under comparable conditions.",
-    "Change the irrigation recipe before retesting."
+    "Close the issue when the repair work order is signed because the servicing action has been formally completed.",
+    "Close the issue after confirming the pump or valve actuates, since restored equipment motion verifies functional recovery.",
+    "Repeat the relevant representative delivery or performance measurement under comparable conditions and compare it with the pre-repair problem evidence.",
+    "Update the irrigation recipe after the repair and use the next crop response as the main confirmation that the issue is resolved."
   ],
   "correct": 2,
-  "rationale": "Repeat the relevant representative delivery/performance measurement under comparable conditions. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A repair is not fully verified merely because the work order is closed or the component moves. Closure should demonstrate that the original performance problem has actually been corrected under comparable operating conditions. Repeating the representative measurement preserves a before/after comparison and tests the outcome the repair was intended to restore. Changing the recipe before retesting would confound the verification because it introduces a second change.",
   "references": [
     "REF-IRRIGATION-001"
   ]

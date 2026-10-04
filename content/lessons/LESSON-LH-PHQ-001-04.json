@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-001-04",
+  "title": "Harvest Deviations, Holds & Affected-Scope Control",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-001-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Harvest-stage deviations should be contained while the affected scope is defined. A sanitation miss, identity uncertainty, environmental delay or suspect material does not automatically prove the entire lot failed, but it cannot be ignored.",
+    "vocabulary": [
+      {
+        "term": "Affected scope",
+        "definition": "Material, time period, location or process plausibly influenced by the deviation."
+      },
+      {
+        "term": "Hold",
+        "definition": "Controlled status that prevents normal movement or release while evidence and disposition remain unresolved."
+      },
+      {
+        "term": "Containment",
+        "definition": "Immediate action used to limit further impact while investigation continues."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Record facts before theories",
+        "body": "Capture time, location, material IDs, observed condition and immediate action before deciding cause or final disposition.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Use genealogy to define scope",
+        "body": "Trace lot splits, locations and handling history to identify which material plausibly shared the event.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Consequence follows evidence",
+        "body": "Duration, product condition, later measurements and process knowledge determine whether the event is minor, requires additional evaluation or supports hold/disposition.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A missed sanitation step on one tote line can justify containment of connected material while the event is investigated without automatically placing unrelated lots on indefinite hold."
+    ],
+    "commonMistakes": [
+      "Assigning blame before collecting facts.",
+      "Placing the whole facility on hold without evidence.",
+      "Releasing affected material because it looks normal."
+    ],
+    "practicalApplication": "Complete a harvest deviation record with event facts, immediate containment, affected scope, evidence gaps and escalation owner.",
+    "summary": "Harvest deviations require fast containment and careful scope, not premature certainty."
+  }
+}

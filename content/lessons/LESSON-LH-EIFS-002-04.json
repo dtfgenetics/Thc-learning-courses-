@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-002-04",
+  "title": "Photoperiod, Spectrum & Crop Architecture Context",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-LIGHT-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-002-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026",
+    "REF-FLOWER-MORPH-2023-001",
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Light duration, spectral distribution, fixture geometry and canopy architecture interact with crop development. Specialists should interpret these variables together while keeping photobiology claims proportional to the evidence.",
+    "vocabulary": [
+      {
+        "term": "Spectrum",
+        "definition": "The distribution of emitted light across wavelengths."
+      },
+      {
+        "term": "Photoperiod response",
+        "definition": "A developmental response influenced by the duration and timing of light and dark periods."
+      },
+      {
+        "term": "Canopy architecture",
+        "definition": "The spatial arrangement of leaves, stems and branches that affects interception, shading and measurement geometry."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Duration is biologically meaningful",
+        "body": "Photoperiod is not only part of a DLI calculation; it can influence developmental signaling. Facility schedules therefore should not be changed solely to chase a photon total.",
+        "references": [
+          "REF-FLOWER-MORPH-2023-001"
+        ]
+      },
+      {
+        "title": "Spectrum and intensity are different dimensions",
+        "body": "A spectral description does not replace PPFD measurement, and a PPFD value does not describe spectral composition. Record which question the measurement is answering.",
+        "references": [
+          "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+        ]
+      },
+      {
+        "title": "Canopy architecture changes interception",
+        "body": "Training, plant spacing and developmental stage affect shading and distribution. Repeated mapping should use a defined crop plane and note major architecture changes.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two fixtures can produce similar PPFD at one point but differ in spectrum and distribution; those systems should not be considered equivalent from one measurement alone."
+    ],
+    "commonMistakes": [
+      "Treating one spectrum as universally optimal.",
+      "Using DLI to ignore photoperiod biology.",
+      "Comparing maps after major canopy changes without recording the change."
+    ],
+    "practicalApplication": "Review a mock change in photoperiod, fixture spectrum and canopy height and identify which measurements are needed before attributing a crop response to one variable.",
+    "summary": "Advanced lighting interpretation separates intensity, duration, spectrum and canopy geometry while considering how they interact."
+  }
+}

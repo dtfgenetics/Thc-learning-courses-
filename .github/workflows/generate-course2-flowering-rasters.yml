@@ -1,0 +1,76 @@
+name: Generate Course 2 Flowering Rasters
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: course2-flowering-raster-generation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install raster dependencies
+        run: python -m pip install --disable-pip-version-check pillow numpy
+
+      - name: Generate Course 2 raster visuals
+        run: python scripts/generate-course2-flowering-foundation-rasters.py
+
+      - name: Verify raster outputs
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          import hashlib, os
+          paths=[
+            'apps/web/public/assets/course2/flower-photoperiod-dark-period.webp',
+            'apps/web/public/assets/course2/flower-trichome-representative-sampling.webp'
+          ]
+          for path in paths:
+              if not os.path.exists(path):
+                  raise SystemExit(f'missing raster: {path}')
+              im=Image.open(path)
+              if im.format!='WEBP':
+                  raise SystemExit(f'not WEBP: {path}')
+              if min(im.size)<1600:
+                  raise SystemExit(f'short side below 1600px: {path} {im.size}')
+              data=open(path,'rb').read()
+              print(path, im.size, len(data), hashlib.sha256(data).hexdigest())
+          PY
+
+      - name: Open PR for generated raster assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add apps/web/public/assets/course2/flower-photoperiod-dark-period.webp
+          git add apps/web/public/assets/course2/flower-trichome-representative-sampling.webp
+          if git diff --cached --quiet; then
+            echo "Raster assets already match generator output."
+            exit 0
+          fi
+
+          branch="assets/course2-flowering-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git commit -m "Generate Course 2 flowering foundation rasters"
+          git push -u origin "$branch"
+
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "Generate Course 2 flowering foundation rasters" \
+            --body "Regenerates the governed Course 2 flowering raster assets from the repository generator. Normal main checks must pass before merge."

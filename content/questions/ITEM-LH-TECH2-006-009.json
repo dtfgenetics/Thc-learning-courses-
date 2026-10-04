@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two samples have similar moisture content but different water activity. What does this demonstrate?",
   "choices": [
-    "Moisture content and water activity are related but not interchangeable product properties.",
-    "One measurement must be deleted.",
-    "Room RH should replace both values.",
-    "The samples are necessarily identical in microbial risk."
+    "Treat the difference as evidence that moisture content and water activity are related but distinct product properties and should not be substituted for one another.",
+    "Treat one of the measurements as erroneous because similar moisture content should produce the same water activity under the same method.",
+    "Use room RH to reconcile the disagreement and select whichever product value is closer to the environmental target.",
+    "Assume the samples have equivalent microbial and chemical stability because total moisture is similar."
   ],
   "correct": 0,
-  "rationale": "Moisture content and water activity are related but not interchangeable product properties.",
+  "rationale": "Moisture content describes how much water is present, while water activity reflects how available that water is for microbial and chemical processes. Product structure, solute content, temperature, and water binding can produce different water activity at similar moisture content. The two measurements can therefore complement each other but are not interchangeable, and neither should be deleted merely because they differ.",
   "references": [
     "REF-POSTHARVEST-STABILITY-2026-001"
   ]

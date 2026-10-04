@@ -9,7 +9,9 @@ const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const exists=(p)=>fs.existsSync(path.join(root,p));
 
 const course=read('content/courses/COURSE-LH-TECH1-006.json');
-assert.equal(course.status,'draft');
+assert.equal(course.status,'published');
+assert.equal(course.extensions?.academicPublicationStatus,'owner-approved-public-academic-release');
+assert.equal(course.extensions?.professionalCredentialUseAuthorized,false);
 assert.equal(course.finalAssessment,'ASSESS-LH-TECH1-006-FINAL');
 assert.ok(course.modules.includes('MOD-LH-TECH1-006-HARVEST'));
 assert.equal(course.extensions?.dedicatedCourseAssessmentRequired,false);
@@ -19,6 +21,7 @@ assert.equal(course.extensions?.independentProductReleaseAuthorityConferred,fals
 assert.equal(course.extensions?.dedicatedItemCount,36);
 assert.equal(course.extensions?.learnerAssetLayerBuilt,true);
 assert.equal(course.extensions?.totalLearnerAssetCount,8);
+assert.equal(course.extensions?.driveAssetMirrorStatus,'verified-8-of-8');
 
 const module=read('content/modules/MOD-LH-TECH1-006-HARVEST.json');
 assert.equal(module.lessons.length,4);
@@ -37,7 +40,7 @@ const formative=read('content/assessments/ASSESS-LH-TECH1-006-M01.json');
 const final=read('content/assessments/ASSESS-LH-TECH1-006-FINAL.json');
 assert.equal(formative.purpose,'formative');
 assert.equal(formative.items.length,12);
-assert.equal(final.status,'draft');
+assert.equal(final.status,'published');
 assert.equal(final.purpose,'summative');
 assert.equal(final.items.length,24);
 assert.equal(new Set([...formative.items,...final.items]).size,36);
@@ -46,6 +49,22 @@ assert.equal(final.extensions?.linkedCredentialPractical,'PRACTICAL-TECH1-F');
 const expectedObjectives=['LO-LH-TECH1-006-01','LO-LH-TECH1-006-02','LO-LH-TECH1-006-03','LO-LH-TECH1-006-04','LO-LH-TECH1-006-05','LO-LH-TECH1-006-06'];
 assert.deepEqual(new Set(final.objectives),new Set(expectedObjectives));
 assert.deepEqual(new Set(formative.objectives),new Set(expectedObjectives));
+assert.equal(final.extensions?.courseDerivedAssessment,true,'Course 6 final must remain explicitly course-derived');
+assert.equal(final.extensions?.encyclopediaSubstitutionAllowed,false,'Encyclopedia material cannot substitute for Course 6 instruction');
+assert.equal(final.extensions?.untaughtMaterialAllowed,false,'Course 6 final cannot assess untaught material');
+assert.equal(final.extensions?.independentProductReleaseAuthorityStillExcluded,true,'Course 6 assessment must not imply product-release authority');
+const taughtMaterialMap=final.extensions?.taughtMaterialMap??{};
+for(const objectiveId of expectedObjectives){
+  assert.ok(Array.isArray(taughtMaterialMap[objectiveId])&&taughtMaterialMap[objectiveId].length>0,`${objectiveId}: final must map to dedicated taught material`);
+  for(const lessonId of taughtMaterialMap[objectiveId]){
+    assert.match(lessonId,/^LESSON-LH-TECH1-006-/,`${objectiveId}: test-to-teaching map must stay inside Course 6`);
+    assert.ok(module.lessons.includes(lessonId),`${objectiveId}: mapped lesson must belong to the dedicated Course 6 module`);
+    const lesson=read(`content/lessons/${lessonId}.json`);
+    assert.ok((lesson.learningObjectives??[]).includes(objectiveId),`${objectiveId}: mapped lesson ${lessonId} must actually teach the objective`);
+  }
+}
+assert.ok(exists('docs/learning-hub/tech1/course-006/TEST-TO-TEACHING-MAP.md'),'Course 6 must retain a human-readable test-to-teaching audit');
+
 const summativeCounts=new Map(expectedObjectives.map(x=>[x,0]));
 const formativeCounts=new Map(expectedObjectives.map(x=>[x,0]));
 const keys=[0,0,0,0];let high=0;
@@ -89,7 +108,7 @@ await import('./test-course6-practical-crosswalk.mjs');
 await import('./test-course6-visual-registry.mjs');
 
 const visualRegistry=read('visuals/COURSE6-ASSET-REGISTRY.json');
-const produced=(visualRegistry.assets??[]).filter(x=>x.status==='produced');
+const produced=(visualRegistry.assets??[]).filter(x=>x.status==='produced'&&!String(x.id??'').startsWith('VIS-FOUNDATION-'));
 assert.equal(produced.length,8);
 const server=createAcademyWebServer({env:{...process.env,NODE_ENV:'development',ACADEMY_PREVIEW_DRAFTS:'1'}});
 server.listen(0,'127.0.0.1');
@@ -99,17 +118,13 @@ try{
   for(const asset of produced){
     const response=await fetch(`${base}${asset.learnerPath}`);
     assert.equal(response.status,200,`${asset.learnerPath} should be served by Academy runtime`);
-    assert.match(response.headers.get('content-type')??'',/^image\/svg\+xml/);
-    const svg=await response.text();
-    assert.match(svg,/<svg[\s>]/);
-    assert.match(svg,/<title[\s>]/);
-    assert.match(svg,/<desc[\s>]/);
+    assert.match(response.headers.get('content-type')??'',/^image\/webp/);
   }
-  assert.equal((await fetch(`${base}/assets/course6x/harvest-readiness-stop-work.svg`)).status,404);
-  assert.equal((await fetch(`${base}/assets/course6/not-a-real-asset.svg`)).status,404);
+  assert.equal((await fetch(`${base}/assets/course6x/harvest-readiness-stop-work.webp`)).status,404);
+  assert.equal((await fetch(`${base}/assets/course6/not-a-real-asset.webp`)).status,404);
 } finally {
   server.close();
   await once(server,'close');
 }
 
-console.log('Course 006 production slice passed: four lessons, six objectives, 36 referenced scored items, complete package artifacts, Practical F mapping and eight lesson-reachable runtime assets are wired while individual Drive mirrors and human/release gates remain open.');
+console.log('Course 006 production slice passed: four lessons, six objectives, 36 referenced scored items, complete package artifacts, Practical F mapping and eight lesson-reachable runtime assets and 8/8 controlled Drive mirrors are verified while human/professional-release gates remain open.');

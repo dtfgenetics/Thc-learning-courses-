@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A moisture sensor is moved into a different substrate. What should happen before its raw value is treated as an absolute target?",
   "choices": [
-    "Reuse the old substrate target unchanged.",
-    "Increase irrigation until the raw number matches the previous media.",
-    "Verify installation and substrate-specific behavior/reference so the trend has appropriate context.",
-    "Ignore crop stage because sensor output is universal."
+    "Reuse the old substrate target because the same sensor converts moisture to a comparable raw value regardless of media type.",
+    "Irrigate until the raw reading matches the previous substrate so the new media begins from a familiar moisture baseline.",
+    "Verify installation and substrate-specific response/reference behavior before treating the raw value as an absolute biological target.",
+    "Use the previous crop-stage target first and adjust only if the new substrate shows visible plant stress."
   ],
   "correct": 2,
-  "rationale": "Verify installation and substrate-specific behavior/reference so the trend has appropriate context.",
+  "rationale": "A raw moisture-sensor value depends on both the sensor and the medium in which it is installed. Different substrates can change dielectric behavior, water distribution, bulk density, contact, and the relationship between the reading and plant-available water. Installation and substrate-specific context therefore need verification before a previous numeric target is transferred.",
   "references": [
     "REF-IRRIGATION-001"
   ]

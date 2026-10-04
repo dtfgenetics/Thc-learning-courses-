@@ -2,7 +2,7 @@
 
 **Course:** Plant Health, IPM & Biosecurity Troubleshooting  
 **Version anchor:** 0.2.0  
-**Status:** authored development support; human review open
+**Status:** published owner-approved academic learner support; human review open
 
 ## Evidence-centered learning loop
 Orient → observe/measure → compare → reason → act within authority → document → reassess in an equivalent context.
@@ -70,12 +70,24 @@ Required evidence: priority statement; identifiers/instruction source; observati
 ## Visual production specification
 At least **4 primary instructional visuals**, one per current outcome. Additional visuals may be added without limit. Use exact terminology, no invented universal SOP/legal/product settings, phone-readable composition, meaningful external alt text/caption, non-color cues, illustrative-example labeling, and explicit academic-training/credential separation.
 
+## Current primary-visual production state
+
+Course 4 has **4 owner-approved lossless WebP primary visuals** recorded in `visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json`. Learner lessons use the WebP paths under `/assets/tech2/course4/`. Legacy SVG files remain provenance/source material only and are not the learner-facing production format.
+
+The raster set remains subject to normal responsive/public-runtime QA controls, but it is no longer a missing-production-asset backlog.
+
 ## Accessibility/manual UX
 Keyboard/focus; headings/landmarks; screen-reader semantics/order; 200%/400% zoom and reflow; mobile/tablet/desktop; contrast/non-color cues; form/table labels; assessment errors/instructions; visual text alternatives; print/download readability.
 
 ## Evidence/authority boundary
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.
+This course has dedicated instruction and a course-owned summative bank, but those materials remain separate from professional credential issuance. Every summative objective is mapped to dedicated Course 4 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 4. The course does not confer independent pesticide selection, mixing, application, or regulated treatment authority. Human technical review, accessibility review, mapped performance validation, program validation, standard setting and final release approval remain separate gates.
 
 Mapped performance evidence: `PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP`. Course completion alone does not validate or issue Technician II certification.
+
+## Published learner job aid
+
+- **DL-TECH2-IPM-BIOSECURITY-001 — Technician II Plant Health and Biosecurity Investigation Log**
+- Download: `/downloads/tech2-ipm-biosecurity-investigation.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.

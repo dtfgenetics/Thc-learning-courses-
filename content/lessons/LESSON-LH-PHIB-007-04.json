@@ -1,0 +1,74 @@
+{
+  "id": "LESSON-LH-PHIB-007-04",
+  "title": "Integrated Response: IPM, Biosecurity, CAPA & Recovery",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-007-04"
+  ],
+  "estimatedMinutes": 75,
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-IRAC-MOA-2026-001",
+    "REF-ASTM-D8403-001",
+    "REF-ASTM-E2659-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The case response should connect the best-supported mechanism to proportionate controls, authority boundaries, recovery metrics and an effectiveness check. The plan should still work if residual uncertainty remains.",
+    "vocabulary": [
+      {
+        "term": "Control objective",
+        "definition": "The specific risk or failure mode an intervention is intended to reduce."
+      },
+      {
+        "term": "Residual risk",
+        "definition": "Risk that remains after current controls are applied."
+      },
+      {
+        "term": "Effectiveness criterion",
+        "definition": "Predefined evidence used to judge whether the intervention or CAPA achieved the intended control objective."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Match controls to the mechanism",
+        "body": "A propagation-linked pathogen risk, media-associated pest, irrigation failure and resistance concern require different control packages. Select controls because they address the evidence-supported pathway.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Integrate tactics without creating new failure modes",
+        "body": "Check beneficial-organism compatibility, environmental effects, sanitation interactions and resistance selection pressure when combining controls.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001",
+          "REF-IRAC-MOA-2026-001"
+        ]
+      },
+      {
+        "title": "Build recovery and CAPA into the plan",
+        "body": "Define who owns each action, what recovery measurement will be used, when it will be checked and what result triggers escalation, reopening or closure.",
+        "references": [
+          "REF-ASTM-D8403-001",
+          "REF-ASTM-E2659-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If the case points to a contaminated propagation workflow, a strong plan may combine hold/movement controls, workflow correction, tool/process validation and targeted retesting rather than relying on one treatment step."
+    ],
+    "commonMistakes": [
+      "Choosing controls before the failure mechanism is defined.",
+      "Stacking interventions without compatibility review.",
+      "Closing when the action is performed rather than when effectiveness is demonstrated."
+    ],
+    "practicalApplication": "Write a case response plan with immediate containment, targeted control, owner, authorization, compatibility check, recovery metric, effectiveness window and residual risk.",
+    "summary": "Integrated response turns diagnosis into a controlled learning loop rather than a one-time treatment decision."
+  }
+}

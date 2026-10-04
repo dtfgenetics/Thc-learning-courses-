@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-008-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-008-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What belongs in a commissioning acceptance check?",
+  "choices": [
+    "Only whether the device powers on.",
+    "Only the installer name.",
+    "Defined test state, expected response, actual response, measurement evidence and acceptance criterion.",
+    "Only the controller model."
+  ],
+  "correct": 2,
+  "rationale": "Commissioning evidence must show tested function and acceptance basis.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}

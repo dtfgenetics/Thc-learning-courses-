@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-TRACEABILITY-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One source batch is divided across two dry-room racks. What is required for traceability?",
   "choices": [
-    "Only the first rack needs the source link",
-    "Both receiving identities/locations remain linked to the same source transformation with required quantities and event data",
-    "The source identity can be deleted once split",
-    "The racks can be combined in one unlabeled record"
+    "Link the source batch only to the first rack because the second rack shares the same harvest event.",
+    "Keep both receiving rack or lot identities linked to the same source transformation, including required quantity and event data for each split.",
+    "Close the source identity once the batch is divided because the new rack IDs become authoritative.",
+    "Use one combined unlabeled record for both racks so the split does not create duplicate records."
   ],
   "correct": 1,
-  "rationale": "Both receiving identities/locations remain linked to the same source transformation with required quantities and event data. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "When one source batch is split, both outputs must remain traceable to the original source and transformation event. Each receiving identity/location needs enough quantity and event context to reconstruct the split. Deleting the source relationship or collapsing both outputs into one unlabeled record breaks genealogy.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY",
     "REF-MHRA-GXP-DATA-INTEGRITY"

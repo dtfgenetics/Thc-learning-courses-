@@ -3,22 +3,119 @@
   "$id": "https://academy.dtfseeds.com/schemas/download.schema.json",
   "title": "THC Academy Learner Download",
   "type": "object",
-  "required": ["id", "title", "version", "status", "releaseStatus", "kind", "format", "description", "path", "accessibilityStatus"],
+  "required": [
+    "id",
+    "title",
+    "version",
+    "status",
+    "releaseStatus",
+    "kind",
+    "format",
+    "description",
+    "path",
+    "accessibilityStatus"
+  ],
   "properties": {
-    "id": {"type": "string", "pattern": "^DL-[A-Z0-9-]+$"},
-    "title": {"type": "string", "minLength": 3},
-    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
-    "status": {"enum": ["planned", "draft", "review", "approved", "published", "superseded", "retired"]},
-    "releaseStatus": {"enum": ["internal-preview", "public", "withdrawn"]},
-    "kind": {"enum": ["worksheet", "observation-log", "measurement-log", "checklist", "job-aid", "sop-template", "record-template"]},
-    "format": {"enum": ["csv", "pdf", "html", "docx", "xlsx"]},
-    "description": {"type": "string", "minLength": 20},
-    "path": {"type": "string", "pattern": "^/downloads/[A-Za-z0-9._-]+\\.(csv|pdf|html|docx|xlsx)$"},
-    "accessibilityStatus": {"enum": ["not-started", "partial", "review", "conformant"]},
-    "courseMappings": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^COURSE-[A-Z0-9-]+$"}},
-    "resourceMappings": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^RES-[A-Z0-9-]+$"}},
-    "instructions": {"type": "array", "items": {"type": "string", "minLength": 5}},
-    "limitations": {"type": "array", "items": {"type": "string", "minLength": 5}}
+    "id": {
+      "type": "string",
+      "pattern": "^DL-[A-Z0-9-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "draft",
+        "review",
+        "approved",
+        "published",
+        "superseded",
+        "retired"
+      ]
+    },
+    "releaseStatus": {
+      "enum": [
+        "internal-preview",
+        "public",
+        "withdrawn"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "worksheet",
+        "observation-log",
+        "measurement-log",
+        "checklist",
+        "job-aid",
+        "sop-template",
+        "record-template"
+      ]
+    },
+    "format": {
+      "enum": [
+        "csv",
+        "pdf",
+        "html",
+        "docx",
+        "xlsx"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^/downloads/[A-Za-z0-9._-]+\\.(csv|pdf|html|docx|xlsx)$"
+    },
+    "accessibilityStatus": {
+      "enum": [
+        "not-started",
+        "partial",
+        "review",
+        "conformant"
+      ]
+    },
+    "courseMappings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^COURSE-[A-Z0-9-]+$"
+      }
+    },
+    "resourceMappings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^RES-[A-Z0-9-]+$"
+      }
+    },
+    "instructions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "publicationNote": {
+      "type": "string",
+      "minLength": 20
+    }
   },
   "additionalProperties": false
 }

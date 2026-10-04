@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A controller commands a dehumidifier on, but independent humidity measurements do not respond. What can be concluded now?",
   "choices": [
-    "The dehumidifier compressor is definitely failed.",
-    "The humidity sensors are definitely wrong.",
-    "There is a command-to-response mismatch that needs equipment/control verification; root cause is not yet confirmed.",
-    "The controller display proves the equipment is working."
+    "Treat the dehumidifier as failed because the controller command is present and humidity is not decreasing.",
+    "Treat the independent humidity measurements as suspect because they disagree with the controller's commanded equipment state.",
+    "Classify the event as a command-to-response mismatch and verify the control signal, equipment state, sensor response, and related system conditions before naming the root cause.",
+    "Treat the controller display as confirmation that the equipment is operating because the command state is part of the control sequence."
   ],
   "correct": 2,
-  "rationale": "There is a command-to-response mismatch that needs equipment/control verification; root cause is not yet confirmed. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A control command shows what the system requested, not what the equipment actually delivered. If independent measurements fail to show the expected response, the verified fact is a mismatch between command and observed outcome. The root cause could involve equipment failure, control logic, interlocks, power, airflow, sensor interpretation, or other system conditions. Verification should therefore trace the command-to-response chain before declaring a specific component failed.",
   "references": [
     "REF-VPD-002",
     "REF-ENV-TEMP-2025-001"

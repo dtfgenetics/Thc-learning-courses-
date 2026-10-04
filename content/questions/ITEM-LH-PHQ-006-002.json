@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-006-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is final testing not the entire quality system?",
+  "choices": [
+    "Testing replaces procedures.",
+    "Quality also depends on defined work, competent execution, equipment, records, deviations and status control throughout the process.",
+    "Only packaging determines quality.",
+    "Final testing proves every prior step."
+  ],
+  "correct": 1,
+  "rationale": "Quality is built and demonstrated across interconnected controls.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

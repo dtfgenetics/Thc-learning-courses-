@@ -10,6 +10,8 @@ import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './se
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { startOrResumeCourseAssessment, getCourseAssessmentAttemptStatus, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
+import { startSecureCredentialAssessment, getSecureCredentialAssessmentStatus, saveSecureCredentialAssessmentResponses, submitSecureCredentialAssessment } from './secure-credential-assessment-service.mjs';
+import { createSecureAssessmentBank, createSecureAssessmentItem, transitionSecureAssessmentItem, getSecureAssessmentBankSummary, activateSecureAssessmentBank } from './secure-assessment-bank-admin-service.mjs';
 import { loadCourseAcademicCompletionBundle, evaluateCourseAcademicCompletion } from './course-enrollment-completion-service.mjs';
 import {
   getCoursePracticalEvaluation,
@@ -21,12 +23,14 @@ import {
   coursePracticalReportCsv
 } from './course-practical-evaluator-service.mjs';
 import { normalizePracticalEvidenceSubmission, learnerPracticalSubmissionView } from '../../../packages/domain/practical-evidence-submission.mjs';
+import { credentialSubjectHash, issueEligibleCredential } from './credential-issuance-service.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
 const credentialDefinitions = new Map();
 const courseDefinitions = new Map();
 const assessmentDefinitions = new Map();
+const credentialProgramDefinitions = new Map();
 
 function loadCredentialDefinition(id) {
   if (!/^CRED-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
@@ -35,6 +39,17 @@ function loadCredentialDefinition(id) {
   if (!fs.existsSync(target)) return null;
   const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
   credentialDefinitions.set(id, definition);
+  return definition;
+}
+
+function loadCredentialProgramDefinition(id) {
+  if (!/^CREDPROG-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+  if (credentialProgramDefinitions.has(id)) return credentialProgramDefinitions.get(id);
+  const target = path.join(root, 'content/credential-programs', `${id}.json`);
+  if (!fs.existsSync(target)) return null;
+  const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+  if (definition?.id !== id) return null;
+  credentialProgramDefinitions.set(id, definition);
   return definition;
 }
 
@@ -138,10 +153,17 @@ function credentialProgressView(credential, course, rawEvidence) {
   const requiredAssessments = new Set(credential.eligibility.requiredAssessments ?? []);
   const requiredPerformance = credential.eligibility.requiredPerformanceAssessments ?? [];
   const requiredArtifacts = credential.eligibility.requiredPortfolioArtifacts ?? [];
-  const requiredCompetencies = new Set(course?.competencies ?? []);
+  const requiredCourses = new Set(
+    (credential.eligibility.requiredCourseCompletions?.length
+      ? credential.eligibility.requiredCourseCompletions
+      : credential.eligibility.requireCourseCompletion === true
+        ? [credential.course]
+        : [])
+  );
+  const requiredCompetencies = new Set(credential.competenciesDemonstrated ?? course?.competencies ?? []);
   const evidence = {
     learnerId: rawEvidence.learnerId ?? null,
-    courseCompletions: (rawEvidence.courseCompletions ?? []).filter((row) => row.courseId === credential.course),
+    courseCompletions: (rawEvidence.courseCompletions ?? []).filter((row) => requiredCourses.has(row.courseId)),
     assessments: (rawEvidence.assessments ?? []).filter((row) => requiredAssessments.has(row.assessmentId)),
     performanceAssessments: (rawEvidence.performanceAssessments ?? []).filter((row) => requiredPerformance.includes(row.assessmentId)),
     portfolioArtifacts: (rawEvidence.portfolioArtifacts ?? []).filter((row) => requiredArtifacts.includes(row.artifactId))
@@ -158,6 +180,8 @@ function credentialProgressView(credential, course, rawEvidence) {
       role: credential.role ?? null,
       course: credential.course,
       courseVersion: credential.courseVersion ?? null,
+      credentialProgram: credential.credentialProgram ?? null,
+      requiredCourses: [...requiredCourses],
       certificationUseStatus: credential.governance?.certificationUseStatus ?? null,
       releaseApprovalStatus: credential.governance?.releaseApprovalStatus ?? null,
       minimumPassingScorePercent: credential.eligibility.minimumPassingScorePercent
@@ -210,6 +234,8 @@ export function credentialTranscriptView(credential, course, rawEvidence) {
       role: progress.credential.role,
       course: progress.credential.course,
       courseVersion: progress.credential.courseVersion,
+      credentialProgram: progress.credential.credentialProgram,
+      requiredCourses: progress.credential.requiredCourses,
       certificationUseStatus: progress.credential.certificationUseStatus,
       releaseApprovalStatus: progress.credential.releaseApprovalStatus
     },
@@ -234,6 +260,32 @@ export function credentialTranscriptView(credential, course, rawEvidence) {
       excludesPrivateEvaluatorNotes: true,
       excludesRawResponses: true
     }
+  };
+}
+
+function privateLearnerCredentialView(record, definition) {
+  const payload = record?.payloadJson ?? {};
+  return {
+    verificationId: record.verificationId,
+    status: record.status,
+    credential: {
+      id: definition?.id ?? record.credentialDefinitionId,
+      title: definition?.title ?? payload?.credential?.title ?? record.credentialDefinitionId,
+      version: record.credentialDefinitionVersion,
+      role: definition?.role ?? payload?.credential?.role ?? null
+    },
+    course: {
+      id: record.courseId ?? null,
+      version: record.courseVersion ?? null
+    },
+    recipient: {
+      learnerReference: payload?.recipient?.learnerReference ?? null,
+      certificateName: payload?.recipient?.certificateName ?? null,
+      applicationReference: payload?.recipient?.applicationReference ?? null
+    },
+    issuer: payload?.issuer ?? record.issuer ?? null,
+    issuedAt: record.issuedAt,
+    expiresAt: record.expiresAt ?? null
   };
 }
 
@@ -292,6 +344,9 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
 
 export function createHandler({
   credentialStore = null,
+  credentialWriter = null,
+  credentialSigner = null,
+  secureAssessmentStore = null,
   learnerStore = null,
   practicalEvaluatorStore = null,
   env = process.env,
@@ -403,6 +458,46 @@ export function createHandler({
         catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
         const result = await claimCoursePracticalEvaluation({ store: practicalEvaluatorStore, courseId: evaluatorAssignmentMatch[1], externalSubject: body.learnerSubject, evaluatorId: auth.subject, action: body.action ?? 'claim' });
         return json(res, result.status, { ...result.body, requestId });
+      }
+
+      if ((req.method === 'GET' || req.method === 'PUT') && url.pathname === '/api/v1/me/profile') {
+        route = `${req.method} /api/v1/me/profile`;
+        const auth = authorizeRequest(resolvedAuthorize, req, req.method === 'GET' ? 'learner:read' : 'learner:write', res, requestId);
+        if (!auth) return;
+        const requiredMethod = req.method === 'GET' ? 'getLearnerProfile' : 'saveLearnerProfile';
+        if (!learnerStore || typeof learnerStore[requiredMethod] !== 'function') return json(res, 503, { error: 'learner-profile-persistence-unavailable', requestId });
+        if (req.method === 'GET') return json(res, 200, { profile: await learnerStore.getLearnerProfile(auth.subject), requestId });
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const displayName = body.displayName == null ? null : String(body.displayName).trim();
+        const certificateName = body.certificateName == null ? null : String(body.certificateName).trim();
+        if ((displayName && displayName.length < 2) || (certificateName && certificateName.length < 2)) return json(res, 400, { error: 'invalid-learner-name', requestId });
+        const profile = await learnerStore.saveLearnerProfile(auth.subject, { displayName, certificateName });
+        return json(res, 200, { profile, requestId });
+      }
+
+      if (req.method === 'GET' && url.pathname === '/api/v1/me/applications') {
+        route = 'GET /api/v1/me/applications';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listApplications !== 'function') return json(res, 503, { error: 'learner-application-persistence-unavailable', requestId });
+        return json(res, 200, { applications: await learnerStore.listApplications(auth.subject), requestId });
+      }
+
+      if (req.method === 'POST' && url.pathname === '/api/v1/me/applications') {
+        route = 'POST /api/v1/me/applications';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.createApplication !== 'function') return json(res, 503, { error: 'learner-application-persistence-unavailable', requestId });
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const programId = String(body.programId ?? '').trim();
+        const program = loadCredentialProgramDefinition(programId);
+        if (!program) return json(res, 404, { error: 'credential-program-not-found', requestId });
+        const application = await learnerStore.createApplication(auth.subject, { programId });
+        return json(res, 201, { application, requestId });
       }
 
       if (req.method === 'GET' && url.pathname === '/api/v1/me/enrollments') {
@@ -532,6 +627,83 @@ export function createHandler({
         return json(res, 200, learnerPracticalSubmissionView(practical, saved));
       }
 
+      const credentialAssessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts$/);
+      if (req.method === 'POST' && credentialAssessmentStartMatch) {
+        route = 'POST /api/v1/me/credentials/:credentialId/assessment-attempts';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore) return json(res, 503, { error: 'secure-assessment-store-unavailable', requestId });
+        if (!learnerStore || ['findOpenAssessmentAttempt','getLearnerProfile','listApplications','listCourseEvidence','createAssessmentAttempt'].some((method) => typeof learnerStore[method] !== 'function')) {
+          return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
+        }
+        const credential = loadCredentialDefinition(credentialAssessmentStartMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        if (!program) return json(res, 409, { error: 'credential-program-not-found', requestId });
+        const assessment = loadAssessmentDefinition(program.assessmentModel?.credentialAssessment);
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
+        const result = await startSecureCredentialAssessment({ learnerStore, secureAssessmentStore, subject: auth.subject, credential, program, assessment });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const credentialAssessmentStatusMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts\/([0-9a-fA-F-]{36})$/);
+      if (req.method === 'GET' && credentialAssessmentStatusMatch) {
+        route = 'GET /api/v1/me/credentials/:credentialId/assessment-attempts/:attemptId';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore || !learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function') {
+          return json(res, 503, { error: 'secure-credential-assessment-unavailable', requestId });
+        }
+        const credential = loadCredentialDefinition(credentialAssessmentStatusMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        const assessment = program ? loadAssessmentDefinition(program.assessmentModel?.credentialAssessment) : null;
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
+        const result = await getSecureCredentialAssessmentStatus({ learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentStatusMatch[2], assessment });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const credentialAssessmentResponsesMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts\/([0-9a-fA-F-]{36})\/responses$/);
+      if (req.method === 'PUT' && credentialAssessmentResponsesMatch) {
+        route = 'PUT /api/v1/me/credentials/:credentialId/assessment-attempts/:attemptId/responses';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore || !learnerStore || ['getAssessmentAttempt','saveAssessmentResponses'].some((method)=>typeof learnerStore[method]!=='function')) {
+          return json(res, 503, { error: 'secure-credential-assessment-unavailable', requestId });
+        }
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 32 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const credential = loadCredentialDefinition(credentialAssessmentResponsesMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        const assessment = program ? loadAssessmentDefinition(program.assessmentModel?.credentialAssessment) : null;
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
+        const result = await saveSecureCredentialAssessmentResponses({
+          learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentResponsesMatch[2], responses: body.responses, assessment
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const credentialAssessmentSubmitMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts\/([0-9a-fA-F-]{36})\/submit$/);
+      if (req.method === 'POST' && credentialAssessmentSubmitMatch) {
+        route = 'POST /api/v1/me/credentials/:credentialId/assessment-attempts/:attemptId/submit';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore || !learnerStore || ['getAssessmentAttempt','saveAssessmentScore'].some((method)=>typeof learnerStore[method]!=='function')) {
+          return json(res, 503, { error: 'secure-credential-assessment-unavailable', requestId });
+        }
+        const credential = loadCredentialDefinition(credentialAssessmentSubmitMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        const assessment = program ? loadAssessmentDefinition(program.assessmentModel?.credentialAssessment) : null;
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
+        const result = await submitSecureCredentialAssessment({
+          learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentSubmitMatch[2], assessment
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
       const courseAssessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/assessment-attempts$/);
       if (req.method === 'POST' && courseAssessmentStartMatch) {
         route = 'POST /api/v1/me/courses/:courseId/assessment-attempts';
@@ -573,6 +745,21 @@ export function createHandler({
         if (!learnerStore || ['getAssessmentAttempt','saveAssessmentScore'].some((method) => typeof learnerStore[method] !== 'function')) return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
         const result = await submitCourseAssessment({ learnerStore, subject: auth.subject, attemptId: assessmentSubmitMatch[1] });
         return json(res, result.status, { ...result.body, requestId });
+      }
+
+      if (req.method === 'GET' && url.pathname === '/api/v1/me/credentials') {
+        route = 'GET /api/v1/me/credentials';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (typeof resolvedCredentialStore.listBySubjectHash !== 'function') {
+          return json(res, 503, { error: 'learner-credential-persistence-unavailable', requestId });
+        }
+        const records = await resolvedCredentialStore.listBySubjectHash(credentialSubjectHash(auth.subject));
+        const credentials = records.map((record) => privateLearnerCredentialView(
+          record,
+          loadCredentialDefinition(record.credentialDefinitionId)
+        ));
+        return json(res, 200, { credentials, requestId });
       }
 
       const credentialProgressMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/progress$/);
@@ -617,6 +804,107 @@ export function createHandler({
         if (!/^\d+(?:\.\d+){0,3}$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
         const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lessonProgressMatch[1], lessonVersion, status });
         return json(res, 200, { progress });
+      }
+
+      if (req.method === 'POST' && url.pathname === '/api/v1/admin/secure-assessment/banks') {
+        route = 'POST /api/v1/admin/secure-assessment/banks';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 32 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await createSecureAssessmentBank({ store: secureAssessmentStore, actorId: auth.subject, input: body });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureBankMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/banks\/([A-Za-z0-9._-]+)$/);
+      if (req.method === 'GET' && adminSecureBankMatch) {
+        route = 'GET /api/v1/admin/secure-assessment/banks/:bankVersion';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
+        if (!auth) return;
+        const result = await getSecureAssessmentBankSummary({ store: secureAssessmentStore, bankVersion: adminSecureBankMatch[1] });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureBankItemsMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/banks\/([A-Za-z0-9._-]+)\/items$/);
+      if (req.method === 'POST' && adminSecureBankItemsMatch) {
+        route = 'POST /api/v1/admin/secure-assessment/banks/:bankVersion/items';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 64 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await createSecureAssessmentItem({
+          store: secureAssessmentStore, actorId: auth.subject, bankVersion: adminSecureBankItemsMatch[1], input: body
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureItemTransitionMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/items\/(SECITEM-[A-Z0-9-]+)\/(\d+)\/transition$/i);
+      if (req.method === 'POST' && adminSecureItemTransitionMatch) {
+        route = 'POST /api/v1/admin/secure-assessment/items/:secureItemId/:revision/transition';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 16 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await transitionSecureAssessmentItem({
+          store: secureAssessmentStore, actorId: auth.subject,
+          secureItemId: adminSecureItemTransitionMatch[1], revision:Number(adminSecureItemTransitionMatch[2]), input: body
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureBankActivateMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/banks\/([A-Za-z0-9._-]+)\/activate$/);
+      if (req.method === 'POST' && adminSecureBankActivateMatch) {
+        route = 'POST /api/v1/admin/secure-assessment/banks/:bankVersion/activate';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 16 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await activateSecureAssessmentBank({
+          store: secureAssessmentStore, actorId: auth.subject, bankVersion: adminSecureBankActivateMatch[1], input: body
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const credentialIssueMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/(CRED-[A-Z0-9-]+)\/issue$/);
+      if (req.method === 'POST' && credentialIssueMatch) {
+        route = 'POST /api/v1/admin/credentials/:credentialId/issue';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || ['listCredentialEvidence','getLearnerProfile','listApplications'].some((method) => typeof learnerStore[method] !== 'function')) {
+          return json(res, 503, { error: 'credential-issuance-learner-evidence-unavailable', requestId });
+        }
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const learnerSubject = String(body.learnerSubject ?? '').trim();
+        if (!learnerSubject) return json(res, 400, { error: 'learner-subject-required', requestId });
+
+        const credential = loadCredentialDefinition(credentialIssueMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const course = loadCourseDefinition(credential.course);
+        if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
+
+        const [rawEvidence, learnerProfile, applications] = await Promise.all([
+          learnerStore.listCredentialEvidence(learnerSubject, { credentialDefinitionId: credential.id }),
+          learnerStore.getLearnerProfile(learnerSubject),
+          learnerStore.listApplications(learnerSubject)
+        ]);
+        const result = await issueEligibleCredential({
+          credential,
+          course,
+          rawEvidence,
+          learnerSubject,
+          learnerProfile,
+          applications,
+          credentialWriter,
+          credentialSigner,
+          actorId: auth.subject
+        });
+        return json(res, result.status, { ...result.body, requestId });
       }
 
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);

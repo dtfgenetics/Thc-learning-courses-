@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-036","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-12","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"A handoff contains an unresolved inventory discrepancy and an equipment alarm. What should it make clear?","choices":["Only which worker caused the problems","The exact affected identities/assets, factual status, controls taken, who was notified, and next required actions","Only that management has been told","Only the total number of completed tasks"],"correct":1,"rationale":"Open issues need precise status, identity, notification and next-action information so the next shift can continue safely.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-036",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-12",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A handoff contains an unresolved inventory discrepancy and an equipment alarm. What should it make clear?",
+  "choices": [
+    "Identify which worker likely caused the inventory and equipment problems so accountability is clear.",
+    "State the affected identities and assets, factual current status, controls already taken, who was notified, and the next required actions or decisions.",
+    "Note only that management has been informed because responsibility transfers once escalation occurs.",
+    "Summarize completed work first and leave the open discrepancy and alarm in the source records for the next shift to find."
+  ],
+  "correct": 1,
+  "rationale": "Open inventory and equipment issues need a decision-ready handoff. The incoming shift should know exactly what material and equipment are affected, what is currently known, what controls or checks were completed, who owns or received the escalation, and what must happen next. Blame or generic notification does not provide enough operational context.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

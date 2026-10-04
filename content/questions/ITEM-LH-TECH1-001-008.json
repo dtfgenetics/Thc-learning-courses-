@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-008","version":1,"status":"draft","purpose":"summative","competency":"COMP-SAFETY-WORK-001","objective":"LO-LH-TECH1-001-02","bloomLevel":"understand","difficulty":"easy","type":"multiple-choice","stem":"What is the main purpose of a Safety Data Sheet?","choices":["To certify the product improves plant yield","To replace all workplace procedures","To authorize any worker to use the chemical","To provide standardized hazard, handling, storage, exposure, and emergency information"],"correct":3,"rationale":"An SDS communicates standardized chemical safety information; it does not replace training or authorization.","references":["REF-OSHA-1910-1200-HAZCOM"]}
+{
+  "id": "ITEM-LH-TECH1-001-008",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-001-02",
+  "bloomLevel": "understand",
+  "difficulty": "easy",
+  "type": "multiple-choice",
+  "stem": "What is the main purpose of a Safety Data Sheet?",
+  "choices": [
+    "To certify that the chemical is effective for the intended cultivation task.",
+    "To replace facility procedures and task-specific training with one standardized document.",
+    "To authorize any trained worker to use the product once they have read the document.",
+    "To communicate standardized information about chemical hazards, handling, storage, exposure controls, and emergency measures."
+  ],
+  "correct": 3,
+  "rationale": "A Safety Data Sheet provides standardized hazard and safety information for a chemical. It supports training, hazard assessment, storage, handling, exposure response, and emergency planning, but it does not by itself authorize use or replace facility procedures, product labels, or task-specific training.",
+  "references": [
+    "REF-OSHA-1910-1200-HAZCOM"
+  ]
+}

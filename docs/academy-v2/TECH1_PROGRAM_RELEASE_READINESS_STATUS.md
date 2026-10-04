@@ -1,16 +1,18 @@
 # Technician I Program Release-Readiness Status
 
 **Program:** `CREDPROG-CULT-TECH-I-001 — THC Cultivation Technician I`  
-**Status date:** 2026-09-16
+**Status date:** 2026-09-24
 
 ## Current interpretation
 
 **Seven-course source/package architecture:** machine-complete under the current contract.  
 **Credential machine/control layer:** built and fail-closed.  
-**Public/deployed evidence for Courses 2–7:** still requires fresh responsive/readback verification.  
+**Public/deployed learner delivery for Courses 2–7:** route/readback and exact deployment build/source identity verified in the current readiness records.  
+**Course 6 controlled Drive mirrors:** 8/8 present with verified file IDs in the governed asset registry.  
+**Rendered responsive/accessibility review:** still requires real human evidence.  
 **Professional credential issuance:** **BLOCKED**.
 
-Green CI proves repository/package consistency. It does not authorize certification issuance.
+Green CI proves repository/package consistency. Public deployment proves delivery of the academic package. Neither authorizes professional certification issuance.
 
 ## Machine controls now present
 
@@ -21,14 +23,16 @@ Green CI proves repository/package consistency. It does not authorize certificat
 - `registry/technician-i-machine-layer.json` records required credential machine artifacts and fail-closed security boundaries;
 - `ASSESS-CRED-TECH1-001` is a public **draft blueprint only** and contains zero operational secure items;
 - the secure assessment-store contract and equivalent-form rules explicitly prohibit promotion of public development items into operational credential forms;
-- candidate retest/remediation/accommodation/appeal/security and evidence-retention/privacy drafts are present;
+- candidate retest/remediation/accommodation/appeal/security and evidence-retention/privacy preparation artifacts are present;
 - the issuance/verification workflow contract is present;
-- the API already exposes read-only public credential verification and persistent status-transition infrastructure, while initial Technician I issuance remains intentionally disabled;
-- `scripts/test-tech1-machine-layer.mjs` and `scripts/test-tech1-release-readiness.mjs` keep these boundaries deterministic.
+- the API exposes read-only public credential verification and persistent status-transition infrastructure, while initial Technician I issuance remains intentionally disabled;
+- public course/lesson/assessment or readiness-check readback and exact deployment build/source identity are recorded as verified for Courses 2–7 in the current readiness matrix;
+- Course 6 has all 8 controlled Google Drive asset mirrors recorded with verified file IDs;
+- `scripts/test-tech1-machine-layer.mjs`, `scripts/test-tech1-release-readiness.mjs`, certification dependency checks, and deployment/readback workflows keep these boundaries deterministic.
 
 ## Critical-failure governance
 
-The development program rule now aligns with the five controlled critical-failure classes in `registry/technician-i-integrated-lab-plan.json`:
+The development program rule aligns with the five controlled critical-failure classes in `registry/technician-i-integrated-lab-plan.json`:
 
 1. serious unresolved safety hazard;
 2. identity/genealogy break;
@@ -40,11 +44,13 @@ An aggregate score cannot silently erase one of these failures. Their final oper
 
 ## Machine work still open
 
-- fresh deployed responsive/manual learner QA for Courses 2–7;
-- anonymous public readback and exact deployment SHA/route evidence where public learner delivery is intended;
-- Course 6 individual Google Drive asset mirrors and real returned mirror IDs;
-- ongoing synchronization of readiness/release evidence with exact versions and deployment state;
-- any further issuance implementation only after an approved private assessment/evidence decision system exists.
+The previously listed Course 2–7 public readback/deployment-evidence gap and Course 6 Drive-mirror gap are no longer current machine blockers.
+
+Remaining machine-side work is limited to:
+
+- keep readiness/release evidence synchronized with exact source versions and deployment state as the repository changes;
+- retain deterministic regression coverage for deployment identity, source/package integrity, accessibility hooks, assessment boundaries, evidence provenance, privacy/security preparation and release dependencies;
+- do not enable credential issuance or operational secure-form delivery until the required private assessment/evidence decision system and real approval evidence exist.
 
 ## Release gates still requiring real evidence
 
@@ -70,4 +76,4 @@ No synthetic review, pilot, calibration, standard-setting, security, privacy, ps
 
 ## Release rule
 
-Technician I remains non-issuable while any required release gate is unresolved. Course completion, package completeness, public deployment, source-package CI, or assistant-generated governance drafts are not substitutes for credential validation and approval.
+Technician I remains non-issuable while any required professional release gate is unresolved. Academic course-package completion and deployment can proceed independently where their own checks pass, but professional credential issuance remains fail-closed until the required human, pilot, psychometric, security/privacy and final approval evidence exists.

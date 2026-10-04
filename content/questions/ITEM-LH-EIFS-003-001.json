@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-003-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Room temperature stays controlled after irrigation, but RH rises sharply. Which system limitation should be investigated first?",
+  "choices": [
+    "Sensible cooling only.",
+    "Latent moisture-removal capacity and control sequencing.",
+    "Fixture spectrum.",
+    "Plant labels."
+  ],
+  "correct": 1,
+  "rationale": "Stable temperature with rising RH points toward moisture-removal performance rather than proving a sensible cooling problem.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

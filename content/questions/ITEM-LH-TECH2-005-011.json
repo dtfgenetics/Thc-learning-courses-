@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A suspect propagation tray must be inspected more closely. Which action best protects biosecurity?",
   "choices": [
-    "Move the tray into a clean room temporarily.",
-    "Use the same uncleaned tools on suspect and clean trays.",
-    "Inspect using the approved quarantine/sanitation workflow or escalate if the needed inspection cannot preserve the boundary.",
-    "Release the tray because the cause is not confirmed."
+    "Move the suspect tray into a clean room briefly if the inspection surface there is better controlled.",
+    "Use shared tools if they are wiped between suspect and clean trays during the inspection.",
+    "Inspect within the approved quarantine and sanitation workflow, or escalate if the necessary examination cannot be completed without breaching containment.",
+    "Release the tray from quarantine once no obvious pest is visible during close inspection."
   ],
   "correct": 2,
-  "rationale": "Inspect using the approved quarantine/sanitation workflow or escalate if the needed inspection cannot preserve the boundary.",
+  "rationale": "A suspect propagation tray can spread pests or pathogens through plant movement, tools, surfaces, and handling even when the cause is not yet confirmed. Inspection should therefore occur within the established containment workflow. Moving the tray into clean space, sharing tools, or releasing it based on a visual check can create avoidable exposure pathways before the risk is resolved.",
   "references": [
     "REF-IPM-001"
   ]

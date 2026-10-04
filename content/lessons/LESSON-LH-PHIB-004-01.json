@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-004-01",
+  "title": "Disease Evidence: Signs, Symptoms, Distribution & Look-Alikes",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-004-01"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-CANNABIS-DIAGNOSTICS-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Plant disease diagnosis begins by separating what is directly observed from what is inferred. Symptoms can overlap across pathogens and abiotic disorders, so specialist work uses plant part, distribution, progression, environmental/root-zone context and appropriate confirmatory evidence.",
+    "vocabulary": [
+      {
+        "term": "Symptom",
+        "definition": "A plant response to injury or disease, such as chlorosis, necrosis, wilt, distortion or stunting."
+      },
+      {
+        "term": "Sign",
+        "definition": "Direct evidence of a causal organism or structure, such as visible fungal growth or diagnostic detection evidence."
+      },
+      {
+        "term": "Differential diagnosis",
+        "definition": "A ranked set of plausible causes kept open until discriminating evidence supports or removes hypotheses."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Separate observation from cause",
+        "body": "Chlorosis, wilt, root browning, lesions and stunting are not unique to one pathogen. Record the visible finding, plant part, distribution and progression before assigning a cause.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-CANNABIS-DIAGNOSTICS-2024-001"
+        ]
+      },
+      {
+        "title": "Use spatial and temporal pattern",
+        "body": "A single plant, a tray edge, an irrigation zone and a room-wide pattern imply different exposure pathways. Compare affected and unaffected plants and preserve denominators when describing incidence.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Confirm when consequence or uncertainty warrants it",
+        "body": "Microscopy, culture, molecular assays or qualified laboratory methods can be needed when visual evidence cannot resolve the differential. Testing method and sampling design must match the suspected causal agent and decision.",
+        "references": [
+          "REF-CANNABIS-DIAGNOSTICS-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Root browning plus waterlogged media keeps both root pathogens and oxygen-related abiotic stress in the differential until additional evidence separates them."
+    ],
+    "commonMistakes": [
+      "Treating one symptom as a pathogen diagnosis.",
+      "Ignoring affected-versus-unaffected comparisons.",
+      "Reporting a suspected pathogen as confirmed before appropriate evidence exists."
+    ],
+    "practicalApplication": "Create an observation-hypothesis-evidence table for a mixed symptom case. Include at least one biotic and one abiotic explanation plus the next discriminating observation or test.",
+    "summary": "Specialist disease work is an evidence process: describe first, compare patterns, keep plausible alternatives open, and escalate to appropriate confirmation when needed."
+  }
+}

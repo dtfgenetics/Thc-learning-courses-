@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PCS-004-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which is the best example of layered propagation biosecurity?",
+  "choices": [
+    "One sanitation step used for every risk",
+    "Source identity, stock separation, controlled movement, sanitation and testing escalation working together",
+    "Daily visual inspection only",
+    "A single negative result for all future batches"
+  ],
+  "correct": 1,
+  "rationale": "Layered controls address different pathways and evidence limits.",
+  "references": [
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

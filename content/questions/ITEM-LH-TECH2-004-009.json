@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Trap counts fall after treatment, but half the traps were removed at the same time. What is the best conclusion?",
   "choices": [
-    "Sampling effort changed, so the apparent decline is confounded and should not be credited without adjustment or comparable follow-up.",
-    "The treatment achieved a 50% reduction.",
-    "Removed traps count as zero catches.",
-    "The earlier round should be discarded."
+    "Treat the apparent decline as confounded because trap density changed; normalize to comparable effort or collect a matched follow-up before attributing improvement.",
+    "Credit the intervention with a 50% reduction because total catch remained lower after half the traps were removed.",
+    "Count removed traps as zero-catch observations so the post-treatment denominator remains comparable with the original round.",
+    "Discard the earlier round and use only the reduced-trap layout because it reflects the current scouting configuration."
   ],
   "correct": 0,
-  "rationale": "Sampling effort changed, so the apparent decline is confounded and should not be credited without adjustment or comparable follow-up.",
+  "rationale": "Changing the number of traps changes sampling effort, so raw counts before and after removal are not directly comparable. A lower total catch may simply reflect fewer opportunities to detect the pest. The defensible interpretation is to account for effort or collect a comparable follow-up before claiming improvement. Treating removed traps as zero or discarding the earlier round manufactures comparability rather than preserving the actual sampling change.",
   "references": [
     "REF-IPM-001",
     "REF-MHRA-GXP-DATA-INTEGRITY"

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A single convenient sample looks acceptable while mapped samples show a rack-position gradient. What is the best conclusion?",
   "choices": [
-    "The single acceptable sample proves the lot uniform.",
-    "All mapped differences should be averaged away.",
-    "Only room setpoints matter.",
-    "The representative spatial dataset outweighs the convenient sample for judging uniformity."
+    "Use the convenient acceptable sample as the primary evidence because a direct product measurement is stronger than a broader spatial pattern.",
+    "Average the mapped samples into one room value so the lot can be judged from the overall central tendency.",
+    "Use room setpoints as the main completion evidence because they explain the expected direction of the product measurements.",
+    "Give greater weight to the predefined representative spatial dataset because it characterizes rack-position variability more reliably than one convenient sample."
   ],
   "correct": 3,
-  "rationale": "The representative spatial dataset outweighs the convenient sample for judging uniformity.",
+  "rationale": "A convenient sample can be accurate for itself while still being unrepresentative of the lot. When predefined mapped sampling shows a consistent rack-position gradient, that spatial dataset provides stronger evidence about uniformity because it captures the variation the decision is supposed to assess. Averaging away the gradient or replacing it with room setpoints loses important process information.",
   "references": [
     "REF-POSTHARVEST-001"
   ]

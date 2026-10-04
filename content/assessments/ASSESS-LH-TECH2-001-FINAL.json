@@ -1,8 +1,8 @@
 {
   "id": "ASSESS-LH-TECH2-001-FINAL",
   "title": "Advanced Crop Observation & Diagnostic Reasoning — Course Assessment",
-  "version": "1.0.0",
-  "status": "draft",
+  "version": "1.2.0",
+  "status": "published",
   "purpose": "summative",
   "competencies": [
     "COMP-ENV-ADV-001",
@@ -51,6 +51,7 @@
   "passingScorePercent": 80,
   "maxAttempts": null,
   "cooldownHours": 0,
+  "timeLimitMinutes": 50,
   "feedbackMode": "post-attempt-domain-level",
   "totalItems": 24,
   "randomizeItems": true,
@@ -105,11 +106,56 @@
   "extensions": {
     "courseId": "COURSE-LH-TECH2-001",
     "linkedCredentialPractical": "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 48,
-    "completionModel": "Course assessment is development evidence only while Course 201 is draft. Credential performance remains separately dependent on Practical A and program-level release gates.",
+    "completionModel": "This published public academic assessment contributes only to academic course evidence. It does not replace mapped practical/performance requirements and does not authorize professional credential issuance.",
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-001-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-001-01": [
+        "LESSON-LH-TECH2-001-01",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-02": [
+        "LESSON-LH-TECH2-001-02",
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-03": [
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-04": [
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-05": [
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-06": [
+        "LESSON-LH-TECH2-001-02"
+      ],
+      "LO-LH-TECH2-001-07": [
+        "LESSON-LH-TECH2-001-01",
+        "LESSON-LH-TECH2-001-02",
+        "LESSON-LH-TECH2-001-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-001/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false,
+    "itemQualityRevision": {
+      "date": "2026-09-23",
+      "scope": "All 24 summative items revised for stronger distractor plausibility and more explanatory rationales while preserving objective, competency, reference, key, blueprint and test-to-teaching mappings.",
+      "reviewRequired": true,
+      "professionalValidationConferred": false
+    }
   }
 }

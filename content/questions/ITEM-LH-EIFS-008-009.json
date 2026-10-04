@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-008-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-008-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What should happen when an interlock prevents equipment operation during troubleshooting?",
+  "choices": [
+    "Bypass it briefly.",
+    "Disable alarms first.",
+    "Force the output from another controller.",
+    "Preserve the interlock condition and escalate protected troubleshooting to the authorized role."
+  ],
+  "correct": 3,
+  "rationale": "Interlocks should not be bypassed by unqualified personnel.",
+  "references": [
+    "REF-SAFETY-OSHA-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}

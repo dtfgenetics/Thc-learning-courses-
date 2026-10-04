@@ -1,0 +1,65 @@
+{
+  "id": "LESSON-LH-PCS-005-01",
+  "title": "Clean-Stock Purpose, Identity & Status Control",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-005-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-PROP-001",
+    "REF-HLVD-REVIEW-2023-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Clean stock is a controlled evidence state, not a visual compliment or a permanent biological guarantee. Specialists preserve identity and separate what is known from what remains unverified.",
+    "vocabulary": [
+      {
+        "term": "Clean stock",
+        "definition": "Plant material managed through defined identity, health, testing and release controls."
+      },
+      {
+        "term": "Material status",
+        "definition": "A controlled designation such as quarantine, hold, eligible for use or released."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Identity and health answer different questions",
+        "body": "A correct cultivar or accession label does not establish health status, and healthy appearance does not prove identity. Both records must remain linked through every transfer.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Test results have a sample and time boundary",
+        "body": "A result applies to the identified sample, method and collection context. It does not certify every tissue or every future propagation generation.",
+        "references": [
+          "REF-HLVD-REVIEW-2023-001"
+        ]
+      },
+      {
+        "title": "Release requires defined evidence",
+        "body": "A release decision should identify the required source record, status checks, testing context, reviewer authority and unresolved limitations. Missing evidence produces a hold or escalation, not an inferred pass.",
+        "references": [
+          "REF-HLVD-REVIEW-2023-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A donor with a matching label but an unresolved genealogy gap remains an identity hold even if it looks vigorous.",
+      "A negative result from one dated sample supports that controlled decision point but is not a lifetime pathogen-free claim."
+    ],
+    "commonMistakes": [
+      "Using healthy appearance as proof of clean-stock status.",
+      "Treating a negative test as permanent clearance.",
+      "Releasing material when identity or sample linkage is incomplete."
+    ],
+    "practicalApplication": "Build a status board for six propagation lots showing source identity, sample linkage, test state, observations, holds, authorized reviewer and the evidence required for the next transition.",
+    "summary": "Clean-stock control keeps identity, health observations, testing evidence and release authority separate but traceably connected."
+  }
+}

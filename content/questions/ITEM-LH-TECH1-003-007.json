@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-LIGHT-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which statement about a fixture dimmer percentage is most accurate?",
   "choices": [
-    "It directly equals PPFD in µmol m⁻² s⁻¹",
-    "It proves uniformity across the canopy",
-    "It is a fixture/control setting and should not automatically be treated as the canopy PPFD",
-    "It replaces the need for a measurement method"
+    "A dimmer percentage directly equals canopy PPFD once the fixture model is known.",
+    "A dimmer percentage proves light uniformity because all fixtures share the same control setting.",
+    "A dimmer percentage is a fixture/control setting and should not be treated as measured canopy PPFD without a defined measurement relationship.",
+    "A dimmer percentage removes the need for a PPFD measurement method as long as fixtures are calibrated."
   ],
   "correct": 2,
-  "rationale": "It is a fixture/control setting and should not automatically be treated as the canopy PPFD. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A control percentage describes the requested output state of the fixture, not the actual photon flux reaching every point of the canopy. Fixture characteristics, mounting height, spacing, optics, obstructions, and room geometry can all affect measured PPFD. The setting is useful context, but it is not a substitute for crop-plane measurement.",
   "references": [
     "REF-LIGHT-001"
   ],

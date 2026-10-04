@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-005-04",
+  "title": "Resistance Management & Mode-of-Action Stewardship",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-005-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IRAC-MOA-2026-001",
+    "REF-EPA-PESTICIDE-LABELS-2026-001",
+    "REF-OSU-GREENHOUSE-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Resistance management aims to reduce repeated selection pressure on pest populations. Product brand names do not define resistance-management diversity; mode of action, pest biology, treatment history, efficacy and local guidance matter.",
+    "vocabulary": [
+      {
+        "term": "Mode of action",
+        "definition": "The biochemical or physiological process through which a pesticide affects the target organism."
+      },
+      {
+        "term": "Selection pressure",
+        "definition": "The survival advantage given to resistant individuals when repeated interventions preferentially remove susceptible individuals."
+      },
+      {
+        "term": "Cross-resistance",
+        "definition": "Resistance mechanism(s) that reduce susceptibility to more than one active ingredient or mode-of-action group."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Different brand does not necessarily mean different MoA",
+        "body": "Rotating between brand names that share the same mode of action can maintain similar selection pressure. Resistance stewardship therefore tracks active ingredient and MoA classification, not branding alone.",
+        "references": [
+          "REF-IRAC-MOA-2026-001"
+        ]
+      },
+      {
+        "title": "Use chemical tools inside IPM",
+        "body": "Resistance-management guidance emphasizes monitoring and integrating multiple control strategies rather than relying on a single chemical tactic. Rotation/sequence principles must be adapted to the target pest, crop stage, local resistance information and legal options.",
+        "references": [
+          "REF-IRAC-MOA-2026-001",
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Label and legal authority still control use",
+        "body": "A sound MoA plan does not authorize an otherwise illegal or off-label application. Current product labeling, crop/site registration, worker safety, applicator requirements and jurisdictional rules remain controlling.",
+        "references": [
+          "REF-EPA-PESTICIDE-LABELS-2026-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Switching from one product to a different brand with the same MoA group is not meaningful rotation merely because the package name changed."
+    ],
+    "commonMistakes": [
+      "Rotating by brand instead of mode of action.",
+      "Using sub-label rates to 'reduce selection pressure.'",
+      "Treating resistance guidance as authorization to use a product on cannabis."
+    ],
+    "practicalApplication": "Given a mock treatment history, flag repeated MoA exposure, identify where nonchemical tactics could reduce selection pressure, and state what label/local-authority checks are required before any chemical change.",
+    "summary": "Resistance stewardship tracks biological selection pressure and mode of action while preserving the legal and operational boundaries of pesticide use."
+  }
+}

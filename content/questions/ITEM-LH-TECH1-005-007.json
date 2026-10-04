@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CANOPY-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What should determine whether a routine canopy task is complete?",
   "choices": [
-    "Every plant looks identical",
-    "Maximum tissue removed",
-    "The supplied structural/work standard plus documented exceptions, not visual sameness at any cost",
-    "The technician used a favorite technique"
+    "Every plant looks visually identical at the end of the task.",
+    "The maximum amount of tissue was removed without obvious damage.",
+    "The supplied structural or work standard has been met, with any legitimate exceptions documented rather than forcing visual sameness.",
+    "The technician used the same favorite technique on every plant."
   ],
   "correct": 2,
-  "rationale": "The supplied structural/work standard plus documented exceptions, not visual sameness at any cost. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "Completion should be judged against the defined work standard, not cosmetic sameness. Plants can differ in structure, stage, or condition, so forcing every plant to look identical may require unnecessary or damaging work. Documented exceptions preserve both crop condition and the integrity of the work record.",
   "references": [
     "REF-CANOPY-001",
     "REF-IPM-001"

@@ -1,0 +1,65 @@
+{
+  "id": "LESSON-LH-PCS-006-02",
+  "title": "Propagation Metrics & Denominator Discipline",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-006-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-PROP-TC-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A percentage is only comparable when its numerator, denominator, stage, observation date and exclusions mean the same thing. Specialists define metrics before using them to judge a batch or process.",
+    "vocabulary": [
+      {
+        "term": "Cohort",
+        "definition": "A traceable group that entered a defined stage under a common batch definition."
+      },
+      {
+        "term": "Censoring",
+        "definition": "Excluding or ending observation for units without silently changing the original denominator."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Define the event and denominator",
+        "body": "Rooted, survived, released and handed off are different events. A metric should state which event occurred, the original eligible count and any documented exclusions.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Observation windows change apparent performance",
+        "body": "A slower genotype can look worse at day 10 and equivalent at day 16. Compare like windows or present a time-to-event distribution rather than one arbitrary snapshot.",
+        "references": [
+          "REF-PROP-TC-2025-001"
+        ]
+      },
+      {
+        "title": "Averages can hide batch structure",
+        "body": "Pooled results can conceal donor, genotype, operator, zone or time-period effects. Preserve batch-level records before calculating summaries.",
+        "references": [
+          "REF-PROP-TC-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Reporting 90 rooted plants out of the 95 still present inflates performance if the batch started with 110 and losses were removed.",
+      "Two lines with the same final rooting proportion can have very different time-to-root distributions and scheduling risk."
+    ],
+    "commonMistakes": [
+      "Changing denominators after losses.",
+      "Comparing different observation days as equivalent.",
+      "Pooling genotypes before checking batch-level variation."
+    ],
+    "practicalApplication": "Audit a mock propagation dashboard, reconstruct every denominator and observation window, then rewrite three ambiguous KPIs as reproducible metric definitions.",
+    "summary": "Reliable propagation metrics preserve cohorts, denominators, timing and exclusions so trends can be reproduced and compared."
+  }
+}

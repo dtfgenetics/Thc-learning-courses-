@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-001-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A required sanitation step may have been missed for one identifiable batch. What should happen first?",
+  "choices": [
+    "Contain connected material/process as directed, record event facts and define affected scope.",
+    "Release it because no defect is visible.",
+    "Mix it with unaffected material.",
+    "Delete the incomplete record."
+  ],
+  "correct": 0,
+  "rationale": "Immediate containment and fact capture preserve evidence before final disposition.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}

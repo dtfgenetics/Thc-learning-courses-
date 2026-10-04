@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which environmental record is most reconstructable?",
   "choices": [
-    "Sensor ID/location, time, measured value and unit, supplied target/limit, verification action and escalation status",
-    "Room was off today",
-    "Target value copied into the measurement field",
-    "A screenshot with no room or time identity"
+    "Record sensor ID/location, observation time, measured value and unit, relevant target/limit, verification action, and escalation status.",
+    "Record only that the room was off target so the next shift knows there was a problem.",
+    "Copy the target into the measurement field and note separately that the actual value differed.",
+    "Save a screenshot of the dashboard without room, sensor, or time identity because the image itself preserves the evidence."
   ],
   "correct": 0,
-  "rationale": "Sensor ID/location, time, measured value and unit, supplied target/limit, verification action and escalation status. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A reconstructable environmental record identifies what instrument and location were involved, when the observation occurred, what value and unit were measured, how that compared with the applicable target or limit, what checks were performed, and whether escalation remains open. A vague note, copied target, or unlabeled screenshot cannot reliably support later review.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ],

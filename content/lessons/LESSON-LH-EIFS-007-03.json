@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-007-03",
+  "title": "Runoff, Return Solution & Root-Zone EC Interpretation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ROOTZONE-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-007-03"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-IRRIGATION-001",
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Runoff or return solution provides useful information but is not a complete picture of root-zone conditions. Volume, timing, sampling method, preferential flow and spatial concentration can all change what a runoff or return sample represents.",
+    "vocabulary": [
+      {
+        "term": "Runoff fraction",
+        "definition": "The portion of applied irrigation volume collected as drainage under the defined measurement method."
+      },
+      {
+        "term": "Return solution",
+        "definition": "Solution leaving or returning from the root-zone system after interacting with the crop and media."
+      },
+      {
+        "term": "Preferential flow",
+        "definition": "Water movement through limited pathways that can bypass parts of the root zone."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Runoff does not prove uniform wetting",
+        "body": "Drainage can begin while portions of the root zone remain relatively dry, especially where channels or uneven distribution exist.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Return EC reflects multiple processes",
+        "body": "Rising return/root-zone EC can reflect concentration from water loss, selective uptake, uneven delivery or accumulation. Stable input EC does not guarantee stable root-zone chemistry.",
+        "references": [
+          "REF-ROOTZONE-NUTRIENT-002"
+        ]
+      },
+      {
+        "title": "Sampling method must stay consistent",
+        "body": "First-drain, composite and late-drain samples can differ. Record timing, location and collection method so trends remain interpretable.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A high return EC from a dry corner of one slab should not automatically be generalized to the whole room without representative comparison."
+    ],
+    "commonMistakes": [
+      "Calling any runoff percentage optimal.",
+      "Treating return EC as a direct nutrient formulation test.",
+      "Ignoring collection timing and location."
+    ],
+    "practicalApplication": "Compare input, root-zone and runoff/return data from three zones and identify whether the strongest concern is concentration, poor distribution, sampling bias or unresolved.",
+    "summary": "Runoff and return data are evidence streams that need volume, timing and spatial context."
+  }
+}

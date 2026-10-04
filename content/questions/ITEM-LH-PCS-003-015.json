@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-003-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A repeatable batch pattern suggests one process factor may matter. What is the strongest improvement step?",
+  "choices": [
+    "Change several factors together",
+    "Define an authorized controlled comparison, change one major factor, preserve other conditions and record the result",
+    "Adopt the change permanently after one observation",
+    "Delete batches that do not match the hypothesis"
+  ],
+  "correct": 1,
+  "rationale": "A controlled, traceable comparison produces stronger evidence than undocumented multi-variable change.",
+  "references": [
+    "REF-CANNABIS-CLONAL-ROOTING-2019"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

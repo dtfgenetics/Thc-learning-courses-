@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why can one product sample not prove a large drying load is uniform?",
   "choices": [
-    "Spatial and material variability can exist across positions, so representative sampling is needed for the scope of the claim.",
-    "One sample always represents a room.",
-    "Uniformity is determined only by fixture settings.",
-    "Water activity is identical within a cultivar."
+    "One sample cannot establish uniformity across a large load because rack position, airflow, mass, and product variability can produce differences that require representative sampling.",
+    "One sample is sufficient if it is taken from the center of the room because central positions best represent average drying conditions.",
+    "Uniformity should be inferred from room-control settings rather than multiple product samples when the process is validated.",
+    "A single water-activity result can represent a cultivar lot because product from the same cultivar has equivalent moisture behavior."
   ],
   "correct": 0,
-  "rationale": "Spatial and material variability can exist across positions, so representative sampling is needed for the scope of the claim.",
+  "rationale": "A claim about a large drying load requires evidence that represents the load. Product state can vary with rack height, airflow, density, material mass, and local conditions, so one sample—even a valid one—describes only its sampled unit. Representative spatial sampling is needed when the decision concerns uniformity across the lot or room.",
   "references": [
     "REF-POSTHARVEST-001"
   ]

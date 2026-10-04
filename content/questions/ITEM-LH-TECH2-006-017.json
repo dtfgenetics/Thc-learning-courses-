@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A later procedure revision adds a new sampling step. How should an older deviation be judged?",
   "choices": [
-    "Use the procedure effective at the event and document the later revision as subsequent context, not as rewritten historical requirement.",
-    "Apply the later step retroactively as if it existed.",
-    "Delete the old procedure.",
-    "Assume the event followed the new step."
+    "Judge the event against the procedure version that was effective at the time, while documenting the later revision as subsequent context rather than a retroactive requirement.",
+    "Apply the newer sampling step retroactively because it represents the current best practice and should govern all open investigations.",
+    "Replace the archived procedure with the revised version so all event reviews use one consistent standard.",
+    "Assume the older event effectively met the new step if other product measurements are acceptable."
   ],
   "correct": 0,
-  "rationale": "Use the procedure effective at the event and document the later revision as subsequent context, not as rewritten historical requirement.",
+  "rationale": "Historical reconstruction should use the controlled procedure that actually governed when the work occurred. A later revision may improve the process or add new evidence requirements, but it cannot be rewritten into the past as if operators had been instructed to follow it. The later version can inform corrective action and future expectations while the original event is judged against the contemporaneous requirement.",
   "references": [
     "REF-ASTM-E2659-001"
   ]

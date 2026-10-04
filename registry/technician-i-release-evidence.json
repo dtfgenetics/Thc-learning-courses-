@@ -66,5 +66,8 @@
     "Do not create synthetic human review, pilot, calibration, inter-rater, standard-setting or approval evidence to close gates.",
     "Do not expose secure operational answer keys, credential forms, candidate evidence or signing secrets in the public repository.",
     "Do not issue the credential while any required release gate is unresolved."
-  ]
+  ],
+  "authorityStatus": "supporting-legacy-program-checklist",
+  "authoritativeReadinessSource": "scripts/report-certification-evidence-reconciliation.mjs",
+  "authorityBoundary": "This ledger preserves program-specific historical/checklist gates. It must not override exact-version evidence-derived certification readiness from the certification evidence reconciler."
 }

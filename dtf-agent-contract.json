@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "repository": "dtfgenetics/Thc-learning-courses-",
+  "controlRepository": "dtfgenetics/Thc",
+  "defaultBranch": "main",
+  "canonicalDomains": [
+    "certification courses",
+    "assessments",
+    "practicals",
+    "credential definitions",
+    "certification validation"
+  ],
+  "sourceRoots": [
+    "content/",
+    "registry/",
+    "schemas/",
+    "apps/",
+    "scripts/",
+    "docs/",
+    "visuals/",
+    "skills/",
+    "package.json",
+    "AGENTS.md"
+  ],
+  "protectedPaths": [
+    ".github/workflows/**",
+    ".env*",
+    "registry/certification-content-policy.json"
+  ],
+  "verificationProfiles": {
+    "default": {
+      "commands": [
+        "npm test"
+      ],
+      "ciAuthoritative": true
+    },
+    "content": {
+      "commands": [
+        "npm run schema:validate",
+        "npm run validate",
+        "npm run registry:validate"
+      ],
+      "ciAuthoritative": true
+    },
+    "status": {
+      "commands": [
+        "npm run status:check"
+      ],
+      "ciAuthoritative": true
+    },
+    "release": {
+      "commands": [
+        "npm run release:check",
+        "npm run status:check"
+      ],
+      "ciAuthoritative": true
+    }
+  },
+  "production": {
+    "directMutation": false,
+    "integrationOwner": "dtfgenetics/Thc",
+    "promotionFlow": [
+      "short-lived work branch",
+      "main",
+      "explicit production release"
+    ],
+    "notes": "Current main is the canonical integration branch. Legacy dev/staging are quarantined until deliberately reconciled. Academic publication does not authorize professional credentials; human/professional evidence gates remain fail-closed."
+  }
+}

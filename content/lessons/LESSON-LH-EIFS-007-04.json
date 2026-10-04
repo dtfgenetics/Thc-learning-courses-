@@ -1,0 +1,72 @@
+{
+  "id": "LESSON-LH-EIFS-007-04",
+  "title": "Crop-Steering Logic, Evidence Boundaries & Response",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-007-04"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001",
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Crop steering uses intentional changes in irrigation and environmental strategy to influence root-zone conditions and plant response. Advanced steering should be treated as an evidence-controlled feedback process, not as a fixed recipe copied across facilities.",
+    "vocabulary": [
+      {
+        "term": "Crop steering",
+        "definition": "Intentional management of irrigation and environmental inputs to influence root-zone trajectories and plant response."
+      },
+      {
+        "term": "Feedback control",
+        "definition": "Adjustment based on measured response rather than only predetermined schedule."
+      },
+      {
+        "term": "Response criterion",
+        "definition": "A predefined measurement used to judge whether a steering change had the intended effect."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Start from a measured baseline",
+        "body": "Before changing strategy, establish root-zone water content, dryback, input/return chemistry, delivery uniformity and environmental context so the effect of the change can be interpreted.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-ROOTZONE-NUTRIENT-002"
+        ]
+      },
+      {
+        "title": "Change one interpretable variable when possible",
+        "body": "Simultaneous changes to volume, frequency, feed concentration and environment make it difficult to identify which change produced the observed response.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Use response, not folklore, to validate steering",
+        "body": "Substrate and crop response differ by system. A published or vendor steering schedule is a hypothesis until validated under the facility's cultivar, media, climate and irrigation hardware.",
+        "references": [
+          "REF-CANNABIS-SOILLESS-MEDIA-2025-001",
+          "REF-VPD-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A facility increases event frequency while holding event volume constant and then compares dryback, return EC and crop response before making a second change."
+    ],
+    "commonMistakes": [
+      "Changing volume, frequency and feed EC together.",
+      "Treating a vendor chart as universal.",
+      "Calling a steering change successful because the intended schedule ran."
+    ],
+    "practicalApplication": "Design a controlled steering trial with baseline, single planned change, expected response, monitoring interval and stop/escalation criteria.",
+    "summary": "Crop steering is strongest when it behaves like a controlled experiment with measurable response and explicit limits."
+  }
+}

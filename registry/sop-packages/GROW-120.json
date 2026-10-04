@@ -1,0 +1,41 @@
+{
+  "id": "GROW-120",
+  "title": "Flowering stage management",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-120.json",
+  "scientificSop": "docs/sop-packages/GROW-120/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-120/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-120/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-120-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-FLOWER-001",
+    "MOD-FLOWER-ADV-001",
+    "MOD-ENV-ADV-001"
+  ],
+  "reusedLessons": [
+    "LESSON-FLOWER-TRANSITION-001",
+    "LESSON-FLOWER-PHOTO-002",
+    "LESSON-FLOWER-SEX-002",
+    "LESSON-FLOWER-MATURITY-003",
+    "LESSON-ENV-LOADS-003"
+  ],
+  "controlledReferences": [
+    "REF-LIGHT-001",
+    "REF-FLOWER-MORPH-2023-001",
+    "REF-FLOWER-001",
+    "REF-SEX-2026-001",
+    "REF-PLANT-BIO-001",
+    "REF-VPD-002"
+  ],
+  "releaseGates": [
+    "flowering physiology review",
+    "lighting/environment review",
+    "reproductive biology review",
+    "facility/genotype validation",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

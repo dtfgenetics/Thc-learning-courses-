@@ -1,0 +1,61 @@
+{
+  "id": "COURSE-LH-EIFS-007",
+  "title": "Root-Zone Water Content, Dryback, Runoff & Crop Steering",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Environmental, Irrigation & Fertigation Systems Specialist / advanced specialization development",
+  "intendedAudience": [
+    "EIFS specialist learners",
+    "Cultivation personnel responsible for root-zone moisture interpretation, irrigation-response analysis, runoff/return trending and advanced crop-steering support"
+  ],
+  "prerequisites": [
+    "Irrigation Design, Flow, Pressure, Uniformity & Maintenance or equivalent advanced irrigation foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses controlled irrigation, root-zone nutrient and cannabis soilless-media evidence. Dryback and crop-steering concepts are taught as measured trajectories and response frameworks; no single dryback percentage, runoff fraction, irrigation interval, feed EC or steering recipe is presented as a universal cannabis target.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize unreviewed crop-steering strategies, nutrient-formulation redesign or production setpoint changes outside assigned authority.",
+  "description": "Develops specialist interpretation of root-zone water content, dryback trajectories, runoff/return evidence, EC concentration, substrate/media behavior and measured crop-steering decisions.",
+  "modules": [
+    "MOD-LH-EIFS-007-ROOTZONE-DRYBACK"
+  ],
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-ROOTZONE-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-EIFS-007-FINAL",
+  "learningOutcomes": [
+    "Interpret root-zone water content as a spatial and temporal state influenced by substrate/media properties, container geometry, root development, irrigation delivery and environmental demand.",
+    "Calculate and analyze dryback as a trajectory between verified measurements rather than treating elapsed time or one percentage as a universal target.",
+    "Use runoff or return volume and chemistry together with input, root-zone and delivery evidence to distinguish drainage, preferential flow, concentration and sampling effects.",
+    "Evaluate crop-steering adjustments from measured root-zone, environment and crop response while preserving study/system boundaries and avoiding universal recipes.",
+    "Produce a reconstructable root-zone steering report that states baseline, intervention, measured response, uncertainty, acceptance limits and authorized next action."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-EIFS-006",
+      "COURSE-LH-EIFS-005",
+      "COURSE-LH-TECH2-003"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-EIFS-007-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

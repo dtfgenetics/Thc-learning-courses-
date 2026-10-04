@@ -3,7 +3,17 @@
   "title": "Root-Zone and Media Foundations",
   "version": "1.0.0",
   "status": "draft",
-  "lessons": ["LESSON-ROOTZONE-001", "LESSON-ROOTZONE-MEDIA-002", "LESSON-ROOTZONE-DRYBACK-003"],
-  "competencies": ["COMP-ROOTZONE-001"],
-  "assessment": "ASSESS-ROOTZONE-MODULE-001"
+  "lessons": [
+    "LESSON-ROOTZONE-001",
+    "LESSON-ROOTZONE-MEDIA-002",
+    "LESSON-ROOTZONE-DRYBACK-003"
+  ],
+  "competencies": [
+    "COMP-ROOTZONE-001"
+  ],
+  "assessment": "ASSESS-ROOTZONE-MODULE-001",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
 }

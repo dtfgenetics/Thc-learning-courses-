@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PHQ-006-QA-TRACEABILITY-RECALL-DISPOSITION",
+  "title": "Postharvest QA, Traceability & Recall/Disposition Concepts",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHQ-006-01",
+    "LESSON-LH-PHQ-006-02",
+    "LESSON-LH-PHQ-006-03",
+    "LESSON-LH-PHQ-006-04",
+    "LESSON-LH-PHQ-006-05"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "assessment": null,
+  "description": "Integrates postharvest quality-system controls, lot genealogy, trace-back and trace-forward exercises, status and disposition boundaries, CAPA, change control and audit-ready handoff.",
+  "estimatedMinutes": 335,
+  "learningOutcomes": [
+    "Analyze how specifications, procedures, records, training, equipment and lot-status controls work together in a postharvest quality system.",
+    "Construct a complete lot genealogy through harvest, splits, merges, samples, packaging and status changes with durable data-integrity controls.",
+    "Evaluate a mock recall by tracing affected material backward and forward, reconciling quantities, contacts, timing and unresolved gaps.",
+    "Evaluate disposition recommendations, CAPA and controlled process changes while preserving evidence, authority and effectiveness verification.",
+    "Create an audit-ready postharvest QA handoff and metric set that preserves definitions, denominators, open risks and accountable follow-up."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

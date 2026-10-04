@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A line leak appears during irrigation and the supplied procedure allows the technician to stop the event but not repair the line. What should happen?",
   "choices": [
-    "Use the permitted stop/isolation step, document the affected zone and escalate for qualified repair",
-    "Repair the line without authorization",
-    "Let the leak continue until the event ends",
-    "Mark the task complete and omit the leak"
+    "Use the permitted stop or isolation step, document the affected zone and leak condition, and escalate for qualified repair.",
+    "Repair the line if the leak is easy to reach and the event has already been stopped.",
+    "Let the event finish if the leak is small enough that most of the zone still receives water.",
+    "Mark the irrigation complete and note the leak only if the next event is also affected."
   ],
   "correct": 0,
-  "rationale": "Use the permitted stop/isolation step, document the affected zone and escalate for qualified repair. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "The procedure already defines the Technician I boundary: stopping or isolating the event is permitted, repairing the line is not. The technician should preserve the fault evidence, identify the affected zone, and escalate for qualified repair. Allowing the leak to continue or silently closing the event can create crop-delivery and record-integrity problems.",
   "references": [
     "REF-IRRIGATION-001"
   ],

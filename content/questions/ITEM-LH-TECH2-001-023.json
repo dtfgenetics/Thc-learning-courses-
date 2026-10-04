@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A room average looks acceptable but a symptom map follows the perimeter near exterior walls. What is the most useful interpretation?",
   "choices": [
-    "The room average disproves an environmental role.",
-    "The perimeter pattern proves nutrient deficiency.",
-    "The spatial association supports investigating local environmental gradients and perimeter conditions rather than relying on the room average.",
-    "The symptom map should be discarded because sensors report an average."
+    "Interpret the acceptable room average as evidence that the perimeter symptoms are unlikely to be caused by environment and prioritize root-zone causes.",
+    "Treat the perimeter association as evidence of a nutrient-distribution problem because exterior-wall plants often have different water use.",
+    "Use the symptom map to investigate perimeter temperature, humidity, airflow, radiation, and wall effects rather than relying on the room average alone.",
+    "Compare only perimeter and center nutrient EC because spatial environmental differences would already be reflected in the room's sensor average."
   ],
   "correct": 2,
-  "rationale": "Spatial gradients can be hidden by averages and should drive targeted environmental verification.",
+  "rationale": "A room average can conceal meaningful spatial gradients. Exterior walls, doors, supply/return airflow, radiation exchange, and localized humidity or temperature patterns can create conditions that differ substantially from the room mean. When symptoms track the perimeter, that spatial association should guide targeted environmental measurements at affected and unaffected locations. Root-zone and nutrition differences can remain in the differential, but the room average does not rule out a local environmental contribution.",
   "references": [
     "REF-VPD-002",
     "REF-ENV-TEMP-2025-001"

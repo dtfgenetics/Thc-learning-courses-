@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-LIGHT-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One aisle PPFD reading meets target while crop complaints occur under the center canopy. What is the best next step?",
   "choices": [
-    "Map representative crop-plane locations using consistent orientation and height.",
-    "Increase lighting everywhere.",
-    "Use the aisle reading as proof the canopy is uniform.",
-    "Change photoperiod before measuring the affected area."
+    "Map representative crop-plane locations using consistent sensor height and orientation, including the complaint area and suitable comparison areas.",
+    "Increase light output across the room because an aisle reading at target suggests the complaint area is being underlit by canopy shading.",
+    "Use the aisle value as the room reference and investigate root-zone causes first because the measured light level already meets target.",
+    "Shorten the photoperiod to reduce light stress and reassess the center canopy before performing additional spatial measurements."
   ],
   "correct": 0,
-  "rationale": "Map representative crop-plane locations using consistent orientation and height. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A single aisle reading says little about spatial uniformity at the crop plane. The complaint occurs under the center canopy, so the next useful step is to map representative locations at consistent height and orientation and compare the affected area with the rest of the crop. Raising output or changing photoperiod before measuring the complaint area adds new variables, while relying on the aisle reading assumes uniformity that has not been demonstrated.",
   "references": [
     "REF-LIGHT-001"
   ]

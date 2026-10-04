@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A sudden room-wide droop is observed. What is the strongest Technician I response?",
   "choices": [
-    "Document the room-wide pattern, check the supplied relevant status information and escalate promptly under procedure",
-    "Independently reprogram environmental controls",
-    "Wait until the next shift without recording it",
-    "Assume the cultivar normally behaves this way"
+    "Document the room-wide droop, check the supplied relevant status information within scope, and escalate promptly under the applicable procedure.",
+    "Adjust environmental controls immediately because a room-wide response is more likely to be environmental than plant-specific.",
+    "Wait for the next scheduled crop walk to see whether the condition persists before creating an escalation.",
+    "Treat the pattern as normal cultivar behavior if no single plant appears severely affected."
   ],
   "correct": 0,
-  "rationale": "A widespread sudden change can have significant consequence. Technician I documents and checks within scope, then escalates rather than redesigning control strategy.",
+  "rationale": "A sudden room-wide change is more significant than an isolated plant observation and can justify prompt escalation. Technician I should document the distribution, review only the supplied status information that is within role, and follow the applicable escalation process. Reprogramming controls independently or delaying until the next routine walk can either exceed authority or allow a serious condition to continue without review.",
   "references": [
     "REF-PLANT-BIO-001"
   ],

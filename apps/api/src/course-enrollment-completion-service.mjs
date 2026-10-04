@@ -32,12 +32,27 @@ function latestIso(values = []) {
   return valid.length ? valid.at(-1) : null;
 }
 
+function academicCompletionModuleIds(course) {
+  const explicit = course?.extensions?.academicCompletionModules;
+  if (Array.isArray(explicit) && explicit.length > 0) return [...new Set(explicit)];
+
+  const dedicatedPrefix = String(course?.id ?? '').replace(/^COURSE-/, 'MOD-');
+  const dedicated = (course?.modules ?? []).filter((moduleId) => String(moduleId).startsWith(dedicatedPrefix));
+  return dedicated.length ? [...new Set(dedicated)] : [...new Set(course?.modules ?? [])];
+}
+
 export function loadCourseAcademicCompletionBundle(courseId) {
   const course = readById('courses', courseId);
   if (!course || course.status !== 'published' || !course.finalAssessment) return null;
+  const openAcademicDependencies = Array.isArray(course.extensions?.openAcademicDependencies)
+    ? course.extensions.openAcademicDependencies.filter(Boolean)
+    : [];
+  if (course.extensions?.academicCompletionBlockedWhileOpenDependencies === true && openAcademicDependencies.length > 0) return null;
   const modules = [];
   const lessons = [];
-  for (const moduleId of course.modules ?? []) {
+  const completionModuleIds = academicCompletionModuleIds(course);
+  if (completionModuleIds.length === 0) return null;
+  for (const moduleId of completionModuleIds) {
     const module = readById('modules', moduleId);
     if (!module || module.status !== 'published') return null;
     modules.push(module);
@@ -54,6 +69,7 @@ export function loadCourseAcademicCompletionBundle(courseId) {
     modules,
     lessons,
     assessment,
+    completionModuleIds,
     performanceAssessmentId: assessment.extensions?.linkedPerformanceAssessment ?? null
   };
 }
@@ -86,7 +102,12 @@ export function courseIdForPerformanceAssessment(assessmentId) {
 export function evaluateCourseAcademicCompletion({ bundle, progress = [], evidence = {}, now = new Date().toISOString() } = {}) {
   if (!bundle?.course?.id || !bundle?.assessment?.id) throw new Error('course academic completion bundle required');
   const requiredLessonIds = [...new Set(bundle.lessons.map((lesson) => lesson.id))];
-  const completedRows = progress.filter((row) => row?.status === 'completed' && requiredLessonIds.includes(row.lessonId));
+  const requiredLessonVersions = new Map(bundle.lessons.map((lesson) => [lesson.id, String(lesson.version)]));
+  const completedRows = progress.filter((row) => (
+    row?.status === 'completed' &&
+    requiredLessonIds.includes(row.lessonId) &&
+    String(row.lessonVersion ?? '') === requiredLessonVersions.get(row.lessonId)
+  ));
   const completedLessonIds = [...new Set(completedRows.map((row) => row.lessonId))];
   const completedLessonSet = new Set(completedLessonIds);
   const instructionComplete = requiredLessonIds.length > 0 && completedLessonIds.length === requiredLessonIds.length;
@@ -112,22 +133,26 @@ export function evaluateCourseAcademicCompletion({ bundle, progress = [], eviden
   const writtenPassed = passedAttempts.length > 0;
   const writtenStatus = writtenPassed ? 'passed' : attempts.length ? 'not-passed' : 'not-attempted';
 
-  const practical = evidence.performanceAssessment?.assessmentId === bundle.performanceAssessmentId ? evidence.performanceAssessment : null;
-  const practicalPassed = Boolean(bundle.performanceAssessmentId)
-    && practical?.status === 'passed'
-    && Number(practical?.criticalErrorCount ?? 0) === 0;
-  const practicalStatus = practical?.status ?? 'not-recorded';
+  const practicalRequired = Boolean(bundle.performanceAssessmentId);
+  const practical = practicalRequired && evidence.performanceAssessment?.assessmentId === bundle.performanceAssessmentId
+    ? evidence.performanceAssessment
+    : null;
+  const practicalPassed = !practicalRequired || (
+    practical?.status === 'passed' &&
+    Number(practical?.criticalErrorCount ?? 0) === 0
+  );
+  const practicalStatus = practicalRequired ? (practical?.status ?? 'not-recorded') : 'not-required';
 
   const complete = instructionComplete && writtenPassed && practicalPassed;
   const missingRequirements = [];
   if (!instructionComplete) missingRequirements.push('instruction');
   if (!writtenPassed) missingRequirements.push('course-final');
-  if (!practicalPassed) missingRequirements.push('course-practical');
+  if (practicalRequired && !practicalPassed) missingRequirements.push('course-practical');
 
   const requirementCompletedAt = complete ? latestIso([
     ...completedRows.map((row) => row.completedAt),
     ...passedAttempts.map((row) => row.scoredAt),
-    practical?.evaluatedAt
+    practicalRequired ? practical?.evaluatedAt : null
   ]) ?? iso(now) : null;
 
   return {

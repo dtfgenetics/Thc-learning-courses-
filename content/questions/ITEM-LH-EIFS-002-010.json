@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LH-EIFS-002-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two fixtures show similar PPFD at one point but different spectra. What can be concluded?",
+  "choices": [
+    "They are not fully characterized as equivalent because PPFD does not describe spectral distribution.",
+    "They are identical systems.",
+    "Spectrum determines PPFD automatically.",
+    "Only human-visible brightness matters."
+  ],
+  "correct": 0,
+  "rationale": "PPFD and spectrum describe different dimensions of the light environment.",
+  "references": [
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}

@@ -14,7 +14,7 @@
     "discrimination": {
       "type": ["object", "null"],
       "properties": {
-        "method": {"enum": ["point-biserial", "upper-lower", "other"]},
+        "method": {"enum": ["point-biserial", "point-biserial-item-rest", "upper-lower", "other"]},
         "value": {"type": "number", "minimum": -1, "maximum": 1}
       },
       "required": ["method", "value"],

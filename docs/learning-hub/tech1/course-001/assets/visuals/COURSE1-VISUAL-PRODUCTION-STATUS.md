@@ -48,7 +48,7 @@ Alternate versions remain controlled Drive references and are not public candida
 
 ## Live/public mapping
 
-The learner-facing repository currently serves canonical Course 1 SVG assets from `apps/web/public/assets/course1/`. Approved PNG replacements should be published under that same public asset directory, registered in `visuals/ASSET-REGISTRY.json`, and referenced by the canonical lesson JSON only after QA passes.
+The learner-facing Course 1 lesson set now serves approved raster production assets (PNG) from `apps/web/public/assets/course1/`. Retired SVG files remain provenance/compatibility records only and must not be reintroduced by lesson JSON or shared renderer overrides. New raster replacements must remain registered in `visuals/ASSET-REGISTRY.json`, mapped to canonical lessons, and protected by the raster-policy regression tests.
 
 ## Current work order
 

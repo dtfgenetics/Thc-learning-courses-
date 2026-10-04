@@ -1,0 +1,32 @@
+{
+  "id": "MOD-LH-EIFS-005-WATER-QUALITY",
+  "title": "Water Quality, Alkalinity, pH, EC & Solution Preparation",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-005-01",
+    "LESSON-LH-EIFS-005-02",
+    "LESSON-LH-EIFS-005-03",
+    "LESSON-LH-EIFS-005-04",
+    "LESSON-LH-EIFS-005-05"
+  ],
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering source-water chemistry, alkalinity, EC, measurement quality, controlled solution preparation and batch disposition.",
+  "estimatedMinutes": 325,
+  "learningOutcomes": [
+    "Differentiate irrigation-water pH, alkalinity, EC and ion composition and explain why no single measurement fully characterizes source-water behavior.",
+    "Evaluate source-water variability and risk using sampling history, treatment/source changes, major-ion or contaminant context and appropriate retesting triggers.",
+    "Verify pH/EC measurement systems using controlled standards, probe condition, temperature/sample handling and traceable calibration/verification records.",
+    "Execute and verify an approved solution-preparation workflow using material identity, recipe version, final volume, ordered additions, mixing and measured acceptance criteria without independently redesigning the formula.",
+    "Produce a reconstructable batch/source-water record and apply controlled hold, correction, escalation or disposition logic when verified results fall outside acceptance."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

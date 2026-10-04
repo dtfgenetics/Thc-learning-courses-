@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-005-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-05",
+  "competency": "COMP-PRO-QA-001",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "stem": "Pest counts are lower after an intervention, but the follow-up sampled only one previously clean bench. What can be concluded?",
+  "choices": [
+    "The entire room is controlled.",
+    "The intervention failed everywhere.",
+    "The follow-up is not representative enough to support room-wide closure.",
+    "The baseline can be deleted."
+  ],
+  "correct": 2,
+  "rationale": "Post-intervention verification must use representative, comparable monitoring before broader conclusions are justified.",
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two cultivars changed photoperiod on the same date but show different reproductive morphology. What is the best diagnostic interpretation?",
   "choices": [
-    "The slower cultivar is nutrient deficient by definition.",
-    "Use each plant’s morphology and crop context; calendar week alone does not prove one cultivar is abnormal.",
-    "Both cultivars must be assigned the same biological stage.",
-    "Immediately increase light intensity for the slower cultivar."
+    "Treat the slower cultivar as developmentally delayed and investigate nutrition first because both cultivars received the same photoperiod transition.",
+    "Stage each cultivar from its observed reproductive morphology and crop context; use calendar time as context rather than as proof that one cultivar is abnormal.",
+    "Assign both cultivars the same biological stage because the shared photoperiod change created the same reproductive starting point.",
+    "Increase light intensity for the slower cultivar and use any acceleration in visible flower development as confirmation that light was limiting."
   ],
   "correct": 1,
-  "rationale": "Floral progression varies and should be documented with morphology, not calendar time alone.",
+  "rationale": "A shared photoperiod transition does not guarantee that two cultivars will express identical reproductive morphology on the same calendar day. Genetic background, prior plant condition, environment, and cultivar-specific developmental rate can shift visible progression. The defensible interpretation is therefore to stage each plant from observable morphology while using time since photoperiod change as supporting context. The other options assume that calendar synchronization proves biological synchronization or use an intervention as a diagnostic shortcut before the developmental difference has been characterized.",
   "references": [
     "REF-FLOWER-MORPH-2023-001",
     "REF-LIGHT-001"

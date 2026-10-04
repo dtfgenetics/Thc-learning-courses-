@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-004-04",
+  "title": "Propagation Genealogy, Lot Traceability & Breach Reconstruction",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-CULT-TRACEABILITY-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-004-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for propagation genealogy, lot traceability & breach reconstruction in propagation and clean-stock operations.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Traceability connects source to downstream exposure",
+        "body": "Donor/accession ID, cutting batch, tray/cell identity, operator, date and handoff destination create the chain needed to find potentially related material when a biosecurity concern appears.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "A traceability break is itself a controlled deviation",
+        "body": "Unlabeled or conflicting material should not be repaired by guesswork. The record should preserve the discrepancy, containment step and evidence used to resolve or disposition the affected material.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Reconstruction narrows containment",
+        "body": "Good genealogy can identify which lots, trays, tools, work periods or destinations share a plausible connection, allowing investigation to be targeted while preserving uncertainty about actual transmission.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Using cultivar name as the only identity field.",
+      "Guessing the identity of a tray after a label break.",
+      "Discarding movement history once a batch is handed off."
+    ],
+    "practicalApplication": "Given a donor-to-handoff genealogy with one missing label and one later concern, reconstruct the affected chain, identify material that should be held pending review and state what cannot be concluded.",
+    "summary": "Traceability makes containment and investigation reconstructable without turning association into proof of transmission."
+  }
+}

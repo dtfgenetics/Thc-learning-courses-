@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHIB-006-04",
+  "title": "CAPA Design & Crop Recovery Verification",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-006-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Corrective and preventive action is stronger when it addresses the investigated cause or system weakness and defines how effectiveness will be measured. Implementation alone is not proof that the CAPA worked or the crop recovered.",
+    "vocabulary": [
+      {
+        "term": "Corrective action",
+        "definition": "Action intended to remove or control an identified cause of an existing problem."
+      },
+      {
+        "term": "Preventive action",
+        "definition": "Action intended to reduce the likelihood of recurrence or occurrence elsewhere."
+      },
+      {
+        "term": "Effectiveness check",
+        "definition": "A predefined follow-up measurement used to determine whether the CAPA reduced the targeted failure mode without creating unacceptable new risk."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Link action to evidence",
+        "body": "Every CAPA action should trace to a supported causal or contributing factor. Generic retraining or repeated sanitation is weak when the investigation points to equipment, method, design or monitoring failure.",
+        "references": [
+          "REF-ASTM-E2659-001",
+          "REF-ASTM-D8403-001"
+        ]
+      },
+      {
+        "title": "Define recovery metrics before closure",
+        "body": "Crop recovery may require compatible scouting, disease/pest trend, plant-health, environmental or process measurements over an appropriate time window. One normal reading immediately after an intervention is rarely sufficient.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Assign ownership and due dates",
+        "body": "Containment, correction, prevention and effectiveness checks should each have accountable roles and completion evidence so the investigation does not close through assumption.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Replacing a failed irrigation component is implementation evidence; recovery is supported only after representative delivery and crop/root-zone observations show the failure mode is controlled."
+    ],
+    "commonMistakes": [
+      "Closing CAPA when the action is assigned.",
+      "Using a metric unrelated to the failure mode.",
+      "Calling crop appearance alone proof that a pathogen or pest pathway is eliminated."
+    ],
+    "practicalApplication": "Create a CAPA table with cause, action, owner, due date, implementation evidence, recovery metric, effectiveness window and reopen trigger.",
+    "summary": "CAPA closes a loop only when actions are linked to evidence and effectiveness is demonstrated with appropriate follow-up."
+  }
+}

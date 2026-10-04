@@ -73,7 +73,7 @@ try {
   assert.equal(app.status, 200);
   const appText = await app.text();
   assert.match(appText, /Module checkpoint · formative test/, 'catalog should expose module checkpoint actions');
-  assert.match(appText, /development target for feedback and remediation, not a credential cut score or certification decision/, 'module checkpoint UI must state the non-credential development-threshold boundary');
+  assert.match(appText, /Aim for .* before moving on\. Checkpoint results guide study and do not issue a professional credential\./, 'module checkpoint UI must state the learner-facing non-credential academic boundary');
   assert.match(appText, /\/api\/modules\//, 'module checkpoint UI must call the controlled module assessment endpoint');
   assert.match(appText, /\/assessment\/grade/, 'module checkpoint UI must request server-side feedback after a response');
   assert.doesNotMatch(appText, /item\.correct/, 'learner UI must not depend on a pre-answer client-side answer key');

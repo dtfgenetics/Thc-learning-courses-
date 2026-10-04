@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PCS-002-DONOR-IDENTITY",
+  "title": "Mother/Donor Plant Management & Plant Identity",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PCS-002-01",
+    "LESSON-LH-PCS-002-02",
+    "LESSON-LH-PCS-002-03",
+    "LESSON-LH-PCS-002-04",
+    "LESSON-LH-PCS-002-05"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering donor accession identity, suitability, stock-area biosecurity, donor-linked performance analysis, testing status, lifecycle records and replacement decisions.",
+  "estimatedMinutes": 310,
+  "learningOutcomes": [
+    "Establish and maintain reconstructable donor identity and genealogy from accession through cutting collection and downstream batch assignment.",
+    "Evaluate donor suitability using source identity, developmental condition, plant-health evidence, propagation performance history and defined acceptance criteria.",
+    "Apply stock-area biosecurity boundaries that separate clean, incoming, suspect and held donor material while preserving tool, personnel and movement controls.",
+    "Analyze donor-linked propagation performance without confusing correlation, genotype effects, plant condition and shared process/environment effects.",
+    "Design a donor lifecycle and replacement record that preserves provenance, testing status, performance trend, exceptions and disposition decisions without unsupported clean-stock claims."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

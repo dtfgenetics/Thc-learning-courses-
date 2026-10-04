@@ -1,0 +1,54 @@
+{
+  "id": "LESSON-LH-PCS-003-01",
+  "title": "Cutting Biology, Batch Setup & Traceability",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-003-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANNABIS-CLONAL-ROOTING-2019"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for cutting biology, batch setup & traceability within controlled clonal-propagation systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "A cutting is donor tissue beginning a new root system",
+        "body": "Vegetative cuttings retain donor genetic identity while relying on wound responses and adventitious-root formation to establish a new root system. Starting tissue condition and genotype therefore matter to later batch performance.",
+        "references": [
+          "REF-PROP-001",
+          "REF-CANNABIS-CLONAL-ROOTING-2019"
+        ]
+      },
+      {
+        "title": "Standardization makes performance interpretable",
+        "body": "A useful batch record preserves donor ID, collection time, operator, cutting class, placement, media or rooting system, process version and tray or lot identity. Without this context, later rooting differences are difficult to interpret.",
+        "references": [
+          "REF-CANNABIS-CLONAL-ROOTING-2019"
+        ]
+      },
+      {
+        "title": "Traceability continues through handoff",
+        "body": "The propagation lot should remain linked to the donor and downstream plant identity through rooting, acclimation and transplant handoff. An unresolved identity break is a reason to hold or escalate material rather than guess.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating all cuttings from a donor as equivalent despite different tissue condition.",
+      "Changing cutting preparation and environment at the same time, making the result hard to interpret.",
+      "Allowing tray identity to depend on memory or position alone."
+    ],
+    "practicalApplication": "Create a propagation batch record that links donor identity, cutting collection, tray positions, process version, observation dates and handoff.",
+    "summary": "A clonal batch is both a biological process and a traceability process; the record must make later outcomes reconstructable."
+  }
+}

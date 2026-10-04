@@ -80,6 +80,13 @@ for (const file of fs.readdirSync(lessonDir).filter((name) => /^LESSON-LH-TECH1-
 }
 
 assert.match(richContent, /COURSE1_PRIMARY_VISUAL_OVERRIDES/, 'controlled Course 1 learner visual override registry must exist in the shared renderer');
+const overrideBlock = richContent.match(/export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object\.freeze\(\{([\s\S]*?)\n\}\);/)?.[1] ?? '';
+assert.ok(overrideBlock, 'Course 1 visual override registry must be parseable for raster-policy QA');
+assert.equal(/src:\s*['"][^'"]+\.svg['"]/i.test(overrideBlock), false, 'Course 1 learner visual overrides must not point back to retired SVG assets');
+for (const requiredRaster of ['equipment-preuse-v3.png','operator-vs-maintenance-v3.png','fault-report-v3.png','record-correction-v3.png','shift-handoff-v3.png','integrated-workflow-v3.png']) {
+  assert.ok(overrideBlock.includes(requiredRaster), `Course 1 learner visual override missing approved raster: ${requiredRaster}`);
+}
+
 for (const asset of produced) {
   if (!usedAssetIds.has(asset.id) && richContent.includes(`assetId: '${asset.id}'`) && richContent.includes(`src: '${asset.learnerPath}'`)) {
     usedAssetIds.add(asset.id);

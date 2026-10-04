@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A chemical container has an unreadable label and no verified identity. What is the correct action?",
   "choices": [
-    "Smell it to identify the material.",
-    "Compare its color with known products and proceed.",
-    "Do not use it; isolate/hold it according to procedure and obtain verified identity and hazard information.",
-    "Use a small amount to see how the batch responds."
+    "Compare odor and appearance with known products while wearing PPE, then relabel the container if the match is convincing.",
+    "Set the container aside temporarily and use it only if the batch cannot be completed with identified stock.",
+    "Do not use it; isolate or hold it according to procedure and obtain verified identity and hazard information before any disposition.",
+    "Use a very small amount in a noncritical batch to confirm its likely identity from the resulting EC or pH change."
   ],
   "correct": 2,
-  "rationale": "Do not use it; isolate/hold it according to procedure and obtain verified identity and hazard information.",
+  "rationale": "An unreadable label means both identity and hazard information are uncertain. Appearance, odor, or process response cannot safely substitute for verified identification because visually similar chemicals can have very different hazards or concentrations. The container should be isolated or held under the controlled procedure until identity and hazard information are confirmed and an authorized disposition is made.",
   "references": [
     "REF-SAFETY-OSHA-001"
   ]

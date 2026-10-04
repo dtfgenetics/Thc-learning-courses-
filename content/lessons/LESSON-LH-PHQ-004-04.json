@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-004-04",
+  "title": "Deviation Investigation, Root Cause & CAPA",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-004-04"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-ASTM-D8556-25",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A deviation investigation should explain what happened and reduce recurrence without forcing a root cause unsupported by evidence. Product consequence and process cause are related but distinct questions.",
+    "vocabulary": [
+      {
+        "term": "Immediate cause",
+        "definition": "Condition directly associated with an event without necessarily explaining why the system allowed it."
+      },
+      {
+        "term": "Root cause",
+        "definition": "Underlying system factor supported as a meaningful explanation of recurrence."
+      },
+      {
+        "term": "CAPA",
+        "definition": "Corrective and preventive action intended to correct a problem and reduce recurrence."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Build the timeline and scope first",
+        "body": "Lot genealogy, equipment history, environmental data and observations define the event before cause analysis begins.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Test competing causes",
+        "body": "Evidence should distinguish equipment, procedure, training, material and environmental hypotheses; uncertainty should remain visible.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Verify CAPA effectiveness",
+        "body": "A completed action is not automatically effective. Follow-up evidence should test whether the intended control works and whether new risks were introduced.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Replacing a failed fan corrects the immediate condition; investigating maintenance, alarms and response explains whether recurrence controls are adequate."
+    ],
+    "commonMistakes": [
+      "Naming operator error without system evidence.",
+      "Confusing product disposition with root cause.",
+      "Closing CAPA when a task is completed but unverified."
+    ],
+    "practicalApplication": "Prepare an investigation with event statement, timeline, scope, evidence table, causal analysis, actions, owners and effectiveness checks.",
+    "summary": "A defensible investigation preserves uncertainty, separates consequence from cause and verifies improvement."
+  }
+}

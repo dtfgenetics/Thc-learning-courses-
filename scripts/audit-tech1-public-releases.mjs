@@ -17,17 +17,29 @@ for(const [n,count] of Object.entries(expected)){
   assert.equal(release.publicationState,'published');
   assert.equal(release.publicationBoundary?.credentialExam,'restricted');
   assert.equal(release.publicationBoundary?.credentialDecision,'restricted-governance');
-  assert.ok(Array.isArray(release.publicScope?.modules)&&release.publicScope.modules.length===1,`${courseId}: public release must name exactly the dedicated course module.`);
-  const moduleId=release.publicScope.modules[0];
-  const module=read(`content/modules/${moduleId}.json`);
-  assert.ok(module.id.includes(`TECH1-${n}`),`${courseId}: release module must be course-specific.`);
-  assert.deepEqual(release.publicScope.studentSources.map(x=>path.basename(x,'.json')).sort(),[...module.lessons].sort(),`${courseId}: public student sources must exactly match dedicated module lessons.`);
+  const academicModules=[...(course.extensions?.academicCompletionModules??course.modules??[])];
+  assert.ok(academicModules.length>0,`${courseId}: course must define at least one academic completion module.`);
+  const releasedModuleIds=[...(release.publicScope?.modules??[])];
+  assert.ok(releasedModuleIds.length>0,`${courseId}: public release must name at least one academic module.`);
+  for(const moduleId of releasedModuleIds){
+    assert.ok(academicModules.includes(moduleId),`${courseId}: public release module ${moduleId} must belong to the course academic module set.`);
+  }
+  const modules=releasedModuleIds.map(moduleId=>read(`content/modules/${moduleId}.json`));
+  assert.ok(modules.some(module=>module.id.includes(`TECH1-${n}`)),`${courseId}: public release must include its dedicated course module.`);
+  const releasedLessons=[...new Set(modules.flatMap(module=>module.lessons??[]))].sort();
+  assert.deepEqual(release.publicScope.studentSources.map(x=>path.basename(x,'.json')).sort(),releasedLessons,`${courseId}: public student sources must exactly match all released academic module lessons.`);
   for(const source of release.publicScope.studentSources) assert.ok(exists(source),`${courseId}: missing public source ${source}`);
-  const assessments=release.publicScope.assessments.map(id=>read(`content/assessments/${id}.json`));
-  const itemIds=assessments.flatMap(a=>a.items||[]);
+  const assessmentEntries=release.publicScope.assessments.map(id=>({id,assessment:read(`content/assessments/${id}.json`)}));
+  const itemIds=assessmentEntries.flatMap(({assessment})=>assessment.items||[]);
   assert.equal(new Set(itemIds).size,itemIds.length,`${courseId}: public assessments must not duplicate item identities across forms.`);
-  assert.equal(itemIds.length,count,`${courseId}: expected ${count} public learning items, found ${itemIds.length}.`);
-  assert.equal(release.publicScope.publicCourseItems,count,`${courseId}: manifest item count mismatch.`);
+  const dedicatedAssessmentIds=assessmentEntries
+    .filter(({id})=>id.includes(`LH-TECH1-${n}`))
+    .map(({id})=>id);
+  const dedicatedItemIds=assessmentEntries
+    .filter(({id})=>dedicatedAssessmentIds.includes(id))
+    .flatMap(({assessment})=>assessment.items||[]);
+  assert.equal(dedicatedItemIds.length,count,`${courseId}: expected ${count} course-owned public learning items, found ${dedicatedItemIds.length}.`);
+  assert.equal(release.publicScope.publicCourseItems,count,`${courseId}: manifest course-owned item count mismatch.`);
   for(const id of itemIds){
     const q=read(`content/questions/${id}.json`);
     assert.ok(['formative','summative'].includes(q.purpose),`${courseId}: credential-purpose item ${id} must not be public.`);
@@ -37,8 +49,7 @@ for(const [n,count] of Object.entries(expected)){
     assert.equal(release.publicScope.assessments.length,1);
     assert.equal(release.publicationBoundary?.secureCredentialForms,'restricted');
   }else{
-    assert.equal(release.publicScope.assessments.length,2);
-    assert.ok(release.publicScope.assessments.includes(course.finalAssessment));
+    assert.ok(release.publicScope.assessments.includes(course.finalAssessment),`${courseId}: public release must include the dedicated course final assessment.`);
   }
 }
 console.log('Technician I Courses 2-7 public-release audit passed: learner lesson sources and public learning assessments are explicitly released while credential exams, secure forms, and credential decisions remain restricted.');

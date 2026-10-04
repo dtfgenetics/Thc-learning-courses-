@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-004-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Three colocated RH sensors read 61%, 62% and 76%, and the 76% sensor lacks recent verification. What is the strongest next action?",
+  "choices": [
+    "Change the room target to match 76%.",
+    "Verify the outlier against a suitable reference before changing room control.",
+    "Average all three readings.",
+    "Replace the two lower-reading sensors."
+  ],
+  "correct": 1,
+  "rationale": "Colocated agreement plus missing verification history makes the outlier a data-quality concern first.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

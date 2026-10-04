@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-006-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why might day-10 rooting comparisons mislead across genotypes?",
+  "choices": [
+    "Genotypes may differ in timing, so a shared early snapshot can distort final performance",
+    "Rooting can never be measured",
+    "Every genotype must have the same result",
+    "Later observations are always invalid"
+  ],
+  "correct": 0,
+  "rationale": "Timing distributions can differ even when final outcomes converge.",
+  "references": [
+    "REF-PROP-TC-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-005-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-05",
+  "competency": "COMP-PRO-QA-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "stem": "Which record best supports an IPM event closure decision?",
+  "choices": [
+    "A note saying 'treated'.",
+    "Baseline evidence, authorized tactic, compatibility check, comparable follow-up results, unresolved risk and the approving role.",
+    "A product receipt only.",
+    "A verbal statement with no sampling record."
+  ],
+  "correct": 1,
+  "rationale": "Closure should be reconstructable from baseline through authorization, intervention, verification and remaining risk.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-OSU-GREENHOUSE-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-005-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A vigorous donor has a matching room label but its accession genealogy is incomplete. What is the defensible status?",
+  "choices": [
+    "Hold the material until identity continuity is resolved",
+    "Release it because vigor confirms identity",
+    "Relabel it from memory",
+    "Treat a visual inspection as a genetic test"
+  ],
+  "correct": 0,
+  "rationale": "Vigor does not resolve an identity gap; the material remains held until evidence supports the transition.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

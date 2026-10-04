@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-002-03",
+  "title": "Canopy Uniformity, Distribution & Fixture Geometry",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-LIGHT-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-002-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-LIGHT-001",
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Lighting quality includes distribution as well as average intensity. A specialist uses spatial maps, range and pattern to identify hot spots, edge losses and canopy zones that may require fixture-layout or canopy-management review.",
+    "vocabulary": [
+      {
+        "term": "Uniformity",
+        "definition": "The consistency of measured light distribution across a defined canopy area."
+      },
+      {
+        "term": "Hot spot",
+        "definition": "A localized region with substantially higher measured intensity than surrounding canopy positions."
+      },
+      {
+        "term": "Edge loss",
+        "definition": "Reduced measured light near the perimeter of the managed canopy relative to interior positions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Average can hide extremes",
+        "body": "Averages should be reviewed with minimum, maximum and spatial pattern. A room may meet an average target while containing biologically different bright and dim zones.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Fixture geometry shapes the map",
+        "body": "Fixture spacing, mounting height, overlap, room boundaries and canopy height influence distribution. Re-map after meaningful layout or canopy changes.",
+        "references": [
+          "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+        ]
+      },
+      {
+        "title": "Uniformity decisions need crop context",
+        "body": "A spatial pattern matters most when it is repeatable and aligns with crop architecture or response. Do not redesign a room from one noisy map.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If average PPFD stays similar after raising fixtures but range narrows and corners improve, uniformity may have improved even though the mean changed little."
+    ],
+    "commonMistakes": [
+      "Using average PPFD alone.",
+      "Ignoring canopy height differences.",
+      "Changing several fixture variables before repeating the same grid."
+    ],
+    "practicalApplication": "Compare two mapped light distributions using average, range and spatial pattern, then recommend the next measurement or authorized adjustment.",
+    "summary": "Uniformity is a spatial property; it cannot be inferred from one number."
+  }
+}

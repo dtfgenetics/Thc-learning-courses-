@@ -1,7 +1,7 @@
 # Final Human Review Worklist — COURSE-LH-TECH1-003
 
 **Course:** Environmental, Light & Sensor Fundamentals  
-**Controlled state:** `draft`  
+**Controlled state:** `published` for owner-approved academic use  
 **Purpose:** authoritative worklist for decisions that cannot be truthfully closed by file generation or CI.
 
 ## Review rule
@@ -76,7 +76,7 @@ Required record: **pending**
 
 ## 5. Visual and asset review
 
-Review all six produced Course 3 assets against the canonical lessons and visual registry:
+Review all seven produced Course 3 assets against the canonical lessons and visual registry:
 - technical meaning;
 - objective/lesson placement;
 - readable labels and units;

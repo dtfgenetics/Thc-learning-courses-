@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CANOPY-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CANOPY-001",
+  "objective": "LO-CANOPY-LST-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "After bending dominant shoots, the canopy looks level but PPFD still ranges widely across the grid. What should happen next?",
+  "choices": [
+    "Investigate fixture distribution, leaf overlap and branch spacing before assuming training is complete",
+    "Stop measuring because the canopy looks flat",
+    "Top every branch",
+    "Increase light everywhere without mapping"
+  ],
+  "correct": 0,
+  "rationale": "Visual flatness does not guarantee light uniformity; the result should be verified with measured distribution.",
+  "references": [
+    "REF-CANOPY-001"
+  ]
+}

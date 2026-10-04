@@ -2,9 +2,9 @@
 
 **Course:** Advanced Crop Observation & Diagnostic Reasoning  
 **Canonical version:** 0.2.0  
-**Canonical course state:** draft  
+**Canonical course state:** published  
 **Public academic package:** published  
-**Updated:** 2026-09-18
+**Updated:** 2026-09-22
 
 ## Purpose
 

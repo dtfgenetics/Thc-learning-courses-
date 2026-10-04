@@ -1,0 +1,67 @@
+{
+  "id": "LESSON-LH-PCS-005-03",
+  "title": "Culture Establishment & Contamination Triage",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-TC-ASEPTIC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-005-03"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-PROP-TC-2025-001",
+    "REF-PROP-REGEN-2025-001",
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Establishment joins donor biology, explant selection and aseptic execution. Contamination timing and distribution are investigation clues, not automatic proof of a source or operator failure.",
+    "vocabulary": [
+      {
+        "term": "Explant",
+        "definition": "Plant tissue introduced into an in-vitro culture system."
+      },
+      {
+        "term": "Contamination pattern",
+        "definition": "The distribution of affected vessels across time, source material, batches and process steps."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Starting material shapes establishment",
+        "body": "Donor condition, explant type, developmental position and genotype can change survival and response. These variables should be recorded rather than hidden inside a single success rate.",
+        "references": [
+          "REF-PROP-TC-2025-001",
+          "REF-PROP-REGEN-2025-001"
+        ]
+      },
+      {
+        "title": "Timing helps rank hypotheses",
+        "body": "Early widespread growth may point toward preparation or workflow exposure, while clustered or delayed findings may support different hypotheses. Timing narrows investigation but does not identify an organism by itself.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Triage protects evidence and adjacent work",
+        "body": "Affected material should follow defined isolation and disposition rules. Images, vessel IDs, batch links and event timing should be preserved before cleanup removes useful evidence.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Contamination across different genotypes that shared one preparation lot makes that common factor worth testing without proving it was the source.",
+      "Low survival confined to one explant type can be biological or procedural; compare condition and handling records before changing the entire protocol."
+    ],
+    "commonMistakes": [
+      "Calling every failed explant contamination.",
+      "Discarding affected vessels before recording the pattern.",
+      "Changing donor, medium and workflow at the same time."
+    ],
+    "practicalApplication": "Triage a mock vessel log, separate contamination from noncontamination establishment failures, rank three hypotheses and specify the next discriminating check for each.",
+    "summary": "Establishment troubleshooting uses source, explant, vessel, timing and workflow evidence to localize failure while protecting unaffected work."
+  }
+}
