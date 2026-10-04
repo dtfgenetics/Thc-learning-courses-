@@ -2,6 +2,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { addAutomaticEnrollmentCompletion } from './enrollment-completion-adapter.mjs';
 import { loadProductionCredentialSigner } from './credential-signing-adapter.mjs';
+import { validateSecureAssessmentStore } from './secure-assessment-store-adapter.mjs';
 
 function required(env, name) {
   const value = String(env[name] ?? '').trim();
@@ -78,11 +79,9 @@ export async function loadProductionApiOptions(env = process.env) {
     completionStore
   });
 
-  const secureAssessmentStore = adapters?.secureAssessmentStore;
-  const requiredSecureMethods = ['ping','bankVersion','selectOperationalItems','recordForm','recordExposure','quarantineItem'];
-  if (!secureAssessmentStore || secureAssessmentStore.kind !== 'private-operational-assessment-store' || requiredSecureMethods.some((method) => typeof secureAssessmentStore[method] !== 'function')) {
-    throw new Error('Production persistence adapter must provide a private operational secureAssessmentStore');
-  }
+  let secureAssessmentStore;
+  try { secureAssessmentStore = validateSecureAssessmentStore(adapters?.secureAssessmentStore); }
+  catch (error) { throw new Error(`Production persistence adapter secureAssessmentStore invalid: ${error.message}`); }
 
   const credentialWriter = adapters.credentialWriter ?? null;
   if (credentialWriter && (typeof credentialWriter.issueCredential !== 'function' || typeof credentialWriter.transitionById !== 'function')) {
