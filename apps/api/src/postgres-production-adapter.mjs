@@ -58,6 +58,8 @@ export function createPersistenceAdaptersFromPool({pool,env={}}={}){
 }
 export async function createPersistenceAdapters({env=process.env}={}){
   const poolModulePath=required(env,'THC_POSTGRES_POOL_MODULE');
+  required(env,'THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON');
+  required(env,'THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY');
   const provider=await import(resolveModuleSpecifier(poolModulePath));
   if(typeof provider.createPostgresPool!=='function'){
     throw new Error('THC_POSTGRES_POOL_MODULE must export createPostgresPool({ env })');
