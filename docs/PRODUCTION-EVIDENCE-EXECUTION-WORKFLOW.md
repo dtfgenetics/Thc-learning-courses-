@@ -95,3 +95,20 @@ With an MFA-asserted dedicated admin test token and the expected private bank ve
 The verifier confirms the private bank summary is reachable, the exact bank version matches, the bank is `approved-operational`, at least one approved operational item exists, and the response does not contain protected prompts, choices, answer keys, rationales, or scoring keys.
 
 This is intentionally read-only. It does not substitute for separate live evidence covering operational item selection, form recording/exposure tracking, quarantine exclusion, or learner delivery projection.
+
+## Direct PostgreSQL RLS verification
+
+Use a dedicated validation database role plus two synthetic learner rows:
+
+`THC_VERIFY_RLS_DATABASE_URL=... THC_VERIFY_RLS_LEARNER_A_ID=... THC_VERIFY_RLS_LEARNER_B_ID=... npm run production:direct-rls-verify`
+
+Requirements enforced by the verifier:
+
+- PostgreSQL TLS must be required;
+- the validation role must not be superuser and must not have `BYPASSRLS`;
+- all protected Academy learner tables must have both RLS enabled and `FORCE ROW LEVEL SECURITY`;
+- every protected table must have at least one deployed policy;
+- learner A must see its own `learners` row and not learner B's row;
+- learner B must see its own row and not learner A's row.
+
+The check runs inside a read-only transaction and emits only counts plus hashed role/learner identifiers. It never emits the database URL or row contents. Use dedicated synthetic validation learners only.
