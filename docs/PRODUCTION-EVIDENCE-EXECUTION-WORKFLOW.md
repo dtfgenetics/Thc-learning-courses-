@@ -144,3 +144,13 @@ To scaffold the exact structured fields for a production control without inventi
 `npm run production-evidence:verification-template -- --control <control-id>`
 
 The command emits every required verification key with a `null` value plus the human-readable evidence label. Replace each `null` only with real deployment-backed evidence before passing the object to `--verification-json` during completion.
+
+## Credential signer identity verification
+
+With an MFA-asserted admin test token:
+
+`THC_PUBLIC_BASE_URL=https://<academy-host> THC_VERIFY_ADMIN_MFA_TOKEN=... npm run production:signer-identity-verify`
+
+The existing admin diagnostics endpoint exposes only whitelisted signer metadata: whether a signer is configured, the signer adapter kind, and public issuer identity (`issuerId`, name, HTTPS URL). No private key, signature, seed, PEM, or provider secret is exposed.
+
+This verifies deployed signer/issuer configuration only. It does not perform the controlled signing smoke test, validate key custody, or satisfy credential-signing approval by itself.
