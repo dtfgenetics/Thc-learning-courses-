@@ -51,7 +51,6 @@ try{
     'Root cause assigned: no',
     'Causation proven: no'
   ]) assert.equal(clientText.includes(expected),true,`client must preserve safety message: ${expected}`);
-  assert.equal(catalogResponse.status,200);')));
 
   const catalogResponse=await fetch(`${base}/api/applied-learning/tools`);
   assert.equal(catalogResponse.status,200);
