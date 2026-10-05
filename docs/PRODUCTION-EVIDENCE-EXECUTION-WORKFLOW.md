@@ -56,22 +56,12 @@ The verifier is intentionally tokenless and safe to attach to an evidence packet
 
 The JSON output includes request identifiers, safe status metadata, timing, build identity, and explicit limitations. It does **not** include credentials or authorization headers and does not claim MFA, row-level isolation, private assessment behavior, backup/restore, monitoring, signing, revocation, independent security review, or professional credential authorization.
 
-## Authenticated scope and MFA boundary verification
+## Learner subject-isolation verification
 
-After tokenless production smoke verification passes, use dedicated short-lived **test identities** to validate the deployed authentication boundary:
+Use two dedicated short-lived learner **test** identities to exercise deployed persistence separation:
 
-`THC_VERIFY_LEARNER_TOKEN=... THC_VERIFY_EVALUATOR_TOKEN=... THC_VERIFY_ADMIN_NO_MFA_TOKEN=... THC_VERIFY_ADMIN_MFA_TOKEN=... npm run production:auth-boundary-verify -- --base-url https://<academy-host>`
+`THC_VERIFY_LEARNER_A_TOKEN=... THC_VERIFY_LEARNER_B_TOKEN=... npm run production:learner-isolation-verify -- --base-url https://<academy-host>`
 
-The verifier checks that:
+The verifier writes verification-only progress markers under each test identity, confirms each learner sees its own marker and cannot see the other learner's marker, then resets both markers to `not-started`.
 
-- the learner token can read its own learner progress route;
-- the learner token is denied evaluator and admin scopes;
-- the evaluator token can read evaluator capabilities and is denied admin scope;
-- an admin-scoped token without MFA is rejected with `admin-mfa-required`;
-- an MFA-asserted admin token can read admin diagnostics;
-- the admin token is denied learner scope when it does not carry learner permission;
-- learner, evaluator, and admin test identities resolve to distinct subjects.
-
-Returned subjects are hashed before evidence output. Tokens are accepted only from environment variables and are never written to the report. Use short-lived dedicated test identities; never use ordinary learner or staff credentials for verification.
-
-This verifies authentication/scope/MFA behavior only. It does not establish learner-to-learner row isolation, secure assessment integrity, backup/restore, monitoring, signing, revocation, independent security review, or credential-release authorization.
+This provides deployed application-level evidence that learner persistence is scoped by the authenticated subject. It does **not** independently prove direct database RLS behavior against privileged/database-level access, so the database policy/version and direct authorization tests remain separate evidence requirements.
