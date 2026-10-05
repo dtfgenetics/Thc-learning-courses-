@@ -1,8 +1,16 @@
+import fs from 'node:fs';
 import assert from 'node:assert/strict';
+import Ajv2020 from 'ajv/dist/2020.js';
+import addFormats from 'ajv-formats';
 import { buildCanonicalAppliedLearningGraph } from '../packages/domain/applied-learning-canonical-graph.mjs';
 import { projectGraph, graphNeighborhood } from '../packages/domain/applied-learning-graph.mjs';
 
 const graph=buildCanonicalAppliedLearningGraph();
+const graphSchema=JSON.parse(fs.readFileSync('schemas/applied-learning-graph.schema.json','utf8'));
+const ajv=new Ajv2020({allErrors:true,strict:false});
+addFormats(ajv);
+const validate=ajv.compile(graphSchema);
+assert.equal(validate(graph),true,JSON.stringify(validate.errors));
 assert.equal(graph.status,'draft');
 assert.ok(graph.nodes.length>=50,`canonical graph unexpectedly small: ${graph.nodes.length}`);
 assert.ok(graph.edges.length>=graph.nodes.length,`graph should have meaningful relationship density: ${graph.edges.length} edges for ${graph.nodes.length} nodes`);
