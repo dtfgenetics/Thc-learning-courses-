@@ -109,6 +109,21 @@ Before routing public traffic:
 
 Only deployment-backed evidence may change the corresponding production-readiness records.
 
+## Automated deployment preflight
+
+Before any production rollout, run the **Production deployment preflight** GitHub Actions workflow against the exact release SHA. The workflow is intentionally fail-closed and uses the protected `production` environment.
+
+It verifies, without printing secrets:
+
+- the deployment uses an exact 40-character Git SHA and the checked-out revision matches it;
+- the public Academy base URL, OIDC issuer, and JWKS URL use HTTPS and are not placeholder values;
+- runtime and secure-assessment PostgreSQL URLs are different, use separate database identities, and require TLS;
+- the runtime schema target is exactly version 7;
+- the secure-assessment control declaration explicitly enables least privilege, privileged-access auditing, encryption, backup/recovery, key separation, environment separation, and exclusion of public-repository material;
+- the secure-assessment audit HMAC key is present and has a minimum safe length.
+
+The command behind the workflow is `node scripts/production-deployment-preflight.mjs`. Successful output contains only non-secret deployment metadata and a configuration fingerprint. A green preflight means the supplied configuration is structurally deployable; it is **not** proof that the infrastructure was deployed, that controls operated correctly, or that professional certification is authorized.
+
 ## Public-site cutover
 
 The current DTFSeeds WordPress course pages truthfully avoid sending learners to a nonexistent authenticated exam portal. Preserve that behavior until this service is deployed and verified.
