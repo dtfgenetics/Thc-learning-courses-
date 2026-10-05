@@ -70,6 +70,29 @@ try{
   assert.equal(calibration.status,200);
   assert.match((await calibration.json()).result.decision,/recalibrate-or-service/);
 
+  const timeline=await fetch(`${base}/api/applied-learning/tools/ALTOOL-PLANT-TIMELINE-ATLAS-001/evaluate`,{
+    method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({
+      subjectId:'SIM-PLANT-7',timestamp:'2026-10-03T11:30',
+      stage:'vegetative',observation:'New growth remains upright and uniformly green',
+      uncertainty:'Need another time point before inferring trend'
+    })
+  });
+  assert.equal(timeline.status,200);
+  const timelineBody=await timeline.json();
+  assert.equal(timelineBody.result.observationRecord.subjectId,'SIM-PLANT-7');
+  assert.equal(timelineBody.result.separatesObservationFromCause,true);
+  assert.equal(timelineBody.result.diagnosticConclusionAuthorized,false);
+
+  const badTimeline=await fetch(`${base}/api/applied-learning/tools/ALTOOL-PLANT-TIMELINE-ATLAS-001/evaluate`,{
+    method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({
+      subjectId:'SIM-PLANT-7',timestamp:'not-a-time',
+      stage:'vegetative',observation:'Observation',uncertainty:'Unknown'
+    })
+  });
+  assert.equal(badTimeline.status,400);
+
   const flight=await fetch(`${base}/api/applied-learning/tools/ALTOOL-GROWER-FLIGHT-RECORDER-001/evaluate`,{
     method:'POST',headers:{'content-type':'application/json'},
     body:JSON.stringify({
@@ -80,7 +103,45 @@ try{
   assert.equal(flight.status,200);
   const flightBody=await flight.json();
   assert.equal(flightBody.status,'learner-draft-record');
-  assert.match(flightBody.note,/does not create credential evidence/i);
+  assert.equal(flightBody.result.eventRecord.eventType,'observation');
+  assert.equal(flightBody.result.handoffReady,true);
+  assert.equal(flightBody.result.chronologyPreserved,true);
+  assert.equal(flightBody.result.regulatedRecordCreated,false);
+  assert.match(flightBody.note,/does not replace controlled facility records/i);
+
+  const incident=await fetch(`${base}/api/applied-learning/tools/ALTOOL-CROP-INCIDENT-REPORT-001/evaluate`,{
+    method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({
+      timestamp:'2026-10-03T12:15',location:'SIM-ROOM-2',
+      facts:'Circulation fan stopped and localized leaf movement decreased',
+      containment:'Paused training activity and kept clear of equipment',
+      escalation:'Notified simulated supervisor',
+      followUp:'Qualified person to inspect equipment'
+    })
+  });
+  assert.equal(incident.status,200);
+  const incidentBody=await incident.json();
+  assert.equal(incidentBody.result.requiredSectionsComplete,true);
+  assert.equal(incidentBody.result.rootCauseAssigned,false);
+  assert.match(incidentBody.result.incidentRecord.facts,/fan stopped/i);
+
+  const causeChain=await fetch(`${base}/api/applied-learning/tools/ALTOOL-CAUSE-CHAIN-001/evaluate`,{
+    method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({
+      observation:'One canopy zone shows reduced leaf movement',
+      mechanism:'Reduced local air exchange could alter the boundary layer',
+      hypothesis:'Local circulation is lower than adjacent zones',
+      alternative:'Sensor placement or canopy density could explain the difference',
+      nextEvidence:'Compare airflow indicators and environmental readings across matched zones',
+      outcome:'No intervention performed in this training example'
+    })
+  });
+  assert.equal(causeChain.status,200);
+  const causeBody=await causeChain.json();
+  assert.equal(causeBody.result.hasAlternativeExplanation,true);
+  assert.equal(causeBody.result.hasDiscriminatingEvidencePlan,true);
+  assert.equal(causeBody.result.causationProven,false);
+  assert.deepEqual(causeBody.result.chain.map(row=>row.stage),['observation','mechanism','hypothesis','alternative','next-evidence','outcome']);
 
   const prod=createAcademyWebServer({env:{NODE_ENV:'production',ACADEMY_PREVIEW_DRAFTS:'0'}});
   prod.listen(0,'127.0.0.1');
