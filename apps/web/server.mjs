@@ -139,30 +139,109 @@ function evaluateAppliedLearningTool(tool, body = {}) {
     } else if (field.type === 'choice') {
       if (!field.options?.includes(String(raw))) throw new Error(`${field.id} is not an allowed choice`);
       values[field.id] = String(raw);
+    } else if (field.type === 'timestamp') {
+      const value = String(raw).trim();
+      if (!Number.isFinite(Date.parse(value))) throw new Error(`${field.id} must be a valid timestamp`);
+      values[field.id] = value;
     } else {
-      values[field.id] = String(raw).slice(0, 4000);
+      values[field.id] = String(raw).trim().slice(0, 4000);
     }
   }
 
-  if (tool.kind === 'blueprint') {
-    const length = values.roomLengthFt;
-    const width = values.roomWidthFt;
-    if (!(length > 0 && width > 0 && length <= 1000 && width <= 1000)) throw new Error('room dimensions must be positive and within the training range');
-    return { toolId: tool.id, kind: tool.kind, values, result: { floorAreaSqFt: length * width }, note: tool.boundary };
-  }
-  if (tool.kind === 'calibration') {
-    const result = values.verificationResult === 'pass'
-      ? 'measurement-eligible-for-contextual-interpretation'
-      : 'stop-recalibrate-or-service-and-repeat-verification';
-    return { toolId: tool.id, kind: tool.kind, values, result: { decision: result }, note: tool.boundary };
-  }
-  return {
+  const common = {
     toolId: tool.id,
     kind: tool.kind,
     status: 'learner-draft-record',
     values,
     note: 'Local training record preview only; this endpoint does not create credential evidence or regulated records.'
   };
+
+  if (tool.kind === 'blueprint') {
+    const length = values.roomLengthFt;
+    const width = values.roomWidthFt;
+    if (!(length > 0 && width > 0 && length <= 1000 && width <= 1000)) throw new Error('room dimensions must be positive and within the training range');
+    return { ...common, result: { floorAreaSqFt: length * width, verificationRequired: true }, note: tool.boundary };
+  }
+  if (tool.kind === 'calibration') {
+    const decision = values.verificationResult === 'pass'
+      ? 'measurement-eligible-for-contextual-interpretation'
+      : 'stop-recalibrate-or-service-and-repeat-verification';
+    return { ...common, result: { decision, acceptedForDecisionSupport: values.verificationResult === 'pass' }, note: tool.boundary };
+  }
+  if (tool.kind === 'timeline-atlas') {
+    return {
+      ...common,
+      result: {
+        observationRecord: {
+          subjectId: values.subjectId,
+          timestamp: values.timestamp,
+          stage: values.stage,
+          observation: values.observation,
+          uncertainty: values.uncertainty
+        },
+        separatesObservationFromCause: true,
+        diagnosticConclusionAuthorized: false
+      },
+      note: tool.boundary
+    };
+  }
+  if (tool.kind === 'flight-recorder') {
+    return {
+      ...common,
+      result: {
+        eventRecord: {
+          subjectId: values.subjectId,
+          timestamp: values.timestamp,
+          eventType: values.eventType,
+          eventDetail: values.eventDetail,
+          nextAction: values.nextAction
+        },
+        handoffReady: Boolean(values.nextAction),
+        chronologyPreserved: true,
+        regulatedRecordCreated: false
+      },
+      note: tool.boundary
+    };
+  }
+  if (tool.kind === 'incident-report') {
+    return {
+      ...common,
+      result: {
+        incidentRecord: {
+          timestamp: values.timestamp,
+          location: values.location,
+          facts: values.facts,
+          containment: values.containment,
+          escalation: values.escalation,
+          ...(values.followUp ? { followUp: values.followUp } : {})
+        },
+        requiredSectionsComplete: Boolean(values.timestamp && values.location && values.facts && values.containment && values.escalation),
+        rootCauseAssigned: false
+      },
+      note: tool.boundary
+    };
+  }
+  if (tool.kind === 'cause-chain') {
+    const chain = [
+      ['observation', values.observation],
+      ['mechanism', values.mechanism],
+      ['hypothesis', values.hypothesis],
+      ['alternative', values.alternative],
+      ['next-evidence', values.nextEvidence],
+      ...(values.outcome ? [['outcome', values.outcome]] : [])
+    ].map(([stage, value]) => ({ stage, value }));
+    return {
+      ...common,
+      result: {
+        chain,
+        hasAlternativeExplanation: Boolean(values.alternative),
+        hasDiscriminatingEvidencePlan: Boolean(values.nextEvidence),
+        causationProven: false
+      },
+      note: tool.boundary
+    };
+  }
+  return common;
 }
 function buildPublicReleaseIds({ modules, assessments }) {
   const ids = new Set();
