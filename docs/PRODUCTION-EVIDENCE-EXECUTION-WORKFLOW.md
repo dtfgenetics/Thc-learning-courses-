@@ -28,3 +28,14 @@ The generated packets cover:
 Each packet includes the exact mapped `system-readiness.json` gate, the canonical required-evidence list, a live execution checklist, and a safe evidence-record section.
 
 A completed checklist is not approval. The mapped readiness gate advances only after an actual `content/production-control-evidence/*.json` record is validated and reaches `approved`.
+
+## Deployment identity binding
+
+When a production evidence record is tied to an actual deployment, create it with the exact deployment identity rather than only a generic run reference. The production intake command accepts:
+
+- `--source-sha` — the exact 40-character certification repository commit;
+- `--image-digest` — the deployed container digest in `sha256:<64 hex>` form;
+- `--attestation-ref` — the signed provenance attestation reference;
+- optional `--service-id`, `--build-id`, and `--schema-version`.
+
+If any deployment-identity argument is supplied, source SHA, image digest, and attestation reference become mandatory. This keeps deployment-backed evidence traceable to the exact image that was built and attested rather than only to a branch, tag, or operator description.

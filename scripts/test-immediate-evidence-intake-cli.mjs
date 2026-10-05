@@ -44,11 +44,14 @@ const cases=[
   {
     name:'production',
     script:'scripts/create-production-control-evidence-record.mjs',
-    args:['--control','backup-restore','--environment','production','--authority','TEST-PLATFORM-LEAD','--evidence-ref','TEST-RUN-001'],
+    args:['--control','backup-restore','--environment','production','--authority','TEST-PLATFORM-LEAD','--evidence-ref','TEST-RUN-001','--service-id','academy-api','--build-id','TEST-BUILD-001','--source-sha','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','--schema-version','7','--image-digest','sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb','--attestation-ref','https://github.com/dtfgenetics/Thc-learning-courses-/attestations/TEST'],
     validate:compile('schemas/production-control-evidence.schema.json'),
     assert:r=>{
       if(r.status!=='in-progress') throw new Error('production intake must start in-progress');
       if(r.findingsDispositioned!==false) throw new Error('production intake fabricated findings disposition');
+      if(r.deploymentIdentity?.sourceSha!=='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') throw new Error('production intake lost exact source SHA');
+      if(r.deploymentIdentity?.imageDigest!=='sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb') throw new Error('production intake lost exact image digest');
+      if(!r.deploymentIdentity?.attestationRef?.includes('/attestations/')) throw new Error('production intake lost signed attestation reference');
     }
   }
 ];
