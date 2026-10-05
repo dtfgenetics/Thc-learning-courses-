@@ -805,6 +805,17 @@ function renderTools() {
   panel.append(text('h2', 'Cultivation Calculators'));
   panel.append(text('p', 'Practice environmental and lighting math. Calculator outputs are measurements, not universal cultivation targets.', 'lede'));
 
+  const appliedLearning = document.createElement('section');
+  appliedLearning.className = 'portal-tool-card';
+  appliedLearning.append(text('h3', 'Applied Learning Lab'));
+  appliedLearning.append(text('p', 'Open the larger interactive suite for the canonical Knowledge Graph, Measurement School, Crop Math, differential reasoning, blueprint, calibration, timeline, flight-recorder, incident-report and cause-chain practice.', 'portal-tool-copy'));
+  const appliedLink = document.createElement('a');
+  appliedLink.className = 'download-action';
+  appliedLink.href = '/applied-learning';
+  appliedLink.textContent = 'Open Applied Learning Lab';
+  appliedLearning.append(appliedLink);
+  panel.append(appliedLearning);
+
   const grid = document.createElement('div');
   grid.className = 'portal-tools-grid';
 
