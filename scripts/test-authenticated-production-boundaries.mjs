@@ -8,10 +8,12 @@ const env={
   THC_VERIFY_ADMIN_MFA_TOKEN:'admin-mfa-secret-token-value'
 };
 
+let requestSequence=0;
 function json(status,body){
+  requestSequence+=1;
   return new Response(JSON.stringify(body),{
     status,
-    headers:{'content-type':'application/json','x-request-id':`req-${status}-${Math.random()}`}
+    headers:{'content-type':'application/json','x-request-id':`req-${status}-${requestSequence}`}
   });
 }
 
