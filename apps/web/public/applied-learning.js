@@ -1,21 +1,44 @@
 const graphNodes=document.querySelector('#graph-nodes');
 const graphFilter=document.querySelector('#graph-filter');
+const graphType=document.querySelector('#graph-type');
 let graphData=null;
+
+function graphNodeSearchText(node){
+  return [node.label,node.canonicalId,node.canonicalType,node.domain,node.kind]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
 
 function renderGraph(){
   if(!graphData) return;
   const q=graphFilter.value.trim().toLowerCase();
-  const rows=graphData.nodes.filter(node=>!q||[node.canonicalId,node.canonicalType,node.kind].filter(Boolean).some(value=>String(value).toLowerCase().includes(q)));
-  graphNodes.replaceChildren(...rows.map(node=>{
+  const type=graphType?.value??'';
+  const rows=graphData.nodes.filter(node=>
+    (!q||graphNodeSearchText(node).includes(q)) &&
+    (!type||node.canonicalType===type)
+  );
+  const visibleRows=rows.slice(0,120);
+  graphNodes.replaceChildren(...visibleRows.map(node=>{
     const li=document.createElement('li');
     const strong=document.createElement('strong');
-    strong.textContent=node.canonicalId;
+    strong.textContent=node.label??node.canonicalId;
     const span=document.createElement('span');
-    span.textContent=node.canonicalType;
+    span.textContent=`${node.canonicalType} · ${node.canonicalId}${node.domain?` · ${node.domain}`:''}`;
     li.append(strong,span);
     return li;
   }));
-  document.querySelector('#graph-stats').textContent=`${rows.length} of ${graphData.nodes.length} canonical nodes shown · ${graphData.edges.length} typed relationship(s)`;
+
+  const visibleIds=new Set(visibleRows.map(node=>node.id));
+  const nodeLabels=new Map(graphData.nodes.map(node=>[node.id,node.label??node.canonicalId]));
+  const relatedEdges=graphData.edges
+    .filter(edge=>visibleIds.has(edge.source)||visibleIds.has(edge.target))
+    .slice(0,100);
+  document.querySelector('#graph-edges').textContent=relatedEdges.length
+    ? relatedEdges.map(edge=>`${nodeLabels.get(edge.source)??edge.source} → ${edge.relationship} → ${nodeLabels.get(edge.target)??edge.target}`).join('\n')
+    : 'No relationships match the current filter.';
+  const capped=rows.length>visibleRows.length?` · first ${visibleRows.length} rendered`:'';
+  document.querySelector('#graph-stats').textContent=`${rows.length} matching of ${graphData.nodes.length} canonical nodes${capped} · ${graphData.edges.length} typed relationships total`;
 }
 
 async function loadGraph(){
@@ -23,10 +46,10 @@ async function loadGraph(){
   if(!response.ok) throw new Error('Knowledge Graph unavailable');
   graphData=await response.json();
   document.querySelector('#graph-summary').textContent=graphData.summary;
-  document.querySelector('#graph-edges').textContent=graphData.edges.map(edge=>`${edge.source} → ${edge.relationship} → ${edge.target}`).join('\n')||'Relationship expansion is still in progress.';
   renderGraph();
 }
 graphFilter.addEventListener('input',renderGraph);
+graphType?.addEventListener('change',renderGraph);
 
 async function loadMeasurement(){
   const response=await fetch('/api/applied-learning/measurements/ALMEAS-SENSOR-PLACEMENT-001');
