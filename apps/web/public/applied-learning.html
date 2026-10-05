@@ -28,7 +28,19 @@
           <p class="eyebrow">THC Knowledge Graph</p>
           <h2 id="graph-title">Canonical concept explorer</h2>
         </div>
-        <label>Filter nodes <input id="graph-filter" type="search" placeholder="VPD, safety, IPM…"></label>
+        <div class="graph-controls">
+          <label>Filter nodes <input id="graph-filter" type="search" placeholder="VPD, safety, IPM…"></label>
+          <label>Concept type
+            <select id="graph-type">
+              <option value="">All types</option>
+              <option value="competency">Competencies</option>
+              <option value="objective">Objectives</option>
+              <option value="lesson">Lessons</option>
+              <option value="claim">Claims</option>
+              <option value="reference">References</option>
+            </select>
+          </label>
+        </div>
       </div>
       <p id="graph-summary">Loading graph…</p>
       <div id="graph-stats" class="stats" aria-live="polite"></div>
