@@ -989,6 +989,13 @@ export function createHandler({
           storageAdapter: resolvedCredentialStore.kind ?? 'unknown',
           learnerStorageAdapter: learnerStore?.kind ?? null,
           practicalEvaluatorStorageAdapter: practicalEvaluatorStore?.kind ?? null,
+          credentialSigningConfigured: Boolean(credentialSigner && typeof credentialSigner.signCredentialPayload === 'function'),
+          credentialSignerKind: credentialSigner?.kind ?? null,
+          credentialIssuer: credentialSigner?.issuer ? {
+            issuerId: credentialSigner.issuer.issuerId ?? null,
+            name: credentialSigner.issuer.name ?? null,
+            url: credentialSigner.issuer.url ?? null
+          } : null,
           credentialCount: typeof resolvedCredentialStore.count === 'function' ? await resolvedCredentialStore.count() : null,
           authenticatedSubject: auth.subject,
           requestId
