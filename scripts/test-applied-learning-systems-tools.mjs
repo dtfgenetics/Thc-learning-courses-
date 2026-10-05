@@ -50,7 +50,7 @@ try{
     'Regulated record created: no',
     'Root cause assigned: no',
     'Causation proven: no'
-  ]) assert.match(clientText,new RegExp(expected.replace(/[.*+?^$\{\}()|[\]\\]/g,'\\  const catalogResponse=await fetch(`${base}/api/applied-learning/tools`);
+  ]) assert.equal(clientText.includes(expected),true,`client must preserve safety message: ${expected}`);
   assert.equal(catalogResponse.status,200);')));
 
   const catalogResponse=await fetch(`${base}/api/applied-learning/tools`);
