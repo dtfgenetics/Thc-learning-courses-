@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHandler as createApiHandler } from '../api/src/server.mjs';
 import { dliFromPpfd } from '../../packages/domain/applied-learning-calculations.mjs';
+import { buildCanonicalAppliedLearningGraph } from '../../packages/domain/applied-learning-canonical-graph.mjs';
 
 const root = process.cwd();
 const webRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'public');
@@ -27,8 +28,11 @@ function safeAppliedLearningGraph(graph) {
     status: graph.status,
     title: graph.title,
     summary: graph.summary ?? '',
-    nodes: (graph.nodes ?? []).map(({ id, canonicalType, canonicalId, kind, status }) => ({
+    generatedFrom: graph.generatedFrom ?? null,
+    nodes: (graph.nodes ?? []).map(({ id, canonicalType, canonicalId, label, domain, kind, status }) => ({
       id, canonicalType, canonicalId,
+      ...(label ? { label } : {}),
+      ...(domain ? { domain } : {}),
       ...(kind ? { kind } : {}),
       ...(status ? { status } : {})
     })),
@@ -676,7 +680,9 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     if (req.method === 'GET' && url.pathname === '/api/catalog') return json(res, 200, buildAcademyCatalog({ previewDrafts }));
     const appliedGraphMatch = url.pathname.match(/^\/api\/applied-learning\/graphs\/(ALGRAPH-[A-Z0-9-]+)$/);
     if (req.method === 'GET' && appliedGraphMatch) {
-      const graph = findAppliedLearningRecord('graphs', appliedGraphMatch[1]);
+      const graph = appliedGraphMatch[1] === 'ALGRAPH-ACADEMY-SEED-001'
+        ? buildCanonicalAppliedLearningGraph({ root })
+        : findAppliedLearningRecord('graphs', appliedGraphMatch[1]);
       if (!graph || !isVisible(graph, previewDrafts)) return json(res, 404, { error: 'applied-learning-graph-not-found' });
       return json(res, 200, safeAppliedLearningGraph(graph));
     }
