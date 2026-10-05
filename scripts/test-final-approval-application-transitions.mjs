@@ -36,7 +36,14 @@ const source={
   evidenceRefs:['RUN-TEST-001'],
   findingsDispositioned:false,
   deploymentIdentity:null,
-  verification:{restoreDrill:'synthetic-regression'},
+  verification:{
+    backupJobIdentifier:'TEST-BACKUP-001',
+    successfulBackupTimestamp:'2026-09-23T18:00:00Z',
+    isolatedRestoreTarget:'TEST-RESTORE-ISOLATED',
+    restoreDrillTimestamp:'2026-09-23T19:00:00Z',
+    schemaDataIntegrityVerification:'synthetic-regression-pass',
+    rpoRtoObservations:'synthetic regression: RPO 15m / RTO 30m'
+  },
   limitations:['Synthetic regression fixture only.']
 };
 const sourceFile=path.join(tmp,'prod-source.json');
@@ -47,6 +54,14 @@ function run(script,args){
   if(r.status!==0) throw new Error(r.stderr||r.stdout);
   return JSON.parse(r.stdout);
 }
+const incompleteFile=path.join(tmp,'prod-incomplete.json');
+fs.writeFileSync(incompleteFile,JSON.stringify({...source,verification:{backupJobIdentifier:'ONLY-ONE-FIELD'}},null,2));
+const incomplete=spawnSync(process.execPath,[
+  'scripts/complete-production-control-evidence.mjs','--source-file',incompleteFile,'--authority','TEST-OPS-AUTH',
+  '--confirm-required-evidence','--confirm-findings-dispositioned'
+],{cwd:root,encoding:'utf8'});
+if(incomplete.status===0) throw new Error('production completion accepted incomplete control-specific verification');
+
 const complete=run('scripts/complete-production-control-evidence.mjs',[
   '--source-file',sourceFile,'--authority','TEST-OPS-AUTH',
   '--confirm-required-evidence','--confirm-findings-dispositioned'
@@ -61,6 +76,15 @@ const approved=run('scripts/approve-production-control-evidence.mjs',[
   '--confirm-live-verification','--confirm-apply-readiness'
 ]);
 if(approved.record.status!=='approved') throw new Error('production approval transition failed');
+const tamperedComplete={...complete.record,verification:{backupJobIdentifier:'ONLY-ONE-FIELD'}};
+const tamperedFile=path.join(tmp,'prod-tampered-complete.json');
+fs.writeFileSync(tamperedFile,JSON.stringify(tamperedComplete,null,2));
+const tamperedApproval=spawnSync(process.execPath,[
+  'scripts/approve-production-control-evidence.mjs','--source-file',tamperedFile,
+  '--authority','TEST','--decision-notes','Should fail structured verification',
+  '--confirm-live-verification','--confirm-apply-readiness'
+],{cwd:root,encoding:'utf8'});
+if(tamperedApproval.status===0) throw new Error('production approval accepted incomplete control-specific verification');
 if(!approved.readinessApplied.includes('operations.backupRestoreTested')) throw new Error('backup-restore readiness mapping missing');
 if(approved.contractStatus!=='evidence-in-progress'&&approved.contractStatus!=='approved') throw new Error('unexpected contract status '+approved.contractStatus);
 
