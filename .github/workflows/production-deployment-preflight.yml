@@ -1,0 +1,61 @@
+name: Production deployment preflight
+
+on:
+  pull_request:
+    paths:
+      - "scripts/production-deployment-preflight.mjs"
+      - "scripts/test-production-deployment-preflight.mjs"
+      - ".github/workflows/production-deployment-preflight.yml"
+      - "deploy/**"
+      - "apps/api/src/bootstrap.mjs"
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: Exact validated certification repository SHA to preflight
+        required: true
+        type: string
+      public_base_url:
+        description: HTTPS production Academy base URL
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  contract-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Test production deployment preflight contract
+        run: node scripts/test-production-deployment-preflight.mjs
+
+  live-config-preflight:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: production
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.source_sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Validate production deployment configuration
+        env:
+          ACADEMY_SOURCE_REF: ${{ inputs.source_sha }}
+          GITHUB_SHA: ${{ inputs.source_sha }}
+          THC_PUBLIC_BASE_URL: ${{ inputs.public_base_url }}
+          THC_REQUIRED_SCHEMA_VERSION: "7"
+          THC_POSTGRES_DATABASE_URL: ${{ secrets.THC_POSTGRES_DATABASE_URL }}
+          THC_SECURE_ASSESSMENT_DATABASE_URL: ${{ secrets.THC_SECURE_ASSESSMENT_DATABASE_URL }}
+          THC_AUTH_ISSUER: ${{ vars.THC_AUTH_ISSUER }}
+          THC_AUTH_JWKS_URL: ${{ vars.THC_AUTH_JWKS_URL }}
+          THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON: ${{ vars.THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON }}
+          THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY: ${{ secrets.THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY }}
+        run: node scripts/production-deployment-preflight.mjs
