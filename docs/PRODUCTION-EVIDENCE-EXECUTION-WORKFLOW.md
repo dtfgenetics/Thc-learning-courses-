@@ -39,3 +39,19 @@ When a production evidence record is tied to an actual deployment, create it wit
 - optional `--service-id`, `--build-id`, and `--schema-version`.
 
 If any deployment-identity argument is supplied, source SHA, image digest, and attestation reference become mandatory. This keeps deployment-backed evidence traceable to the exact image that was built and attested rather than only to a branch, tag, or operator description.
+
+## External live deployment smoke verification
+
+After the exact attested image is deployed, run:
+
+`npm run production:live-verify -- --base-url https://<academy-host> --source-sha <exact-40-char-sha>`
+
+The verifier is intentionally tokenless and safe to attach to an evidence packet. It checks:
+
+- exact public build identity at `/api/build-info`;
+- `/healthz` liveness;
+- `/readyz` readiness with schema version 7;
+- anonymous denial on `/api/v1/admin/diagnostics` with a Bearer challenge;
+- baseline API security headers.
+
+The JSON output includes request identifiers, safe status metadata, timing, build identity, and explicit limitations. It does **not** include credentials or authorization headers and does not claim MFA, row-level isolation, private assessment behavior, backup/restore, monitoring, signing, revocation, independent security review, or professional credential authorization.
