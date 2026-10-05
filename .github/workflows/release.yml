@@ -19,6 +19,8 @@ on:
 permissions:
   contents: read
   packages: write
+  id-token: write
+  attestations: write
 
 jobs:
   release-audit:
@@ -67,6 +69,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and publish exact-SHA production container
+        id: build
         uses: docker/build-push-action@v7
         with:
           context: .
@@ -76,3 +79,10 @@ jobs:
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+
+      - name: Attest exact production image provenance
+        uses: actions/attest@v4
+        with:
+          subject-name: ghcr.io/${{ github.repository_owner }}/thc-academy
+          subject-digest: ${{ steps.build.outputs.digest }}
+          push-to-registry: true
