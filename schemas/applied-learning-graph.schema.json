@@ -70,6 +70,14 @@
           },
           "status": {
             "type": "string"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }
@@ -109,6 +117,39 @@
             },
             "uniqueItems": true
           }
+        }
+      }
+    },
+    "generatedFrom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "competencies",
+        "objectives",
+        "lessons",
+        "claims",
+        "references"
+      ],
+      "properties": {
+        "competencies": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "objectives": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lessons": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "claims": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "references": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     }

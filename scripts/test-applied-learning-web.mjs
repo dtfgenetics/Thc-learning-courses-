@@ -18,9 +18,18 @@ try{
   const graphResponse=await fetch(`${base}/api/applied-learning/graphs/ALGRAPH-ACADEMY-SEED-001`);
   assert.equal(graphResponse.status,200);
   const graph=await graphResponse.json();
-  assert.equal(graph.nodes.length,50);
+  assert.ok(graph.nodes.length>=50,'runtime graph should include the full canonical curriculum projection');
+  assert.ok(graph.edges.length>=graph.nodes.length,'runtime graph should expose meaningful relationship density');
   assert.equal(graph.status,'draft');
-  assert.ok(graph.nodes.some(node=>node.canonicalId==='COMP-ENV-VPD-001'));
+  const vpdNode=graph.nodes.find(node=>node.canonicalId==='COMP-ENV-VPD-001');
+  assert.ok(vpdNode);
+  assert.match(vpdNode.label,/vapor pressure deficit/i);
+  assert.ok(graph.nodes.some(node=>node.canonicalType==='objective'));
+  assert.ok(graph.nodes.some(node=>node.canonicalType==='lesson'));
+  assert.ok(graph.nodes.some(node=>node.canonicalType==='claim'));
+  assert.ok(graph.nodes.some(node=>node.canonicalType==='reference'));
+  assert.ok(graph.edges.some(edge=>edge.relationship==='teaches-objective'));
+  assert.ok(graph.edges.some(edge=>edge.relationship==='supported-by-reference'));
   assert.ok(!('review' in graph));
 
   const measurementResponse=await fetch(`${base}/api/applied-learning/measurements/ALMEAS-SENSOR-PLACEMENT-001`);

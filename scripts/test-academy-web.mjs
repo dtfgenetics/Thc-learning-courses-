@@ -47,6 +47,8 @@ try {
   assert.match(homeHtml, /assessor\.css/, 'Academy shell should load assessor styles');
   assert.match(homeHtml, /assessor\.js/, 'Academy shell should load the assessor client');
   assert.match(homeHtml, /id="tab-assessor"[^>]*hidden/, 'assessor navigation must default hidden');
+  assert.match(homeHtml, /Applied Learning Lab/, 'Academy home should surface the Applied Learning Lab');
+  assert.match(homeHtml, /href="\/applied-learning"/, 'Academy home should link directly to the Applied Learning Lab');
 
   const richRendererResponse = await fetch(`${base}/rich-content.js`);
   assert.equal(richRendererResponse.status, 200);
@@ -54,6 +56,12 @@ try {
   const richStylesResponse = await fetch(`${base}/rich-content.css`);
   assert.equal(richStylesResponse.status, 200);
   assert.match(await richStylesResponse.text(), /rich-scenario/, 'rich lesson styles should include scenario presentation');
+  const portalResponse = await fetch(`${base}/portal.js`);
+  assert.equal(portalResponse.status, 200);
+  const portalClientText = await portalResponse.text();
+  assert.match(portalClientText, /Open Applied Learning Lab/, 'Learning Tools tab should link to the Applied Learning Lab');
+  assert.match(portalClientText, /\/applied-learning/, 'Learning Tools tab should use the canonical lab route');
+
   const appResponse = await fetch(`${base}/app.js`);
   assert.equal(appResponse.status, 200);
   const appClientText = await appResponse.text();
