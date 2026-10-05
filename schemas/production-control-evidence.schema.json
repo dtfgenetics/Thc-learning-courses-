@@ -99,13 +99,27 @@
             "string",
             "null"
           ],
-          "pattern": "^[0-9a-fA-F]{40,64}$"
+          "pattern": "^[0-9a-fA-F]{40}$"
         },
         "schemaVersion": {
           "type": [
             "string",
             "null"
           ]
+        },
+        "imageDigest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-fA-F]{64}$"
+        },
+        "attestationRef": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
         }
       },
       "additionalProperties": false
