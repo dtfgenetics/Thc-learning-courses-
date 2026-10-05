@@ -1,3 +1,4 @@
+import { requiredProductionVerification } from './lib/production-evidence-verification.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -117,6 +118,7 @@ function packet(control){
     currentControlStatus:control.status,
     mappedReadiness:mapped,
     requiredEvidence:control.requiredEvidence??[],
+    verificationFields:requiredProductionVerification(control),
     evidenceRefs:control.evidenceRefs??[],
     executionChecks:liveChecks[control.id]??[],
     completionRule:'Advance only from real deployment-backed evidence with findings dispositioned; repository code/tests alone are insufficient.',
@@ -134,6 +136,8 @@ function md(p){
   for(const m of p.mappedReadiness) lines.push(`- \`${m.area}.${m.gate}\` — current: **${m.current?'true':'false'}**`);
   lines.push('','## Required evidence','');
   for(const x of p.requiredEvidence) lines.push(`- [ ] ${x}`);
+  lines.push('','## Structured verification fields','');
+  for(const field of p.verificationFields) lines.push(`- [ ] \`${field.key}\` — ${field.label}`);
   lines.push('','## Live execution checks','');
   for(const x of p.executionChecks) lines.push(`- [ ] ${x}`);
   lines.push(
@@ -183,6 +187,6 @@ const out={
   controlsWithTrueReadiness:packets.filter(p=>p.mappedReadiness.some(m=>m.current)).map(p=>p.controlId),
   outputDirectory:path.relative(root,outDir),
   wroteFiles:write,
-  packets:packets.map(p=>({controlId:p.controlId,owner:p.owner,mappedGates:p.mappedReadiness.length,requiredEvidence:p.requiredEvidence.length,executionChecks:p.executionChecks.length}))
+  packets:packets.map(p=>({controlId:p.controlId,owner:p.owner,mappedGates:p.mappedReadiness.length,requiredEvidence:p.requiredEvidence.length,verificationFields:p.verificationFields.length,executionChecks:p.executionChecks.length}))
 };
 console.log(JSON.stringify(out,null,2));

@@ -1,3 +1,4 @@
+import { assertProductionVerificationComplete } from './lib/production-evidence-verification.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -16,6 +17,7 @@ const readinessPath=path.join(root,'registry/system-readiness.json');
 const contract=JSON.parse(fs.readFileSync(contractPath,'utf8'));
 const readiness=JSON.parse(fs.readFileSync(readinessPath,'utf8'));
 const control=(contract.controls??[]).find(x=>x.id===source.controlId);if(!control)throw new Error('Unknown production control '+source.controlId);
+assertProductionVerificationComplete(control,source.verification);
 
 for(const [area,gate] of control.readiness??[]){
   if(readiness.areas?.[area]?.gates?.[gate]===undefined) throw new Error('Missing readiness mapping '+area+'.'+gate);

@@ -128,3 +128,19 @@ The route requires `admin:write`, which is MFA-enforced by the production author
 After revocation, the public verification route for the credential's verification ID must return `valid: false` and `status: "revoked"`.
 
 Use only a dedicated controlled test credential for production revocation verification. A successful controlled revocation test is evidence for the revocation-persistence control only; it does not authorize credential issuance.
+
+## Structured production evidence requirements
+
+Production evidence completion and approval now derive required verification keys directly from each control's canonical `requiredEvidence` list. Generic confirmation flags and evidence references are no longer sufficient by themselves.
+
+Generated production evidence packets show the exact key for every required evidence item. The record's `verification` object must contain a meaningful boolean, string, or finite numeric value for every listed key before it can transition to `evidence-complete`. Approval revalidates the same keys before applying any readiness gate.
+
+For operator-generated evidence, `scripts/complete-production-control-evidence.mjs` also accepts `--verification-json <path>` to merge a JSON object into the source record before validating completeness.
+
+## Verification template generator
+
+To scaffold the exact structured fields for a production control without inventing values:
+
+`npm run production-evidence:verification-template -- --control <control-id>`
+
+The command emits every required verification key with a `null` value plus the human-readable evidence label. Replace each `null` only with real deployment-backed evidence before passing the object to `--verification-json` during completion.
