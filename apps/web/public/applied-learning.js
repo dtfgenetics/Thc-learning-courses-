@@ -178,6 +178,70 @@ function makeToolInput(field){
   return label;
 }
 
+function formatSystemsToolResult(tool,body){
+  const result=body?.result??{};
+  if(tool.kind==='blueprint'){
+    return [
+      `Training floor area: ${Number(result.floorAreaSqFt??0).toFixed(1)} ft²`,
+      'Real design verification required: yes',
+      body.note??''
+    ].filter(Boolean).join('\n');
+  }
+  if(tool.kind==='calibration'){
+    return [
+      `Decision: ${String(result.decision??'').replaceAll('-',' ')}`,
+      `Eligible for contextual interpretation: ${result.acceptedForDecisionSupport===true?'yes':'no'}`,
+      body.note??''
+    ].filter(Boolean).join('\n');
+  }
+  if(tool.kind==='timeline-atlas'){
+    const row=result.observationRecord??{};
+    return [
+      `Subject: ${row.subjectId??''}`,
+      `Time: ${row.timestamp??''}`,
+      `Stage: ${row.stage??''}`,
+      `Observation: ${row.observation??''}`,
+      `Uncertainty / next evidence: ${row.uncertainty??''}`,
+      'Diagnostic conclusion authorized: no',
+      body.note??''
+    ].filter(Boolean).join('\n');
+  }
+  if(tool.kind==='flight-recorder'){
+    const row=result.eventRecord??{};
+    return [
+      `Subject: ${row.subjectId??''}`,
+      `Time: ${row.timestamp??''}`,
+      `Event type: ${row.eventType??''}`,
+      `Event: ${row.eventDetail??''}`,
+      `Next action / handoff: ${row.nextAction??''}`,
+      'Regulated record created: no',
+      body.note??''
+    ].filter(Boolean).join('\n');
+  }
+  if(tool.kind==='incident-report'){
+    const row=result.incidentRecord??{};
+    return [
+      `Time: ${row.timestamp??''}`,
+      `Location: ${row.location??''}`,
+      `Observed facts: ${row.facts??''}`,
+      `Containment: ${row.containment??''}`,
+      `Escalation: ${row.escalation??''}`,
+      ...(row.followUp?[`Follow-up: ${row.followUp}`]:[]),
+      'Root cause assigned: no',
+      body.note??''
+    ].filter(Boolean).join('\n');
+  }
+  if(tool.kind==='cause-chain'){
+    const lines=(result.chain??[]).map(row=>`${String(row.stage??'').replaceAll('-',' ')}: ${row.value??''}`);
+    return [
+      ...lines,
+      'Causation proven: no',
+      body.note??''
+    ].filter(Boolean).join('\n');
+  }
+  return JSON.stringify(body,null,2);
+}
+
 function renderSystemsTool(tool){
   currentSystemsTool=tool;
   document.querySelector('#systems-tool-title').textContent=tool.title;
@@ -214,7 +278,9 @@ async function loadSystemsTools(){
       method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(values)
     });
     const body=await result.json();
-    document.querySelector('#systems-tool-output').textContent=JSON.stringify(body,null,2);
+    document.querySelector('#systems-tool-output').textContent=result.ok
+      ? formatSystemsToolResult(currentSystemsTool,body)
+      : (body.message??body.error??'Unable to evaluate this training record.');
   });
 }
 
