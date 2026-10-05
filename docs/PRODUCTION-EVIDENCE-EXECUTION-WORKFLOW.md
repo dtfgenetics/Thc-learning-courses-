@@ -85,3 +85,13 @@ Use two dedicated short-lived learner **test** identities to exercise deployed p
 The verifier writes verification-only progress markers under each test identity, confirms each learner sees its own marker and cannot see the other learner's marker, then resets both markers to `not-started`.
 
 This provides deployed application-level evidence that learner persistence is scoped by the authenticated subject. It does **not** independently prove direct database RLS behavior against privileged/database-level access, so the database policy/version and direct authorization tests remain separate evidence requirements.
+
+## Secure assessment store read-only verification
+
+With an MFA-asserted dedicated admin test token and the expected private bank version:
+
+`THC_VERIFY_ADMIN_MFA_TOKEN=... THC_VERIFY_SECURE_BANK_VERSION=... npm run production:secure-store-verify -- --base-url https://<academy-host>`
+
+The verifier confirms the private bank summary is reachable, the exact bank version matches, the bank is `approved-operational`, at least one approved operational item exists, and the response does not contain protected prompts, choices, answer keys, rationales, or scoring keys.
+
+This is intentionally read-only. It does not substitute for separate live evidence covering operational item selection, form recording/exposure tracking, quarantine exclusion, or learner delivery projection.
