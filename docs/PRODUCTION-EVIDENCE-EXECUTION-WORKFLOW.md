@@ -75,3 +75,13 @@ The verifier checks that:
 Returned subjects are hashed before evidence output. Tokens are accepted only from environment variables and are never written to the report. Use short-lived dedicated test identities; never use ordinary learner or staff credentials for verification.
 
 This verifies authentication/scope/MFA behavior only. It does not establish learner-to-learner row isolation, secure assessment integrity, backup/restore, monitoring, signing, revocation, independent security review, or credential-release authorization.
+
+## Learner subject-isolation verification
+
+Use two dedicated short-lived learner **test** identities to exercise deployed persistence separation:
+
+`THC_VERIFY_LEARNER_A_TOKEN=... THC_VERIFY_LEARNER_B_TOKEN=... npm run production:learner-isolation-verify -- --base-url https://<academy-host>`
+
+The verifier writes verification-only progress markers under each test identity, confirms each learner sees its own marker and cannot see the other learner's marker, then resets both markers to `not-started`.
+
+This provides deployed application-level evidence that learner persistence is scoped by the authenticated subject. It does **not** independently prove direct database RLS behavior against privileged/database-level access, so the database policy/version and direct authorization tests remain separate evidence requirements.
