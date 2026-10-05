@@ -112,3 +112,19 @@ Requirements enforced by the verifier:
 - learner B must see its own row and not learner A's row.
 
 The check runs inside a read-only transaction and emits only counts plus hashed role/learner identifiers. It never emits the database URL or row contents. Use dedicated synthetic validation learners only.
+
+## Credential revocation execution path
+
+The production API exposes an MFA-admin-only revocation route:
+
+`POST /api/v1/admin/credentials/<credential-uuid>/revoke`
+
+with JSON:
+
+`{"reason":"<controlled revocation reason>"}`
+
+The route requires `admin:write`, which is MFA-enforced by the production authorizer. It uses the transactional credential writer to persist the status transition, credential-status event, and audit event. Repeating the same revocation is idempotent and does not create duplicate status/audit writes.
+
+After revocation, the public verification route for the credential's verification ID must return `valid: false` and `status: "revoked"`.
+
+Use only a dedicated controlled test credential for production revocation verification. A successful controlled revocation test is evidence for the revocation-persistence control only; it does not authorize credential issuance.

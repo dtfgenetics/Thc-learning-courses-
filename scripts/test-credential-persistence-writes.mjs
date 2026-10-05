@@ -44,6 +44,7 @@ const result = await writer.transitionById(row.id, 'revoked', {
 assert.equal(transactionCount, 1);
 assert.equal(result.credential.status, 'revoked');
 assert.equal(result.event.persistence, 'transactional-postgres');
+assert.equal(result.idempotent, false);
 assert.equal(calls.length, 4);
 assert.match(calls[0].text, /for update/);
 assert.deepEqual(calls[0].params, [row.id]);
@@ -57,6 +58,18 @@ assert.deepEqual(JSON.parse(calls[3].params[4]), {
   toStatus: 'revoked',
   reason: 'test-revocation'
 });
+
+const alreadyRevokedRow={...row,status:'revoked'};
+const idempotentRevocationWriter=createPostgresCredentialWriter({
+  withTransaction: async (callback) => callback(async (text) => {
+    if (text.includes('from credentials') && text.includes('for update')) return { rows: [alreadyRevokedRow] };
+    throw new Error('idempotent revocation must not write status or audit events');
+  })
+});
+const repeatRevocation=await idempotentRevocationWriter.transitionById(row.id,'revoked',{actorId:'admin-service',reason:'repeat'});
+assert.equal(repeatRevocation.idempotent,true);
+assert.equal(repeatRevocation.credential.status,'revoked');
+assert.equal(repeatRevocation.event,null);
 
 await assert.rejects(
   () => writer.transitionById(row.id, 'issued', { actorId: 'admin-service', now }),

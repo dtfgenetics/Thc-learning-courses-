@@ -907,6 +907,42 @@ export function createHandler({
         return json(res, result.status, { ...result.body, requestId });
       }
 
+      const adminCredentialRevokeMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/([0-9a-fA-F-]{36})\/revoke$/);
+      if (req.method === 'POST' && adminCredentialRevokeMatch) {
+        route = 'POST /api/v1/admin/credentials/:credentialId/revoke';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        if (!credentialWriter || typeof credentialWriter.transitionById !== 'function') {
+          return json(res, 503, { error: 'credential-revocation-persistence-unavailable', requestId });
+        }
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 8 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const reason = String(body.reason ?? '').trim();
+        if (reason.length < 3 || reason.length > 500) return json(res, 400, { error: 'credential-revocation-reason-required', requestId });
+        try {
+          const result = await credentialWriter.transitionById(adminCredentialRevokeMatch[1], 'revoked', {
+            actorId: auth.subject,
+            reason
+          });
+          return json(res, 200, {
+            credential: {
+              id: result.credential.id,
+              verificationId: result.credential.verificationId,
+              status: result.credential.status
+            },
+            idempotent: result.idempotent === true,
+            requestId
+          });
+        } catch (error) {
+          if (error.message === 'credential-not-found') return json(res, 404, { error: 'credential-not-found', requestId });
+          if (/Invalid credential transition|credential-state-conflict/.test(error.message)) {
+            return json(res, 409, { error: 'credential-revocation-conflict', requestId });
+          }
+          throw error;
+        }
+      }
+
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
       if (req.method === 'GET' && credentialMatch) {
         route = 'GET /api/v1/credentials/:verificationId';

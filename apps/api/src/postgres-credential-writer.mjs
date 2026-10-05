@@ -112,6 +112,9 @@ export function createPostgresCredentialWriter({ withTransaction } = {}) {
         );
         const current = mapCredentialRow(currentResult.rows?.[0] ?? null);
         if (!current) throw new Error('credential-not-found');
+        if (current.status === nextStatus) {
+          return { credential: current, event: null, idempotent: true };
+        }
 
         const transition = transitionCredential(current, nextStatus, { actorId, reason, now });
 
@@ -152,7 +155,8 @@ export function createPostgresCredentialWriter({ withTransaction } = {}) {
           event: {
             ...transition.event,
             persistence: 'transactional-postgres'
-          }
+          },
+          idempotent: false
         };
       });
     }
