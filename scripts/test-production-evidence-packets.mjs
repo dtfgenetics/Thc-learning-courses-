@@ -16,5 +16,8 @@ for(const p of out.packets){
     const file=path.join(dir,`${p.controlId}.${ext}`);
     if(!fs.existsSync(file)) throw new Error(`${p.controlId}: missing generated ${ext} packet`);
   }
+  const md=fs.readFileSync(path.join(dir,`${p.controlId}.md`),'utf8');
+  if(!md.includes('- Container image digest:')) throw new Error(`${p.controlId}: packet missing exact image digest field`);
+  if(!md.includes('- Signed provenance attestation reference:')) throw new Error(`${p.controlId}: packet missing provenance attestation field`);
 }
 console.log('Production evidence packet generation: PASS (13 controls).');

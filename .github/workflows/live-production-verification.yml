@@ -1,0 +1,48 @@
+name: Live production verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: HTTPS Academy production base URL
+        required: true
+        type: string
+      source_sha:
+        description: Exact 40-character Academy source SHA expected at /api/build-info
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: production
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.source_sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Verify live production deployment
+        shell: bash
+        run: |
+          set -o pipefail
+          node scripts/verify-live-production-deployment.mjs \
+            --base-url "${{ inputs.base_url }}" \
+            --source-sha "${{ inputs.source_sha }}" \
+            > live-production-verification.json \
+            2> live-production-verification-error.log
+      - name: Upload live verification evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: academy-live-production-verification-${{ inputs.source_sha }}
+          path: |
+            live-production-verification.json
+            live-production-verification-error.log
+          if-no-files-found: warn
+          retention-days: 30
