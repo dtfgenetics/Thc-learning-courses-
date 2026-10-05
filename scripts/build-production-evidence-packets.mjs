@@ -141,6 +141,8 @@ function md(p){
     '- Environment:',
     '- Deployment/service identity:',
     '- Build/source SHA:',
+    '- Container image digest:',
+    '- Signed provenance attestation reference:',
     '- Observed at:',
     '- Evidence references:',
     '- Findings:',
