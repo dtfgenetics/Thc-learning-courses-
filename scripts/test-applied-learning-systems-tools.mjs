@@ -42,6 +42,17 @@ server.listen(0,'127.0.0.1');
 await once(server,'listening');
 try{
   const base=`http://127.0.0.1:${server.address().port}`;
+  const clientResponse=await fetch(`${base}/applied-learning.js`);
+  assert.equal(clientResponse.status,200);
+  const clientText=await clientResponse.text();
+  for(const expected of [
+    'Diagnostic conclusion authorized: no',
+    'Regulated record created: no',
+    'Root cause assigned: no',
+    'Causation proven: no'
+  ]) assert.match(clientText,new RegExp(expected.replace(/[.*+?^$\{\}()|[\]\\]/g,'\\  const catalogResponse=await fetch(`${base}/api/applied-learning/tools`);
+  assert.equal(catalogResponse.status,200);')));
+
   const catalogResponse=await fetch(`${base}/api/applied-learning/tools`);
   assert.equal(catalogResponse.status,200);
   const catalog=await catalogResponse.json();
