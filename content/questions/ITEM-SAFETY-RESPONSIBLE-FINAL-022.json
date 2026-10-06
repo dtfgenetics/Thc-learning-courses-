@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-SAFETY-RESPONSIBLE-FINAL-022",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-RESPONSIBLE-LEGAL-001",
+  "objective": "LO-LEGAL-LABEL-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which conditions should stop a planned input application until they are resolved?",
+  "choices": [
+    "The product identity does not match the available label",
+    "The intended crop/site authorization is unclear",
+    "Required worker protections are unavailable",
+    "The product is popular with other growers",
+    "The current reentry requirement cannot be verified"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "rationale": "Identity, crop/site authorization, worker protection and reentry requirements are core verification conditions. Popularity with other growers does not establish authorization.",
+  "references": [
+    "REF-SAFETY-EPA-WPS-003",
+    "REF-SAFETY-OSHA-HAZCOM-004"
+  ]
+}
