@@ -1,1 +1,187 @@
-{"id":"LESSON-RESPONSIBLE-RECORDS-003","title":"Responsible Cultivation Records, Traceability and Corrective Action","version":"1.0.0","status":"draft","competencies":["COMP-RESPONSIBLE-LEGAL-001"],"learningObjectives":["LO-RESPONSIBLE-RECORDS-003"],"estimatedMinutes":40,"references":["REF-LEGAL-USDA-001","REF-SAFETY-OSHA-001"],"assessment":null,"content":{"overview":"Good cultivation records connect decisions to outcomes. Site, plant, input, irrigation, scouting, training, harvest, safety and compliance records support traceability and learning while also making it easier to identify what changed when a problem occurs.","vocabulary":[{"term":"Traceability","definition":"Ability to connect a crop or decision to its source, history and relevant records."},{"term":"Corrective action","definition":"A documented response intended to correct a problem and reduce the chance of recurrence."},{"term":"Audit trail","definition":"A chronological record showing important actions, changes and responsible actors."}],"sections":[{"title":"Records should answer who, what, where and when","body":"A useful record identifies the crop or location, action, date/time, responsible person and relevant measurements rather than only a vague note that work was completed.","references":["REF-LEGAL-USDA-001"]},{"title":"Records make diagnosis stronger","body":"Environmental, irrigation, scouting and input histories help distinguish sudden events from long trends and can reveal changes that visual symptoms alone cannot explain.","references":["REF-SAFETY-OSHA-001"]},{"title":"Corrective action should close the loop","body":"When a failure occurs, document the immediate correction, root cause when known, verification that the fix worked and any procedural change needed to prevent recurrence.","references":["REF-SAFETY-OSHA-001"]}],"workedExamples":["A disease event is easier to investigate when scouting, humidity, irrigation and sanitation records are available for the preceding weeks.","A spill response should document what happened, the immediate control, exposure evaluation and the prevention change made afterward."],"commonMistakes":["Writing records too vaguely to reconstruct the decision.","Changing logs after the fact without preserving history.","Collecting data without reviewing it for corrective action."],"practicalApplication":"Use consistent IDs for sites, rooms, lots and plant groups. Define required fields for each log and schedule review of records so they drive decisions instead of becoming unused paperwork.","summary":"Traceability turns cultivation history into usable evidence. Good records support diagnosis, compliance, safety, learning and corrective action without replacing the legal authorization itself."}}
+{
+  "id": "LESSON-RESPONSIBLE-RECORDS-003",
+  "title": "Responsible Cultivation Records, Traceability and Corrective Action",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-RESPONSIBLE-LEGAL-001"
+  ],
+  "learningObjectives": [
+    "LO-RESPONSIBLE-RECORDS-003"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-LEGAL-USDA-001",
+    "REF-SAFETY-OSHA-001",
+    "REF-SAFETY-EPA-WPS-003"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A cultivation record is useful only if another person can reconstruct what happened, what evidence was available, what decision was made and whether the correction worked. Traceability connects plant/lot identity, work activity, measurements, responsible people, source/version information and corrective action without overwriting history.",
+    "vocabulary": [
+      {
+        "term": "Traceability",
+        "definition": "The ability to connect a crop, lot, task or decision to its source, history and supporting records."
+      },
+      {
+        "term": "Corrective action",
+        "definition": "A documented response intended to correct a detected problem and reduce recurrence."
+      },
+      {
+        "term": "Preventive action",
+        "definition": "A change intended to reduce the likelihood of a related problem occurring in the future."
+      },
+      {
+        "term": "Audit trail",
+        "definition": "A chronological record of important actions, changes and responsible actors."
+      },
+      {
+        "term": "Record integrity",
+        "definition": "The degree to which a record remains complete, attributable, legible, contemporaneous and protected against silent alteration."
+      },
+      {
+        "term": "Closure evidence",
+        "definition": "Evidence showing that the corrective action was implemented and verified rather than merely assigned."
+      }
+    ],
+    "sections": [
+      {
+        "title": "A useful record answers more than who, what, where and when",
+        "body": "At minimum, important records should identify the crop/lot/location, action, date/time, responsible person and relevant measurements. For regulated or high-risk decisions, also preserve the source/version, authorization context, exception/escalation and outcome.",
+        "references": [
+          "REF-LEGAL-USDA-001"
+        ]
+      },
+      {
+        "title": "Do not overwrite history",
+        "body": "When plans or values change, preserve both the original and corrected state with a reason and actor where possible. Silent edits destroy the evidence needed to understand sequence, accountability and recurring failure.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Link records across the crop lifecycle",
+        "body": "Scouting, environment, irrigation, input, training, harvest, safety and postharvest records become more powerful when stable identifiers connect them. Fragmented logs make it difficult to reconstruct causal timelines or lot genealogy.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Corrective action needs verification",
+        "body": "A correction is not closed merely because someone wrote 'fixed.' Record the immediate control, root cause when known, longer-term change, owner, due date and verification that the change worked. If the hazard or defect returns, reopen the problem rather than creating disconnected notes.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Safety and chemical records protect communication",
+        "body": "Pesticide/application and safety information may need to be available to workers, handlers, representatives or medical personnel under applicable requirements. Record systems must therefore be accessible to authorized people while protecting private data and preventing casual alteration.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A humidity excursion and disease finding can be reconstructed because room ID, sensor history, irrigation events, scouting notes and sanitation actions share a common crop/time context.",
+      "A spill record preserves immediate control, people potentially exposed, product identity, response, corrective action and later verification instead of only saying 'cleaned up.'",
+      "A planned transplant date is not replaced when the crop moves three days late. Both planned and actual dates remain available with the reason for variance.",
+      "A chemical record retains the label/revision used at the time instead of being silently associated with the newest label months later."
+    ],
+    "commonMistakes": [
+      "Writing notes too vaguely to reconstruct the decision.",
+      "Using inconsistent room/lot/plant identifiers.",
+      "Overwriting planned or prior values.",
+      "Closing corrective actions without verification.",
+      "Collecting measurements without linking them to a crop/time/location.",
+      "Keeping important safety/application records inaccessible to the people who need them.",
+      "Treating logs as paperwork rather than decision evidence."
+    ],
+    "practicalApplication": "Build a traceability packet for a supplied incident/crop scenario. Link stable identifiers, chronological observations, measurements, source/version evidence, decision owner, immediate correction, corrective/preventive action and closure verification. A reviewer should be able to reproduce the timeline without asking the author what they meant.",
+    "summary": "Traceability turns cultivation history into evidence. Strong records preserve identity, chronology, sources, decisions, changes and closure so safety, compliance, diagnosis and continuous improvement can be verified.",
+    "blocks": [
+      {
+        "type": "table",
+        "title": "Minimum fields for reconstructable records",
+        "columns": [
+          "Field",
+          "Why it matters",
+          "Weak example",
+          "Strong example"
+        ],
+        "rows": [
+          [
+            "Identity",
+            "Links record to the correct crop/lot/location",
+            "Room 2",
+            "Room 2 · lot BM-F3-2026-10A"
+          ],
+          [
+            "Time",
+            "Builds sequence",
+            "Tuesday",
+            "2026-10-06 14:20 local"
+          ],
+          [
+            "Observation/measurement",
+            "Separates fact from interpretation",
+            "Plants bad",
+            "RH 82%; lower-canopy condensation observed"
+          ],
+          [
+            "Action/decision",
+            "Shows what changed",
+            "Fixed",
+            "Dehumidifier setpoint adjusted by authorized lead"
+          ],
+          [
+            "Source/version",
+            "Reproduces regulated/technical decision",
+            "Checked label",
+            "Product X label rev. 2026-04"
+          ],
+          [
+            "Closure",
+            "Shows correction worked",
+            "Done",
+            "RH remained 58–62% for next 24 h; verified by J.S."
+          ]
+        ],
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The invisible edit",
+        "setting": "A worker changes an application date in a shared log because the original entry was wrong, but does not preserve the old value or reason.",
+        "prompt": "Why is this a traceability problem?",
+        "options": [
+          "It makes the spreadsheet longer",
+          "It destroys part of the audit trail and makes the sequence harder to reconstruct",
+          "Dates do not matter if the product was correct",
+          "Only supervisors need accurate records"
+        ],
+        "answer": "It destroys part of the audit trail and makes the sequence harder to reconstruct.",
+        "feedback": "Corrections should preserve enough history to show what changed, why and by whom when the system supports it."
+      },
+      {
+        "type": "activity",
+        "title": "Corrective-action closeout",
+        "instructions": "Use a supplied safety or cultivation incident.",
+        "prompts": [
+          "Build the timeline.",
+          "Separate observation from interpretation.",
+          "Identify immediate control.",
+          "Record root cause only if supported.",
+          "Assign longer-term action and owner.",
+          "Define objective closure evidence.",
+          "State what would reopen the issue."
+        ],
+        "artifact": "Traceability and corrective-action closeout record",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      }
+    ]
+  }
+}
