@@ -13,17 +13,18 @@
     "COMP-RESPONSIBLE-LEGAL-001"
   ],
   "finalAssessment": "ASSESS-SAFETY-RESPONSIBLE-FINAL-001",
-  "description": "A workforce-oriented foundation in cultivation safety, regulatory literacy, chemical and pesticide verification, heat and PPE planning, traceable records, corrective action, and responsible escalation. The course trains learners to recognize hazards, select proportionate controls, verify rules and labels from authoritative sources, preserve an audit trail, and stop or escalate work when authorization or safety conditions are unclear.",
+  "description": "THC Safety, Compliance and Responsible Practice prepares cultivation learners to recognize common workplace hazards, apply the hierarchy of controls, use PPE and emergency procedures appropriately, verify jurisdiction-specific requirements from primary sources, check labels and worker-protection requirements before use, and create traceable records that support safe work and corrective action. The course emphasizes evidence-based decision making, source verification, escalation boundaries and documented work rather than memorized universal rules.",
   "level": "foundational-workforce",
   "intendedAudience": [
     "Entry-level cultivation technicians and support staff",
-    "Learners preparing for THC Academy Technician I coursework",
-    "Supervisors who need a common baseline for safe-work and responsible-practice expectations"
+    "Learners preparing for Technician I cultivation coursework",
+    "Supervised home or educational growers who need a structured safety and regulatory-literacy foundation",
+    "Cultivation team members responsible for routine records, scouting, sanitation, irrigation, harvest or postharvest support"
   ],
   "prerequisites": [
     "No prior THC Academy credential is required.",
-    "Learners should be able to read workplace instructions, labels, tables and basic regulatory or safety documents.",
-    "Facility-specific safety, emergency, chemical-handling and jurisdictional requirements remain mandatory before supervised workplace activity."
+    "Learners should be able to follow written procedures, record measurements and identify when a task exceeds their authorization.",
+    "Facility-specific safety orientation, emergency procedures and jurisdiction-specific legal requirements remain mandatory before real workplace activity."
   ],
   "deliveryModes": [
     "self-paced-online",
@@ -35,43 +36,57 @@
   ],
   "estimatedMinutes": 245,
   "learningOutcomes": [
-    "Identify common cultivation workplace hazards and distinguish elimination, engineering, administrative and PPE controls.",
-    "Evaluate wet-area, electrical, tool, machinery, ladder, lifting and housekeeping hazards and select an appropriate stop-work, control or escalation response.",
-    "Explain how heat load, workload, acclimatization, hydration, recovery and PPE interact and apply an emergency-response plan to heat-illness scenarios.",
-    "Verify chemical and pesticide use from current labels, safety information and applicable worker-protection requirements before handling, application or reentry.",
-    "Determine which jurisdiction and authority govern a proposed cultivation activity and distinguish official primary sources from informal summaries or outdated guidance.",
-    "Create a pre-use verification record for a cultivation input that captures product identity, label version, crop/site, worker controls, reentry, disposal and unresolved authorization questions.",
-    "Create traceable safety and cultivation records that preserve who, what, where, when, measurements, deviations and corrective actions without overwriting history.",
-    "Recognize when a task exceeds an entry-level role, stop unsafe or unauthorized work, and produce a clear escalation or handoff record."
+    "Identify common cultivation hazards involving tools, machinery, electricity, wet work areas, lifting, repetitive work and blocked access, then select controls using the hierarchy of controls rather than relying on PPE alone.",
+    "Explain how heat load, workload, humidity, radiant heat, acclimatization and PPE interact, and choose appropriate prevention, monitoring and emergency-response actions.",
+    "Use product labels, Safety Data Sheets, worker-protection information and decontamination procedures to support safe chemical handling and reentry decisions.",
+    "Determine which jurisdiction and controlling authority apply to a proposed cultivation-related activity and verify current requirements using primary official sources.",
+    "Evaluate whether an agricultural or cultivation input is authorized for the intended crop, site and use before application, and identify required PPE, reentry, communication and recordkeeping steps.",
+    "Create traceable safety, compliance and cultivation records that preserve who, what, where, when, source/version and corrective-action history.",
+    "Recognize the limits of educational guidance, stop when authorization is unclear, and escalate unresolved legal, safety or technical decisions to the appropriate responsible person or authority."
   ],
-  "evidencePolicy": "Safety, regulatory and responsible-practice claims must use current primary or authoritative sources whenever practical, including OSHA, EPA, USDA, state or tribal regulators, product labels, Safety Data Sheets and other controlling documents. Educational summaries must not be presented as legal authorization. Jurisdiction-, product- and facility-specific requirements must be verified at the point of use, and dated sources should be reviewed for currency before operational decisions.",
-  "assessmentPolicy": "The course uses lesson retrieval, scenarios, hazard-control selection, label and source verification, recordkeeping exercises, formative module checks, a dedicated summative final, and a practical simulation. The 80 percent final-assessment threshold remains provisional for academic completion while the item bank, standard setting, accessibility review and pilot evidence are expanded. Credential issuance remains disabled until the course has sufficient randomized item-bank depth, human assessment review, practical-performance evidence, pilot data and release authorization.",
+  "evidencePolicy": "Safety and regulatory instruction should rely on current primary sources wherever practical, including OSHA, EPA, USDA, state or tribal regulatory agencies, product labels, Safety Data Sheets, university extension and applicable standards-body guidance. Course content must distinguish federal, state, tribal, local and facility requirements and must not present one jurisdiction's rule as universally applicable. Regulatory and label claims should preserve source identity, version or effective date when available, and a stable source URL. Educational examples may teach verification methods but must not be represented as legal advice or operational authorization.",
+  "assessmentPolicy": "The course uses retrieval prompts, decision scenarios, record-review exercises and guided practice before summative testing. Module assessments map to COMP-SAFETY-WORK-001 and COMP-RESPONSIBLE-LEGAL-001. The current final assessment samples both competencies and is configured at an 80 percent development threshold with randomized item and choice order, but the course remains noncredential until human assessment review, pilot evidence, accessibility review, adequate item-bank depth, standard-setting review and release approval are recorded. Practical capability should be demonstrated through hazard-control planning, label/SDS verification, jurisdiction-source verification and traceable corrective-action documentation rather than multiple-choice performance alone.",
   "extensions": {
     "courseFinalProfile": "public-noncredential-dedicated-bank",
     "certificationUseStatus": "not-authorized",
-    "practicalAssessment": "PRACTICAL-SAFETY-RESPONSIBLE-001",
-    "practicalRequirementStatus": "draft-required-before-credential-activation",
-    "depthRemediation": {
-      "standard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
-      "currentLessonCount": 6,
-      "currentModuleCount": 2,
-      "targetWork": [
-        "expand lesson blocks with applied scenarios and guided practice",
-        "add purposeful visual instruction and visual provenance",
-        "increase formative and summative item-bank depth",
-        "map scored items to objective and proficiency level",
-        "pilot practical scoring and critical-error behavior",
-        "complete SME, accessibility and source-freshness review"
-      ]
-    },
-    "assessmentActivation": {
-      "currentFinalItemCount": 12,
-      "minimumState": "development-only",
-      "requireHumanAssessmentReview": true,
-      "requirePilotEvidence": true,
-      "requireAccessibilityReview": true,
-      "requireStandardSettingEvidence": true
-    },
-    "credentialStatement": "Completion documents educational achievement only. It does not grant a government license, authorize cannabis activity, replace employer training or facility-specific procedures, or supersede current laws, regulations, product labels or controlling agency requirements."
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "qualityStandard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
+    "roleBoundary": "Learners may identify hazards, verify sources, follow approved procedures, document work and escalate uncertainty. Course completion does not authorize regulated activity, chemical application, legal interpretation, emergency command, electrical repair, machinery service or professional safety practice beyond the learner's actual workplace role and jurisdiction.",
+    "practicalEvidenceRequirements": [
+      {
+        "id": "PRACT-SAFETY-HAZARD-CONTROL-001",
+        "title": "Cultivation hazard walk and control plan",
+        "evidence": "A documented walkthrough identifying hazards, affected workers, selected control level, responsible person, correction status and verification step.",
+        "competency": "COMP-SAFETY-WORK-001"
+      },
+      {
+        "id": "PRACT-SAFETY-CHEMICAL-VERIFY-001",
+        "title": "Label, SDS and worker-protection verification",
+        "evidence": "A pre-use record identifying product, label/version, intended crop/site/use, PPE, decontamination, reentry/notification requirements, emergency information and unresolved authorization questions.",
+        "competency": "COMP-SAFETY-WORK-001"
+      },
+      {
+        "id": "PRACT-RESPONSIBLE-JURISDICTION-001",
+        "title": "Jurisdiction and source verification exercise",
+        "evidence": "A source-verification record identifying location, activity, controlling authority, primary source, effective/version date and unresolved questions requiring escalation.",
+        "competency": "COMP-RESPONSIBLE-LEGAL-001"
+      },
+      {
+        "id": "PRACT-RESPONSIBLE-CAPA-001",
+        "title": "Corrective-action and traceability record",
+        "evidence": "A corrective-action record preserving event, immediate control, root cause when known, verification of effectiveness and prevention change without overwriting history.",
+        "competency": "COMP-RESPONSIBLE-LEGAL-001"
+      }
+    ],
+    "credentialStatement": "Successful completion may satisfy a safety/responsible-practice prerequisite within THC Academy pathways when configured, but this course is not currently authorized to issue a standalone professional certification. It does not replace employer training, pesticide-handler qualification, occupational-safety requirements, legal counsel, state or local licensing, or jurisdiction-specific worker credentials.",
+    "productionActivationRequirements": [
+      "Expand and independently review the final item bank so each learning outcome is sampled by more than one credible item.",
+      "Add or validate practical/simulation rubrics and critical-error criteria.",
+      "Record human SME and assessment review.",
+      "Complete accessibility review of learner content and assessments.",
+      "Run a learner pilot and review item performance and ambiguous distractors.",
+      "Document standard-setting rationale for the passing threshold.",
+      "Verify public course rendering, progress persistence, attempt locking and post-submit grading."
+    ]
   }
 }
