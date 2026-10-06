@@ -12,96 +12,99 @@
   "estimatedMinutes": 55,
   "references": [
     "REF-LEGAL-USDA-001",
-    "REF-SAFETY-OSHA-001",
+    "REF-SAFETY-OSHA-CONTROLS-002",
     "REF-SAFETY-EPA-WPS-003"
   ],
   "assessment": null,
   "content": {
-    "overview": "A cultivation record is useful only if another person can reconstruct what happened, what evidence was available, what decision was made and whether the correction worked. Traceability connects plant/lot identity, work activity, measurements, responsible people, source/version information and corrective action without overwriting history.",
+    "overview": "Traceability turns cultivation history into evidence that can be reviewed, corrected and learned from. A strong record preserves identity, time, location, responsible person, measured evidence, source/version information and the difference between what was planned, what actually occurred and what was changed later. Responsible recordkeeping also preserves corrections instead of silently rewriting history, so incident review, compliance, diagnosis and continuous improvement remain trustworthy.",
     "vocabulary": [
       {
         "term": "Traceability",
-        "definition": "The ability to connect a crop, lot, task or decision to its source, history and supporting records."
-      },
-      {
-        "term": "Corrective action",
-        "definition": "A documented response intended to correct a detected problem and reduce recurrence."
-      },
-      {
-        "term": "Preventive action",
-        "definition": "A change intended to reduce the likelihood of a related problem occurring in the future."
+        "definition": "The ability to connect a crop, action, material or decision to its identity, source, history and relevant records."
       },
       {
         "term": "Audit trail",
-        "definition": "A chronological record of important actions, changes and responsible actors."
+        "definition": "A chronological record showing significant actions, changes, responsible actors and preserved history."
       },
       {
-        "term": "Record integrity",
-        "definition": "The degree to which a record remains complete, attributable, legible, contemporaneous and protected against silent alteration."
+        "term": "Corrective action",
+        "definition": "A documented response that addresses a detected problem and verifies whether the correction was effective."
       },
       {
-        "term": "Closure evidence",
-        "definition": "Evidence showing that the corrective action was implemented and verified rather than merely assigned."
+        "term": "Preventive action",
+        "definition": "A documented change intended to reduce the chance that the same or a similar failure will recur."
+      },
+      {
+        "term": "Source/version evidence",
+        "definition": "The specific label, procedure, rule, work order or other controlled source used to support a decision at the time it was made."
       }
     ],
     "sections": [
       {
-        "title": "A useful record answers more than who, what, where and when",
-        "body": "At minimum, important records should identify the crop/lot/location, action, date/time, responsible person and relevant measurements. For regulated or high-risk decisions, also preserve the source/version, authorization context, exception/escalation and outcome.",
+        "title": "A useful record can reconstruct the decision",
+        "body": "Records should identify who acted, what happened, where and when it happened, which crop/lot/room/equipment was involved, what evidence was observed or measured, and which procedure, label or authority supported the decision. Vague notes such as 'checked plants' or 'fixed issue' are not enough for later review.",
+        "references": [
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "title": "Preserve planned, actual and corrected values separately",
+        "body": "Overwriting an original plan or incorrect value removes information that may be needed to understand a delay, deviation or failure. Good records preserve the original entry, the corrected or actual value, the reason for change and who made the correction.",
         "references": [
           "REF-LEGAL-USDA-001"
         ]
       },
       {
-        "title": "Do not overwrite history",
-        "body": "When plans or values change, preserve both the original and corrected state with a reason and actor where possible. Silent edits destroy the evidence needed to understand sequence, accountability and recurring failure.",
+        "title": "Identity should follow the crop and material",
+        "body": "Room, lot, batch, plant group, input and application identifiers should remain consistent enough to connect upstream and downstream records. Traceability breaks when each stage invents unrelated names or when records cannot show which material affected which crop.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-LEGAL-USDA-001"
         ]
       },
       {
-        "title": "Link records across the crop lifecycle",
-        "body": "Scouting, environment, irrigation, input, training, harvest, safety and postharvest records become more powerful when stable identifiers connect them. Fragmented logs make it difficult to reconstruct causal timelines or lot genealogy.",
+        "title": "Records strengthen diagnosis but do not create certainty",
+        "body": "Environmental, irrigation, scouting, input, sanitation and work-history records provide context that visual symptoms alone cannot. They can show correlations, timing and changes, but learners should not overstate causation when evidence is incomplete.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-CONTROLS-002"
         ]
       },
       {
-        "title": "Corrective action needs verification",
-        "body": "A correction is not closed merely because someone wrote 'fixed.' Record the immediate control, root cause when known, longer-term change, owner, due date and verification that the change worked. If the hazard or defect returns, reopen the problem rather than creating disconnected notes.",
+        "title": "Corrective action must close the loop",
+        "body": "A corrective-action record should preserve the problem, immediate containment, root cause when known, assigned action, completion evidence and verification that the change worked. If effectiveness is never checked, the record documents activity rather than improvement.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-CONTROLS-002"
         ]
       },
       {
-        "title": "Safety and chemical records protect communication",
-        "body": "Pesticide/application and safety information may need to be available to workers, handlers, representatives or medical personnel under applicable requirements. Record systems must therefore be accessible to authorized people while protecting private data and preventing casual alteration.",
+        "title": "Safety and application records have worker-protection value",
+        "body": "When chemical or pesticide work is involved, application information, labeling access, worker communication and access/reentry information can be safety-critical. These records must be accurate enough to support real decisions rather than serving as paperwork completed after the fact.",
         "references": [
           "REF-SAFETY-EPA-WPS-003"
         ]
       }
     ],
     "workedExamples": [
-      "A humidity excursion and disease finding can be reconstructed because room ID, sensor history, irrigation events, scouting notes and sanitation actions share a common crop/time context.",
-      "A spill record preserves immediate control, people potentially exposed, product identity, response, corrective action and later verification instead of only saying 'cleaned up.'",
-      "A planned transplant date is not replaced when the crop moves three days late. Both planned and actual dates remain available with the reason for variance.",
-      "A chemical record retains the label/revision used at the time instead of being silently associated with the newest label months later."
+      "A crop was planned for irrigation at 08:00 but actually received water at 10:15 because a pump failed. The record preserves both times, the failure, the temporary response and the repair verification.",
+      "A disease investigation links the affected room to scouting, irrigation, humidity and sanitation records from prior days. The combined timeline narrows the investigation without claiming a cause that the evidence cannot prove.",
+      "An application record retains the label/version and reentry information used on the application date. When a later label changes, the historical decision can still be reconstructed.",
+      "A spill record documents containment but initially lacks verification. The corrective action remains open until the team confirms the leaking connection was repaired and the prevention change was implemented."
     ],
     "commonMistakes": [
-      "Writing notes too vaguely to reconstruct the decision.",
-      "Using inconsistent room/lot/plant identifiers.",
-      "Overwriting planned or prior values.",
-      "Closing corrective actions without verification.",
-      "Collecting measurements without linking them to a crop/time/location.",
-      "Keeping important safety/application records inaccessible to the people who need them.",
-      "Treating logs as paperwork rather than decision evidence."
+      "Writing vague notes that cannot reconstruct the decision.",
+      "Overwriting planned or incorrect entries instead of preserving correction history.",
+      "Changing lot, room or plant-group identifiers so genealogy breaks.",
+      "Recording measurements without units or method/source context.",
+      "Collecting data without reviewing it for corrective action.",
+      "Closing corrective action when the task was assigned rather than when effectiveness was verified.",
+      "Backfilling records from memory long after the work occurred."
     ],
-    "practicalApplication": "Build a traceability packet for a supplied incident/crop scenario. Link stable identifiers, chronological observations, measurements, source/version evidence, decision owner, immediate correction, corrective/preventive action and closure verification. A reviewer should be able to reproduce the timeline without asking the author what they meant.",
-    "summary": "Traceability turns cultivation history into evidence. Strong records preserve identity, chronology, sources, decisions, changes and closure so safety, compliance, diagnosis and continuous improvement can be verified.",
+    "practicalApplication": "Create a traceability packet for a supplied cultivation event that includes the affected room/lot identity, planned versus actual actions, measurements with units, source/procedure version, responsible person, deviation or incident, immediate containment, assigned corrective action and verification of effectiveness. A second reviewer should be able to reconstruct what happened without asking the original author to explain missing context.",
+    "summary": "Responsible records preserve history rather than merely recording completion. Identity, planned-versus-actual values, measurements, source/version evidence, corrections, ownership and effectiveness checks turn everyday logs into trustworthy traceability for safety, compliance, diagnosis and continuous improvement.",
     "blocks": [
       {
         "type": "table",
-        "title": "Minimum fields for reconstructable records",
+        "title": "Minimum traceability fields",
         "columns": [
           "Field",
           "Why it matters",
@@ -111,77 +114,146 @@
         "rows": [
           [
             "Identity",
-            "Links record to the correct crop/lot/location",
-            "Room 2",
-            "Room 2 · lot BM-F3-2026-10A"
+            "Connects the event to the correct crop/room/lot/equipment",
+            "Flower room",
+            "Room F2 · Lot BM-F3-2026-10"
           ],
           [
             "Time",
-            "Builds sequence",
-            "Tuesday",
-            "2026-10-06 14:20 local"
+            "Builds chronology",
+            "Morning",
+            "2026-10-06 09:42 local"
           ],
           [
             "Observation/measurement",
-            "Separates fact from interpretation",
-            "Plants bad",
-            "RH 82%; lower-canopy condensation observed"
-          ],
-          [
-            "Action/decision",
-            "Shows what changed",
-            "Fixed",
-            "Dehumidifier setpoint adjusted by authorized lead"
+            "Preserves evidence",
+            "EC high",
+            "Drain EC 2.8 mS/cm using meter ID EC-03"
           ],
           [
             "Source/version",
-            "Reproduces regulated/technical decision",
-            "Checked label",
-            "Product X label rev. 2026-04"
+            "Shows what controlled the decision",
+            "Followed label",
+            "Product label revision/date recorded"
           ],
           [
-            "Closure",
-            "Shows correction worked",
-            "Done",
-            "RH remained 58–62% for next 24 h; verified by J.S."
+            "Correction",
+            "Preserves history",
+            "Fixed",
+            "Original value preserved; corrected value + reason + author"
+          ],
+          [
+            "Verification",
+            "Shows whether action worked",
+            "Completed",
+            "Recheck result/date confirms target condition restored"
           ]
         ],
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-CONTROLS-002"
         ]
       },
       {
         "type": "scenario",
-        "title": "The invisible edit",
-        "setting": "A worker changes an application date in a shared log because the original entry was wrong, but does not preserve the old value or reason.",
-        "prompt": "Why is this a traceability problem?",
+        "title": "Do not erase the mistake",
+        "setting": "A technician enters the wrong room number in a treatment record and notices the mistake later.",
+        "prompt": "What is the strongest recordkeeping response?",
         "options": [
-          "It makes the spreadsheet longer",
-          "It destroys part of the audit trail and makes the sequence harder to reconstruct",
-          "Dates do not matter if the product was correct",
-          "Only supervisors need accurate records"
+          "Delete the original entry so nobody sees the error",
+          "Leave the wrong entry unchanged",
+          "Correct the record using the system's approved method while preserving history, reason and responsible person",
+          "Create an unrelated new record without linking it"
         ],
-        "answer": "It destroys part of the audit trail and makes the sequence harder to reconstruct.",
-        "feedback": "Corrections should preserve enough history to show what changed, why and by whom when the system supports it."
+        "answer": "Correct the record using the system's approved method while preserving history, reason and responsible person.",
+        "feedback": "Traceability depends on correction without destroying the audit trail.",
+        "references": [
+          "REF-LEGAL-USDA-001"
+        ]
       },
       {
         "type": "activity",
-        "title": "Corrective-action closeout",
-        "instructions": "Use a supplied safety or cultivation incident.",
+        "title": "Reconstruct a cultivation event",
+        "instructions": "Use a supplied mixed packet of work orders, measurements, scouting notes and a deviation. Build one chronological traceability record.",
         "prompts": [
-          "Build the timeline.",
-          "Separate observation from interpretation.",
-          "Identify immediate control.",
-          "Record root cause only if supported.",
-          "Assign longer-term action and owner.",
-          "Define objective closure evidence.",
-          "State what would reopen the issue."
+          "Which identifiers connect all records?",
+          "What was planned versus what actually happened?",
+          "Which measurements need units or source context?",
+          "What deviation occurred?",
+          "What immediate control was taken?",
+          "What corrective action is still open?",
+          "What evidence would prove the correction worked?"
         ],
-        "artifact": "Traceability and corrective-action closeout record",
+        "artifact": "Cultivation traceability and corrective-action packet",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Corrective-action record",
+        "description": "Use this structure for training exercises; actual workplace forms may require additional fields.",
+        "fields": [
+          {
+            "label": "Event/deviation",
+            "value": "What happened and where"
+          },
+          {
+            "label": "Immediate containment",
+            "value": "What was done to reduce immediate risk or impact"
+          },
+          {
+            "label": "Evidence",
+            "value": "Measurements, observations and source/version context"
+          },
+          {
+            "label": "Root cause",
+            "value": "Known cause or 'not yet established'"
+          },
+          {
+            "label": "Assigned corrective action",
+            "value": "Action, owner and due date"
+          },
+          {
+            "label": "Verification",
+            "value": "Evidence and date showing whether the action worked"
+          },
+          {
+            "label": "Prevention change",
+            "value": "Procedure, design, training or workflow change if needed"
+          }
+        ],
+        "note": "Never invent certainty. If root cause is unknown, record it as unresolved and define the next evidence needed.",
+        "references": [
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Records are evidence, not decoration",
+        "tone": "evidence",
+        "body": "A log that cannot identify the event, actor, time, affected crop/material, measured evidence and decision source cannot reliably support diagnosis, compliance review or corrective action.",
+        "references": [
+          "REF-SAFETY-OSHA-CONTROLS-002"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "practicalEvidenceId": "PRACTICAL-SAFETY-RESPONSIBLE-001",
+      "visualNeeds": [
+        {
+          "concept": "Cultivation traceability chain",
+          "teachingObjective": "Learner follows a crop/lot through work order, action, measurement, deviation, correction and verification."
+        },
+        {
+          "concept": "Audit-trail before/after example",
+          "teachingObjective": "Learner compares destructive overwriting with a preserved correction history."
+        }
+      ],
+      "reviewState": "content-depth-expanded-human-sme-review-pending"
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }
