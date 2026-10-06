@@ -1,0 +1,31 @@
+{
+  "id": "ITEM-SAFETY-RESPONSIBLE-FINAL-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-RESPONSIBLE-LEGAL-001",
+  "objective": "LO-LEGAL-JURISDICTION-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "ordering",
+  "stem": "Place the regulatory-verification steps in the strongest sequence.",
+  "choices": [
+    "Define the exact location/activity/crop classification",
+    "Identify the potentially controlling authority",
+    "Find current primary official sources",
+    "Record source/version/effective-date information",
+    "Escalate unresolved conflicts or authorization gaps"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "rationale": "A reproducible verification process starts by defining the activity, then identifying authority, finding primary sources, preserving version/date context and escalating unresolved uncertainty.",
+  "references": [
+    "REF-LEGAL-USDA-001",
+    "REF-LEGAL-USDA-PLANS-002"
+  ]
+}
