@@ -1,1 +1,180 @@
-{"id":"LESSON-LEGAL-LABEL-002","title":"Input and Pesticide Compliance: Verify Before Use","version":"1.0.0","status":"draft","competencies":["COMP-RESPONSIBLE-LEGAL-001"],"learningObjectives":["LO-LEGAL-LABEL-002"],"estimatedMinutes":40,"references":["REF-SAFETY-OSHA-001","REF-LEGAL-USDA-001"],"assessment":null,"content":{"overview":"A cultivation input should be checked for crop/site authorization, label directions, worker-protection requirements and jurisdiction-specific restrictions before use. The safest educational rule is verify first rather than compiling a universal list that can become outdated or wrong across jurisdictions.","vocabulary":[{"term":"Label use","definition":"The crop, site, rate, method and other conditions authorized or directed by a product label."},{"term":"Reentry","definition":"Entry into a treated area after application, subject to applicable safety and regulatory restrictions."},{"term":"Recordkeeping","definition":"Documentation of product, date, location, amount, operator and other required application information."}],"sections":[{"title":"Availability is not authorization","body":"A product sold online or in a garden store may not be approved for every crop, production system or jurisdiction. Verify the actual label and current agency guidance.","references":["REF-SAFETY-OSHA-001"]},{"title":"Worker rules are part of product use","body":"PPE, notification, reentry and decontamination requirements can affect how and when work occurs around an application.","references":["REF-SAFETY-OSHA-001"]},{"title":"Keep evidence of the decision","body":"Application and label records support traceability, worker communication and later review. Recordkeeping also helps prevent repeated mistakes when rules or products change.","references":["REF-SAFETY-OSHA-001"]}],"workedExamples":["Before using a pest-control product recommended in a forum, check the current label and applicable agricultural/cannabis rules for the specific crop and site.","If a label changes between seasons, retain the version associated with each historical application record."],"commonMistakes":["Assuming natural or organic means unrestricted.","Using a product on a crop not listed or otherwise allowed by the applicable rules.","Discarding application records."],"practicalApplication":"Create a pre-use checklist covering product identity, label version, crop/site, intended use, PPE, reentry, worker communication, disposal and required records. Stop if authorization is unclear.","summary":"Responsible input use is verification-driven. Product label, worker protection, jurisdiction and documentation all have to agree before application."}}
+{
+  "id": "LESSON-LEGAL-LABEL-002",
+  "title": "Input and Pesticide Compliance: Verify Before Use",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-RESPONSIBLE-LEGAL-001"
+  ],
+  "learningObjectives": [
+    "LO-LEGAL-LABEL-002"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-SAFETY-OSHA-HAZCOM-004",
+    "REF-SAFETY-EPA-WPS-003",
+    "REF-LEGAL-USDA-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Input compliance is a verification workflow. Before use, the learner must identify the exact product and label, confirm the intended crop/site/use, identify worker-protection requirements, verify any jurisdiction-specific restrictions, prepare required controls and preserve enough evidence for the decision to be reconstructed later.",
+    "vocabulary": [
+      {
+        "term": "Label use",
+        "definition": "The crop, site, rate, method, timing and other conditions authorized or directed by a product label."
+      },
+      {
+        "term": "Reentry",
+        "definition": "Entry into a treated area after application, subject to applicable label, worker-protection and regulatory restrictions."
+      },
+      {
+        "term": "Application record",
+        "definition": "A traceable record of product identity, date/time, location, use, responsible person and other information required by law or procedure."
+      },
+      {
+        "term": "Source version",
+        "definition": "The specific label, rule, guidance or policy version relied on for a decision."
+      },
+      {
+        "term": "Stop condition",
+        "definition": "A condition that requires the task to pause because authorization, controls or required information are missing or unclear."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Confirm the exact product and current label",
+        "body": "Similar product names, concentrations or formulations are not interchangeable. Verification should start with the container/product identity and the current label/SDS associated with that exact product.",
+        "references": [
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "title": "Crop/site/use must be explicitly supported",
+        "body": "A product being sold for gardens, agriculture or 'organic' use does not establish that the intended cannabis/hemp crop, site or method is authorized. Verify the label and the applicable jurisdiction before application.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-LEGAL-USDA-001"
+        ]
+      },
+      {
+        "title": "Worker-protection duties are part of the decision",
+        "body": "PPE, decontamination, training, application restrictions, notification/reentry and emergency assistance can change whether and how a task may proceed. These are not optional add-ons after the product decision.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "Preserve the evidence used",
+        "body": "Keep the source/version information used for the decision, plus the application record required by law or facility procedure. Historical records should not silently inherit a newer label or rule version.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "Define stop conditions before work starts",
+        "body": "If the label is missing, product identity is uncertain, worker protections are unavailable, crop/site authorization is unclear or jurisdiction-specific restrictions have not been resolved, the correct action is to stop and escalate rather than improvise.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A forum recommends a product for cannabis, but the current label does not clearly support the planned crop/site use. The recommendation is not treated as authorization.",
+      "Two containers have similar brand names but different active-ingredient concentrations. The worker verifies the exact label/SDS for the product in hand rather than relying on last season's instructions.",
+      "A label version changes between seasons. Historical application records preserve the version used at the time so later review is reproducible.",
+      "A required decontamination station is not available. Work does not begin even though the product itself appears authorized."
+    ],
+    "commonMistakes": [
+      "Assuming natural or organic means unrestricted.",
+      "Using a label for a similar but different product.",
+      "Treating a vendor page as the controlling label.",
+      "Checking crop/site authorization but ignoring worker protection.",
+      "Failing to preserve the version of the label/rule used.",
+      "Continuing when a stop condition is present."
+    ],
+    "practicalApplication": "Complete a pre-use compliance checklist for a supplied label/SDS and hypothetical jurisdiction. Record exact product identity, label version, crop/site/use, worker protections, reentry/notification, emergency information, jurisdiction-specific restrictions, required records and stop conditions.",
+    "summary": "Responsible input use is evidence-driven. Product identity, label authorization, worker protection, jurisdiction and traceable documentation must all agree before application.",
+    "blocks": [
+      {
+        "type": "table",
+        "title": "Input-verification matrix",
+        "columns": [
+          "Question",
+          "Evidence source",
+          "If unresolved"
+        ],
+        "rows": [
+          [
+            "What exact product is this?",
+            "Container identity + label/SDS",
+            "Stop"
+          ],
+          [
+            "Is the intended crop/site/use supported?",
+            "Current label + applicable authority",
+            "Stop and escalate"
+          ],
+          [
+            "What worker protections apply?",
+            "Label/WPS/employer program",
+            "Do not begin until available"
+          ],
+          [
+            "What reentry/notification restrictions apply?",
+            "Label/application record/WPS",
+            "Restrict access until resolved"
+          ],
+          [
+            "What must be recorded?",
+            "Applicable rule + facility procedure",
+            "Complete before closeout"
+          ],
+          [
+            "Which source/version did we rely on?",
+            "Saved label/rule metadata",
+            "Preserve source trail"
+          ]
+        ],
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same brand, different formulation",
+        "setting": "A worker recognizes the brand name and starts using last season's mixing and PPE notes. The current container has a different concentration and label revision.",
+        "prompt": "What is the correct response?",
+        "options": [
+          "Continue because the brand is the same",
+          "Use half the old rate",
+          "Stop and verify the exact current label/SDS and requirements",
+          "Ask a coworker what they remember"
+        ],
+        "answer": "Stop and verify the exact current label/SDS and requirements.",
+        "feedback": "Product identity and current source version must match the task. Familiarity is not a substitute for verification.",
+        "references": [
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Pre-use compliance record",
+        "instructions": "Review a training product packet and jurisdiction scenario.",
+        "prompts": [
+          "Confirm exact identity and label revision.",
+          "Identify crop/site/use authorization.",
+          "Identify required worker protections.",
+          "Identify application/reentry restrictions.",
+          "Identify required records.",
+          "List all stop conditions and escalation questions."
+        ],
+        "artifact": "Input-use verification and stop-condition record",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      }
+    ]
+  }
+}
