@@ -1,7 +1,7 @@
 {
   "id": "LESSON-SAFETY-HEAT-PPE-002",
   "title": "Heat Stress, Hydration, PPE and Emergency Response",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "status": "draft",
   "competencies": [
     "COMP-SAFETY-WORK-001"
@@ -12,7 +12,8 @@
   "estimatedMinutes": 50,
   "references": [
     "REF-SAFETY-OSHA-001",
-    "REF-SAFETY-OSHA-CONTROLS-002"
+    "REF-SAFETY-OSHA-CONTROLS-002",
+    "REF-SAFETY-OSHA-HEAT-005"
   ],
   "assessment": null,
   "content": {
@@ -44,35 +45,40 @@
         "title": "Assess heat as conditions change",
         "body": "A greenhouse may be acceptable early and hazardous later. Air temperature, humidity, radiant heat, workload, duration and PPE should be reconsidered as the shift or task changes.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-HEAT-005"
         ]
       },
       {
         "title": "Acclimatization changes risk",
         "body": "New workers, returning workers and people whose heat exposure has changed may be less adapted. Work planning should account for gradual acclimatization rather than assuming prior experience guarantees tolerance.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-HEAT-005"
         ]
       },
       {
         "title": "Hydration and recovery must be planned",
         "body": "Water, rest and an appropriate recovery area should be available before symptoms appear. Prevention cannot depend only on thirst or on a worker requesting a break after heat strain is already significant.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-HEAT-005"
         ]
       },
       {
         "title": "PPE can increase heat burden",
         "body": "Chemical or task-specific PPE may reduce evaporative or convective cooling. When PPE is required, schedule, workload and recovery planning should account for the added burden rather than relaxing the protective requirement.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-HEAT-005"
         ]
       },
       {
         "title": "Emergency response must be explicit",
         "body": "Workers should know who to contact, what symptoms trigger immediate escalation, how to move a person to a safer environment when appropriate and how emergency medical help will be obtained. Serious symptoms are not managed by simply giving water and sending the person back to work.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-HEAT-005"
         ]
       }
     ],
@@ -105,7 +111,8 @@
         "answer": "Reassess heat risk, workload, PPE burden, recovery and monitoring before continuing.",
         "feedback": "Heat plans must reflect actual conditions and workload, not only the original schedule.",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-HEAT-005"
         ]
       },
       {
@@ -122,9 +129,28 @@
         ],
         "artifact": "Heat-work preflight and response plan",
         "references": [
-          "REF-SAFETY-OSHA-001"
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-HEAT-005"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "practicalEvidenceId": "PRACTICAL-SAFETY-RESPONSIBLE-001",
+      "visualNeeds": [
+        {
+          "concept": "Greenhouse heat-risk progression",
+          "teachingObjective": "Learner sees how radiant load, humidity, workload and PPE can change risk across a shift."
+        },
+        {
+          "concept": "Heat-response decision aid",
+          "teachingObjective": "Learner distinguishes prevention, early symptom response and emergency escalation."
+        }
+      ],
+      "reviewState": "content-depth-expanded-human-sme-review-pending"
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }
