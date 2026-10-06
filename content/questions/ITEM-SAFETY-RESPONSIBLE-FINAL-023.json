@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-SAFETY-RESPONSIBLE-FINAL-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-RESPONSIBLE-LEGAL-001",
+  "objective": "LO-RESPONSIBLE-RECORDS-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A worker corrects a wrong application date by replacing the old value in a shared log without preserving what changed or why. What is the main traceability problem?",
+  "choices": [
+    "The edit destroys part of the audit trail and makes the sequence harder to reconstruct",
+    "The spreadsheet may have fewer rows",
+    "Only supervisors should be allowed to use dates",
+    "Application dates are optional once the crop is harvested"
+  ],
+  "correct": 0,
+  "rationale": "Silent replacement of prior values can destroy chronology and accountability. Corrections should preserve enough history to show what changed, why and by whom when the system supports it.",
+  "references": [
+    "REF-SAFETY-EPA-WPS-003",
+    "REF-SAFETY-OSHA-001"
+  ]
+}
