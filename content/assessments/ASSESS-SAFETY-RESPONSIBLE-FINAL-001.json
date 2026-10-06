@@ -1,12 +1,47 @@
 {
   "id": "ASSESS-SAFETY-RESPONSIBLE-FINAL-001",
   "title": "THC Safety, Compliance and Responsible Practice Final Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
-  "competencies": ["COMP-SAFETY-WORK-001", "COMP-RESPONSIBLE-LEGAL-001"],
-  "objectives": ["LO-SAFETY-HAZARDS-001", "LO-SAFETY-HEAT-PPE-002", "LO-SAFETY-CHEMICAL-003", "LO-LEGAL-JURISDICTION-001", "LO-LEGAL-LABEL-002", "LO-RESPONSIBLE-RECORDS-003"],
-  "items": ["ITEM-SAFETY-RESPONSIBLE-FINAL-001", "ITEM-SAFETY-RESPONSIBLE-FINAL-002", "ITEM-SAFETY-RESPONSIBLE-FINAL-003", "ITEM-SAFETY-RESPONSIBLE-FINAL-004", "ITEM-SAFETY-RESPONSIBLE-FINAL-005", "ITEM-SAFETY-RESPONSIBLE-FINAL-006", "ITEM-SAFETY-RESPONSIBLE-FINAL-007", "ITEM-SAFETY-RESPONSIBLE-FINAL-008", "ITEM-SAFETY-RESPONSIBLE-FINAL-009", "ITEM-SAFETY-RESPONSIBLE-FINAL-010", "ITEM-SAFETY-RESPONSIBLE-FINAL-011", "ITEM-SAFETY-RESPONSIBLE-FINAL-012"],
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-RESPONSIBLE-LEGAL-001"
+  ],
+  "objectives": [
+    "LO-SAFETY-HAZARDS-001",
+    "LO-SAFETY-HEAT-PPE-002",
+    "LO-SAFETY-CHEMICAL-003",
+    "LO-LEGAL-JURISDICTION-001",
+    "LO-LEGAL-LABEL-002",
+    "LO-RESPONSIBLE-RECORDS-003"
+  ],
+  "items": [
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-001",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-002",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-003",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-004",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-005",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-006",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-007",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-008",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-009",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-010",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-011",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-012",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-013",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-014",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-015",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-016",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-017",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-018",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-019",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-020",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-021",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-022",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-023",
+    "ITEM-SAFETY-RESPONSIBLE-FINAL-024"
+  ],
   "passingScorePercent": 80,
   "maxAttempts": 3,
   "cooldownHours": 0,
@@ -15,12 +50,28 @@
   "randomizeChoices": true,
   "extensions": {
     "courseFinalProfile": "public-noncredential-dedicated-bank",
-    "sourceModuleAssessments": ["ASSESS-SAFETY-WORK-MODULE-001", "ASSESS-RESPONSIBLE-LEGAL-MODULE-001"],
-    "dedicatedItemBankSource": "preserved-from-prior-course-final-branches",
+    "sourceModuleAssessments": [
+      "ASSESS-SAFETY-WORK-MODULE-001",
+      "ASSESS-RESPONSIBLE-LEGAL-MODULE-001"
+    ],
+    "dedicatedItemBankSource": "course-authored-source-backed-bank",
     "certificationUseStatus": "not-authorized",
     "academicThresholdStatus": "provisional-development",
     "standardSettingStatus": "pending-validation",
     "requireHumanAssessmentReview": true,
-    "thresholdNote": "The 80% score is a development target for academic course completion only. This noncredential course final must not be used for certification issuance until review, pilot evidence, accessibility review, and release approval are recorded."
+    "bankCoverage": {
+      "totalItems": 24,
+      "objectives": 6,
+      "minimumItemsPerObjective": 4,
+      "newApplicationItemsAdded": 12,
+      "itemTypes": [
+        "multiple-choice",
+        "scenario",
+        "case-study",
+        "multiple-response",
+        "ordering"
+      ]
+    },
+    "thresholdNote": "The 80% score is a development target for academic course completion only. This noncredential course final must not be used for certification issuance until human review, pilot evidence, item analysis, accessibility review, standard-setting validation, source-freshness review, and release approval are recorded."
   }
 }
