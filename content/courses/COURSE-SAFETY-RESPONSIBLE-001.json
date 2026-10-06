@@ -1,1 +1,77 @@
-{"id":"COURSE-SAFETY-RESPONSIBLE-001","title":"THC Safety, Compliance and Responsible Practice","version":"1.0.1","status":"draft","credentialBearing":false,"modules":["MOD-SAFETY-WORK-001","MOD-RESPONSIBLE-LEGAL-001"],"competencies":["COMP-SAFETY-WORK-001","COMP-RESPONSIBLE-LEGAL-001"],"finalAssessment":"ASSESS-SAFETY-RESPONSIBLE-FINAL-001","extensions":{"courseFinalProfile":"public-noncredential-dedicated-bank","certificationUseStatus":"not-authorized"}}
+{
+  "id": "COURSE-SAFETY-RESPONSIBLE-001",
+  "title": "THC Safety, Compliance and Responsible Practice",
+  "version": "1.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "modules": [
+    "MOD-SAFETY-WORK-001",
+    "MOD-RESPONSIBLE-LEGAL-001"
+  ],
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-RESPONSIBLE-LEGAL-001"
+  ],
+  "finalAssessment": "ASSESS-SAFETY-RESPONSIBLE-FINAL-001",
+  "description": "A workforce-oriented foundation in cultivation safety, regulatory literacy, chemical and pesticide verification, heat and PPE planning, traceable records, corrective action, and responsible escalation. The course trains learners to recognize hazards, select proportionate controls, verify rules and labels from authoritative sources, preserve an audit trail, and stop or escalate work when authorization or safety conditions are unclear.",
+  "level": "foundational-workforce",
+  "intendedAudience": [
+    "Entry-level cultivation technicians and support staff",
+    "Learners preparing for THC Academy Technician I coursework",
+    "Supervisors who need a common baseline for safe-work and responsible-practice expectations"
+  ],
+  "prerequisites": [
+    "No prior THC Academy credential is required.",
+    "Learners should be able to read workplace instructions, labels, tables and basic regulatory or safety documents.",
+    "Facility-specific safety, emergency, chemical-handling and jurisdictional requirements remain mandatory before supervised workplace activity."
+  ],
+  "deliveryModes": [
+    "self-paced-online",
+    "instructor-led",
+    "simulation",
+    "supervised-lab",
+    "workplace-practice",
+    "paper-data-exercise"
+  ],
+  "estimatedMinutes": 245,
+  "learningOutcomes": [
+    "Identify common cultivation workplace hazards and distinguish elimination, engineering, administrative and PPE controls.",
+    "Evaluate wet-area, electrical, tool, machinery, ladder, lifting and housekeeping hazards and select an appropriate stop-work, control or escalation response.",
+    "Explain how heat load, workload, acclimatization, hydration, recovery and PPE interact and apply an emergency-response plan to heat-illness scenarios.",
+    "Verify chemical and pesticide use from current labels, safety information and applicable worker-protection requirements before handling, application or reentry.",
+    "Determine which jurisdiction and authority govern a proposed cultivation activity and distinguish official primary sources from informal summaries or outdated guidance.",
+    "Create a pre-use verification record for a cultivation input that captures product identity, label version, crop/site, worker controls, reentry, disposal and unresolved authorization questions.",
+    "Create traceable safety and cultivation records that preserve who, what, where, when, measurements, deviations and corrective actions without overwriting history.",
+    "Recognize when a task exceeds an entry-level role, stop unsafe or unauthorized work, and produce a clear escalation or handoff record."
+  ],
+  "evidencePolicy": "Safety, regulatory and responsible-practice claims must use current primary or authoritative sources whenever practical, including OSHA, EPA, USDA, state or tribal regulators, product labels, Safety Data Sheets and other controlling documents. Educational summaries must not be presented as legal authorization. Jurisdiction-, product- and facility-specific requirements must be verified at the point of use, and dated sources should be reviewed for currency before operational decisions.",
+  "assessmentPolicy": "The course uses lesson retrieval, scenarios, hazard-control selection, label and source verification, recordkeeping exercises, formative module checks, a dedicated summative final, and a practical simulation. The 80 percent final-assessment threshold remains provisional for academic completion while the item bank, standard setting, accessibility review and pilot evidence are expanded. Credential issuance remains disabled until the course has sufficient randomized item-bank depth, human assessment review, practical-performance evidence, pilot data and release authorization.",
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "certificationUseStatus": "not-authorized",
+    "practicalAssessment": "PRACTICAL-SAFETY-RESPONSIBLE-001",
+    "practicalRequirementStatus": "draft-required-before-credential-activation",
+    "depthRemediation": {
+      "standard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
+      "currentLessonCount": 6,
+      "currentModuleCount": 2,
+      "targetWork": [
+        "expand lesson blocks with applied scenarios and guided practice",
+        "add purposeful visual instruction and visual provenance",
+        "increase formative and summative item-bank depth",
+        "map scored items to objective and proficiency level",
+        "pilot practical scoring and critical-error behavior",
+        "complete SME, accessibility and source-freshness review"
+      ]
+    },
+    "assessmentActivation": {
+      "currentFinalItemCount": 12,
+      "minimumState": "development-only",
+      "requireHumanAssessmentReview": true,
+      "requirePilotEvidence": true,
+      "requireAccessibilityReview": true,
+      "requireStandardSettingEvidence": true
+    },
+    "credentialStatement": "Completion documents educational achievement only. It does not grant a government license, authorize cannabis activity, replace employer training or facility-specific procedures, or supersede current laws, regulations, product labels or controlling agency requirements."
+  }
+}
