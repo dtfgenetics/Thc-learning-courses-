@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-024",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LIGHT-UV-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "An experiment increases the daily light period while keeping instantaneous PPFD similar. What other lighting quantity should be checked before interpreting the outcome?",
+  "choices": [
+    "Daily light integral (DLI)",
+    "Only fixture brand",
+    "Only room volume",
+    "Only sensor color"
+  ],
+  "correct": 0,
+  "rationale": "A longer light period at similar PPFD increases total daily photon exposure, so DLI should be considered when interpreting the treatment.",
+  "references": [
+    "REF-LIGHT-001"
+  ]
+}

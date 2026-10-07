@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LIGHT-SPECTRUM-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two spectral treatments are compared, but one treatment also delivers substantially higher PPFD. What is the main interpretation problem?",
+  "choices": [
+    "Spectrum and intensity are confounded, so the spectral effect cannot be isolated cleanly",
+    "Higher PPFD makes spectrum irrelevant",
+    "Only plant height should be measured",
+    "The lower-PPFD treatment is automatically inferior"
+  ],
+  "correct": 0,
+  "rationale": "When intensity differs, observed outcomes may reflect both spectrum and photon delivery. The comparison must acknowledge that confound.",
+  "references": [
+    "REF-LIGHT-001",
+    "REF-LIGHT-SPECTRUM-2025-001"
+  ]
+}

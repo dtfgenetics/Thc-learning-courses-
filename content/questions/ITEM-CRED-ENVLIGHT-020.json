@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LIGHT-SPECTRUM-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One treatment produces shorter plants with higher compound concentration, while another produces more total biomass. What should be done before calling either treatment superior?",
+  "choices": [
+    "Define the production/experimental outcome being optimized and compare outcomes separately",
+    "Choose the treatment with the highest concentration automatically",
+    "Choose the tallest treatment automatically",
+    "Average all outcomes into one unlabeled score"
+  ],
+  "correct": 0,
+  "rationale": "Morphology, biomass, concentration and total compound yield are distinct outcomes. The goal must be defined before ranking treatments.",
+  "references": [
+    "REF-LIGHT-SPECTRUM-2025-001"
+  ]
+}

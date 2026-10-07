@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-ENV-AIRFLOW-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which evidence is useful when evaluating airflow uniformity across a controlled-environment canopy?",
+  "choices": [
+    "Multiple local temperature/RH measurements",
+    "Air-velocity or qualitative airflow mapping",
+    "Plant density and fan direction",
+    "Visible movement at only one plant",
+    "Repeated measurements at problem-prone positions"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "rationale": "Airflow uniformity is a spatial problem and should be evaluated with multiple environmental/flow observations and canopy context rather than one visible leaf response.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}

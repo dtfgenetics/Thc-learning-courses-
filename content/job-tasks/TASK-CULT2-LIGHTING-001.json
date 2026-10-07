@@ -1,0 +1,19 @@
+{
+  "id": "TASK-CULT2-LIGHTING-001",
+  "title": "Verify canopy lighting distribution and identify lighting-control deviations",
+  "description": "Measure and interpret controlled-environment crop lighting using PPFD, DLI, sensor position, fixture state, canopy geometry and environmental context; distinguish measurement problems from real spatial nonuniformity; document permitted corrections or escalation based on measured evidence.",
+  "competencies": [
+    "COMP-LIGHT-ADV-001",
+    "COMP-ENV-ADV-001"
+  ],
+  "proficiency": "PROF-DIAGNOSTIC-001",
+  "safetyCritical": true,
+  "assessmentIdeas": [
+    "top- and mid-canopy PPFD mapping case",
+    "fixture-state versus measured-output verification",
+    "sensor orientation and calibration-quality review",
+    "DLI and photoperiod comparison case",
+    "lighting change recommendation with evidence limits"
+  ],
+  "version": "1.0.0"
+}

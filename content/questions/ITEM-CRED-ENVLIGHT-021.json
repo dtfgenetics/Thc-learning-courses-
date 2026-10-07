@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LIGHT-DISTRIBUTION-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A room has an acceptable average top-canopy PPFD, but edge locations are much lower than the center. What does the average hide?",
+  "choices": [
+    "Meaningful spatial nonuniformity",
+    "The exact spectrum at every point",
+    "A guaranteed calibration failure",
+    "Photoperiod duration"
+  ],
+  "correct": 0,
+  "rationale": "An average can mask minima, maxima and edge deficits. A spatial map is needed to characterize distribution.",
+  "references": [
+    "REF-CANOPY-001"
+  ]
+}

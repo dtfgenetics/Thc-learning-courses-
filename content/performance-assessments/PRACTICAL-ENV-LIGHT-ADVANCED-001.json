@@ -1,0 +1,79 @@
+{
+  "id": "PRACTICAL-ENV-LIGHT-ADVANCED-001",
+  "title": "Environment & Lighting Verification Practical",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": [
+    "TASK-CULT2-SENSOR-001",
+    "TASK-CULT2-EQUIPMENT-001",
+    "TASK-CULT2-LIGHTING-001"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-LIGHT-ADV-001"
+  ],
+  "deliveryModes": [
+    "simulation",
+    "virtual-facility",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidenceOutputs": [
+    "Environment & Lighting Verification Report",
+    "Annotated sensor/environment map",
+    "Top/mid-canopy PPFD analysis",
+    "Fault classification and next-test plan",
+    "Supervisor-ready handoff"
+  ],
+  "scoring": {
+    "totalPoints": 100,
+    "domains": [
+      {
+        "name": "Measurement and sensor-quality verification",
+        "points": 20
+      },
+      {
+        "name": "Environmental spatial/trend interpretation",
+        "points": 20
+      },
+      {
+        "name": "PPFD/DLI and light-distribution analysis",
+        "points": 25
+      },
+      {
+        "name": "Fault classification and next-test selection",
+        "points": 15
+      },
+      {
+        "name": "Role boundary and safety",
+        "points": 10
+      },
+      {
+        "name": "Documentation and supervisor handoff",
+        "points": 10
+      }
+    ]
+  },
+  "passingStandard": {
+    "minimumPercent": 80,
+    "noCriticalErrors": true
+  },
+  "criticalErrors": [
+    "Bypasses a required safety boundary or attempts an unauthorized repair.",
+    "Changes controller or fixture settings primarily to hide a failed measurement or equipment condition.",
+    "Treats one unverified sensor or one center PPFD reading as definitive room-wide evidence despite contradictory supplied data.",
+    "Discards contradictory data without documenting a defensible data-quality reason.",
+    "Recommends a major control change without first resolving a clear measurement-quality problem.",
+    "Represents an unresolved hypothesis as confirmed fact."
+  ],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-ENV-LIGHT-ADVANCED-001.md",
+  "extensions": {
+    "certificationUseStatus": "not-authorized",
+    "requireAssessorCalibration": true,
+    "requirePilot": true,
+    "course": "COURSE-ENV-LIGHT-ADVANCED-001"
+  }
+}

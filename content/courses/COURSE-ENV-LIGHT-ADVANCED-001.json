@@ -1,1 +1,78 @@
-{"id":"COURSE-ENV-LIGHT-ADVANCED-001","title":"THC Advanced Environment and Lighting","version":"1.0.0","status":"draft","credentialBearing":true,"modules":["MOD-ENV-ADV-001","MOD-LIGHT-ADV-001"],"competencies":["COMP-ENV-ADV-001","COMP-LIGHT-ADV-001"],"finalAssessment":"ASSESS-ENV-LIGHT-ADVANCED-FINAL-001"}
+{
+  "id": "COURSE-ENV-LIGHT-ADVANCED-001",
+  "title": "THC Advanced Environment and Lighting",
+  "version": "1.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "modules": [
+    "MOD-ENV-ADV-001",
+    "MOD-LIGHT-ADV-001"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-LIGHT-ADV-001"
+  ],
+  "finalAssessment": "ASSESS-ENV-LIGHT-ADVANCED-FINAL-001",
+  "description": "Advanced Environment and Lighting prepares experienced cultivation learners to verify environmental and lighting data quality, map spatial gradients, interpret airflow and heat/moisture loads, distinguish sensor faults from true crop conditions, evaluate PPFD/DLI and light distribution, and design evidence-based verification steps before recommending environmental or lighting changes.",
+  "level": "advanced-workforce",
+  "intendedAudience": [
+    "Cultivation Technician II and senior cultivation technicians",
+    "Cultivation staff responsible for sensor verification, environmental trend review, PPFD mapping or lighting checks",
+    "Learners progressing toward cultivation lead or specialist pathways"
+  ],
+  "prerequisites": [
+    "THC Cultivation Foundations or equivalent plant-environment knowledge is recommended.",
+    "Learners should be able to interpret temperature, RH, VPD, PPFD and DLI terminology and basic trend data.",
+    "Technician I-level measurement, documentation and workplace-safety competency is recommended before supervised practical work."
+  ],
+  "deliveryModes": [
+    "self-paced-online",
+    "instructor-led",
+    "simulation",
+    "supervised-lab",
+    "workplace-practice",
+    "paper-data-exercise"
+  ],
+  "learningOutcomes": [
+    "Design and evaluate a spatial environmental-sensor map that distinguishes representative crop conditions from controller-wall or single-point readings.",
+    "Assess sensor placement, calibration history, shielding, cross-sensor agreement and response behavior before concluding that a crop-space deviation is real.",
+    "Interpret airflow and canopy microclimate evidence to distinguish mixing problems, local dead zones and biologically excessive airflow.",
+    "Interpret sensible and latent loads, irrigation events, crop transpiration and control sequencing when evaluating environmental-capacity problems.",
+    "Compare lighting treatments using PPFD, DLI, spectral distribution, photoperiod, cultivar, stage and production goal rather than fixture marketing labels.",
+    "Build and interpret canopy PPFD maps using average, minimum, maximum and spatial variability rather than a single center measurement.",
+    "Evaluate whether fixture placement, canopy architecture or supplemental/interlighting changes are justified by measured spatial light distribution.",
+    "Evaluate UV or altered-photoperiod trials using documented dose, timing, wavelength, DLI and safety controls while preserving evidence limits.",
+    "Separate measurement fault, equipment fault, environmental-control fault and crop-response evidence before recommending corrective action.",
+    "Create a supervisor-ready environment/lighting verification report with measurements, source data, hypotheses, confidence limits, next checks and escalation boundaries."
+  ],
+  "evidencePolicy": "Course claims should use cannabis-specific peer-reviewed evidence when available and established controlled-environment horticulture or plant-physiology evidence for general mechanisms. Every recommendation must distinguish measured fact from interpretation, and cultivar-, fixture-, room- or study-specific outcomes must not be presented as universal recipes. Sensor and light measurements require documented units, device/context, position, time and relevant calibration or verification status.",
+  "assessmentPolicy": "Instruction uses mapped data sets, troubleshooting cases, PPFD/environment maps, sensor-verification exercises and evidence-based decision scenarios. Module checks are formative. The final credential assessment remains fail-closed until adequate bank depth, human review, accessibility review, pilot evidence and standard-setting are complete. Practical performance should include sensor/data-quality verification and canopy light mapping with a documented technical handoff.",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "qualityStandard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
+    "technicianIIAlignment": [
+      "TASK-CULT2-SENSOR-001",
+      "TASK-CULT2-EQUIPMENT-001",
+      "TASK-CULT2-LIGHTING-001"
+    ],
+    "practicalEvidenceRequirements": [
+      "sensor and environmental verification report",
+      "annotated environmental trend or spatial map",
+      "top/mid-canopy PPFD map with uniformity analysis",
+      "fault classification and next-test plan",
+      "supervisor-ready handoff"
+    ],
+    "roleBoundary": "Technician II may verify measurements, identify probable sensor/equipment/data-quality faults, perform approved checks, compare measured light/environment conditions to work instructions and recommend next verification or escalation. The learner does not gain unrestricted authority to redesign facility HVAC/electrical systems, bypass safety controls or make unapproved program changes.",
+    "credentialStatement": "Successful completion may contribute to the THC Advanced Environment and Lighting certificate when all assessment, practical, review, identity, issuance and release requirements are active. The credential documents educational/workforce achievement and is not a government license or independent personnel certification.",
+    "productionActivationRequirements": [
+      "Add and validate sufficient randomized final-assessment bank depth across all six objectives.",
+      "Add a dedicated lighting/environment performance assessment or map equivalent evidence to an approved integrated practical.",
+      "Record human SME and assessment review.",
+      "Complete accessibility review.",
+      "Run learner pilot and item-analysis review.",
+      "Document passing-threshold standard-setting rationale.",
+      "Verify source freshness and public learner rendering.",
+      "Verify credential identity, issuance and public-verification flow."
+    ]
+  }
+}

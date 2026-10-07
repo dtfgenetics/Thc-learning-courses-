@@ -67,7 +67,7 @@ New job layer:
 - deciding verify/correct/escalate
 
 ### Unit 02 — Sensors, Controls & Data Quality
-**Tasks:** `TASK-CULT2-SENSOR-001`, `TASK-CULT2-EQUIPMENT-001`
+**Tasks:** `TASK-CULT2-SENSOR-001`, `TASK-CULT2-EQUIPMENT-001`, `TASK-CULT2-LIGHTING-001`
 
 New job layer:
 - cross-sensor comparison
@@ -77,6 +77,10 @@ New job layer:
 - equipment alarm triage
 - safe maintenance boundary
 - data-quality flags
+- canopy PPFD mapping and DLI interpretation
+- fixture-state versus measured-output verification
+- spatial light-uniformity analysis
+- lighting-measurement escalation and handoff
 
 ### Unit 03 — Fertigation Batch Execution & Verification
 **Task:** `TASK-CULT2-FERTIGATION-001`
