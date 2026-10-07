@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-NIPM-022",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-IPM-DIAG-ADV-002",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "A recurring plant-health problem could affect multiple batches if the diagnosis is wrong. What should happen before a high-consequence conclusion is treated as confirmed?",
+  "choices": [
+    "Use stronger confirmation appropriate to the consequence, such as microscopy, laboratory testing or expert review when available",
+    "Rely on one photograph",
+    "Choose the most familiar cause",
+    "Skip confirmation because symptoms look typical"
+  ],
+  "correct": 0,
+  "rationale": "Higher-consequence diagnoses deserve stronger evidence and confirmation proportional to the risk of being wrong.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ]
+}
