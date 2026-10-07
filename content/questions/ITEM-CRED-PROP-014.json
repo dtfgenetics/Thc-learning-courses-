@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-CRED-PROP-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-TC-ASEPSIS-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which practices strengthen aseptic-work traceability and contamination control?",
+  "choices": [
+    "Separate clean and waste flows",
+    "Record operator and transfer date",
+    "Minimize open-vessel exposure",
+    "Move repeatedly between waste and open cultures",
+    "Preserve medium-lot and donor identity"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "rationale": "Directional workflow, limited exposure and complete batch identity help prevent and investigate contamination.",
+  "references": [
+    "REF-PROP-001",
+    "REF-PROP-TC-2025-001"
+  ]
+}
