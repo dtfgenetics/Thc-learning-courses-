@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LIGHT-UV-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A UV trial reports only '10% UV' without wavelength range, irradiance or exposure duration. What is the main evidence problem?",
+  "choices": [
+    "The treatment dose is not adequately defined or reproducible",
+    "The result must be false",
+    "UV cannot be measured",
+    "Photoperiod automatically corrects the missing data"
+  ],
+  "correct": 0,
+  "rationale": "UV treatment requires wavelength, intensity and duration context. A percentage alone is insufficient to reproduce or interpret exposure.",
+  "references": [
+    "REF-LIGHT-UV-2024-001"
+  ]
+}
