@@ -1,17 +1,80 @@
 {
   "id": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
   "title": "Technician II Practical C — Fertigation & Root-Zone Troubleshooting",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "credential",
   "assessmentType": "practical",
   "role": "ROLE-CULT-TECH-II-001",
-  "jobTasks": ["TASK-CULT2-FERTIGATION-001", "TASK-CULT2-ROOTZONE-001"],
-  "competencies": ["COMP-WATER-QUALITY-ADV-001", "COMP-IRRIGATION-ADV-001", "COMP-NUTRIENT-DIAG-001", "COMP-PRO-SOP-001", "COMP-SAFETY-WORK-001"],
-  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
-  "evidenceOutputs": ["Completed batch record", "Measurement-verification record", "Root-zone and irrigation diagnostic memo", "Next-check or correction recommendation"],
-  "scoring": {"totalPoints": 100, "domains": [{"name":"Batch preparation and verification","points":30},{"name":"Measurement quality","points":15},{"name":"Root-zone trend interpretation","points":20},{"name":"Distribution and scheduling reasoning","points":20},{"name":"Records and escalation","points":15}]},
-  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
-  "criticalErrors": ["Makes an unapproved recipe or chemical change.", "Ignores an incorrect or incompatible material identity.", "Uses unsafe chemical-handling practices.", "Acts on an abnormal measurement without required verification.", "Assumes a universal dryback target without crop and media context."],
-  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.md"
+  "jobTasks": [
+    "TASK-CULT2-FERTIGATION-001",
+    "TASK-CULT2-ROOTZONE-001"
+  ],
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-PRO-SOP-001",
+    "COMP-SAFETY-WORK-001"
+  ],
+  "deliveryModes": [
+    "simulation",
+    "virtual-facility",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidenceOutputs": [
+    "Completed batch/work-order record",
+    "Measurement-verification record",
+    "Root-zone and irrigation diagnostic memo",
+    "Annotated timeline or trend table",
+    "Next-check or correction recommendation",
+    "Supervisor-ready handoff"
+  ],
+  "scoring": {
+    "totalPoints": 100,
+    "domains": [
+      {
+        "name": "Work-order and batch preparation/verification",
+        "points": 30
+      },
+      {
+        "name": "Measurement quality",
+        "points": 15
+      },
+      {
+        "name": "Root-zone trend interpretation",
+        "points": 20
+      },
+      {
+        "name": "Distribution and scheduling reasoning",
+        "points": 20
+      },
+      {
+        "name": "Records, uncertainty and escalation",
+        "points": 15
+      }
+    ]
+  },
+  "passingStandard": {
+    "minimumPercent": 80,
+    "noCriticalErrors": true
+  },
+  "criticalErrors": [
+    "Makes an unapproved formulation or material change.",
+    "Ignores an incorrect or incompatible material identity.",
+    "Uses unsafe handling practices.",
+    "Acts on an abnormal measurement without required verification.",
+    "Assumes a universal dryback target without media, container, stage and measurement context.",
+    "Changes multiple variables at once in a way that prevents meaningful verification.",
+    "Represents an unresolved hypothesis as confirmed fact."
+  ],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.md",
+  "extensions": {
+    "certificationUseStatus": "not-authorized",
+    "requireAssessorCalibration": true,
+    "requirePilot": true,
+    "course": "COURSE-WATER-IRRIGATION-ADVANCED-001",
+    "scoringNote": "Score the candidate's evidence trail, uncertainty handling and next-test logic rather than agreement with one preferred hypothesis."
+  }
 }
