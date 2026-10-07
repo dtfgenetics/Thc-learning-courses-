@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-PROP-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-TC-FIDELITY-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A long-passage culture appears visually normal. Which QA conclusion is strongest?",
+  "choices": [
+    "Normal appearance is useful evidence but does not replace passage-history and retained-reference review",
+    "Appearance proves complete genetic fidelity",
+    "Passage history can be discarded",
+    "Molecular testing is always unnecessary"
+  ],
+  "correct": 0,
+  "rationale": "Fidelity QA combines identity, history and phenotype; no single observation proves complete fidelity.",
+  "references": [
+    "REF-PROP-TC-2025-001"
+  ]
+}
