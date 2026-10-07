@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-CFLOW-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-CANOPY-ADV-001",
+  "objective": "LO-CANOPY-TRAIN-002",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One cultivar responds positively to a training intensity while another shows slower recovery under otherwise similar conditions. What is the strongest conclusion?",
+  "choices": [
+    "Cultivar response should remain explicit and the practice should not be treated as universally optimal",
+    "The slower cultivar must have been trained incorrectly",
+    "The positive response proves the same intensity should be standardized for all cultivars",
+    "Cultivar identity can be removed from future records"
+  ],
+  "correct": 0,
+  "rationale": "Published and practical responses can differ by cultivar, so training outcomes should preserve genotype/cultivar context.",
+  "references": [
+    "REF-CANOPY-DEFOL-2025-001"
+  ]
+}
