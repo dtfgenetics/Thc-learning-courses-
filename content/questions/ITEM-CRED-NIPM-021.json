@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-NIPM-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-IPM-DIAG-ADV-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Plants wilt while the root zone is already wet. What is the strongest diagnostic response?",
+  "choices": [
+    "Keep root dysfunction, disease and other causes in the differential instead of assuming more water is needed",
+    "Add more irrigation immediately",
+    "Treat wilting as proof of one pathogen",
+    "Ignore root-zone condition"
+  ],
+  "correct": 0,
+  "rationale": "Similar symptoms can arise from different causes. Root-zone context can contradict a simple water-deficit interpretation.",
+  "references": [
+    "REF-IPM-001",
+    "REF-NUTRIENT-DEFICIENCY-001"
+  ]
+}
