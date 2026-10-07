@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-ENV-MAP-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A wall sensor reports stable temperature and RH, but three canopy-level sensors show a repeated warmer and more humid zone in one corner. What is the strongest interpretation?",
+  "choices": [
+    "The wall sensor proves the whole room is uniform",
+    "The spatial pattern should be investigated and verified before changing global setpoints",
+    "Average all readings and ignore location",
+    "Replace every sensor immediately"
+  ],
+  "correct": 1,
+  "rationale": "A single wall sensor may not represent crop-zone conditions. A repeated localized pattern warrants verification of placement, calibration and local environmental causes before global changes.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}
