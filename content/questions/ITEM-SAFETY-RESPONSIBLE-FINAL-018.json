@@ -19,5 +19,9 @@
   "rationale": "When reentry authorization cannot be verified, the safe and responsible action is to stop and resolve the missing information before entry.",
   "references": [
     "REF-SAFETY-EPA-WPS-003"
-  ]
+  ],
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "certificationUseStatus": "not-authorized"
+  }
 }
