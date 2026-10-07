@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-WATER-ALKALINITY-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two irrigation-water samples have similar pH but very different alkalinity. What is the strongest conclusion?",
+  "choices": [
+    "They may exert different long-term buffering effects despite similar pH",
+    "They must behave identically in the root zone",
+    "The lower-alkalinity sample always has higher EC",
+    "pH alone proves acid-neutralizing capacity"
+  ],
+  "correct": 0,
+  "rationale": "pH and alkalinity measure different properties. Similar pH does not imply similar acid-neutralizing capacity or cumulative buffering behavior.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}
