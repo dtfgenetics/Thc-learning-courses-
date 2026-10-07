@@ -1,1 +1,203 @@
-{"id":"LESSON-LEGAL-LABEL-002","title":"Input and Pesticide Compliance: Verify Before Use","version":"1.0.0","status":"draft","competencies":["COMP-RESPONSIBLE-LEGAL-001"],"learningObjectives":["LO-LEGAL-LABEL-002"],"estimatedMinutes":40,"references":["REF-SAFETY-OSHA-001","REF-LEGAL-USDA-001"],"assessment":null,"content":{"overview":"A cultivation input should be checked for crop/site authorization, label directions, worker-protection requirements and jurisdiction-specific restrictions before use. The safest educational rule is verify first rather than compiling a universal list that can become outdated or wrong across jurisdictions.","vocabulary":[{"term":"Label use","definition":"The crop, site, rate, method and other conditions authorized or directed by a product label."},{"term":"Reentry","definition":"Entry into a treated area after application, subject to applicable safety and regulatory restrictions."},{"term":"Recordkeeping","definition":"Documentation of product, date, location, amount, operator and other required application information."}],"sections":[{"title":"Availability is not authorization","body":"A product sold online or in a garden store may not be approved for every crop, production system or jurisdiction. Verify the actual label and current agency guidance.","references":["REF-SAFETY-OSHA-001"]},{"title":"Worker rules are part of product use","body":"PPE, notification, reentry and decontamination requirements can affect how and when work occurs around an application.","references":["REF-SAFETY-OSHA-001"]},{"title":"Keep evidence of the decision","body":"Application and label records support traceability, worker communication and later review. Recordkeeping also helps prevent repeated mistakes when rules or products change.","references":["REF-SAFETY-OSHA-001"]}],"workedExamples":["Before using a pest-control product recommended in a forum, check the current label and applicable agricultural/cannabis rules for the specific crop and site.","If a label changes between seasons, retain the version associated with each historical application record."],"commonMistakes":["Assuming natural or organic means unrestricted.","Using a product on a crop not listed or otherwise allowed by the applicable rules.","Discarding application records."],"practicalApplication":"Create a pre-use checklist covering product identity, label version, crop/site, intended use, PPE, reentry, worker communication, disposal and required records. Stop if authorization is unclear.","summary":"Responsible input use is verification-driven. Product label, worker protection, jurisdiction and documentation all have to agree before application."}}
+{
+  "id": "LESSON-LEGAL-LABEL-002",
+  "title": "Input and Pesticide Compliance: Verify Before Use",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-RESPONSIBLE-LEGAL-001"
+  ],
+  "learningObjectives": [
+    "LO-LEGAL-LABEL-002"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-SAFETY-EPA-WPS-003",
+    "REF-SAFETY-OSHA-HAZCOM-004",
+    "REF-LEGAL-USDA-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Input compliance is a verification workflow. Before any pesticide or other regulated cultivation input is used, the learner must identify the exact product, open the current label and hazard information, verify the intended crop/site/use, determine which worker-protection and access requirements apply, check jurisdiction-specific restrictions, and preserve a traceable record of the decision. Marketing terms such as natural, organic or commonly used do not establish authorization.",
+    "vocabulary": [
+      {
+        "term": "Label use",
+        "definition": "The crop, site, rate, method and other conditions directed or authorized by the product label and applicable law."
+      },
+      {
+        "term": "Reentry",
+        "definition": "Entry into a treated area after application, subject to applicable label, worker-protection and jurisdictional restrictions."
+      },
+      {
+        "term": "Application record",
+        "definition": "A traceable record linking a product and label/version to date, location, crop/site, use, amount, operator and required safety or access information."
+      },
+      {
+        "term": "Authorization gap",
+        "definition": "A missing, conflicting or unclear requirement that prevents the learner from concluding that the proposed use may proceed."
+      },
+      {
+        "term": "Primary source",
+        "definition": "The current official label, regulation, agency guidance, license condition or other authoritative source used to support a compliance decision."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Verify the exact product and current label",
+        "body": "A recommendation is not enough. Confirm the product identity and current label/version before relying on rate, crop/site, PPE, reentry, disposal or other directions. Preserve the source or version used so the decision can be reconstructed later.",
+        "references": [
+          "REF-SAFETY-OSHA-HAZCOM-004",
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "Crop, site and use are separate checks",
+        "body": "A product that is lawful in one context may not be allowed for every crop, location, production system or application method. The verification record should state the intended crop/site/use explicitly rather than assuming general agricultural availability means universal authorization.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "Worker protection is part of compliance",
+        "body": "Where applicable, worker and handler protections include training, application information, labeling access, PPE, notification, restricted-entry controls, decontamination and emergency assistance. The learner must determine which protections actually apply to the operation and task instead of treating them as optional add-ons.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "Jurisdiction can add or change requirements",
+        "body": "Federal guidance does not eliminate state, tribal, local, license or facility requirements. If the applicable authority is unclear, the correct response is to document the gap and escalate before use rather than selecting the least restrictive interpretation.",
+        "references": [
+          "REF-LEGAL-USDA-001"
+        ]
+      },
+      {
+        "title": "Records preserve the compliance decision",
+        "body": "A strong application or pre-use record preserves the product, label/version, date, location, crop/site, intended use, responsible person, safety controls, access/reentry information and source used for authorization. Keeping this evidence supports worker communication, audits, corrective action and future review.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A product marketed as natural is recommended for a cannabis crop. The team still verifies the exact label, intended crop/site/use and applicable jurisdiction before deciding whether it can be used.",
+      "A label used last season has changed. The current application record stores the new label/version instead of assuming last year's directions still apply.",
+      "A worker-protection requirement applies to the planned task, but required decontamination supplies are not ready. The task does not proceed until the requirement is satisfied.",
+      "Two official sources appear to conflict about a restriction. The learner documents the conflict and escalates it rather than choosing the more convenient interpretation."
+    ],
+    "commonMistakes": [
+      "Assuming natural, organic or commonly used means unrestricted.",
+      "Using a screenshot or old label instead of the current product source.",
+      "Checking rate but not crop, site, method or worker-protection requirements.",
+      "Treating PPE as proof that an otherwise unauthorized use is acceptable.",
+      "Ignoring jurisdiction-specific or license-specific restrictions.",
+      "Failing to retain enough source/version detail to reconstruct why a use was approved."
+    ],
+    "practicalApplication": "Create a complete pre-use verification record for a supplied training product or approved supervised example. Record exact product identity, current label/version, crop/site/use, jurisdiction/source checked, PPE, worker communication, decontamination, access/reentry, emergency information, required application records and any unresolved authorization gap. The exercise ends in either a documented proceed decision supported by the supplied sources or a documented stop-and-escalate decision.",
+    "summary": "Responsible input use depends on evidence, not familiarity. Product identity, current label, crop/site/use, worker protection, jurisdiction, access controls and traceable records must agree before a proposed application is treated as acceptable.",
+    "blocks": [
+      {
+        "type": "table",
+        "title": "Pre-use compliance matrix",
+        "columns": [
+          "Question",
+          "Evidence to inspect",
+          "Stop condition"
+        ],
+        "rows": [
+          [
+            "Is this the exact product?",
+            "Container/product identity + current label",
+            "Identity or label/version is uncertain"
+          ],
+          [
+            "Is the crop/site/use supported?",
+            "Current label + applicable authority",
+            "Intended use is absent, prohibited or unclear"
+          ],
+          [
+            "Are worker protections ready?",
+            "PPE, notification, decontamination, access/reentry information",
+            "Required protection is unavailable"
+          ],
+          [
+            "Is jurisdiction verified?",
+            "Current primary regulatory/license source",
+            "Controlling authority or restriction is unresolved"
+          ],
+          [
+            "Can the decision be reconstructed?",
+            "Application/pre-use record with source/version",
+            "Record cannot show why the decision was made"
+          ]
+        ],
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Natural does not mean unrestricted",
+        "setting": "A pest-control product is advertised as natural and widely recommended by growers. The current label and jurisdictional use have not been checked.",
+        "prompt": "What is the correct decision?",
+        "options": [
+          "Use it because natural products are exempt from restrictions",
+          "Use a reduced rate until approval is confirmed",
+          "Stop and verify the current label, crop/site/use, worker protections and jurisdiction before application",
+          "Proceed if gloves are available"
+        ],
+        "answer": "Stop and verify the current label, crop/site/use, worker protections and jurisdiction before application.",
+        "feedback": "Marketing language and community use do not establish legal or safe use in the intended context.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Complete a pre-use authorization record",
+        "instructions": "Use a supplied training label, SDS and jurisdiction packet. Do not conduct a real application unless separately authorized and supervised.",
+        "prompts": [
+          "Record the exact product and label/version.",
+          "State the crop, site and intended use.",
+          "List the worker-protection controls that apply.",
+          "Record reentry/access information.",
+          "Identify the controlling jurisdiction/source.",
+          "State whether authorization is complete or whether the task must stop and escalate."
+        ],
+        "artifact": "Input/pesticide pre-use authorization record",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "No implied authorization",
+        "tone": "warning",
+        "body": "THC Academy training does not authorize pesticide application or other regulated input use. Real work must follow the current label, employer program and all applicable jurisdictional requirements.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      }
+    ],
+    "extensions": {
+      "practicalEvidenceId": "PRACTICAL-SAFETY-RESPONSIBLE-001",
+      "visualNeeds": [
+        {
+          "concept": "Product verification evidence map",
+          "teachingObjective": "Learner connects product identity, label, SDS, crop/site/use, worker protection and jurisdiction to one go/no-go decision."
+        },
+        {
+          "concept": "Application and reentry record example",
+          "teachingObjective": "Learner sees which fields preserve traceability and safe access decisions."
+        }
+      ],
+      "reviewState": "content-depth-expanded-human-sme-review-pending"
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
+}

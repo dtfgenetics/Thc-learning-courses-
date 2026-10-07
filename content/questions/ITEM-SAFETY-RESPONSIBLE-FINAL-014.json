@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-SAFETY-RESPONSIBLE-FINAL-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-SAFETY-HAZARDS-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A temporary repair keeps a damaged powered device running during harvest. The repair bypasses a guard but production would otherwise stop. What is the strongest decision?",
+  "choices": [
+    "Remove the device from service and use an authorized repair/replacement process before resuming the task",
+    "Continue because harvest is time-sensitive",
+    "Assign the most experienced worker to use it",
+    "Add PPE and continue"
+  ],
+  "correct": 0,
+  "rationale": "Production urgency does not justify defeating designed protections. The unsafe equipment should be removed from service and corrected through an authorized process.",
+  "references": [
+    "REF-SAFETY-OSHA-001",
+    "REF-SAFETY-OSHA-CONTROLS-002"
+  ],
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "certificationUseStatus": "not-authorized"
+  }
+}

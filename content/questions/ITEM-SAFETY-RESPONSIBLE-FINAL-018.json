@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-SAFETY-RESPONSIBLE-FINAL-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-SAFETY-CHEMICAL-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "A treated-area entry is requested, but the application record is incomplete and the team cannot confirm the current reentry restriction. What should the technician do?",
+  "choices": [
+    "Delay entry and escalate until the application/reentry requirements are verified",
+    "Enter briefly if no odor is present",
+    "Enter with gloves and document the missing record later",
+    "Use last month's reentry interval from memory"
+  ],
+  "correct": 0,
+  "rationale": "When reentry authorization cannot be verified, the safe and responsible action is to stop and resolve the missing information before entry.",
+  "references": [
+    "REF-SAFETY-EPA-WPS-003"
+  ],
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "certificationUseStatus": "not-authorized"
+  }
+}

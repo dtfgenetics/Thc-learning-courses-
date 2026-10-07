@@ -1,0 +1,33 @@
+{
+  "id": "ITEM-SAFETY-RESPONSIBLE-FINAL-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-SAFETY-HEAT-PPE-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which elements belong in a defensible hot-work plan for a greenhouse shift?",
+  "choices": [
+    "Workload and changing environmental conditions",
+    "Required PPE and its added heat burden",
+    "Water/recovery access and reassessment points",
+    "A rule that only workers who feel thirsty may pause",
+    "Emergency escalation expectations"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "rationale": "Heat planning should consider changing conditions, workload, PPE, hydration/recovery and emergency response. Thirst alone is not an adequate control strategy.",
+  "references": [
+    "REF-SAFETY-OSHA-001"
+  ],
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "certificationUseStatus": "not-authorized"
+  }
+}

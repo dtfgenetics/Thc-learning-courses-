@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-RESPONSIBLE-LEGAL-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-RESPONSIBLE-LEGAL-001",
+  "objective": "LO-RESPONSIBLE-RECORDS-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "A technician entered the wrong room ID in a treatment record and notices the error later. Which correction best preserves traceability?",
+  "choices": [
+    "Use the approved correction process to preserve the original entry, add the corrected value, reason, date/time and responsible person",
+    "Delete the original entry completely",
+    "Leave the error unchanged so the audit trail is not touched",
+    "Create a new unrelated record without linking it to the original"
+  ],
+  "correct": 0,
+  "rationale": "A trustworthy audit trail preserves what was originally recorded and documents the correction rather than erasing history.",
+  "references": [
+    "REF-SAFETY-OSHA-CONTROLS-002"
+  ]
+}

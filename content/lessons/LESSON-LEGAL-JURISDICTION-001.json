@@ -1,1 +1,209 @@
-{"id":"LESSON-LEGAL-JURISDICTION-001","title":"Jurisdiction, Licensing and How to Verify Current Rules","version":"1.0.0","status":"draft","competencies":["COMP-RESPONSIBLE-LEGAL-001"],"learningObjectives":["LO-LEGAL-JURISDICTION-001"],"estimatedMinutes":40,"references":["REF-LEGAL-USDA-001"],"assessment":null,"content":{"overview":"Cultivation legality is jurisdiction dependent. Learners should know how to identify the controlling authority and locate current primary regulatory information rather than treating a course, search result or old rule summary as legal authorization.","vocabulary":[{"term":"Jurisdiction","definition":"The geographic or legal authority under which a rule or license applies."},{"term":"Authorization","definition":"Formal permission required by an applicable law or regulatory program."},{"term":"Primary source","definition":"An official law, regulation, agency rule, license document or authoritative government publication."}],"sections":[{"title":"Start with the location","body":"The controlling cultivation rules depend on where the activity occurs and what crop/activity is involved. USDA's hemp framework, for example, may operate through a state, tribal or USDA program depending on location.","references":["REF-LEGAL-USDA-001"]},{"title":"Use official sources","body":"Current agency sites, statutes, regulations and license materials are stronger than forum posts or old summaries. Rules can change, so verify the version and effective date before acting.","references":["REF-LEGAL-USDA-001"]},{"title":"Educational content is not a license","body":"Completing a THC Academy course demonstrates educational achievement only. It does not grant permission to cultivate, possess, process, transport or sell cannabis or hemp.","references":["REF-LEGAL-USDA-001"]}],"workedExamples":["A grower moving operations to another state should re-check the controlling program rather than assuming the previous license or rules transfer.","If an old guide conflicts with a current agency page, verify the current regulation and effective date before relying on the guide."],"commonMistakes":["Assuming one state's rules apply nationally.","Treating hemp and non-hemp cannabis rules as interchangeable.","Treating a training certificate as legal authorization."],"practicalApplication":"For any proposed regulated activity, record the location, crop/activity, controlling agency, current rule or license source, effective date and unresolved questions before taking action.","summary":"Regulatory literacy means knowing how to verify the rule that actually applies. Location, activity, authority and current primary sources come before operational decisions."}}
+{
+  "id": "LESSON-LEGAL-JURISDICTION-001",
+  "title": "Jurisdiction, Licensing and How to Verify Current Rules",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-RESPONSIBLE-LEGAL-001"
+  ],
+  "learningObjectives": [
+    "LO-LEGAL-JURISDICTION-001"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-LEGAL-USDA-001",
+    "REF-LEGAL-USDA-PLANS-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Cultivation legality and authorization depend on the activity, crop category, location and controlling program. A responsible technician does not memorize one universal cannabis rule set; they identify the jurisdiction, determine which authority actually governs the proposed activity, locate the current primary source, preserve the effective/version date, and escalate unresolved questions before work proceeds. Training material, search snippets and old summaries are starting points for research, not legal authorization.",
+    "vocabulary": [
+      {
+        "term": "Jurisdiction",
+        "definition": "The geographic or legal authority under which a rule, license or enforcement program applies."
+      },
+      {
+        "term": "Authorization",
+        "definition": "Formal permission required by an applicable law, regulation, license or regulatory program."
+      },
+      {
+        "term": "Primary source",
+        "definition": "An official statute, regulation, agency rule, license document, product label or authoritative government publication."
+      },
+      {
+        "term": "Effective date",
+        "definition": "The date on which a rule or version becomes operative."
+      },
+      {
+        "term": "Source trail",
+        "definition": "The recorded sequence of official sources used to reach a regulatory conclusion."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Define the activity before searching for a rule",
+        "body": "Cultivation, possession, processing, transport, pesticide use, waste handling, employment activity and hemp production can be controlled by different authorities. Start with a precise description of the proposed activity and location so the research question is narrow enough to verify.",
+        "references": [
+          "REF-LEGAL-USDA-001"
+        ]
+      },
+      {
+        "title": "Location changes the controlling program",
+        "body": "USDA's hemp framework demonstrates why jurisdiction matters: depending on location, a producer may operate under an approved state or tribal plan or under a USDA producer license. Approved plans can also be revised. This example teaches a general verification habit; it should not be generalized to non-hemp cannabis authorization.",
+        "references": [
+          "REF-LEGAL-USDA-PLANS-002"
+        ]
+      },
+      {
+        "title": "Primary sources outrank summaries",
+        "body": "Current agency pages, statutes, regulations, license materials and official program documents are stronger authority than forum posts, search snippets, blog summaries or archived training material. Record the source and effective or update date when available so another reviewer can reconstruct the decision.",
+        "references": [
+          "REF-LEGAL-USDA-001",
+          "REF-LEGAL-USDA-PLANS-002"
+        ]
+      },
+      {
+        "title": "Hemp and non-hemp cannabis must not be conflated",
+        "body": "Federal hemp production rules do not establish that non-hemp cannabis cultivation, possession, processing or sale is authorized in a particular jurisdiction. The crop/activity classification must be part of the verification record before the learner decides which source applies.",
+        "references": [
+          "REF-LEGAL-USDA-PLANS-002"
+        ]
+      },
+      {
+        "title": "Authorization can be layered",
+        "body": "A lawful operation may need to satisfy more than one layer of authority, including federal requirements, state or tribal programs, local rules, license conditions and facility procedures. Finding one relevant source does not prove every required authorization has been satisfied.",
+        "references": [
+          "REF-LEGAL-USDA-001"
+        ]
+      },
+      {
+        "title": "Uncertainty is a stop-and-escalate condition",
+        "body": "When the learner cannot determine which authority controls, sources conflict, a license condition is unclear or the activity is outside their role, the correct educational response is to document the unresolved question and escalate it. Guessing from precedent is not responsible regulatory practice.",
+        "references": [
+          "REF-LEGAL-USDA-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A hemp producer moves a growing site to another state. The team verifies which program governs the new location rather than assuming the prior license or plan transfers.",
+      "A current agency page conflicts with a two-year-old compliance handout. The learner records both sources and escalates the discrepancy, using the current primary authority rather than silently choosing the older summary.",
+      "A worker finds USDA hemp guidance while researching a non-hemp cannabis activity. They record that the source does not establish authorization for the proposed activity and continue to the correct state/local authority.",
+      "A local license condition appears more restrictive than a general statewide FAQ. The learner flags the license-specific condition for responsible review instead of treating the FAQ as permission to ignore it."
+    ],
+    "commonMistakes": [
+      "Searching for 'cannabis law' without first defining location and activity.",
+      "Assuming one state's rules or license transfer to another jurisdiction.",
+      "Treating hemp and non-hemp cannabis frameworks as interchangeable.",
+      "Using a search snippet or blog summary without opening the primary source.",
+      "Failing to record an effective date, revision date or license version when one is available.",
+      "Treating a training certificate as legal authorization.",
+      "Proceeding when controlling authority or authorization remains unresolved."
+    ],
+    "practicalApplication": "Complete a jurisdiction-source verification record for a supplied scenario. State the exact location and proposed activity, identify the crop/activity classification, list the agencies or authorities that may control it, locate the strongest primary source available, record its effective or update date, describe what the source establishes and does not establish, and document unresolved questions that require escalation.",
+    "summary": "Regulatory literacy is a verification skill, not a memory contest. Responsible practice starts with the exact activity and location, distinguishes hemp from non-hemp cannabis, uses current primary sources, preserves source/version evidence, recognizes layered authority and stops when authorization remains unclear.",
+    "blocks": [
+      {
+        "type": "steps",
+        "title": "Verify jurisdiction before acting",
+        "items": [
+          {
+            "title": "Define the activity",
+            "body": "Describe exactly what is proposed: cultivation, hemp production, application, transport, processing, disposal or another regulated action."
+          },
+          {
+            "title": "Fix the location",
+            "body": "Identify the state, tribe, territory and local/facility context that may affect authority."
+          },
+          {
+            "title": "Classify the crop/activity",
+            "body": "Do not assume hemp and non-hemp cannabis are governed by the same program."
+          },
+          {
+            "title": "Identify authorities",
+            "body": "List the agencies, license programs and other controlling sources that may apply."
+          },
+          {
+            "title": "Open primary sources",
+            "body": "Use current official rules, program pages, licenses and agency documents rather than relying on summaries."
+          },
+          {
+            "title": "Record version/date",
+            "body": "Preserve update, effective or license-version information when available."
+          },
+          {
+            "title": "Escalate gaps",
+            "body": "Document unresolved questions and stop before treating uncertainty as permission."
+          }
+        ],
+        "references": [
+          "REF-LEGAL-USDA-001",
+          "REF-LEGAL-USDA-PLANS-002"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "A familiar rule in a new state",
+        "setting": "A cultivation worker moves from a state where they previously worked under one regulatory program to a facility in another state. They assume the same authorization and operating rules apply.",
+        "prompt": "What is the correct approach?",
+        "options": [
+          "Use the old state's rules until someone objects",
+          "Verify the new location's controlling authority, license/program requirements and current primary sources before relying on the old procedure",
+          "Use whichever online summary was updated most recently",
+          "Treat the Academy certificate as sufficient authorization"
+        ],
+        "answer": "Verify the new location's controlling authority, license/program requirements and current primary sources before relying on the old procedure.",
+        "feedback": "Regulatory authorization is jurisdiction- and activity-specific. Previous experience is useful context but not evidence that the same rule or license applies.",
+        "references": [
+          "REF-LEGAL-USDA-PLANS-002"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Create a jurisdiction-source verification note",
+        "instructions": "Use a supplied hypothetical case or an approved research exercise. This is a research and documentation activity, not legal advice.",
+        "prompts": [
+          "What exact activity and location are being evaluated?",
+          "Is the activity hemp-specific, non-hemp cannabis, or another regulated category?",
+          "Which authority appears to control it?",
+          "What current primary source did you open?",
+          "What effective/update date or version can you record?",
+          "What does the source establish?",
+          "What does it not establish?",
+          "What unresolved question requires escalation?"
+        ],
+        "artifact": "Jurisdiction and authority verification note",
+        "references": [
+          "REF-LEGAL-USDA-001",
+          "REF-LEGAL-USDA-PLANS-002"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Course boundary",
+        "tone": "warning",
+        "body": "This lesson teaches regulatory-literacy methods. It does not provide legal advice or grant permission to cultivate, possess, process, transport, apply pesticides, sell cannabis/hemp or perform any other regulated activity.",
+        "references": [
+          "REF-LEGAL-USDA-001"
+        ]
+      }
+    ],
+    "extensions": {
+      "practicalEvidenceId": "PRACTICAL-SAFETY-RESPONSIBLE-001",
+      "visualNeeds": [
+        {
+          "concept": "Jurisdiction verification decision tree",
+          "teachingObjective": "Learner moves from activity and location to crop classification, controlling authority, primary source and escalation."
+        },
+        {
+          "concept": "Primary-source hierarchy example",
+          "teachingObjective": "Learner distinguishes official rule/license/program sources from summaries, search snippets and informal advice."
+        }
+      ],
+      "reviewState": "content-depth-expanded-human-sme-review-pending"
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
+}

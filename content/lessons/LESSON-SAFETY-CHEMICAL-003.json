@@ -1,1 +1,205 @@
-{"id":"LESSON-SAFETY-CHEMICAL-003","title":"Chemical Labels, Pesticide Worker Protection and Decontamination","version":"1.0.0","status":"draft","competencies":["COMP-SAFETY-WORK-001"],"learningObjectives":["LO-SAFETY-CHEMICAL-003"],"estimatedMinutes":45,"references":["REF-SAFETY-OSHA-001"],"assessment":null,"content":{"overview":"Chemical handling should begin with identification, label instructions, hazard communication and applicable worker-protection requirements. Agricultural pesticide work can involve PPE, notification, restricted-entry intervals, decontamination and emergency-assistance requirements.","vocabulary":[{"term":"Restricted-entry interval","definition":"A period after a pesticide application during which entry into a treated area is restricted except under applicable rules."},{"term":"Safety Data Sheet","definition":"A document describing chemical hazards, handling, first aid and other safety information."},{"term":"Decontamination","definition":"Removal or reduction of hazardous contamination from skin, clothing, equipment or work areas."}],"sections":[{"title":"The label is a control document","body":"Chemical products must be identified and used according to applicable label and legal requirements. A product being available for sale does not automatically make every crop or site use lawful or safe.","references":["REF-SAFETY-OSHA-001"]},{"title":"Worker protection continues after application","body":"Agricultural pesticide rules can include training, notification, PPE, decontamination supplies and restricted-entry requirements for handlers and workers.","references":["REF-SAFETY-OSHA-001"]},{"title":"Emergency information must be accessible","body":"Workers need to know how to respond to spills or exposure, where washing supplies are located and how to obtain medical assistance and product information.","references":["REF-SAFETY-OSHA-001"]}],"workedExamples":["If a worker is asked to reenter a treated area, the application record and applicable restricted-entry requirement should be checked before entry.","If a product label does not include the intended crop/site use, do not assume a social-media recommendation makes that use acceptable."],"commonMistakes":["Using a product because another grower uses it without verifying the label and jurisdiction.","Removing PPE early because an application seems small.","Failing to provide decontamination supplies."],"practicalApplication":"Maintain accessible labels and safety information, document application and reentry information, verify required PPE and decontamination supplies, and train workers on exposure response before handling begins.","summary":"Chemical safety combines label compliance with worker protection. Handling, application, reentry and emergency response all require preparation and records."}}
+{
+  "id": "LESSON-SAFETY-CHEMICAL-003",
+  "title": "Chemical Labels, Pesticide Worker Protection and Decontamination",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SAFETY-WORK-001"
+  ],
+  "learningObjectives": [
+    "LO-SAFETY-CHEMICAL-003"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-SAFETY-OSHA-001",
+    "REF-SAFETY-EPA-WPS-003",
+    "REF-SAFETY-OSHA-HAZCOM-004"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Chemical and pesticide work requires more than recognizing a product name. Learners must verify the actual label and Safety Data Sheet, determine whether worker-protection requirements apply, identify required PPE and decontamination provisions, check reentry or access restrictions, know emergency-response information, and preserve a traceable record of the decision. Product availability, informal grow advice, or prior use does not establish that a current use is authorized or safe.",
+    "vocabulary": [
+      {
+        "term": "Restricted-entry interval",
+        "definition": "A period following a pesticide application during which entry to a treated area is restricted except under applicable requirements."
+      },
+      {
+        "term": "Safety Data Sheet",
+        "definition": "Standardized hazard, handling, exposure-response and other safety information for a chemical product."
+      },
+      {
+        "term": "Hazard communication",
+        "definition": "The system used to communicate chemical hazards through labels, Safety Data Sheets, information and training."
+      },
+      {
+        "term": "Decontamination",
+        "definition": "Removal or reduction of hazardous contamination from a person, clothing, equipment or work area."
+      },
+      {
+        "term": "Worker/handler",
+        "definition": "Roles used by EPA's Worker Protection Standard with different task and protection requirements; applicability must be verified for the operation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Start with product identity, label and SDS",
+        "body": "Before handling or recommending use, confirm the exact product identity and current label, then use the Safety Data Sheet for hazard communication, exposure information, first aid and handling context. Similar product names or an older label version can create false confidence. The record should preserve which label or source version supported the decision.",
+        "references": [
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "title": "Verify crop, site, use and jurisdiction before application",
+        "body": "A product being sold does not establish that every crop, production site, rate, method or jurisdictional use is allowed. The learner should verify the intended crop/site/use against the current label and applicable authority, and stop when authorization is unclear rather than relying on custom, social media or a previous season's practice.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "Worker protection extends beyond the spray event",
+        "body": "Where the Agricultural Worker Protection Standard or other applicable rules apply, protections can include training, application information, labeling access, PPE, notification, application restrictions, restricted-entry intervals, decontamination supplies and emergency assistance. Applicability must be verified for the operation and activity; the course teaches the verification process rather than assuming one rule set covers every cannabis or hemp workplace.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "PPE must match the task and remain usable",
+        "body": "Required PPE must be selected from the applicable label and workplace requirements, used correctly, maintained and replaced when damaged or contaminated. PPE does not make an otherwise unauthorized application acceptable, and it does not replace stronger exposure controls where those are available.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "title": "Decontamination and emergency information must be ready before work begins",
+        "body": "A response plan should identify where washing or decontamination supplies are located, how contaminated clothing or equipment will be handled, where emergency and product information can be accessed, and how medical assistance will be obtained if exposure occurs. Planning after an incident is too late.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      },
+      {
+        "title": "Reentry decisions require records, not memory",
+        "body": "When entry into a treated area is restricted, the decision should be based on the application record, label information and applicable access or reentry requirement. Workers should not be asked to rely on elapsed-time guesses or verbal memory when a documented restriction controls access.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A worker is asked to reenter a treated area. The correct process is to retrieve the application record and current label, verify the applicable access or restricted-entry requirement, and escalate if any required information is missing.",
+      "A product recommended in a forum is sold locally. Before use, the team verifies the exact label, intended crop/site/use, worker-protection requirements and jurisdiction. If the intended use is not supported, the recommendation is rejected.",
+      "A handler has the correct gloves but the required eye protection is damaged. The task does not proceed until required PPE is available in usable condition.",
+      "A spill occurs and the team can immediately retrieve the label/SDS, decontamination supplies and emergency contact process because those controls were confirmed before handling began."
+    ],
+    "commonMistakes": [
+      "Assuming a product is acceptable because it is sold online or in a garden store.",
+      "Using an old label, screenshot or secondhand recommendation instead of the current source.",
+      "Treating PPE as a substitute for crop/site/use authorization.",
+      "Guessing a reentry time from memory instead of verifying the record and applicable requirement.",
+      "Failing to provide accessible decontamination or emergency information before handling.",
+      "Discarding label/version and application records that are needed for traceability."
+    ],
+    "practicalApplication": "Complete a pre-use verification using a training product record or supervised real-world example. Record exact product identity, label/version, SDS location, intended crop/site/use, jurisdiction/source checked, PPE, decontamination supplies, worker communication, access/reentry controls, emergency information, required application records and any unresolved question that requires stop-work or escalation.",
+    "summary": "Responsible chemical handling is verification-driven. A defensible decision connects the exact product and current label to hazard communication, crop/site/use authorization, worker protection, PPE, decontamination, access restrictions, emergency response and traceable records before work begins.",
+    "blocks": [
+      {
+        "type": "steps",
+        "title": "Run a chemical pre-use verification",
+        "items": [
+          {
+            "title": "Identify",
+            "body": "Confirm the exact product and current label; do not rely on a nickname, memory or a similar product."
+          },
+          {
+            "title": "Read hazards",
+            "body": "Locate the Safety Data Sheet and review hazard communication, first-aid and handling information relevant to the task."
+          },
+          {
+            "title": "Verify use",
+            "body": "Check crop, site, intended use and the controlling jurisdiction or program."
+          },
+          {
+            "title": "Protect workers",
+            "body": "Determine required PPE, notification, decontamination, application restrictions and access/reentry controls that apply."
+          },
+          {
+            "title": "Prepare response",
+            "body": "Confirm emergency information, washing/decontamination resources and escalation contacts before handling starts."
+          },
+          {
+            "title": "Document",
+            "body": "Preserve label/version, decision source, application/access information and unresolved questions."
+          }
+        ],
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The product is familiar but the label changed",
+        "setting": "A team has used a product in previous seasons. A new container arrives with revised labeling, and a supervisor says to follow last year's procedure.",
+        "prompt": "What should the technician do before use?",
+        "options": [
+          "Use the old procedure because the product name is the same",
+          "Verify the current label, SDS, intended crop/site/use and applicable worker-protection requirements before proceeding",
+          "Use half the previous rate to be safe",
+          "Proceed if the required gloves are available"
+        ],
+        "answer": "Verify the current label, SDS, intended crop/site/use and applicable worker-protection requirements before proceeding.",
+        "feedback": "A familiar product name does not prove that current directions, authorization or worker-protection requirements are unchanged.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Build a label/SDS/WPS verification record",
+        "instructions": "Use a supplied training label and SDS or an approved supervised example. Do not perform a real application as part of this activity unless the learner is separately authorized and supervised under the applicable workplace program.",
+        "prompts": [
+          "What exact product and label/version did you verify?",
+          "What crop, site and intended use are being evaluated?",
+          "Which source establishes or limits authorization?",
+          "What PPE and worker-protection controls are required?",
+          "What access/reentry information must be preserved?",
+          "What decontamination and emergency information must be available?",
+          "What unresolved issue would require stop-work or escalation?"
+        ],
+        "artifact": "Chemical/input pre-use verification record",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003",
+          "REF-SAFETY-OSHA-HAZCOM-004"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Verification boundary",
+        "tone": "safety",
+        "body": "This lesson teaches how to verify requirements. It does not authorize pesticide handling, application, respirator use or entry into a treated area. Real work requires the applicable employer training, label compliance, jurisdictional authorization and worker-protection controls.",
+        "references": [
+          "REF-SAFETY-EPA-WPS-003"
+        ]
+      }
+    ],
+    "extensions": {
+      "practicalEvidenceId": "PRACTICAL-SAFETY-RESPONSIBLE-001",
+      "visualNeeds": [
+        {
+          "concept": "Annotated pesticide label and SDS crosswalk",
+          "teachingObjective": "Learner distinguishes label directions from SDS hazard communication and knows where each source supports a decision."
+        },
+        {
+          "concept": "Worker-protection timeline",
+          "teachingObjective": "Learner sees application, notification, access/reentry, decontamination and emergency-response controls as a sequence rather than isolated facts."
+        }
+      ],
+      "reviewState": "content-depth-expanded-human-sme-review-pending"
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
+}

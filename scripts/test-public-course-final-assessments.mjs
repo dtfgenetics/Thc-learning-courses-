@@ -36,7 +36,9 @@ const specs = [
     courseId: 'COURSE-SAFETY-RESPONSIBLE-001',
     finalAssessment: 'ASSESS-SAFETY-RESPONSIBLE-FINAL-001',
     itemPrefix: 'ITEM-SAFETY-RESPONSIBLE-FINAL-',
-    moduleAssessments: ['ASSESS-SAFETY-WORK-MODULE-001', 'ASSESS-RESPONSIBLE-LEGAL-MODULE-001']
+    moduleAssessments: ['ASSESS-SAFETY-WORK-MODULE-001', 'ASSESS-RESPONSIBLE-LEGAL-MODULE-001'],
+    itemCount: 24,
+    dedicatedItemBankSource: 'course-authored-source-backed-bank'
   }
 ];
 
@@ -55,10 +57,18 @@ for (const spec of specs) {
   assert.equal(final.extensions?.courseFinalProfile, 'public-noncredential-dedicated-bank');
   assert.equal(final.extensions?.certificationUseStatus, 'not-authorized');
   assert.deepEqual(final.extensions?.sourceModuleAssessments, spec.moduleAssessments);
-  assert.equal(final.extensions?.dedicatedItemBankSource, 'preserved-from-prior-course-final-branches');
+  assert.equal(
+    final.extensions?.dedicatedItemBankSource,
+    spec.dedicatedItemBankSource ?? 'preserved-from-prior-course-final-branches',
+    `${final.id} must declare the expected dedicated-bank provenance`
+  );
   assert.equal(final.feedbackMode, 'after-submit');
   assert.equal(final.passingScorePercent, 80);
-  assert.equal(final.items.length, 12, `${final.id} must expose a dedicated 12-item summative final bank`);
+  assert.equal(
+    final.items.length,
+    spec.itemCount ?? 12,
+    `${final.id} must expose the expected dedicated summative final bank size`
+  );
 
   const moduleAssessments = spec.moduleAssessments.map((id) => read(`content/assessments/${id}.json`));
   const moduleItems = moduleAssessments.flatMap((assessment) => assessment.items);

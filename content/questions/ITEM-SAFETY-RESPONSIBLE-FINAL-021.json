@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-SAFETY-RESPONSIBLE-FINAL-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-RESPONSIBLE-LEGAL-001",
+  "objective": "LO-LEGAL-LABEL-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A familiar brand of pesticide has a new concentration and label revision. A coworker suggests using last season's mixing and PPE notes because the brand name is unchanged. What is the best response?",
+  "choices": [
+    "Stop and verify the exact current label/SDS and applicable requirements for the product in hand",
+    "Use the old notes because the brand name is the same",
+    "Use half the old amount to compensate",
+    "Ask a social-media group which rate they prefer"
+  ],
+  "correct": 0,
+  "rationale": "Product identity, formulation and current source version must match the task. Familiarity with a brand does not substitute for current verification.",
+  "references": [
+    "REF-SAFETY-OSHA-HAZCOM-004",
+    "REF-SAFETY-EPA-WPS-003"
+  ],
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "certificationUseStatus": "not-authorized"
+  }
+}

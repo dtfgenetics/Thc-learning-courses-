@@ -1,1 +1,307 @@
-{"id":"LESSON-SAFETY-HAZARDS-001","title":"Cultivation Hazards: Tools, Machinery, Electrical and Work Areas","version":"1.0.0","status":"draft","competencies":["COMP-SAFETY-WORK-001"],"learningObjectives":["LO-SAFETY-HAZARDS-001"],"estimatedMinutes":40,"references":["REF-SAFETY-OSHA-001"],"assessment":null,"content":{"overview":"Cultivation work combines agricultural tools, powered equipment, wet floors, electricity, lifting and repetitive tasks. Safety starts by identifying the hazard, controlling it at the source where possible, using safe procedures and PPE, and keeping work areas maintained.","vocabulary":[{"term":"Hazard","definition":"A condition or activity with potential to cause injury, illness or damage."},{"term":"Engineering control","definition":"A physical change that reduces exposure to a hazard without relying only on worker behavior."},{"term":"PPE","definition":"Personal protective equipment worn to reduce exposure when other controls do not fully remove the hazard."}],"sections":[{"title":"Tools require condition and technique","body":"Cutting tools, ladders and powered equipment can cause serious injuries when damaged, unguarded or used incorrectly. Inspection, maintenance and manufacturer instructions are basic controls.","references":["REF-SAFETY-OSHA-001"]},{"title":"Wet cultivation spaces increase slip and electrical risk","body":"Irrigation leaks, cords and equipment can create overlapping hazards. Clear walkways, appropriate electrical protection and prompt cleanup reduce preventable incidents.","references":["REF-SAFETY-OSHA-001"]},{"title":"Control hierarchy is stronger than PPE alone","body":"Removing a hazard, separating workers from it or redesigning the task is generally stronger than relying solely on protective equipment or attention.","references":["REF-SAFETY-OSHA-001"]}],"workedExamples":["A damaged extension cord near irrigation water should be removed from service rather than covered with tape and left in use.","A repeated trip hazard from hoses is better addressed by routing and securing them than by telling workers to step carefully."],"commonMistakes":["Using damaged tools until failure.","Treating PPE as the only safety control.","Leaving wet floors or blocked aisles for later cleanup."],"practicalApplication":"Walk the workspace looking for cutting, electrical, trip, lifting and machinery hazards. Document the hazard, control, responsible person and correction status rather than relying on memory.","summary":"Safe cultivation work is designed, not improvised. Equipment condition, layout and source controls should reduce hazards before PPE becomes the final layer."}}
+{
+  "id": "LESSON-SAFETY-HAZARDS-001",
+  "title": "Cultivation Hazards: Tools, Machinery, Electrical and Work Areas",
+  "version": "1.1.1",
+  "status": "draft",
+  "competencies": [
+    "COMP-SAFETY-WORK-001"
+  ],
+  "learningObjectives": [
+    "LO-SAFETY-HAZARDS-001"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-SAFETY-OSHA-001",
+    "REF-SAFETY-OSHA-CONTROLS-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Cultivation work combines agricultural hand tools, powered equipment, wet surfaces, temporary cords, irrigation, ladders, repetitive motion, lifting, carts and time-sensitive crop work. Hazards often overlap: a leaking irrigation line can create both a slip hazard and an electrical exposure; a blocked aisle can make routine movement difficult and emergency response slower. Safe work therefore begins with a repeatable process: observe the task and environment, identify the hazard and who may be exposed, select the strongest practical control, document the correction, and verify that the control remains effective.",
+    "vocabulary": [
+      {
+        "term": "Hazard",
+        "definition": "A source, condition or activity with the potential to cause injury, illness, damage or loss."
+      },
+      {
+        "term": "Risk",
+        "definition": "The combination of how likely harm is and how severe the resulting harm could be in the actual work context."
+      },
+      {
+        "term": "Hierarchy of controls",
+        "definition": "A control framework that prioritizes eliminating or reducing hazards at the source before relying on procedures or personal protective equipment."
+      },
+      {
+        "term": "Engineering control",
+        "definition": "A physical design or equipment change that reduces exposure without depending only on worker attention or behavior."
+      },
+      {
+        "term": "Administrative control",
+        "definition": "A rule, schedule, procedure, training practice or work organization method used to reduce exposure to a hazard."
+      },
+      {
+        "term": "PPE",
+        "definition": "Personal protective equipment worn to reduce exposure when stronger controls do not fully remove the hazard."
+      },
+      {
+        "term": "Near miss",
+        "definition": "An event that did not cause injury or damage but had the realistic potential to do so and should be treated as useful prevention information."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Identify the task before choosing the control",
+        "body": "The same object can create different hazards depending on how it is used. A pruning tool may create a cut hazard during normal use, a puncture hazard when stored open, and a contamination hazard if it moves between plant groups without an approved sanitation process. Start by observing the actual task, work area, people exposed, equipment condition and surrounding conditions rather than assigning a generic label to the tool.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "title": "Use the strongest practical control",
+        "body": "PPE is important, but it should not be the first or only response when a hazard can be removed, isolated or redesigned. A hose repeatedly crossing a walkway is better rerouted or secured than managed indefinitely with warning signs. Damaged electrical equipment should be removed from service rather than made acceptable by telling workers to be careful around it. Procedures and PPE remain important layers when source controls cannot fully remove exposure.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "title": "Wet cultivation spaces create compound hazards",
+        "body": "Irrigation, floor drains, reservoirs, humid environments and frequent cleaning make cultivation spaces different from dry office settings. Water on a floor may cause slips, obscure damaged surfaces and increase concern around electrical equipment. Controls should address the whole condition: stop the source if possible, protect or isolate affected equipment, restore safe access, clean the area and document recurring causes rather than treating each puddle as an isolated housekeeping problem.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "title": "Tools and machinery require condition, authorization and guarding",
+        "body": "Before use, workers should know whether they are authorized for the task, whether the equipment is in safe condition and whether guards, interlocks or manufacturer-required controls are intact. Defects that affect safe operation should trigger removal from service and escalation. Improvised repairs, defeated guards and unfamiliar operation increase risk because they remove designed protections or create conditions the worker may not understand.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "title": "Manual handling and repetitive work are real cultivation hazards",
+        "body": "Moving media, water, trays, harvest containers and equipment can create lifting, carrying, pushing and repetitive-motion demands. Risk is affected by load weight, reach distance, repetition, awkward posture, floor condition and available handling equipment. Good control may involve changing container size, work height, route, staffing or mechanical assistance rather than relying only on lifting technique.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "title": "Emergency access must remain usable",
+        "body": "Production pressure can gradually turn walkways and work zones into storage areas. Carts, hoses, bags and harvest materials should not compromise required access, exits or emergency equipment. During a hazard walk, evaluate not only whether routine work is possible but whether a worker could move quickly and safely during an emergency.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "title": "Near misses and recurring hazards are prevention data",
+        "body": "A near miss is valuable because it reveals a failure before severe harm occurs. Repeated wet-floor events, damaged cords, unstable loads or blocked aisles indicate a system problem even when nobody has been hurt yet. Record the event, immediate correction, likely contributing factors and verification step so the organization can prevent recurrence rather than relying on memory.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A damaged extension cord is found beside an irrigation bench. The correct response is not to cover the damaged area and continue. Remove the cord from service, keep the affected area safe, report the defect and replace or repair it through an authorized process.",
+      "Workers repeatedly step over a nutrient hose that crosses a main aisle. A warning cone may reduce immediate risk, but rerouting or securing the hose addresses the source and is a stronger long-term control.",
+      "A worker strains while repeatedly lifting large wet-media containers from floor height. Training may help, but redesigning container size, storage height or handling equipment can reduce exposure for every worker performing the task.",
+      "A cart temporarily parked near an exit does not cause an incident, but it reduces emergency access. The near miss should trigger a storage/workflow correction rather than waiting for an evacuation problem."
+    ],
+    "commonMistakes": [
+      "Treating PPE as the first and only control even when a source control is practical.",
+      "Using damaged tools or electrical equipment until complete failure occurs.",
+      "Correcting a wet floor without investigating the leak or recurring source.",
+      "Ignoring repetitive handling because each individual lift seems manageable.",
+      "Defeating guards or improvising repairs to keep production moving.",
+      "Leaving temporary materials in aisles or near emergency access points.",
+      "Failing to document near misses because no injury occurred."
+    ],
+    "practicalApplication": "Perform a structured cultivation hazard walk. For each observed condition, record the task, hazard, people exposed, existing controls, potential severity, proposed control using the hierarchy of controls, responsible person, due date and verification step. At least one observation should evaluate compound risk such as water plus electricity, handling plus blocked access, or equipment condition plus worker authorization.",
+    "summary": "Cultivation safety is a systems discipline. Strong hazard control begins with the real task and environment, favors elimination or source control over worker vigilance alone, treats wet areas and production pressure as compound-risk conditions, keeps emergency access usable, and converts defects and near misses into documented corrective action.",
+    "blocks": [
+      {
+        "type": "table",
+        "title": "Translate a hazard into a stronger control",
+        "columns": [
+          "Observed condition",
+          "Weak response",
+          "Stronger response",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Hose crosses a work aisle",
+            "Tell workers to step over it",
+            "Reroute, bridge or secure the hose",
+            "Confirm clear walking path during normal operations"
+          ],
+          [
+            "Damaged cord near irrigation",
+            "Tape the damage and continue",
+            "Remove from service and use approved replacement/repair",
+            "Confirm replacement equipment and dry/safe routing"
+          ],
+          [
+            "Repeated heavy floor-level lifting",
+            "Remind workers to lift correctly",
+            "Change load size, storage height or handling method",
+            "Observe the revised task and worker reach/posture"
+          ],
+          [
+            "Cart blocks emergency access",
+            "Move it only when someone complains",
+            "Create a defined storage/parking location",
+            "Check access during routine hazard walks"
+          ]
+        ],
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Use a hazard-control loop",
+        "items": [
+          {
+            "title": "Observe",
+            "body": "Describe the real task, equipment, environment and people exposed."
+          },
+          {
+            "title": "Identify",
+            "body": "Name the hazard and plausible harm without jumping directly to a preferred solution."
+          },
+          {
+            "title": "Control",
+            "body": "Choose the strongest practical control, starting with elimination or source reduction before procedures and PPE."
+          },
+          {
+            "title": "Assign",
+            "body": "Record who owns the correction and when it should be completed."
+          },
+          {
+            "title": "Verify",
+            "body": "Confirm the control actually reduced the hazard and did not create a new one."
+          },
+          {
+            "title": "Learn",
+            "body": "If the hazard or near miss recurs, investigate the system cause rather than repeating the same temporary correction."
+          }
+        ],
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Water, electricity and production pressure",
+        "setting": "An irrigation connection is slowly leaking near a powered fan and an extension cord. Harvest work is underway and the aisle is busy.",
+        "prompt": "What is the strongest first response?",
+        "options": [
+          "Place a towel over the water and finish the harvest shift",
+          "Tell workers to avoid the wet area",
+          "Stop and isolate the affected condition, control the water/electrical hazards through authorized procedures, restore safe access and document the defect",
+          "Add more PPE and continue"
+        ],
+        "answer": "Stop and isolate the affected condition, control the water/electrical hazards through authorized procedures, restore safe access and document the defect.",
+        "feedback": "The condition combines multiple hazards. Production urgency does not make continued exposure acceptable, and PPE or warnings alone do not address the source.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Build a cultivation hazard-control record",
+        "instructions": "Use a supervised workspace, training photograph set or supplied room diagram. Identify at least six hazards across tools, electricity/water, access, manual handling, storage and equipment condition.",
+        "prompts": [
+          "What task or condition creates the hazard?",
+          "Who could be exposed?",
+          "What is the plausible harm?",
+          "Which level of the hierarchy of controls is currently being used?",
+          "What stronger control is practical?",
+          "Who owns the correction?",
+          "How and when will effectiveness be verified?"
+        ],
+        "artifact": "Cultivation hazard walk and control plan",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Minimum fields for a hazard record",
+        "description": "A useful hazard record should be specific enough that another authorized person can understand what was observed and what still needs to happen.",
+        "fields": [
+          {
+            "label": "Location/task",
+            "value": "Room, zone, equipment or activity"
+          },
+          {
+            "label": "Observed hazard",
+            "value": "Specific condition, not a vague label"
+          },
+          {
+            "label": "People exposed",
+            "value": "Roles or work groups"
+          },
+          {
+            "label": "Immediate control",
+            "value": "What was done now"
+          },
+          {
+            "label": "Corrective action",
+            "value": "Longer-term source/system control"
+          },
+          {
+            "label": "Owner and due date",
+            "value": "Responsible person and target completion"
+          },
+          {
+            "label": "Verification",
+            "value": "Evidence that the control worked"
+          }
+        ],
+        "note": "Do not use a training record as a substitute for legally required workplace forms or facility procedures.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Stop-work and escalation boundary",
+        "tone": "safety",
+        "body": "If equipment condition, electrical exposure, guarding, authorization or emergency access is unclear, stop the affected task and escalate through the facility's approved process. Training does not authorize a learner to repair, bypass or improvise around hazardous equipment.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-SAFETY-OSHA-CONTROLS-002"
+        ]
+      }
+    ],
+    "extensions": {
+      "practicalEvidenceId": "PRACT-SAFETY-HAZARD-CONTROL-001",
+      "visualNeeds": [
+        {
+          "concept": "Cultivation room hazard-identification photograph",
+          "teachingObjective": "Learner identifies overlapping wet-floor, electrical, access, storage and tool hazards in one realistic scene."
+        },
+        {
+          "concept": "Hierarchy-of-controls cultivation example",
+          "teachingObjective": "Learner compares elimination/source control, engineering controls, administrative controls and PPE using cultivation-specific examples."
+        }
+      ],
+      "reviewState": "content-depth-expanded-human-sme-review-pending"
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
+}

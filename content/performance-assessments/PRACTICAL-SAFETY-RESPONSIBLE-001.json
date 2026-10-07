@@ -1,0 +1,78 @@
+{
+  "id": "PRACTICAL-SAFETY-RESPONSIBLE-001",
+  "title": "Safety and Responsible Practice — Hazard, Authorization and Handoff Practical",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "summative",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-I-001",
+  "jobTasks": [
+    "TASK-CULT-SAFETY-001"
+  ],
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-RESPONSIBLE-LEGAL-001"
+  ],
+  "deliveryModes": [
+    "simulation",
+    "virtual-facility",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidenceOutputs": [
+    "Completed hazard-control worksheet",
+    "Chemical or input pre-use verification record",
+    "Jurisdiction and authority verification note",
+    "Incident or deviation record",
+    "Corrective-action and escalation handoff"
+  ],
+  "scoring": {
+    "totalPoints": 100,
+    "domains": [
+      {
+        "name": "Hazard recognition and prioritization",
+        "points": 20
+      },
+      {
+        "name": "Hierarchy-of-controls reasoning",
+        "points": 20
+      },
+      {
+        "name": "Label and authorization verification",
+        "points": 20
+      },
+      {
+        "name": "Emergency and stop-work response",
+        "points": 15
+      },
+      {
+        "name": "Records and traceability",
+        "points": 15
+      },
+      {
+        "name": "Escalation and handoff quality",
+        "points": 10
+      }
+    ]
+  },
+  "passingStandard": {
+    "minimumPercent": 80,
+    "noCriticalErrors": true
+  },
+  "criticalErrors": [
+    "Knowingly continues work through an unresolved electrical, chemical, heat, machinery, fall, or other serious safety hazard instead of stopping or escalating.",
+    "Directs or performs a chemical or pesticide use after the scenario shows that crop, site, label, worker-protection, or jurisdictional authorization is unresolved.",
+    "Knowingly enters or directs another worker into a restricted or otherwise unsafe area without verifying the applicable reentry or access control.",
+    "Falsifies, erases, or backdates a safety, application, exposure, incident, authorization, or corrective-action record to conceal a discrepancy."
+  ],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-SAFETY-RESPONSIBLE-001.md",
+  "extensions": {
+    "courseMappings": [
+      "COURSE-SAFETY-RESPONSIBLE-001"
+    ],
+    "cutScoreStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "assessorCalibrationRequired": true,
+    "evidenceRetentionRequired": true
+  }
+}
