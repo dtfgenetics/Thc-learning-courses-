@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-CRED-CFLOW-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-CANOPY-ADV-001",
+  "objective": "LO-CANOPY-ARCH-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which measurements improve a three-dimensional canopy review?",
+  "choices": [
+    "Top/mid/lower light measurements",
+    "Branch or flower-position records",
+    "Selected temperature/RH measurements",
+    "Only total plant height",
+    "Spacing and interior/edge position"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "rationale": "Canopy performance is spatial; multiple heights, positions, architecture and microclimate data improve interpretation.",
+  "references": [
+    "REF-CANOPY-001"
+  ]
+}
