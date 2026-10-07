@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-PROP-022",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-TC-ROOT-002",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One genotype performs well with an ex-vitro rooting transition while another performs poorly. What is the strongest program response?",
+  "choices": [
+    "Preserve genotype-specific transition data and avoid forcing one route onto every line",
+    "Use the better-performing route for every genotype without validation",
+    "Ignore survival because initial roots formed",
+    "Pool both genotypes into one average and discard identity"
+  ],
+  "correct": 0,
+  "rationale": "Genotype-specific transition performance should remain visible because one route may not generalize.",
+  "references": [
+    "REF-PROP-TC-2025-001"
+  ]
+}
