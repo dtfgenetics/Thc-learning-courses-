@@ -1,1 +1,77 @@
-{"id":"COURSE-CANOPY-FLOWERING-ADVANCED-001","title":"THC Advanced Canopy, Flowering and Reproductive Biology","version":"1.0.0","status":"draft","credentialBearing":true,"modules":["MOD-CANOPY-ADV-001","MOD-FLOWER-ADV-001"],"competencies":["COMP-CANOPY-ADV-001","COMP-FLOWER-ADV-001"],"finalAssessment":"ASSESS-CANOPY-FLOWERING-ADVANCED-FINAL-001"}
+{
+  "id": "COURSE-CANOPY-FLOWERING-ADVANCED-001",
+  "title": "THC Advanced Canopy, Flowering and Reproductive Biology",
+  "version": "1.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "modules": [
+    "MOD-CANOPY-ADV-001",
+    "MOD-FLOWER-ADV-001"
+  ],
+  "competencies": [
+    "COMP-CANOPY-ADV-001",
+    "COMP-FLOWER-ADV-001"
+  ],
+  "finalAssessment": "ASSESS-CANOPY-FLOWERING-ADVANCED-FINAL-001",
+  "description": "Advanced Canopy, Flowering and Reproductive Biology prepares experienced controlled-environment cultivation learners to evaluate canopy architecture, training response, spatial uniformity, flowering transition, reproductive-development signals and trichome observations using measured evidence and documented production objectives rather than technique names or visual impressions alone.",
+  "level": "advanced-workforce",
+  "intendedAudience": [
+    "Cultivation Technician II and senior cultivation technicians",
+    "Staff responsible for canopy measurements, training-performance review or flowering-stage observations",
+    "Learners progressing toward cultivation lead or crop-performance specialist pathways"
+  ],
+  "prerequisites": [
+    "Foundational plant architecture, light/environment and flowering-stage knowledge is recommended.",
+    "Learners should understand basic canopy, photoperiod, morphology and crop-record terminology.",
+    "Technician I-level measurement, documentation and workplace-safety competency is recommended before supervised practical work."
+  ],
+  "deliveryModes": [
+    "self-paced-online",
+    "instructor-led",
+    "simulation",
+    "supervised-lab",
+    "workplace-practice",
+    "paper-data-exercise"
+  ],
+  "learningOutcomes": [
+    "Evaluate canopy architecture using plant spacing, branch distribution, vertical structure and production objective rather than one preferred training style.",
+    "Assess training interventions using pre/post measurements, recovery evidence and stage/cultivar context.",
+    "Use spatial canopy and light-response evidence to distinguish room-wide from localized nonuniformity.",
+    "Interpret flowering transition as a developmental process influenced by photoperiod, genotype and environmental context.",
+    "Distinguish observed reproductive structures from unsupported assumptions about cause or crop-wide status.",
+    "Interpret sex-expression observations with appropriate uncertainty and escalation when evidence is incomplete.",
+    "Use trichome observations as one maturity/quality evidence stream without treating one visual cue as a universal harvest command.",
+    "Separate execution quality, genotype response and environment/light context when reviewing performance.",
+    "Document what should be repeated, modified within approved procedure or escalated after a canopy/flowering intervention.",
+    "Produce a supervisor-ready crop-performance review with measurements, images/observations, uncertainty, next checks and role boundaries."
+  ],
+  "evidencePolicy": "Course conclusions should use measured canopy/environment data, documented stage and cultivar context, repeatable observations and relevant peer-reviewed or university/extension evidence. Technique names, visual appearance and one-time observations must not be treated as universal proof of performance or maturity. Genotype- and study-specific reproductive findings must preserve their original context.",
+  "assessmentPolicy": "Instruction uses work orders, before/after measurement sets, spatial canopy cases, developmental-stage scenarios and evidence-based reproductive observations. Module checks are formative. The final credential assessment remains fail-closed until adequate bank depth, human review, accessibility review, pilot evidence and standard-setting are complete. Practical performance uses the canopy/flowering form of the existing Technician II Propagation / Canopy Performance Review practical.",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "qualityStandard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
+    "technicianIIAlignment": [
+      "TASK-CULT2-CANOPY-001"
+    ],
+    "requiredPerformanceAssessment": "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+    "practicalFormRequirement": "canopy/flowering",
+    "practicalEvidenceRequirements": [
+      "Canopy/Flowering Performance Review",
+      "Before/after measurement comparison",
+      "Pattern and recovery analysis",
+      "Supervisor-ready handoff"
+    ],
+    "roleBoundary": "Technician II may execute approved canopy/flowering work orders, evaluate crop response, perform permitted adjustments within procedure, document abnormal response and recommend next verification or escalation. The course does not authorize unrestricted environmental-program redesign, unsupported reproductive/genetic diagnosis or supervisory production-program ownership.",
+    "credentialStatement": "Successful completion may contribute to the THC Advanced Canopy, Flowering and Reproductive Biology certificate when all written assessment, practical, review, identity, issuance and release requirements are active. The credential documents educational/workforce achievement and is not a government license or independent personnel certification.",
+    "productionActivationRequirements": [
+      "Expand and validate final-assessment bank depth across all six objectives.",
+      "Require the canopy/flowering form of the mapped Technician II practical.",
+      "Record human SME and assessment review.",
+      "Complete accessibility review.",
+      "Run learner pilot and item-analysis review.",
+      "Calibrate practical assessors and document passing-threshold rationale.",
+      "Verify evidence-source freshness and learner rendering.",
+      "Verify credential identity, issuance and public-verification flow."
+    ]
+  }
+}
