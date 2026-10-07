@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-ENV-MAP-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One sensor consistently reads 3 °C warmer than two colocated peers. What is the best next step before redesigning the control strategy?",
+  "choices": [
+    "Verify sensor placement, shielding and calibration/verification status",
+    "Raise the room cooling setpoint",
+    "Average the three readings and assume all are valid",
+    "Move the plants instead of checking the sensor"
+  ],
+  "correct": 0,
+  "rationale": "Colocated disagreement is a data-quality signal. Measurement quality should be checked before system-level conclusions are made.",
+  "references": [
+    "REF-ENV-TEMP-2025-001"
+  ]
+}
