@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-PROP-024",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-TC-FIDELITY-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "A regenerated line shows abnormal morphology after many passages. What is the strongest next action within a QA program?",
+  "choices": [
+    "Quarantine the line from reference stock and investigate passage, regeneration route and comparison evidence before disposition",
+    "Ignore the abnormality because the material is clonal",
+    "Replace the reference record with the current line",
+    "Declare a specific mutation without testing"
+  ],
+  "correct": 0,
+  "rationale": "Abnormal morphology is a QA signal that warrants separation and investigation, not unsupported causal claims.",
+  "references": [
+    "REF-PROP-TC-2025-001",
+    "REF-PROP-REGEN-2025-001"
+  ]
+}
