@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-NIPM-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-NUTRIENT-DIAG-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Interveinal chlorosis appears only in one irrigation zone. What is the strongest next diagnostic step?",
+  "choices": [
+    "Check delivery, root-zone pH/EC and spatial context before changing a nutrient input",
+    "Diagnose a deficiency from color alone",
+    "Change several micronutrients immediately",
+    "Ignore the irrigation-zone pattern"
+  ],
+  "correct": 0,
+  "rationale": "A localized spatial pattern can indicate delivery or root-zone conditions. Visual symptoms alone are not a unique diagnosis.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-NUTRITION-001"
+  ]
+}
