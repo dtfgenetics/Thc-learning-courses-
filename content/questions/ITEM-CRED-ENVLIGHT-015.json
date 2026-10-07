@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-ENV-AIRFLOW-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Leaves nearest a circulation fan show faster drying while an interior canopy zone remains more humid. Which conclusion is best supported?",
+  "choices": [
+    "The room needs maximum fan speed everywhere",
+    "Air distribution is uneven and should be mapped/repositioned rather than judged by fan count alone",
+    "Humidity is unrelated to airflow",
+    "The interior sensor must be wrong"
+  ],
+  "correct": 1,
+  "rationale": "Strong local jets can coexist with stagnant zones. The useful next step is to evaluate distribution and local plant/environment response.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}
