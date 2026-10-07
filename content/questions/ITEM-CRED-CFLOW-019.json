@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-CFLOW-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-FLOWER-ADV-001",
+  "objective": "LO-FLOWER-TRANSITION-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two cultivars begin the same light schedule on the same date but show reproductive structures at different rates. What does this demonstrate?",
+  "choices": [
+    "Calendar time and biological developmental stage are not identical",
+    "The slower cultivar is automatically unhealthy",
+    "Every cultivar must transition on the same day",
+    "Photoperiod history is irrelevant"
+  ],
+  "correct": 0,
+  "rationale": "Developmental stage should be documented using morphology together with schedule history; cultivar response can differ.",
+  "references": [
+    "REF-LIGHT-001",
+    "REF-FLOWER-MORPH-2023-001"
+  ]
+}
