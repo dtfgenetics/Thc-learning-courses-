@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-022",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-IRR-SCHEDULE-002",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A moisture sensor is moved into a different substrate and begins reporting unfamiliar values. What should happen before using those values as absolute scheduling targets?",
+  "choices": [
+    "Verify sensor behavior and establish context/reference behavior in the new substrate",
+    "Apply the same raw-value targets from the previous substrate",
+    "Change several schedule variables at once",
+    "Ignore irrigation timestamps"
+  ],
+  "correct": 0,
+  "rationale": "Sensor output can depend on substrate and installation. Verification and contextual reference behavior are needed before treating raw readings as absolute targets.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-CRED-WATER-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-WATER-SOURCE-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which factors should trigger review or re-characterization of a water source?",
+  "choices": [
+    "A seasonal source change",
+    "A treatment-process change",
+    "A new blend of two sources",
+    "A change in sample date only with no process/source change",
+    "A known source-quality incident"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "rationale": "Source and treatment changes or known incidents can alter composition and should trigger review. A new date alone does not necessarily indicate a changed source.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}

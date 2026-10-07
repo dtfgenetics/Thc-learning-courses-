@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-WATER-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-IRR-SCHEDULE-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two rooms use the same irrigation clock schedule, but their root-zone dryback trends differ. Which explanation is most defensible?",
+  "choices": [
+    "Different environment, crop size, substrate, container or sensor context may be changing demand or measured response",
+    "Clock time guarantees identical root-zone behavior",
+    "The drier room always needs more fertilizer",
+    "Dryback is independent of plant demand"
+  ],
+  "correct": 0,
+  "rationale": "Root-zone response depends on multiple system variables. A shared clock schedule does not guarantee equal water demand or dryback.",
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-NUTRIENT-UPTAKE-2026-001"
+  ]
+}

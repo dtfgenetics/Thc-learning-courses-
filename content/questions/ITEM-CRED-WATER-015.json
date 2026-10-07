@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-WATER-SOURCE-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two source waters have the same EC. Why is that not enough to conclude they have the same composition or risk profile?",
+  "choices": [
+    "EC reflects bulk ionic conductivity but does not identify individual ions or contaminants",
+    "EC directly identifies every dissolved ion",
+    "Equal EC guarantees equal alkalinity",
+    "Equal EC proves equivalent microbiological quality"
+  ],
+  "correct": 0,
+  "rationale": "EC is a screening measure of conductivity. Different ionic mixtures and contaminant profiles can produce similar EC values.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}

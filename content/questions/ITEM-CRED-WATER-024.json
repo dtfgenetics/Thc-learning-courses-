@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-WATER-024",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-IRR-MASSBAL-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "A system shows rising root-zone EC while irrigation-in EC is stable and drainage volume has fallen. What is the strongest next interpretation step?",
+  "choices": [
+    "Review water/solute inputs, drainage, root-zone trend and delivery uniformity together before changing formulation",
+    "Increase concentration immediately",
+    "Assume the source-water lab is wrong",
+    "Ignore drainage because feed EC is stable"
+  ],
+  "correct": 0,
+  "rationale": "Mass-balance reasoning requires integrating what enters, leaves and accumulates. Stable feed EC does not rule out reduced drainage, distribution issues or root-zone accumulation.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-IRRIGATION-001"
+  ]
+}

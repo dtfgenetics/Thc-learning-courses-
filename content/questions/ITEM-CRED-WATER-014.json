@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-WATER-ALKALINITY-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician repeatedly adjusts water pH but root-zone pH continues to drift over time. Which missing measurement is especially important before changing treatment strategy?",
+  "choices": [
+    "Alkalinity",
+    "Fixture wattage",
+    "Canopy height",
+    "Air velocity only"
+  ],
+  "correct": 0,
+  "rationale": "Repeated root-zone pH drift can be influenced by source-water alkalinity and buffering load. pH adjustment alone does not characterize that load.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}

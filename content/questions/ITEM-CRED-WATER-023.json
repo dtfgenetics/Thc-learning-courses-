@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-IRR-MASSBAL-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A recirculating reservoir has stable EC but laboratory analysis shows the ratio of several ions has shifted. What does this demonstrate?",
+  "choices": [
+    "Stable EC does not guarantee stable ion composition",
+    "Stable EC proves every individual ion is unchanged",
+    "Ion ratios cannot change in recirculating systems",
+    "EC is an element-specific measurement"
+  ],
+  "correct": 0,
+  "rationale": "EC reflects total ionic conductivity, not the concentration of each individual ion. Selective uptake and accumulation can change composition while bulk EC remains similar.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002"
+  ]
+}
