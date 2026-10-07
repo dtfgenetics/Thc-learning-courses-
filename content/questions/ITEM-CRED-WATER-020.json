@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-CRED-WATER-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-IRR-UNIFORMITY-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which observations are useful in an irrigation distribution-uniformity investigation?",
+  "choices": [
+    "Representative catch volumes",
+    "Near/far and high/low system positions",
+    "Filter condition or pressure information",
+    "One nominal emitter rating from a catalog",
+    "Repeated problem-zone output measurements"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "rationale": "Uniformity is measured across representative system positions and should be interpreted with pressure/filtration context. A nominal rating alone is not proof of installed performance.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}
