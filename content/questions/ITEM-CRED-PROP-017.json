@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-PROP-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-TC-CONTAM-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Contamination repeatedly appears in cultures from one donor line but not others handled in the same session. What is the strongest next step?",
+  "choices": [
+    "Investigate donor/source-material contamination while preserving other hypotheses",
+    "Assume the transfer hood is the only cause",
+    "Discard all records and restart",
+    "Change every process variable simultaneously"
+  ],
+  "correct": 0,
+  "rationale": "A donor-linked cluster supports source-material investigation, but the cause should not be declared confirmed without further evidence.",
+  "references": [
+    "REF-PROP-001",
+    "REF-IPM-001"
+  ]
+}
