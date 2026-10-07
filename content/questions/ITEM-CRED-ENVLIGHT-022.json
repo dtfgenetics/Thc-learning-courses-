@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-022",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LIGHT-DISTRIBUTION-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which values are useful for describing a PPFD map rather than reporting one center reading?",
+  "choices": [
+    "Average",
+    "Minimum",
+    "Maximum",
+    "Spatial pattern/variability",
+    "Fixture marketing name"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "rationale": "A useful light map describes distribution, not just one center value or a fixture label.",
+  "references": [
+    "REF-CANOPY-001",
+    "REF-LIGHT-INTERCANOPY-2025-001"
+  ]
+}
