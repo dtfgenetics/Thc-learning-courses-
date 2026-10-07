@@ -1,1 +1,77 @@
-{"id":"COURSE-WATER-IRRIGATION-ADVANCED-001","title":"THC Advanced Water Quality and Irrigation","version":"1.0.0","status":"draft","credentialBearing":true,"modules":["MOD-WATER-QUALITY-ADV-001","MOD-IRRIGATION-ADV-001"],"competencies":["COMP-WATER-QUALITY-ADV-001","COMP-IRRIGATION-ADV-001"],"finalAssessment":"ASSESS-WATER-IRRIGATION-ADVANCED-FINAL-001"}
+{
+  "id": "COURSE-WATER-IRRIGATION-ADVANCED-001",
+  "title": "THC Advanced Water Quality and Irrigation",
+  "version": "1.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "modules": [
+    "MOD-WATER-QUALITY-ADV-001",
+    "MOD-IRRIGATION-ADV-001"
+  ],
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "finalAssessment": "ASSESS-WATER-IRRIGATION-ADVANCED-FINAL-001",
+  "description": "Advanced Water Quality and Irrigation prepares experienced controlled-environment cultivation learners to characterize source water, distinguish pH from alkalinity, verify pH/EC measurement quality, evaluate irrigation distribution, interpret root-zone moisture and dryback trends, and use water/solute mass-balance evidence to separate delivery, scheduling, source-water and accumulation problems.",
+  "level": "advanced-workforce",
+  "intendedAudience": [
+    "Cultivation Technician II and senior cultivation technicians",
+    "Staff responsible for irrigation-system verification, water-quality records, meter control or root-zone trend review",
+    "Learners progressing toward cultivation lead, irrigation or controlled-environment specialist pathways"
+  ],
+  "prerequisites": [
+    "THC Cultivation Foundations or equivalent plant-water/root-zone knowledge is recommended.",
+    "Learners should understand basic pH, EC, irrigation-volume and root-zone moisture terminology.",
+    "Technician I-level measurement, documentation, safety and procedure-following competency is recommended before supervised practical work."
+  ],
+  "deliveryModes": [
+    "self-paced-online",
+    "instructor-led",
+    "simulation",
+    "supervised-lab",
+    "workplace-practice",
+    "paper-data-exercise"
+  ],
+  "learningOutcomes": [
+    "Distinguish water pH from alkalinity and explain why repeated bicarbonate/alkalinity loading can influence root-zone behavior over time.",
+    "Build a source-water characterization plan using pH, EC, alkalinity, source history and risk-based chemistry or contaminant testing rather than one screening number.",
+    "Verify pH/EC measurement quality using device identity, calibration/verification records, standards, cleaning history and comparison checks before changing crop inputs.",
+    "Measure irrigation distribution across representative locations and interpret emitter-output variation, pressure and filtration evidence.",
+    "Interpret root-zone moisture/dryback trends in the context of substrate, container, environment, crop stage and sensor verification rather than universal dryback targets.",
+    "Evaluate irrigation timing and volume changes one variable at a time and use measured root-zone response to determine whether the change improved control.",
+    "Interpret irrigation-in, drainage/return, EC, volume and reservoir trends using a mass-balance framework.",
+    "Recognize when stable bulk EC can still hide changing ion ratios or localized root-zone accumulation.",
+    "Separate likely source-water, measurement, distribution, scheduling, root-zone and recirculation problems before recommending corrective action.",
+    "Produce a supervisor-ready irrigation/root-zone diagnostic record with measurements, uncertainty, next checks, permitted actions and escalation boundaries."
+  ],
+  "evidencePolicy": "Course conclusions should rely on verified measurements, source-water records, irrigation-distribution data, root-zone trends and peer-reviewed or university/extension evidence where available. The course must distinguish screening measurements such as EC from ion-specific or contaminant testing, and must not present one pH, EC, dryback, pulse count or runoff percentage as a universal target across media, containers, cultivars, facilities or crop stages.",
+  "assessmentPolicy": "Instruction uses water-analysis records, meter-verification cases, emitter catch tests, root-zone trend interpretation, scheduling scenarios and mass-balance exercises. Module checks are formative. The final credential assessment remains fail-closed until adequate bank depth, human review, accessibility review, pilot evidence and standard-setting are complete. Practical performance is demonstrated through the existing Technician II Fertigation & Root-Zone Troubleshooting practical, including measurement verification, distribution/scheduling reasoning, records and escalation.",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "qualityStandard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
+    "technicianIIAlignment": [
+      "TASK-CULT2-FERTIGATION-001",
+      "TASK-CULT2-ROOTZONE-001"
+    ],
+    "requiredPerformanceAssessment": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+    "practicalEvidenceRequirements": [
+      "Completed batch or source-water record",
+      "Measurement-verification record",
+      "Root-zone and irrigation diagnostic memo",
+      "Next-check or correction recommendation"
+    ],
+    "roleBoundary": "Technician II may verify measurements, execute approved procedures, evaluate irrigation distribution and root-zone trends, identify likely faults, and recommend next verification or escalation. The course does not authorize unapproved recipe changes, unrestricted chemical treatment, plumbing/electrical repair, or facility-level irrigation design outside assigned authority.",
+    "credentialStatement": "Successful completion may contribute to the THC Advanced Water Quality and Irrigation certificate when all written assessment, practical, review, identity, issuance and release requirements are active. The credential documents educational/workforce achievement and is not a government license or independent personnel certification.",
+    "productionActivationRequirements": [
+      "Expand and validate final-assessment bank depth across all six objectives.",
+      "Require and verify the mapped Technician II practical performance evidence.",
+      "Record human SME and assessment review.",
+      "Complete accessibility review.",
+      "Run learner pilot and item-analysis review.",
+      "Document passing-threshold standard-setting rationale.",
+      "Verify evidence-source freshness and public learner rendering.",
+      "Verify credential identity, issuance and public-verification flow."
+    ]
+  }
+}
