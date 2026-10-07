@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-PROP-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-TC-ASEPSIS-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Contamination appears mainly in cultures handled during one transfer window, across several unrelated genotypes. Which explanation deserves priority review?",
+  "choices": [
+    "Workspace sequence and handling during that transfer window",
+    "A universal genotype defect",
+    "Only the medium formula",
+    "Random chance with no need to review records"
+  ],
+  "correct": 0,
+  "rationale": "Clustering by transfer window across unrelated genotypes points first toward shared workflow, operator or environment factors.",
+  "references": [
+    "REF-PROP-001",
+    "REF-PROP-TC-2025-001"
+  ]
+}
