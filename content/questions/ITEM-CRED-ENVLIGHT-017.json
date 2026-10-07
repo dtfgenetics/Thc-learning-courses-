@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-ENVLIGHT-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-ENV-LOADS-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Temperature remains near target after irrigation, but RH rises sharply and stays elevated. Which problem is most directly suggested?",
+  "choices": [
+    "Insufficient latent-moisture removal or control sequencing",
+    "Excessive visible-light spectrum",
+    "A guaranteed sensor failure",
+    "Too little photoperiod"
+  ],
+  "correct": 0,
+  "rationale": "A stable temperature with persistent moisture increase points toward latent load handling or control sequencing rather than a simple sensible-cooling problem.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}
