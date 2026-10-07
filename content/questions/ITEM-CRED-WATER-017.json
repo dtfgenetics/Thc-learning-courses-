@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-WATER-METER-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A pH reading changes sharply on one older probe, while a second verified meter remains stable. What should happen before changing system inputs?",
+  "choices": [
+    "Verify the suspect probe with appropriate standards and comparison checks",
+    "Change the system immediately to match the older probe",
+    "Average both meters without checking either one",
+    "Discard the second meter because it disagrees"
+  ],
+  "correct": 0,
+  "rationale": "Unexpected readings should be verified before they drive operational changes. Instrument drift or fouling can create false problems.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}
