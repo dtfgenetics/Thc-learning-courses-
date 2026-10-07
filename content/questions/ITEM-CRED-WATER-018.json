@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-WATER-METER-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A meter passes calibration but repeatedly fails verification later in the shift. What is the strongest interpretation?",
+  "choices": [
+    "Measurement control is unstable and the device/process requires investigation before results are trusted",
+    "Passing calibration once proves every later reading is valid",
+    "Verification failures can be ignored if the display looks reasonable",
+    "The crop should be adjusted instead of checking the instrument"
+  ],
+  "correct": 0,
+  "rationale": "Calibration and verification serve different purposes. Repeated verification failure indicates measurement quality is not under control.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}
