@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-NIPM-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-NUTRIENT-EC-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Root-zone EC rises while input EC remains stable. Which interpretation is most defensible?",
+  "choices": [
+    "Investigate water balance, delivery, selective uptake and accumulation before changing formulation",
+    "The input meter must be wrong",
+    "Stable input EC proves root-zone EC cannot rise",
+    "Add more nutrients immediately"
+  ],
+  "correct": 0,
+  "rationale": "Root-zone concentration can change through water removal, uptake, irrigation behavior and accumulation even when input EC is stable.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-NUTRIENT-UPTAKE-2026-001"
+  ]
+}

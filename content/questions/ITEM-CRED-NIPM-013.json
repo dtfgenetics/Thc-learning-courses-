@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-NIPM-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-NUTRIENT-INTERACT-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A crop shows a response after several nutrient inputs were changed at the same time. What is the main diagnostic problem?",
+  "choices": [
+    "The effects are confounded, making it hard to attribute the response to one change",
+    "Multiple changes always improve diagnosis",
+    "The response proves every changed input was deficient",
+    "Nutrient interactions no longer matter"
+  ],
+  "correct": 0,
+  "rationale": "Changing several inputs together reduces interpretability. Advanced diagnosis preserves interaction context and changes one controllable factor at a time when practical.",
+  "references": [
+    "REF-NUTRITION-001",
+    "REF-ROOTZONE-NUTRIENT-002"
+  ]
+}

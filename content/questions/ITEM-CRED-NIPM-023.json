@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-NIPM-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-IPM-INTEGRATE-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "After an intervention, symptoms appear lower during one quick check. What evidence is needed before declaring control success?",
+  "choices": [
+    "Repeat scouting using comparable incidence, severity and spread measures",
+    "No additional evidence; one improvement proves success",
+    "Only the product label",
+    "A different scouting route with no baseline"
+  ],
+  "correct": 0,
+  "rationale": "Intervention efficacy should be measured against a baseline with repeatable follow-up, not inferred from one isolated observation.",
+  "references": [
+    "REF-IPM-001"
+  ]
+}

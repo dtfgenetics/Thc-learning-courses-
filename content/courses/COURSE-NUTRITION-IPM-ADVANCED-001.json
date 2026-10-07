@@ -1,1 +1,77 @@
-{"id":"COURSE-NUTRITION-IPM-ADVANCED-001","title":"THC Advanced Nutrition, Diagnostics and Plant Health","version":"1.0.0","status":"draft","credentialBearing":true,"modules":["MOD-NUTRIENT-DIAG-001","MOD-IPM-ADV-001"],"competencies":["COMP-NUTRIENT-DIAG-001","COMP-IPM-ADV-001"],"finalAssessment":"ASSESS-NUTRITION-IPM-ADVANCED-FINAL-001"}
+{
+  "id": "COURSE-NUTRITION-IPM-ADVANCED-001",
+  "title": "THC Advanced Nutrition, Diagnostics and Plant Health",
+  "version": "1.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "modules": [
+    "MOD-NUTRIENT-DIAG-001",
+    "MOD-IPM-ADV-001"
+  ],
+  "competencies": [
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-IPM-ADV-001"
+  ],
+  "finalAssessment": "ASSESS-NUTRITION-IPM-ADVANCED-FINAL-001",
+  "description": "Advanced Nutrition, Diagnostics and Plant Health prepares experienced controlled-environment cultivation learners to interpret nutrient interactions, evaluate EC and root-zone evidence, build structured differentials, design consistent scouting systems, distinguish biotic from abiotic look-alikes, and evaluate integrated plant-health interventions using measured follow-up rather than visual guesswork.",
+  "level": "advanced-workforce",
+  "intendedAudience": [
+    "Cultivation Technician II and senior cultivation technicians",
+    "Staff responsible for crop diagnostics, scouting, plant-health records or intervention follow-up",
+    "Learners progressing toward cultivation lead, diagnostics or plant-health specialist pathways"
+  ],
+  "prerequisites": [
+    "THC Cultivation Foundations or equivalent plant nutrition, root-zone and IPM knowledge is recommended.",
+    "Learners should understand basic EC, pH, irrigation, symptom-pattern and scouting terminology.",
+    "Technician I-level observation, documentation, biosecurity and workplace-safety competency is recommended before supervised practical work."
+  ],
+  "deliveryModes": [
+    "self-paced-online",
+    "instructor-led",
+    "simulation",
+    "supervised-lab",
+    "workplace-practice",
+    "paper-data-exercise"
+  ],
+  "learningOutcomes": [
+    "Interpret nutrient interactions and explain why a single nutrient concentration or fertilizer label cannot be treated as a universal crop requirement.",
+    "Build a differential diagnosis from symptom pattern, tissue context, root-zone evidence, irrigation history and environmental history before recommending a correction.",
+    "Interpret EC as a concentration/mass-balance signal while recognizing that stable EC can hide changing ion composition.",
+    "Design a repeatable scouting plan with fixed zones, sampling effort, location/batch identity and severity/incidence categories.",
+    "Separate signs, symptoms and look-alike causes and select confirmation proportional to the consequence of being wrong.",
+    "Use spatial and temporal scouting evidence to distinguish isolated, batch-linked and room-wide plant-health patterns.",
+    "Evaluate an intervention using before/after incidence, severity, spread and repeated scouting rather than assuming efficacy from one observation.",
+    "Preserve legal and authorization boundaries when reviewing pest/disease-control options and product claims.",
+    "Separate measured observations, working hypotheses and unresolved causes in plant-health documentation.",
+    "Produce a supervisor-ready diagnostic or IPM follow-up record with evidence, confidence, next checks, outcome measures and escalation boundaries."
+  ],
+  "evidencePolicy": "Course conclusions should integrate verified measurements, scouting records, root-zone/environment context, tissue/laboratory evidence when available, and peer-reviewed or university/extension sources. Visual symptoms alone must not be presented as definitive diagnosis. Treatment/product availability must not be represented as legal authorization, and study-specific nutrient or plant-health findings must preserve crop stage, system, cultivar and evidence limits.",
+  "assessmentPolicy": "Instruction uses differential-diagnosis worksheets, scouting maps, trend tables, root-zone/EC cases, look-alike problems and intervention follow-up scenarios. Module checks are formative. The final credential assessment remains fail-closed until adequate bank depth, human review, accessibility review, pilot evidence and standard-setting are complete. Practical performance is demonstrated through the existing Technician II IPM Trend & Treatment Follow-Up practical; nutrition-specific reasoning is evaluated through integrated diagnostic cases and evidence review.",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "qualityStandard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
+    "technicianIIAlignment": [
+      "TASK-CULT2-IPM-001",
+      "TASK-CULT2-DIAG-001"
+    ],
+    "requiredPerformanceAssessment": "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+    "practicalEvidenceRequirements": [
+      "IPM Trend & Treatment Follow-Up Report",
+      "Annotated scouting map",
+      "Next-round follow-up plan",
+      "Diagnostic evidence table or differential record"
+    ],
+    "roleBoundary": "Technician II may collect and interpret evidence, perform approved scouting and follow-up, execute authorized routine controls, document diagnostic hypotheses, and recommend next verification or escalation. The course does not authorize pesticide selection outside assigned authority, unapproved formulation changes, laboratory diagnosis beyond available evidence, or supervisory program ownership.",
+    "credentialStatement": "Successful completion may contribute to the THC Advanced Nutrition, Diagnostics and Plant Health certificate when all written assessment, practical, review, identity, issuance and release requirements are active. The credential documents educational/workforce achievement and is not a government license or independent personnel certification.",
+    "productionActivationRequirements": [
+      "Expand and validate final-assessment bank depth across all six objectives.",
+      "Require and verify the mapped Technician II plant-health practical evidence.",
+      "Record human SME and assessment review.",
+      "Complete accessibility review.",
+      "Run learner pilot and item-analysis review.",
+      "Document passing-threshold standard-setting rationale.",
+      "Verify evidence-source freshness and public learner rendering.",
+      "Verify credential identity, issuance and public-verification flow."
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-CRED-NIPM-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-NUTRIENT-DIAG-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which evidence streams strengthen a nutrient differential diagnosis?",
+  "choices": [
+    "Symptom location and progression",
+    "Root-zone pH/EC and irrigation history",
+    "Consistent tissue-sampling context",
+    "Environmental history",
+    "A single photograph with no context"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "rationale": "Reliable diagnosis triangulates symptoms with root-zone, irrigation, tissue and environmental context.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-NUTRITION-001"
+  ]
+}

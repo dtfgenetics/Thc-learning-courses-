@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-NIPM-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-NUTRIENT-EC-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A solution maintains similar EC after a formulation change. What can you conclude about individual ion composition?",
+  "choices": [
+    "Very little; similar EC does not prove the same ion composition",
+    "Every ion is unchanged",
+    "The formulation change had no effect",
+    "EC identifies each nutrient separately"
+  ],
+  "correct": 0,
+  "rationale": "EC measures bulk ionic conductivity, not individual ion concentrations.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002"
+  ]
+}
