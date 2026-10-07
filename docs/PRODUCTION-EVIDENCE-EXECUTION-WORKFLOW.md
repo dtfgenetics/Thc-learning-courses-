@@ -154,3 +154,13 @@ With an MFA-asserted admin test token:
 The existing admin diagnostics endpoint exposes only whitelisted signer metadata: whether a signer is configured, the signer adapter kind, and public issuer identity (`issuerId`, name, HTTPS URL). No private key, signature, seed, PEM, or provider secret is exposed.
 
 This verifies deployed signer/issuer configuration only. It does not perform the controlled signing smoke test, validate key custody, or satisfy credential-signing approval by itself.
+
+## Backup and monitoring evidence semantics
+
+Backup/restore and monitoring/alerting evidence is validated beyond field presence.
+
+Backup evidence must include ISO-8601 UTC timestamps for the successful backup and restore drill, the restore drill cannot precede the backup, the backup job and isolated restore target must be identifiable values, and the observation must explicitly include both RPO and RTO.
+
+Monitoring evidence must identify the deployed telemetry source and alert rules, include an ISO-8601 UTC synthetic/test-alert timestamp, and identify both the alert delivery record and owner acknowledgement. Obvious placeholders such as `TBD`, `pending`, `placeholder`, or `none` fail closed.
+
+These checks validate evidence shape and plausibility only; they do not generate or substitute for the real provider-backed backup, restore, alert-delivery, or acknowledgement evidence.
