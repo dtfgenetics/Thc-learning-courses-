@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-CRED-NIPM-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-IPM-SCOUT-ADV-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which fields make plant-health scouting data more useful for trend analysis?",
+  "choices": [
+    "Location or zone ID",
+    "Batch/crop identity",
+    "Sampling effort",
+    "Incidence/severity category",
+    "Only positive findings"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "rationale": "Location, identity, effort and standardized outcome categories make observations comparable. Negative findings should also be preserved.",
+  "references": [
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ]
+}
