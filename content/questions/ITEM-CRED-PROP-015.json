@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-PROP-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-TC-ESTABLISH-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One genotype establishes well while another performs poorly under the same medium and operator. What is the strongest interpretation?",
+  "choices": [
+    "Genotype response should be treated as a plausible factor and evaluated rather than pooled away",
+    "The operator must be at fault",
+    "One result proves a universal medium failure",
+    "All genotypes should be expected to respond identically"
+  ],
+  "correct": 0,
+  "rationale": "Genotype-by-treatment interactions are common enough that establishment outcomes should be analyzed by genotype.",
+  "references": [
+    "REF-PROP-TC-2025-001",
+    "REF-PROP-REGEN-2025-001"
+  ]
+}

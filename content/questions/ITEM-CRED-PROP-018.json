@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-PROP-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-TC-CONTAM-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "A contamination event could plausibly come from donor material, one medium lot, or a transfer-day workflow error. What corrective-action strategy preserves the most diagnostic value?",
+  "choices": [
+    "Use the records to rank hypotheses and change the smallest number of variables needed to test them",
+    "Change donor, medium, disinfectant and workflow all at once",
+    "Declare the first suspected cause confirmed",
+    "Ignore clustering and treat every vessel independently"
+  ],
+  "correct": 0,
+  "rationale": "Corrective action should reduce uncertainty without destroying the ability to identify which factor mattered.",
+  "references": [
+    "REF-IPM-001"
+  ]
+}

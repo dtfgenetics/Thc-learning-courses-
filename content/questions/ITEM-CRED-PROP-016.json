@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-PROP-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-TC-ESTABLISH-002",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two explant types from the same donor line show different survival and regeneration behavior. What should the reviewer avoid concluding?",
+  "choices": [
+    "That one explant response automatically defines the behavior of all tissue types",
+    "That explant type may influence response",
+    "That donor identity should remain traceable",
+    "That the comparison should preserve tissue context"
+  ],
+  "correct": 0,
+  "rationale": "Explant type is itself an experimental factor. One tissue response should not be generalized to all tissues.",
+  "references": [
+    "REF-PROP-REGEN-2025-001"
+  ]
+}

@@ -1,1 +1,74 @@
-{"id":"COURSE-PROP-ADVANCED-001","title":"THC Advanced Propagation and Tissue Culture","version":"1.0.0","status":"draft","credentialBearing":true,"modules":["MOD-TC-ASEPTIC-001","MOD-TC-REGEN-001"],"competencies":["COMP-TC-ASEPTIC-001","COMP-TC-REGEN-001"],"finalAssessment":"ASSESS-PROP-ADVANCED-FINAL-001"}
+{
+  "id": "COURSE-PROP-ADVANCED-001",
+  "title": "THC Advanced Propagation and Tissue Culture",
+  "version": "1.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "modules": [
+    "MOD-TC-ASEPTIC-001",
+    "MOD-TC-REGEN-001"
+  ],
+  "competencies": [
+    "COMP-TC-ASEPTIC-001",
+    "COMP-TC-REGEN-001"
+  ],
+  "finalAssessment": "ASSESS-PROP-ADVANCED-FINAL-001",
+  "description": "Advanced Propagation and Tissue Culture prepares experienced plant-production learners to evaluate aseptic workflow, culture establishment, contamination patterns, multiplication/regeneration tradeoffs, acclimatization performance and germplasm-fidelity evidence using traceable batch records and controlled comparisons.",
+  "level": "advanced-workforce",
+  "intendedAudience": [
+    "Advanced propagation technicians and controlled-environment plant-production staff",
+    "Staff supporting tissue-culture establishment, micropropagation, contamination control or germplasm QA",
+    "Learners progressing toward propagation lead, clean-stock or plant-biotechnology specialist pathways"
+  ],
+  "prerequisites": [
+    "Foundational propagation, sanitation and plant-development knowledge is recommended.",
+    "Learners should understand batch identity, contamination-control, acclimatization and basic experimental-comparison terminology.",
+    "Prior supervised experience with clean-work practices is recommended before practical assessment."
+  ],
+  "deliveryModes": [
+    "self-paced-online",
+    "instructor-led",
+    "simulation",
+    "supervised-lab",
+    "workplace-practice",
+    "paper-data-exercise"
+  ],
+  "learningOutcomes": [
+    "Evaluate aseptic workspace flow and identify cross-contamination risks using directional movement, staged materials and batch separation.",
+    "Interpret culture-establishment outcomes in the context of donor condition, explant type, genotype and medium rather than treating establishment as one universal protocol.",
+    "Use contamination timing and batch clustering to distinguish likely donor, workflow, operator or material-lot contributors and select a traceable corrective-action path.",
+    "Compare multiplication or regeneration treatments using multiple quality outcomes rather than shoot count alone.",
+    "Interpret genotype-by-treatment differences without generalizing one line's response to all germplasm.",
+    "Evaluate rooting and acclimatization as a connected transition using survival, new growth, humidity transition, substrate and genotype evidence.",
+    "Use passage history, regeneration route, morphology and retained-reference comparisons to support germplasm-fidelity QA.",
+    "Separate observed contamination, suspected source and confirmed cause in technical records.",
+    "Design a batch-level review that preserves operator, donor, explant, medium lot, transfer date and outcome traceability.",
+    "Produce a supervisor-ready propagation QA report with measured outcomes, uncertainty, next checks, corrective actions and escalation boundaries."
+  ],
+  "evidencePolicy": "Course conclusions should use plant tissue-culture and controlled-environment propagation evidence appropriate to the mechanism being taught. Genotype-, explant-, medium- or study-specific results must not be presented as universal protocols. Contamination patterns, fidelity concerns and regeneration outcomes must preserve uncertainty until supported by appropriate evidence.",
+  "assessmentPolicy": "Instruction uses batch records, contamination-cluster cases, genotype-by-treatment comparisons, acclimatization data and fidelity-QA scenarios. Module checks are formative. The final credential assessment remains fail-closed until adequate bank depth, human review, accessibility review, pilot evidence and standard-setting are complete. Practical performance requires a dedicated micropropagation QA case rather than the broader Technician II propagation/canopy practical, because the latter does not directly assess the course's tissue-culture competencies.",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "qualityStandard": "docs/ACADEMY_CERTIFICATE_PROGRAM_QUALITY_STANDARD.md",
+    "requiredPerformanceAssessment": "PRACTICAL-PROP-TC-QA-001",
+    "practicalEvidenceRequirements": [
+      "Aseptic workflow risk map",
+      "Culture-establishment and contamination review",
+      "Multiplication/acclimatization comparison table",
+      "Germplasm QA and corrective-action report",
+      "Supervisor-ready handoff"
+    ],
+    "roleBoundary": "The learner may evaluate records, identify likely process failures, perform approved clean-work and propagation procedures, and recommend verification or escalation. The course does not authorize unsafe biological handling, unsupported diagnosis, unapproved chemical/process changes, or independent laboratory claims beyond available evidence.",
+    "credentialStatement": "Successful completion may contribute to the THC Advanced Propagation and Tissue Culture certificate when all written assessment, practical, review, identity, issuance and release requirements are active. The credential documents educational/workforce achievement and is not a government license or independent personnel certification.",
+    "productionActivationRequirements": [
+      "Expand and validate final-assessment bank depth across all six objectives.",
+      "Add and validate the dedicated tissue-culture QA practical.",
+      "Record human SME and assessment review.",
+      "Complete accessibility review.",
+      "Run learner pilot and item-analysis review.",
+      "Calibrate practical assessors and document passing-threshold rationale.",
+      "Verify source freshness and learner rendering.",
+      "Verify credential identity, issuance and public-verification flow."
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "PRACTICAL-PROP-TC-QA-001",
+  "title": "Advanced Propagation and Tissue Culture QA Practical",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": [
+    "TASK-CULT2-PROP-001"
+  ],
+  "competencies": [
+    "COMP-TC-ASEPTIC-001",
+    "COMP-TC-REGEN-001"
+  ],
+  "deliveryModes": [
+    "simulation",
+    "virtual-facility",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidenceOutputs": [
+    "Aseptic workflow risk map",
+    "Culture-establishment and contamination review",
+    "Multiplication/acclimatization comparison table",
+    "Germplasm QA and corrective-action report",
+    "Supervisor-ready handoff"
+  ],
+  "scoring": {
+    "totalPoints": 100,
+    "domains": [
+      {
+        "name": "Aseptic workflow and traceability",
+        "points": 20
+      },
+      {
+        "name": "Contamination-pattern analysis",
+        "points": 20
+      },
+      {
+        "name": "Establishment/multiplication interpretation",
+        "points": 20
+      },
+      {
+        "name": "Rooting/acclimatization and fidelity QA",
+        "points": 20
+      },
+      {
+        "name": "Corrective action, uncertainty and handoff",
+        "points": 20
+      }
+    ]
+  },
+  "passingStandard": {
+    "minimumPercent": 80,
+    "noCriticalErrors": true
+  },
+  "criticalErrors": [
+    "Breaches the defined clean-work boundary while handling known contaminated material.",
+    "Discards or alters original batch records to hide contrary evidence.",
+    "Declares a donor, operator, medium lot or genotype to be the confirmed cause without supporting evidence.",
+    "Treats one genotype response as a universal propagation protocol.",
+    "Ignores passage history or obvious abnormal morphology when making a germplasm-quality disposition.",
+    "Changes several process variables simultaneously while claiming the result identifies root cause.",
+    "Represents a QA hypothesis as a validated genetic or pathogen diagnosis."
+  ],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-PROP-TC-QA-001.md",
+  "extensions": {
+    "certificationUseStatus": "not-authorized",
+    "requireAssessorCalibration": true,
+    "requirePilot": true,
+    "course": "COURSE-PROP-ADVANCED-001"
+  }
+}

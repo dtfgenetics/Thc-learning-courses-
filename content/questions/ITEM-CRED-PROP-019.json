@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-PROP-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-TC-MULTIPLY-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Treatment A produces more shoots, but also more callus and poorer later rooting than Treatment B. What is the strongest evaluation?",
+  "choices": [
+    "Compare multiple quality and downstream outcomes instead of ranking by shoot count alone",
+    "Treatment A is automatically superior",
+    "Callus and rooting do not matter",
+    "Only the fastest treatment should be selected"
+  ],
+  "correct": 0,
+  "rationale": "Multiplication is a multi-trait optimization problem; downstream quality matters as well as shoot number.",
+  "references": [
+    "REF-PROP-TC-2025-001",
+    "REF-PROP-REGEN-2025-001"
+  ]
+}

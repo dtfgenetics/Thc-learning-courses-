@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-CRED-PROP-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-TC-MULTIPLY-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-response",
+  "stem": "Which measures improve a multiplication-treatment comparison?",
+  "choices": [
+    "Shoot number",
+    "Shoot length or node count",
+    "Callus or abnormal morphology",
+    "Later rooting/acclimatization performance",
+    "Only one overall pass/fail label"
+  ],
+  "correct": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "rationale": "A robust comparison uses several biologically relevant outcomes rather than one aggregate judgment.",
+  "references": [
+    "REF-PROP-TC-2025-001"
+  ]
+}
