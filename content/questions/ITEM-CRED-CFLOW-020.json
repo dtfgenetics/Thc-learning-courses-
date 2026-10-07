@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-CFLOW-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-FLOWER-ADV-001",
+  "objective": "LO-FLOWER-TRANSITION-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A crop shows delayed reproductive development relative to prior runs. Which investigation is strongest before changing unrelated inputs?",
+  "choices": [
+    "Review light/dark schedule integrity, plant condition and actual reproductive morphology",
+    "Increase several inputs at once",
+    "Use calendar week alone as proof of stage",
+    "Assume the cultivar has permanently changed"
+  ],
+  "correct": 0,
+  "rationale": "Delayed development should be investigated with photoperiod history, morphology and crop condition before unrelated changes are made.",
+  "references": [
+    "REF-LIGHT-001",
+    "REF-FLOWER-MORPH-2023-001"
+  ]
+}
