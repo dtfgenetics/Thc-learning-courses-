@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-NIPM-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-NUTRIENT-INTERACT-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A higher nutrient concentration increases tissue accumulation but does not improve yield in the tested system. Which conclusion is strongest?",
+  "choices": [
+    "Greater accumulation does not automatically mean greater performance",
+    "Higher concentration should always be increased further",
+    "Tissue accumulation proves universal deficiency",
+    "Yield is unrelated to nutrient supply"
+  ],
+  "correct": 0,
+  "rationale": "Adequacy and excess must be distinguished. Accumulation without performance gain is not evidence that more input is beneficial.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002"
+  ]
+}
