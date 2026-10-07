@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-NIPM-024",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-IPM-INTEGRATE-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A product is widely recommended online, but authorization for the intended crop/site and jurisdiction is unclear. What is the strongest action?",
+  "choices": [
+    "Do not treat popularity as authorization; verify applicable requirements before use",
+    "Use it because it is sold online",
+    "Use a smaller amount without checking",
+    "Assume biological products are always unrestricted"
+  ],
+  "correct": 0,
+  "rationale": "Product availability or popularity does not establish legal authorization. Verification is separate from efficacy evidence.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-IPM-001"
+  ]
+}
