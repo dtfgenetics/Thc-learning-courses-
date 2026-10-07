@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-CRED-WATER-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-IRR-UNIFORMITY-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "The first emitter on a line delivers the expected volume, but several far-end positions underdeliver. What is the strongest next step?",
+  "choices": [
+    "Run a representative output/uniformity check and investigate pressure, filtration or line effects",
+    "Assume the whole line is correct because the first emitter passed",
+    "Increase all schedules without measuring distribution",
+    "Replace the water source immediately"
+  ],
+  "correct": 0,
+  "rationale": "A single emitter cannot represent the whole irrigation network. Spatial output data are needed to diagnose distribution problems.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}
