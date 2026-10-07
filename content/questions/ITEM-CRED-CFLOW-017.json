@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-CFLOW-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-CANOPY-ADV-001",
+  "objective": "LO-CANOPY-UNIFORM-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A canopy has a visually flat top but interior flower sites receive much less light than edge sites. Which statement is most accurate?",
+  "choices": [
+    "Visual flatness does not guarantee spatial uniformity",
+    "The canopy is uniform because height is even",
+    "Interior light cannot affect outcomes",
+    "Only room-average PPFD matters"
+  ],
+  "correct": 0,
+  "rationale": "Useful uniformity depends on spatial exposure and outcomes, not only canopy height.",
+  "references": [
+    "REF-CANOPY-001",
+    "REF-LIGHT-INTERCANOPY-2025-001"
+  ]
+}
