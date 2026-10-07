@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-NIPM-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-IPM-SCOUT-ADV-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One scouting round checks 50 plants across fixed zones; the next checks 10 plants near the door only. Why is trend interpretation weakened?",
+  "choices": [
+    "Sampling effort and spatial coverage changed, so rounds are not directly comparable",
+    "More recent data are always better regardless of method",
+    "Door samples represent the entire room automatically",
+    "Negative findings do not need sampling context"
+  ],
+  "correct": 0,
+  "rationale": "Comparable scouting requires consistent or documented sampling effort and spatial coverage.",
+  "references": [
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ]
+}
