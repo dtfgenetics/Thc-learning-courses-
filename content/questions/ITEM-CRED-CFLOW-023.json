@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-CFLOW-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-FLOWER-ADV-001",
+  "objective": "LO-FLOWER-TRICHOME-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One exposed bract shows many amber trichome heads, while interior samples are less mature. What is the strongest conclusion?",
+  "choices": [
+    "Maturity is heterogeneous and representative sampling is needed",
+    "The whole crop has the same maturity as the exposed bract",
+    "One sample defines a universal harvest threshold",
+    "Interior flower position is irrelevant"
+  ],
+  "correct": 0,
+  "rationale": "Trichome development can vary by position, genotype and age; one exposed sample is not representative of the whole crop.",
+  "references": [
+    "REF-FLOWER-001",
+    "REF-FLOWER-MORPH-2023-001"
+  ]
+}

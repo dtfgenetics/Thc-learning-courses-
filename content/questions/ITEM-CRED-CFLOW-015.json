@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-CFLOW-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-CANOPY-ADV-001",
+  "objective": "LO-CANOPY-TRAIN-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A training intervention makes the canopy look cleaner, but no pre/post measurements or recovery data were collected. What is the main evaluation problem?",
+  "choices": [
+    "Appearance alone cannot establish whether the production objective improved",
+    "The intervention is automatically successful",
+    "Recovery data are unnecessary",
+    "Only labor time matters"
+  ],
+  "correct": 0,
+  "rationale": "Training success should be evaluated against a defined objective and measured response, not visual preference.",
+  "references": [
+    "REF-CANOPY-001",
+    "REF-CANOPY-DEFOL-2025-001"
+  ]
+}

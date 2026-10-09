@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-CRED-CFLOW-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-CANOPY-ADV-001",
+  "objective": "LO-CANOPY-ARCH-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two plants have similar height, but one has much denser lateral branching and poorer lower-canopy light. What does this demonstrate?",
+  "choices": [
+    "Plant height alone is not a complete canopy-architecture metric",
+    "The taller plant is always more uniform",
+    "Lower-canopy light is unrelated to architecture",
+    "One top-canopy PPFD reading describes the whole plant"
+  ],
+  "correct": 0,
+  "rationale": "Architecture includes branch distribution and canopy porosity; similar height can produce very different internal light environments.",
+  "references": [
+    "REF-CANOPY-001",
+    "REF-LIGHT-INTERCANOPY-2025-001"
+  ]
+}
