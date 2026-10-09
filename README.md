@@ -2,6 +2,10 @@
 
 Version-controlled curriculum, assessment, evidence, review, and credentialing source for Teaching Healthy Cultivation.
 
+## Join the THC education community
+
+Connect with learners studying cultivation science, genetics, lighting, VPD, plant health, and careful observation through **[THC — Teaching Healthy Cultivation on Discord](https://discord.gg/xJbUeHFPMt)**. For adults only; educational discussion, not sales or trades. Follow local laws and community rules.
+
 ## Mission
 
 Build a standards-aware education platform in which scientific evidence supports occupational competencies, competencies drive learning objectives, lessons teach those objectives, assessments measure them, performance evidence validates applied skill, and credentials are issued only after defined requirements are satisfied.
