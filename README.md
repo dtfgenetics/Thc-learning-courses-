@@ -4,7 +4,7 @@ Version-controlled curriculum, assessment, evidence, review, and credentialing s
 
 ## Join the THC education community
 
-Connect with learners studying cultivation science, genetics, lighting, VPD, plant health, and careful observation through **[THC — Teaching Healthy Cultivation on Discord](https://discord.gg/xJbUeHFPMt)**. For adults only; educational discussion, not sales or trades. Follow local laws and community rules.
+Connect with learners studying cultivation science, genetics, lighting, VPD, plant health, and careful observation through **[THC — Teaching Healthy Cultivation on Discord](https://discord.gg/ZzYTUWKKW)**. For adults only; educational discussion, not sales or trades. Follow local laws and community rules.
 
 ## Mission
 
